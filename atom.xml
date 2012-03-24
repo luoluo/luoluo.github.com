@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-25T04:14:21+08:00</updated>
+  <updated>2012-03-25T04:17:32+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -223,7 +223,7 @@ rake deploy         //将博文上传至服务器
     <link href="http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti/"/>
     <updated>2012-03-21T19:53:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti</id>
-    <content type="html"><![CDATA[<p>问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
+    <content type="html"><![CDATA[<p>   问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
 
 <p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
 
