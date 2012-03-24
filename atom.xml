@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-24T21:25:36+08:00</updated>
+  <updated>2012-03-25T01:09:03+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
-    
+    <email><![CDATA[luoluo1920@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
