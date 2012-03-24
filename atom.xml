@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-25T04:00:11+08:00</updated>
+  <updated>2012-03-25T04:14:21+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -14,111 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Ubuntu Wu Xian Lu You Wen Ti]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/25/ubuntu-wu-xian-lu-you-wen-ti/"/>
-    <updated>2012-03-25T00:00:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/25/ubuntu-wu-xian-lu-you-wen-ti</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>layout: post
-title: &#8220;ubuntu 无线路由问题&#8221;
-date: 2012-03-23 01:51
-comments: true
-categories: [linux,无线路由]</p>
-
-<p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
-
-<p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
-
-<!--more-->
-
-
-<blockquote>
-无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
-你可以把路由的频道改一下，或把网卡的地区改为日本也行。
-
-笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
-</blockquote>
-
-
-<p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
-
-<p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
-
-<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux Xia Wen Jian Luan Ma De Wen Ti]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti/"/>
-    <updated>2012-03-25T00:00:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>layout: post
-title: &#8220;linux 下文件乱码的问题&#8221;
-date: 2012-03-21 19:53
-comments: true
-categories: [linux, 编码]
-问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
-
-<p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
-
-<blockquote>
-1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
-:set fileencoding=utf-8
-2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
-enconv -L zh_CN -x UTF-8 filename
-</blockquote>
-
-
-
-
-<blockquote>
-3.iconv 转换，iconv的命令格式如下：
-iconv -f encoding -t encoding inputfile
-比如将一个UTF-8 编码的文件转换成GBK编码
-iconv -f GBK -t UTF-8 file1 -o file2
-</blockquote>
-
-
-<!--more-->
-
-
-<p>下面是摘自网上的关于VIM编码的资料：</p>
-
-<blockquote>和所有的流行文本编辑器一样，Vim 可以很好的编辑各种字符编码的文件，这当然包括UCS-2、UTF-8 等流行的 Unicode 编码方式。然而不幸的是，和很多来自 Linux 世界的软件一样，这需要你自己动手设置。
-Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助 :help encoding-names)，它们的意义如下:
-* encoding: Vim 内部使用的字符编码方式，包括 Vim 的 buffer (缓冲区)、菜单文本、消息文本等。默认是根据你的locale选择.用户手册上建议只在 .vimrc 中改变它的值，事实上似乎也只有在.vimrc 中改变它的值才有意义。你可以用另外一种编码来编辑和保存文件，如你的vim的encoding为utf-8,所编辑的文件采用cp936编码,vim会自动将读入的文件转成utf-8(vim的能读懂的方式），而当你写入文件时,又会自动转回成cp936（文件的保存编码).
-* fileencoding: Vim 中当前编辑的文件的字符编码方式，Vim 保存文件时也会将文件保存为这种字符编码方式 (不管是否新文件都如此)。
-* fileencodings: Vim自 动探测fileencoding的顺序列表， 启动时会按照它所列出的字符编码方式逐一探测即将打开的文件的字符编码方式，并且将 fileencoding 设置为最终探测到的字符编码方式。因此最好将Unicode 编码方式放到这个列表的最前面，将拉丁语系编码方式 latin1 放到最后面。
-* termencoding: Vim 所工作的终端 (或者 Windows 的 Console 窗口) 的字符编码方式。如果vim所在的term与vim编码相同，则无需设置。如其不然，你可以用vim的termencoding选项将自动转换成term的编码.这个选项在 Windows 下对我们常用的 GUI 模式的 gVim 无效，而对 Console 模式的Vim 而言就是 Windows 控制台的代码页，并且通常我们不需要改变它。
-好了，解释完了这一堆容易让新手犯糊涂的参数，我们来看看 Vim 的多字符编码方式支持是如何工作的。
-1. Vim 启动，根据 .vimrc 中设置的 encoding 的值来设置 buffer、菜单文本、消息文的字符编码方式。
-2. 读取需要编辑的文件，根据 fileencodings 中列出的字符编码方式逐一探测该文件编码方式。并设置 fileencoding 为探测到的，看起来是正确的 (注1) 字符编码方式。
-3. 对比 fileencoding 和 encoding 的值，若不同则调用 iconv 将文件内容转换为encoding 所描述的字符编码方式，并且把转换后的内容放到为此文件开辟的 buffer 里，此时我们就可以开始编辑这个文件了。注意，完成这一步动作需要调用外部的 iconv.dll(注2)，你需要保证这个文件存在于 $VIMRUNTIME 或者其他列在 PATH 环境变量中的目录里。
-4. 编辑完成后保存文件时，再次对比 fileencoding 和 encoding 的值。若不同，再次调用 iconv 将即将保存的 buffer 中的文本转换为 fileencoding 所描述的字符编码方式，并保存到指定的文件中。同样，这需要调用 iconv.dll由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;)。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示cp936，也就是 GBK 的代码页)。</blockquote>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Github Plus Octopress Equals Equals Geeks Blog]]></title>
+    <title type="html"><![CDATA[GitHub + Octopress == Geek's Blog]]></title>
     <link href="http://luoluo.github.com/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/"/>
-    <updated>2012-03-25T00:00:00+08:00</updated>
+    <updated>2012-03-25T03:19:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>layout: post
-title: &#8220;GitHub + Octopress == Geek&#8217;s Blog&#8221;
-date: 2012-03-25 03:19
-comments: true
-categories: [blog, octopress, geek]</p>
-
-<p>去年就开始搭建一个自己的Blog，结果在“重重困难”和期末考试前，停下了脚步。现在又启程了。正在进行中，把今天的收获记录下。</p>
+    <content type="html"><![CDATA[<p>去年就开始搭建一个自己的Blog，结果在“重重困难”和期末考试前，停下了脚步。现在又启程了。正在进行中，把今天的收获记录下。</p>
 
 <p>期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。</p>
 
@@ -132,8 +32,7 @@ categories: [blog, octopress, geek]</p>
 <blockquote>
 rvm package install zlib
 rvm remove 1.9.1
-rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm_path/usr
-<strong>出处：<a href="http://stackoverflow.com/questions/2441248/rvm-ruby-1-9-1-install-cant-locate-zlib-but-its-runtime-and-dev-library-are-the" title="http://stackoverflow.com/questions/2441248/rvm-ruby-1-9-1-install-cant-locate-zlib-but-its-runtime-and-dev-library-are-the"></a></strong>
+rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm
 </blockquote>
 
 
@@ -146,7 +45,8 @@ rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm_path/usr
 
 <blockquote>## Generating Site with Jekyll
 unchanged sass/screen.scss
-Configuration from /home/lo/blog/octopress/_config.yml
+Configuration from /home/lo/blog/octopress/&#8221;config.yml&#8221;
+
 <strong>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require&#8217;: no such file to load &#8211; openssl (LoadError)</strong>
     from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `&#8217;
     from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require&#8217;
@@ -193,7 +93,7 @@ find命令详解
     例如：$ find –name ’tmp’ –xtype c -user ’inin’   该命令寻找三个给定条件都满足的所有文件。
      
 （2）or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。 
-　　例如：$ find –name ’tmp’ –o –name ’mina*’ 　 　　该命令查询文件名为’tmp’或是匹配’mina*’的所有文件。
+　　例如：$ find –name ’tmp’ –o –name ’mina 　 　　该命令查询文件名为’tmp’或是匹配’mina的所有文件。
 （3）not：逻辑非，在命令中用“！”表示。该运算符表示查找不满足所给条件的文件。 
 　　例如：$ find ! –name ’tmp’                       该命令查询文件名不是’tmp’的所有文件。
 　　需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。为了避免Shell本身对括号引起误解，在话号前需要加转义字符“”来去除括号的意义。 
@@ -209,7 +109,7 @@ url: http://yoursite.com  # blog地址
 title: My Octopress Blog  # blog名称，会出现在左上角
 subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
 author: Your Name # 会出现在每篇文章下面的Posted by 
-simple_search: http://google.com/search # 右边搜索框使用的搜索引擎
+simple search: http://google.com/search # 右边搜索框使用的搜索引擎
 description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉</blockquote>
 
 
@@ -222,17 +122,17 @@ root: / # 网站的根目录，如果你网站是http://site.com/project这样�
 # 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
 permalink: /blog/:year/:month/:day/:title/
 paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-recent_posts: 5       # 右侧最近发表模块里blog的数量
+recentposts: 5       # 右侧最近发表模块里blog的数量
 # 在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
-excerpt_link: &#8220;Read on &rarr;&#8221;
-# 右侧边栏的展现，有些要下面的设置配合，比如你没有配置github_user，则这儿也不会展现github.html
-# 也可以增加一些自己的页面，比如在/source/_includes/custom/asides/下增加about.html
+excerptlink: &#8220;Read on &rarr;&#8221;
+# 右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
+# 也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
 # 然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
-default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html]
+defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
 # 可以给不同的页面配置不同的侧边栏  
-blog_index_asides:
-post_asides:
-page_asides:
+blogindexasides:
+postasides:
+pageasides:
 </blockquote>
 
 
@@ -243,7 +143,7 @@ page_asides:
 <p>主要的工具是<strong>rake</strong>：</p>
 
 <blockquote>
-rake new_post[&#8220;postname&#8221;] //来产生新的博文
+rake newpost[&#8220;postname&#8221;] //来产生新的博文
 rake generate       //生成博文
 rake deploy         //将博文上传至服务器
 </blockquote>
@@ -287,6 +187,83 @@ rake deploy         //将博文上传至服务器
     <updated>2012-03-24T21:12:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/24/here</id>
     <content type="html"><![CDATA[<p>Here is the very first blog of geek.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu 无线路由问题]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti/"/>
+    <updated>2012-03-23T01:51:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti</id>
+    <content type="html"><![CDATA[<p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
+
+<p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
+
+<!--more-->
+
+
+<blockquote>
+无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
+你可以把路由的频道改一下，或把网卡的地区改为日本也行。
+
+笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
+</blockquote>
+
+
+<p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
+
+<p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
+
+<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[linux 下文件乱码的问题]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti/"/>
+    <updated>2012-03-21T19:53:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti</id>
+    <content type="html"><![CDATA[<p>问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
+
+<p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
+
+<blockquote>
+1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
+:set fileencoding=utf-8
+2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
+enconv -L zhCN -x UTF-8 filename
+</blockquote>
+
+
+
+
+<blockquote>
+3.iconv 转换，iconv的命令格式如下：
+iconv -f encoding -t encoding inputfile
+比如将一个UTF-8 编码的文件转换成GBK编码
+iconv -f GBK -t UTF-8 file1 -o file2
+</blockquote>
+
+
+<!--more-->
+
+
+<p>下面是摘自网上的关于VIM编码的资料：</p>
+
+<blockquote>和所有的流行文本编辑器一样，Vim 可以很好的编辑各种字符编码的文件，这当然包括UCS-2、UTF-8 等流行的 Unicode 编码方式。然而不幸的是，和很多来自 Linux 世界的软件一样，这需要你自己动手设置。
+Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助 :help encoding-names)，它们的意义如下:
+* encoding: Vim 内部使用的字符编码方式，包括 Vim 的 buffer (缓冲区)、菜单文本、消息文本等。默认是根据你的locale选择.用户手册上建议只在 .vimrc 中改变它的值，事实上似乎也只有在.vimrc 中改变它的值才有意义。你可以用另外一种编码来编辑和保存文件，如你的vim的encoding为utf-8,所编辑的文件采用cp936编码,vim会自动将读入的文件转成utf-8(vim的能读懂的方式），而当你写入文件时,又会自动转回成cp936（文件的保存编码).
+* fileencoding: Vim 中当前编辑的文件的字符编码方式，Vim 保存文件时也会将文件保存为这种字符编码方式 (不管是否新文件都如此)。
+* fileencodings: Vim自 动探测fileencoding的顺序列表， 启动时会按照它所列出的字符编码方式逐一探测即将打开的文件的字符编码方式，并且将 fileencoding 设置为最终探测到的字符编码方式。因此最好将Unicode 编码方式放到这个列表的最前面，将拉丁语系编码方式 latin1 放到最后面。
+* termencoding: Vim 所工作的终端 (或者 Windows 的 Console 窗口) 的字符编码方式。如果vim所在的term与vim编码相同，则无需设置。如其不然，你可以用vim的termencoding选项将自动转换成term的编码.这个选项在 Windows 下对我们常用的 GUI 模式的 gVim 无效，而对 Console 模式的Vim 而言就是 Windows 控制台的代码页，并且通常我们不需要改变它。
+好了，解释完了这一堆容易让新手犯糊涂的参数，我们来看看 Vim 的多字符编码方式支持是如何工作的。
+1. Vim 启动，根据 .vimrc 中设置的 encoding 的值来设置 buffer、菜单文本、消息文的字符编码方式。
+2. 读取需要编辑的文件，根据 fileencodings 中列出的字符编码方式逐一探测该文件编码方式。并设置 fileencoding 为探测到的，看起来是正确的 (注1) 字符编码方式。
+3. 对比 fileencoding 和 encoding 的值，若不同则调用 iconv 将文件内容转换为encoding 所描述的字符编码方式，并且把转换后的内容放到为此文件开辟的 buffer 里，此时我们就可以开始编辑这个文件了。注意，完成这一步动作需要调用外部的 iconv.dll(注2)，你需要保证这个文件存在于 $VIMRUNTIME 或者其他列在 PATH 环境变量中的目录里。
+4. 编辑完成后保存文件时，再次对比 fileencoding 和 encoding 的值。若不同，再次调用 iconv 将即将保存的 buffer 中的文本转换为 fileencoding 所描述的字符编码方式，并保存到指定的文件中。同样，这需要调用 iconv.dll由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;)。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示cp936，也就是 GBK 的代码页)。</blockquote>
+
+
+
 ]]></content>
   </entry>
   

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>疯狂不是程序员的全部 - LOG.02</title>
+  <title>ubuntu 无线路由问题 - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="没有像往常那样一口气读完，断断续续的，感受也是不连续的，有激动有伤心，虽说做的的文笔不是辞藻华丽，但却给人朴素的真实感。与其说是小说，还不如说是自传，一个青涩的大学生向一个技术大牛的进化过程。此时想起了《社交网络》里的马克，天才的爆发。还记得看望社交网络后和朋友一起血脉膨胀，踌躇满志， &hellip;">
+  <meta name="description" content="ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？ 在网上看到很多用户遇到了类似的困境。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">疯狂不是程序员的全部</h1>
+      <h1 class="entry-title">Ubuntu 无线路由问题</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2012-03-06T23:54:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
+<time datetime="2012-03-23T01:51:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,17 +104,26 @@
   </header>
 
 
-<div class="entry-content"><p>   没有像往常那样一口气读完，断断续续的，感受也是不连续的，有激动有伤心，虽说做的的文笔不是辞藻华丽，但却给人朴素的真实感。与其说是小说，还不如说是自传，一个青涩的大学生向一个技术大牛的进化过程。此时想起了《社交网络》里的马克，天才的爆发。还记得看望社交网络后和朋友一起血脉膨胀，踌躇满志，感觉仿佛世界是我们的，或将是我们的。 《疯狂的程序员》却给人以不同的角度，以一个普通人的第一视角，讲述了光辉背后的辛酸与快乐。</p>
+<div class="entry-content"><p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
+
+<p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
 
 <!--more-->
 
 
-<pre><code>拿到那份100块的第一份“程序员”的收入，绝影还是一个初入技术大门的求知若渴的青年，这份收入让他和燕儿都高兴了半天。却不知疯狂程序员已经上路，然后就是一个又一个的CASE，一个又一个的难题，一个又一个的挑战；它的反面是越来越少的陪伴，越来越少的休息，越来愈多的熬夜，越来越多的出差。一年、两年、三年，当年的初尝爱情甜蜜的青涩小伙，蜕变成了胡茬硬硬、眼圈黑黑、目光炯炯的单生技术牛。或许这就是许多技术达人的成长路线吧。我不知道这种生活可不可以称作“生活”，我不知道写程序后的快乐可不可以称为“生活的幸福”。“程序员有着魔术师的双手，可以把呆板的代码变成丰富多彩的世界”，或许这是程序的魅力所在，也是程序员的快乐源泉。可是程序员的幸福有在哪里呢？？  看到绝影与燕儿的分手，真的有点心痛，原以为燕儿会理解，最后幸福下去，勾画缤纷的未来...  是陪伴太少，还记得书中的那句“做程序员的女朋友还能要求些什么呢...”，可是程序员也是人啊，也需要家庭的温暖，爱情的甜蜜，当然这需要付出。而绝影或许缺失了写什么吧...
+<blockquote>
+无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
+你可以把路由的频道改一下，或把网卡的地区改为日本也行。
 
-不要忘记生活，程序员需要疯狂，可是要记得“疯狂不是程序员的全部”...
-</code></pre>
+笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
+</blockquote>
 
-<p>做为一个还没有如技术大门的小白，在这里说下自己的感受，几年之后，自己是否也会像他们一样呢？？</p>
+
+<p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
+
+<p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
+
+<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
 </div>
 
 
@@ -137,7 +146,7 @@
   
 
 
-<time datetime="2012-03-06T23:54:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
+<time datetime="2012-03-23T01:51:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
       
 
 
@@ -145,7 +154,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu/" data-via="" data-counturl="http://luoluo.github.com/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti/" data-via="" data-counturl="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -156,10 +165,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/03/03/xiao-jie-0-dot-0/" title="Previous Post: 小节0.0">&laquo; 小节0.0</a>
+        <a class="basic-alignment left" href="/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti/" title="Previous Post: linux 下文件乱码的问题">&laquo; linux 下文件乱码的问题</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/03/11/ill/" title="Next Post: ILL">ILL &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/03/24/here/" title="Next Post: here">here &raquo;</a>
       
     </p>
   </footer>
@@ -271,8 +280,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu/';
-        var disqus_url = 'http://luoluo.github.com/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu/';
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti/';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti/';
         var disqus_script = 'embed.js';
       
     (function () {
