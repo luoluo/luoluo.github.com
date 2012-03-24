@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-25T03:48:48+08:00</updated>
+  <updated>2012-03-25T03:49:29+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,24 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[小节0.0]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/25/xiao-jie-0-dot-0/"/>
-    <updated>2012-03-25T03:48:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/25/xiao-jie-0-dot-0</id>
-    <content type="html"><![CDATA[<pre><code>  从什么说起呢？？记忆力衰退太猛，由现在写起来好点。就先说说这个BLOG吧。从最初有Blog的想法到现在有一个学期加一个假期了，期间屡试屡爽，可谓历经周折有回到起点。开始的时候，打算找片地，放置以下自己的思绪，以供回忆与分享...  出于一种对完美的最求，想利用下最先进的Blog技术---GITHUB的那对东东。所谓的hacker的blog，是文本下的操作。可是经过了几日的钻研，只是略有进展，一小点一小点前进，最后期末考试给这个计划判了死刑，无果。 然后想到使用个国内的托管型，考虑到国内行业的诚信（现在想想自己真是想多了），马上打消。 还是在硬着头皮钻自己的ZONE。 后来看了一些“牛人”的blog，发现好多都是wordpress，于是心有凄凄然，从自习室跑回寝室操练起来，什么mysql、apache、php去年让我折腰的“红颜”从现江湖，信心满满，打算大干一场，从日出到日落，教程看了一打，结果各种奇奇怪怪的错误，满头大汗，头晕目眩，不知南北....
-</code></pre>
-
-<!--more-->
-
-
-<pre><code>我有一次要把它搁置起来了，放弃？？  差一点就放了。后来折中的计划产生了，使用外国的托管，还有就是自己有没什么秘密去让别人“窥探”，我还是一直小小...小鸟，我要飞...
-
- 这个事绕了一个大弯子又回到了起点，发现其实blog只是一个工具，自己让工具控制了大半年，有点可笑。 另外就是有些先进的工具的学习是需要时间的，在决定是否学习他之前，我应当衡量下学习代价与自己对这个知识的需求程度，或择说是知识\技术对自己当前\以后的意义，不可以盲目的学，突然想起小时候看过的那个“擒龙术”的预言。华而不实的技术少学，无趣难啃的面包不吃，知识的海洋里一定有属于你的城堡，Find it，Maybe the route  is  not easy.... keep trying...
-</code></pre>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[To Do]]></title>
@@ -429,6 +411,24 @@ All submissions should be sent to the editor-in-chief
 </code></pre>
 
 <p>做为一个还没有如技术大门的小白，在这里说下自己的感受，几年之后，自己是否也会像他们一样呢？？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[小节0.0]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/03/xiao-jie-0-dot-0/"/>
+    <updated>2012-03-03T21:50:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/03/xiao-jie-0-dot-0</id>
+    <content type="html"><![CDATA[<pre><code>  从什么说起呢？？记忆力衰退太猛，由现在写起来好点。就先说说这个BLOG吧。从最初有Blog的想法到现在有一个学期加一个假期了，期间屡试屡爽，可谓历经周折有回到起点。开始的时候，打算找片地，放置以下自己的思绪，以供回忆与分享...  出于一种对完美的最求，想利用下最先进的Blog技术---GITHUB的那对东东。所谓的hacker的blog，是文本下的操作。可是经过了几日的钻研，只是略有进展，一小点一小点前进，最后期末考试给这个计划判了死刑，无果。 然后想到使用个国内的托管型，考虑到国内行业的诚信（现在想想自己真是想多了），马上打消。 还是在硬着头皮钻自己的ZONE。 后来看了一些“牛人”的blog，发现好多都是wordpress，于是心有凄凄然，从自习室跑回寝室操练起来，什么mysql、apache、php去年让我折腰的“红颜”从现江湖，信心满满，打算大干一场，从日出到日落，教程看了一打，结果各种奇奇怪怪的错误，满头大汗，头晕目眩，不知南北....
+</code></pre>
+
+<!--more-->
+
+
+<pre><code>我有一次要把它搁置起来了，放弃？？  差一点就放了。后来折中的计划产生了，使用外国的托管，还有就是自己有没什么秘密去让别人“窥探”，我还是一直小小...小鸟，我要飞...
+
+ 这个事绕了一个大弯子又回到了起点，发现其实blog只是一个工具，自己让工具控制了大半年，有点可笑。 另外就是有些先进的工具的学习是需要时间的，在决定是否学习他之前，我应当衡量下学习代价与自己对这个知识的需求程度，或择说是知识\技术对自己当前\以后的意义，不可以盲目的学，突然想起小时候看过的那个“擒龙术”的预言。华而不实的技术少学，无趣难啃的面包不吃，知识的海洋里一定有属于你的城堡，Find it，Maybe the route  is  not easy.... keep trying...
+</code></pre>
 ]]></content>
   </entry>
   
