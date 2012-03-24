@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-25T04:33:29+08:00</updated>
+  <updated>2012-03-25T04:36:23+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -181,6 +181,9 @@ rake deploy         //将博文上传至服务器
 
 <pre><code>a.下划线是非法字符，星号也是非法字符
 b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+c.引用显示的不同风格，延时还是？
+d.是否可以开头空格的风格？
+e.开头不规范会出现无法显示，抑或是延时？
 </code></pre>
 ]]></content>
   </entry>
