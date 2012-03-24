@@ -139,6 +139,76 @@ categories: [linux,无线路由]</p>
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti/">Linux Xia Wen Jian Luan Ma De Wen Ti</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><hr />
+
+<p>layout: post
+title: &#8220;linux 下文件乱码的问题&#8221;
+date: 2012-03-21 19:53
+comments: true
+categories: [linux, 编码]
+问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
+
+<p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
+
+<blockquote>
+1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
+:set fileencoding=utf-8
+2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
+enconv -L zh_CN -x UTF-8 filename
+</blockquote>
+
+
+
+
+<blockquote>
+3.iconv 转换，iconv的命令格式如下：
+iconv -f encoding -t encoding inputfile
+比如将一个UTF-8 编码的文件转换成GBK编码
+iconv -f GBK -t UTF-8 file1 -o file2
+</blockquote>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">Github Plus Octopress Equals Equals Geeks Blog</a></h1>
     
     
@@ -471,6 +541,10 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
       </li>
     
       <li class="post">
+        <a href="/blog/2012/03/25/linux-xia-wen-jian-luan-ma-de-wen-ti/">Linux Xia Wen Jian Luan Ma De Wen Ti</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">Github Plus Octopress Equals Equals Geeks Blog</a>
       </li>
     
@@ -480,10 +554,6 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
     
       <li class="post">
         <a href="/blog/2012/03/24/here/">here</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/24/firsttry/">FirstTry</a>
       </li>
     
   </ul>
