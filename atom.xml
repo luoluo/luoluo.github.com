@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-25T03:58:24+08:00</updated>
+  <updated>2012-03-25T04:00:11+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -282,29 +282,11 @@ rake deploy         //将博文上传至服务器
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[It works]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/24/it-works/"/>
-    <updated>2012-03-24T21:24:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/24/it-works</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[here]]></title>
     <link href="http://luoluo.github.com/blog/2012/03/24/here/"/>
     <updated>2012-03-24T21:12:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/24/here</id>
     <content type="html"><![CDATA[<p>Here is the very first blog of geek.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[FirstTry]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/24/firsttry/"/>
-    <updated>2012-03-24T19:27:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/24/firsttry</id>
-    <content type="html"><![CDATA[<p>Why did it not work?</p>
 ]]></content>
   </entry>
   
