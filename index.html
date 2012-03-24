@@ -9,8 +9,11 @@
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="layout: post
+title: &#8220;GitHub + Octopress == Geek&#8217;s Blog&#8221;
+date: 2012-03-25 03:19
+comments: true
+categories: [blog, octopress, geek] &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +80,155 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">Github Plus Octopress Equals Equals Geeks Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><hr />
+
+<p>layout: post
+title: &#8220;GitHub + Octopress == Geek&#8217;s Blog&#8221;
+date: 2012-03-25 03:19
+comments: true
+categories: [blog, octopress, geek]</p>
+
+<p>去年就开始搭建一个自己的Blog，结果在“重重困难”和期末考试前，停下了脚步。现在又启程了。正在进行中，把今天的收获记录下。</p>
+
+<p>期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。</p>
+
+<p>1.无法装ruby，问题如下</p>
+
+<blockquote>no such file to load &#8211; zlib (LoadError)</blockquote>
+
+
+<p>解决办法：</p>
+
+<blockquote>
+rvm package install zlib
+rvm remove 1.9.1
+rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm_path/usr
+<strong>出处：<a href="http://stackoverflow.com/questions/2441248/rvm-ruby-1-9-1-install-cant-locate-zlib-but-its-runtime-and-dev-library-are-the" title="http://stackoverflow.com/questions/2441248/rvm-ruby-1-9-1-install-cant-locate-zlib-but-its-runtime-and-dev-library-are-the"></a></strong>
+</blockquote>
+
+
+<p>2.openssl error</p>
+
+<blockquote>## Generating Site with Jekyll
+unchanged sass/screen.scss
+Configuration from /home/lo/blog/octopress/_config.yml
+<strong>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require&#8217;: no such file to load &#8211; openssl (LoadError)</strong>
+    from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `&#8217;
+    from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require&#8217;
+    from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load&#8217;
+    from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `&#8217;
+</blockquote>
+
+
+<p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案如下：</p>
+
+<blockquote>
+1.sudo apt-get install libssl-dev
+
+2.cd ext/openssl
+Run the command one after the others.
+ruby extconf.rb
+make
+sudo make install
+</blockquote>
+
+
+<p>然后就神奇的AC了。 原网址：http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/</p>
+
+<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽。
+具体的FIND使用规则：</p>
+
+<blockquote>
+find命令详解
+功能：在目录结构中搜索文件，并执行指定的操作。此命令提供了相当多的查找条件，功能很强大。 
+语法：find 起始目录 寻找条件 操作 
+说明：find命令从指定的起始目录开始，递归地搜索其各个子目录，查找满足寻找条件的文件并对之采取相关的操作。
+该命令提供的寻找条件可以是一个用逻辑运算符not、and、or组成的复合条件。逻辑运算符and、or、not的含义为：
+    例子：在当前目录查找所有的 sql文件
+    #find ./ -name &#8216;*.sql&#8217;
+（1）and：逻辑与，在命令中用“-a”表示，是系统缺省的选项，表示只有当所给的条件都满足时，寻找条件才算满足。
+    例如：$ find –name ’tmp’ –xtype c -user ’inin’   该命令寻找三个给定条件都满足的所有文件。
+     
+（2）or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。 
+　　例如：$ find –name ’tmp’ –o –name ’mina*’ 　 　　该命令查询文件名为’tmp’或是匹配’mina*’的所有文件。
+（3）not：逻辑非，在命令中用“！”表示。该运算符表示查找不满足所给条件的文件。 
+　　例如：$ find ! –name ’tmp’                       该命令查询文件名不是’tmp’的所有文件。
+　　需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。为了避免Shell本身对括号引起误解，在话号前需要加转义字符“”来去除括号的意义。 
+
+</blockquote>
+
+
+<p>4.octopress的个性化配置</p>
+
+<blockquote>
+<strong>Main Configs</strong>
+url: http://yoursite.com  # blog地址
+title: My Octopress Blog  # blog名称，会出现在左上角
+subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
+author: Your Name # 会出现在每篇文章下面的Posted by 
+simple_search: http://google.com/search # 右边搜索框使用的搜索引擎
+description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉</blockquote>
+
+
+
+
+<blockquote>
+<strong>Jekyll &amp; Plugins</strong>
+
+root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project
+# 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
+permalink: /blog/:year/:month/:day/:title/
+paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
+recent_posts: 5       # 右侧最近发表模块里blog的数量
+# 在某篇blog中使用</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -260,6 +412,10 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">Github Plus Octopress Equals Equals Geeks Blog</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/24/it-works/">It works</a>
