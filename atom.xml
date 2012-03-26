@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T14:30:41+08:00</updated>
+  <updated>2012-03-26T14:43:10+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Alias 利器]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/26/alias-li-qi/"/>
+    <updated>2012-03-26T14:33:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/26/alias-li-qi</id>
+    <content type="html"><![CDATA[<pre><code>适用场合：惯用指令很长
+使用目的：简化指令，提高指令输入效率
+使用规则：
+    alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
+    unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
+举例：
+    alias rg='rake generate'
+    此时在命令行下输入
+    rg 与 rake generate 作用一致
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Find 命令的使用]]></title>
