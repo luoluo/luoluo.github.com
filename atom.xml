@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T21:39:31+08:00</updated>
+  <updated>2012-03-26T21:41:07+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -68,7 +68,8 @@ alias is='sudo apt-get install'
     <link href="http://luoluo.github.com/blog/find-ming-ling-de-shi-yong/2012/03/26/"/>
     <updated>2012-03-26T12:55:00+08:00</updated>
     <id>http://luoluo.github.com/blog/find-ming-ling-de-shi-yong/2012/03/find-ming-ling-de-shi-yong</id>
-    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。</p>
+    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。
+<img src="http://placekitten.com/890/280"></p>
 ]]></content>
   </entry>
   
