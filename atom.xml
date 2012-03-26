@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T13:49:56+08:00</updated>
+  <updated>2012-03-26T13:51:45+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -37,10 +37,9 @@
 解决办法：</p>
 
 <pre><code>1.rvm package install zlib &lt;br&gt;
+2.rvm remove 1.9.1&lt;br&gt;
+3.rvm install 1.9.1 -C --with-zlib-dir=$rvm &lt;br&gt;
 </code></pre>
-
-<p>2.rvm remove 1.9.1<br>
-3.rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm <br></p>
 
 <!--more-->
 
@@ -53,7 +52,12 @@ unchanged sass/screen.scss
 Configuration from /home/lo/blog/octopress/"config.yml"
 </code></pre>
 
-<p><strong>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require&#8217;: no such file to load &#8211; openssl (LoadError)</strong></p>
+<p><strong></p>
+
+<pre><code>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
+</code></pre>
+
+<p></strong></p>
 
 <pre><code>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
 from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
