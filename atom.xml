@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T15:05:55+08:00</updated>
+  <updated>2012-03-26T15:26:57+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -44,6 +44,18 @@ rg：找不到命令
 
 <pre><code>lo@lo:source ~/.bashrc 
 </code></pre>
+
+<p>下面列一下我用的alias</p>
+
+<pre><code>alias rg='rake generate'
+alias rd='rake deploy'
+alias update='sudo apt-get update'
+alias ..='cd ..' #据说是死罪
+alias df='df -h'  #以M为单位查看磁盘空间
+alias is='sudo apt-get install' 
+</code></pre>
+
+<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用宜情，乱用伤身。</p>
 ]]></content>
   </entry>
   
