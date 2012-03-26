@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T14:24:15+08:00</updated>
+  <updated>2012-03-26T14:26:22+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -78,8 +78,9 @@ from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
 <p>然后就神奇的AC了。 原网址:<a href="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 " title="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 ">http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
-</a>
-5.怎么撰写新文章呢？</p>
+</a></p>
+
+<p>5.怎么撰写新文章呢？</p>
 
 <p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</p>
 
