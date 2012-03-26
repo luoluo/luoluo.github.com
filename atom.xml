@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T13:54:08+08:00</updated>
+  <updated>2012-03-26T14:00:44+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -77,81 +77,59 @@ from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
 
 <p>然后就神奇的AC了。 原网址：http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/</p>
 
-<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽。</p>
+<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</p>
 
-<pre><code>具体的FIND使用规则：man find 好点。
+<pre><code>这里只记录下最最基本的使用： 
+find / -name FileNameToBeFind
 </code></pre>
-
-<blockquote>
-    这里只记录下最最基本的使用： <br>
-    find / -name FileNameToBeFind
-</blockquote>
-
 
 <p>4.octopress的个性化配置</p>
 
-<blockquote>
-<strong>Main Configs</strong> <br>
-1.url: http://yoursite.com  # blog地址<br>
-2.title: My Octopress Blog  # blog名称，会出现在左上角 <br>
-3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己<br>
-4.author: Your Name # 会出现在每篇文章下面的Posted by i<br>
-5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎<br>
-6.description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉<br>
-</blockquote>
+<p>  Main Configs
+  1.url: http://yoursite.com  # blog地址
+  2.title: My Octopress Blog  # blog名称，会出现在左上角
+  3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己<br>
+  4.author: Your Name # 会出现在每篇文章下面的Posted by i<br>
+  5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎<br>
+  6.description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉<br></p>
 
+<p>  Jekyll &amp; Plugins
+  1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project</p>
 
+<h1>生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</h1>
 
+<p>  2.permalink: /blog/:year/:month/:day/:title/<br>
+  3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
+  4.recentposts: 5       # 右侧最近发表模块里blog的数量</p>
 
-<blockquote>
-<strong>Jekyll &amp; Plugins</strong>
-<br>
-1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project<br>
-# 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
-<br>
-2.permalink: /blog/:year/:month/:day/:title/<br>
-<br>
-3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-<br>
-4.recentposts: 5       # 右侧最近发表模块里blog的数量
-<br>
-# 在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
-<br>
-5.excerptlink: &#8220;Read on &rarr;&#8221;
-<br>
-# 右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
-<br>
-# 也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
-<br>
-# 然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
-<br>
-6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
-<br>
-# 可以给不同的页面配置不同的侧边栏  
-<br>
-7.blogindexasides:
-<br>
-8.postasides:
-<br>
-9.pageasides:
-<br>
-</blockquote>
+<h1>在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</h1>
 
+<p>  5.excerptlink: &#8220;Read on &rarr;&#8221;</p>
 
-<br>
+<h1>右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</h1>
 
+<h1>也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</h1>
+
+<h1>然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序</h1>
+
+<p>  6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]</p>
+
+<h1>可以给不同的页面配置不同的侧边栏</h1>
+
+<p>  7.blogindexasides:
+  8.postasides:
+  9.pageasides:</p>
 
 <p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a>
 5.怎么撰写新文章呢？</p>
 
-<p>主要的工具是<strong>rake</strong>：</p>
+<p>主要的工具是
+<strong>rake</strong>：</p>
 
-<blockquote>
-1.rake newpost[&#8220;postname&#8221;] //来产生新的博文 <br>
-2.rake generate       //生成博文 <br>
-3.rake deploy         //将博文上传至服务器 <br>
-</blockquote>
-
+<pre><code>1.rake newpost["postname"] //来产生新的博文 
+2.rake generate       //生成博文 
+3.rake deploy         //将博文上传至服务器 
+</code></pre>
 
 <p>6.增加第三方插件</p>
 
@@ -183,12 +161,16 @@ from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
 
 <p>7.down语法的几点小白困惑：</p>
 
-<pre><code>a.下划线是非法字符，星号也是非法字符
-b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
-c.引用显示的不同风格，延时还是？
-d.是否可以开头空格的风格？
-e.开头不规范会出现无法显示，抑或是延时？
-</code></pre>
+<blockquote>
+    a.下划线是非法字符，星号也是非法字符
+    b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+    c.引用显示的不同风格，延时还是？
+    d.是否可以开头空格的风格？
+    e.开头不规范会出现无法显示，抑或是延时？
+</blockquote>
+
+
+
 ]]></content>
   </entry>
   
