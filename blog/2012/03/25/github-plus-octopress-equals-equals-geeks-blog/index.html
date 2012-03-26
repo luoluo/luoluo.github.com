@@ -129,108 +129,116 @@ rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm <br>
 
 <p>2.openssl error</p>
 
-<blockquote>## Generating Site with Jekyll
+<pre><code>在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 
+</code></pre>
+
+<p>   Generating Site with Jekyll
 unchanged sass/screen.scss
-Configuration from /home/lo/blog/octopress/&#8221;config.yml&#8221;
+Configuration from /home/lo/blog/octopress/&#8221;config.yml&#8221;</p>
 
-<strong>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require&#8217;: no such file to load &#8211; openssl (LoadError)</strong>
-    from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `&#8217;
-    from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require&#8217;
-    from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load&#8217;
-    from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `&#8217;
-</blockquote>
+<p><strong>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require&#8217;: no such file to load &#8211; openssl (LoadError)</strong></p>
 
+<pre><code>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
+from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
+from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load'
+from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
+</code></pre>
 
-<p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案如下：</p>
+<p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:</p>
 
 <blockquote>
 1.sudo apt-get install libssl-dev <br>
 2.cd ext/openssl <br>
-Run the command one after the others. <br>
-ruby extconf.rb <br>
-make <br>
-sudo make install <br>
+  Run the command one after the others. <br>
+  ruby extconf.rb <br>
+  make <br>
+  sudo make install <br>
 </blockquote>
 
 
 <p>然后就神奇的AC了。 原网址：http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/</p>
 
-<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽。
-具体的FIND使用规则：</p>
+<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽。</p>
+
+<pre><code>具体的FIND使用规则：man find 好点。
+</code></pre>
 
 <blockquote>
-find命令详解
-功能：在目录结构中搜索文件，并执行指定的操作。此命令提供了相当多的查找条件，功能很强大。 
-语法：find 起始目录 寻找条件 操作 
-说明：find命令从指定的起始目录开始，递归地搜索其各个子目录，查找满足寻找条件的文件并对之采取相关的操作。
-该命令提供的寻找条件可以是一个用逻辑运算符not、and、or组成的复合条件。逻辑运算符and、or、not的含义为：
-    例子：在当前目录查找所有的 sql文件
-    #find ./ -name &#8216;*.sql&#8217;
-（1）and：逻辑与，在命令中用“-a”表示，是系统缺省的选项，表示只有当所给的条件都满足时，寻找条件才算满足。
-    例如：$ find –name ’tmp’ –xtype c -user ’inin’   该命令寻找三个给定条件都满足的所有文件。
-     
-（2）or：逻辑或，在命令中用“-o”表示。该运算符表示只要所给的条件中有一个满足时，寻找条件就算满足。 
-　　例如：$ find –name ’tmp’ –o –name ’mina 　 　　该命令查询文件名为’tmp’或是匹配’mina的所有文件。
-（3）not：逻辑非，在命令中用“！”表示。该运算符表示查找不满足所给条件的文件。 
-　　例如：$ find ! –name ’tmp’                       该命令查询文件名不是’tmp’的所有文件。
-　　需要说明的是：当使用很多的逻辑选项时，可以用括号把这些选项括起来。为了避免Shell本身对括号引起误解，在话号前需要加转义字符“”来去除括号的意义。 
-
+    这里只记录下最最基本的使用： <br>
+    find / -name FileNameToBeFind
 </blockquote>
 
 
 <p>4.octopress的个性化配置</p>
 
 <blockquote>
-<strong>Main Configs</strong>
-url: http://yoursite.com  # blog地址
-title: My Octopress Blog  # blog名称，会出现在左上角
-subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
-author: Your Name # 会出现在每篇文章下面的Posted by 
-simple search: http://google.com/search # 右边搜索框使用的搜索引擎
-description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉</blockquote>
+<strong>Main Configs</strong> <br>
+1.url: http://yoursite.com  # blog地址<br>
+2.title: My Octopress Blog  # blog名称，会出现在左上角 <br>
+3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己<br>
+4.author: Your Name # 会出现在每篇文章下面的Posted by i<br>
+5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎<br>
+6.description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉<br>
+</blockquote>
 
 
 
 
 <blockquote>
 <strong>Jekyll &amp; Plugins</strong>
-
-root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project
+<br>
+1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project<br>
 # 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
-permalink: /blog/:year/:month/:day/:title/
-paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-recentposts: 5       # 右侧最近发表模块里blog的数量
+<br>
+2.permalink: /blog/:year/:month/:day/:title/<br>
+<br>
+3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
+<br>
+4.recentposts: 5       # 右侧最近发表模块里blog的数量
+<br>
 # 在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
-excerptlink: &#8220;Read on &rarr;&#8221;
+<br>
+5.excerptlink: &#8220;Read on &rarr;&#8221;
+<br>
 # 右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
+<br>
 # 也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
+<br>
 # 然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
-defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
+<br>
+6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
+<br>
 # 可以给不同的页面配置不同的侧边栏  
-blogindexasides:
-postasides:
-pageasides:
+<br>
+7.blogindexasides:
+<br>
+8.postasides:
+<br>
+9.pageasides:
+<br>
 </blockquote>
 
 
-<p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
+<br>
 
-<p>5.怎么撰写新文章呢？</p>
+
+<p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a>
+5.怎么撰写新文章呢？</p>
 
 <p>主要的工具是<strong>rake</strong>：</p>
 
 <blockquote>
-rake newpost[&#8220;postname&#8221;] //来产生新的博文
-rake generate       //生成博文
-rake deploy         //将博文上传至服务器
+1.rake newpost[&#8220;postname&#8221;] //来产生新的博文 <br>
+2.rake generate       //生成博文 <br>
+3.rake deploy         //将博文上传至服务器 <br>
 </blockquote>
 
 
@@ -314,6 +322,8 @@ e.开头不规范会出现无法显示，抑或是延时？
         <a class="basic-alignment left" href="/blog/2012/03/24/here/" title="Previous Post: here">&laquo; here</a>
       
       
+        <a class="basic-alignment right" href="/blog/2012/03/26/find-ming-ling-de-shi-yong/" title="Next Post: Find 命令的使用">Find 命令的使用 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -333,6 +343,10 @@ e.开头不规范会出现无法显示，抑或是延时？
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/03/26/find-ming-ling-de-shi-yong/">Find 命令的使用</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog/">GitHub + Octopress == Geek's Blog</a>
       </li>
     
@@ -346,10 +360,6 @@ e.开头不规范会出现无法显示，抑或是延时？
     
       <li class="post">
         <a href="/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti/">linux 下文件乱码的问题</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/17/wang-zhan-tui-jian/">网站推荐</a>
       </li>
     
   </ul>
