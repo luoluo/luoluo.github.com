@@ -1,5 +1,5 @@
 /*
-Syntax error: Invalid CSS after "subtitle-color:": expected pseudoclass or pseudoelement, was " lighten($heade..."
+Syntax error: Invalid CSS after "subtitle-color:": expected pseudoclass or pseudoelement, was " #4BBDF1//light..."
         on line 6 of /home/lo/blog/octopress/sass/custom/_colors.scss
         from line 5 of /home/lo/blog/octopress/sass/screen.scss
 
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"subtitle-color:\": expected pseudoclass or pseudoelement, was \" lighten($heade...\"\A         on line 6 of /home/lo/blog/octopress/sass/custom/_colors.scss\A         from line 5 of /home/lo/blog/octopress/sass/screen.scss\A \A 1: /home/lo/blog/octopress/sass/screen.scss"; }
+  content: "Syntax error: Invalid CSS after \"subtitle-color:\": expected pseudoclass or pseudoelement, was \" #4BBDF1//light...\"\A         on line 6 of /home/lo/blog/octopress/sass/custom/_colors.scss\A         from line 5 of /home/lo/blog/octopress/sass/screen.scss\A \A 1: /home/lo/blog/octopress/sass/screen.scss"; }
