@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T21:32:50+08:00</updated>
+  <updated>2012-03-26T21:34:35+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -64,11 +64,19 @@ alias is='sudo apt-get install'
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Find 命令的使用]]></title>
+    <title type="html"><![CDATA[Find Ming Ling De Shi Yong]]></title>
     <link href="http://luoluo.github.com/blog/find-ming-ling-de-shi-yong/2012/03/26/"/>
-    <updated>2012-03-26T12:55:00+08:00</updated>
+    <updated>2012-03-26T00:00:00+08:00</updated>
     <id>http://luoluo.github.com/blog/find-ming-ling-de-shi-yong/2012/03/find-ming-ling-de-shi-yong</id>
-    <content type="html"><![CDATA[<p><img class="right" src="http://placekitten.com/300/500" width="150" height="250" title="Place Kitten #3" >
+    <content type="html"><![CDATA[<hr />
+
+<p>layout: post
+title: &#8220;Find 命令的使用&#8221;
+date: 2012-03-26 12:55
+comments: true
+categories: linux</p>
+
+<p><img class="right" src="http://http://placekitten.com/890/280" width="150" height="250" title="Place Kitten #3" >
 vim 中复制缓存与系统缓存的关系。</p>
 ]]></content>
   </entry>
