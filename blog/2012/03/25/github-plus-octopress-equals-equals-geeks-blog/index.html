@@ -127,16 +127,8 @@
 <pre><code>Generating Site with Jekyll
 unchanged sass/screen.scss
 Configuration from /home/lo/blog/octopress/"config.yml"
-</code></pre>
-
-<p><strong></p>
-
-<pre><code>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
-</code></pre>
-
-<p></strong></p>
-
-<pre><code>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
+/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
+from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
 from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
 from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `'
 from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require'
@@ -152,15 +144,13 @@ from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
 
 <p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:</p>
 
-<blockquote>
-1.sudo apt-get install libssl-dev <br>
-2.cd ext/openssl <br>
-  Run the command one after the others. <br>
-  ruby extconf.rb <br>
-  make <br>
-  sudo make install <br>
-</blockquote>
-
+<pre><code>1.sudo apt-get install libssl-dev 
+2.cd ext/openssl 
+  Run the command one after the others. 
+  ruby extconf.rb 
+  make 
+  sudo make install 
+</code></pre>
 
 <p>然后就神奇的AC了。 原网址：http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/</p>
 
