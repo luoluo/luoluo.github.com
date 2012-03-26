@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T14:00:44+08:00</updated>
+  <updated>2012-03-26T14:05:50+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -85,40 +85,43 @@ find / -name FileNameToBeFind
 
 <p>4.octopress的个性化配置</p>
 
-<p>  Main Configs
-  1.url: http://yoursite.com  # blog地址
-  2.title: My Octopress Blog  # blog名称，会出现在左上角
-  3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己<br>
-  4.author: Your Name # 会出现在每篇文章下面的Posted by i<br>
-  5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎<br>
-  6.description: # head.html中meta name=&#8221;description&#8221;的默认content，但一般都被会截断的文章内容替换掉<br></p>
+<pre><code>Main Configs
+1.url: http://yoursite.com  # blog地址
+2.title: My Octopress Blog  # blog名称，会出现在左上角 
+3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己&lt;br&gt;
+4.author: Your Name # 会出现在每篇文章下面的Posted by i&lt;br&gt;
+5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎&lt;br&gt;
+6.description: # head.html中meta name="description"的默认content，但一般都被会截断的文章内容替换掉&lt;br&gt;
 
-<p>  Jekyll &amp; Plugins
-  1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project</p>
+Jekyll &amp;amp; Plugins
+1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project
+</code></pre>
 
-<h1>生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</h1>
+<p>   // 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</p>
 
-<p>  2.permalink: /blog/:year/:month/:day/:title/<br>
-  3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-  4.recentposts: 5       # 右侧最近发表模块里blog的数量</p>
+<pre><code>2.permalink: /blog/:year/:month/:day/:title/&lt;br&gt;
+3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
+4.recentposts: 5       # 右侧最近发表模块里blog的数量
+</code></pre>
 
-<h1>在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</h1>
+<p>// 在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</p>
 
-<p>  5.excerptlink: &#8220;Read on &rarr;&#8221;</p>
+<pre><code>5.excerptlink: "Read on &amp;rarr;"
+</code></pre>
 
-<h1>右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</h1>
+<p>//右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
+//也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
+//然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序</p>
 
-<h1>也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</h1>
+<pre><code>6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
+</code></pre>
 
-<h1>然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序</h1>
+<p>// 可以给不同的页面配置不同的侧边栏</p>
 
-<p>  6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]</p>
-
-<h1>可以给不同的页面配置不同的侧边栏</h1>
-
-<p>  7.blogindexasides:
-  8.postasides:
-  9.pageasides:</p>
+<pre><code>7.blogindexasides:
+8.postasides:
+9.pageasides:
+</code></pre>
 
 <p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a>
 5.怎么撰写新文章呢？</p>
