@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T15:28:27+08:00</updated>
+  <updated>2012-03-26T15:29:57+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -29,7 +29,11 @@
     rg 与 rake generate 作用一致
 </code></pre>
 
-<p>按照以上的设置在重新开机后，输入</p>
+<!--more-->
+
+
+<p>
+按照以上的设置在重新开机后，输入</p>
 
 <pre><code>lo@lo:/etc$ rg
 rg：找不到命令

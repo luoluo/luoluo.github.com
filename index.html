@@ -120,35 +120,12 @@
     rg 与 rake generate 作用一致
 </code></pre>
 
-<p>按照以上的设置在重新开机后，输入</p>
-
-<pre><code>lo@lo:/etc$ rg
-rg：找不到命令
-</code></pre>
-
-<p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
-
-<pre><code>lo@lo: vim ~/.bashrc
-</code></pre>
-
-<p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
-
-<pre><code>lo@lo:source ~/.bashrc 
-</code></pre>
-
-<p>下面列一下我用的alias</p>
-
-<pre><code>alias rg='rake generate'
-alias rd='rake deploy'
-alias update='sudo apt-get update'
-alias ..='cd ..' #据说是死罪
-alias df='df -h'  #以M为单位查看磁盘空间
-alias is='sudo apt-get install' 
-</code></pre>
-
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用宜情，乱用伤身。</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/26/alias-li-qi/">Read on &rarr;</a>
+    </footer>
   
 
 
