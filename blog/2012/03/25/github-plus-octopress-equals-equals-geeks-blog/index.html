@@ -178,24 +178,10 @@ Jekyll &amp;amp; Plugins
 
 <pre><code>2.permalink: /blog/:year/:month/:day/:title/&lt;br&gt;
 3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-4.recentposts: 5       # 右侧最近发表模块里blog的数量
-</code></pre>
-
-<p>// 在某篇blog中使用<!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</p>
-
-<pre><code>5.excerptlink: "Read on &amp;rarr;"
-</code></pre>
-
-<p>//右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
-//也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
-//然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序</p>
-
-<pre><code>6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
-</code></pre>
-
-<p>// 可以给不同的页面配置不同的侧边栏</p>
-
-<pre><code>7.blogindexasides:
+4.recentposts: 5       # 右侧最近发表模块里blog的数量#在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
+5.excerptlink: "Read on &amp;rarr;"#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
+6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]&lt;br&gt;# 可以给不同的页面配置不同的侧边栏  
+7.blogindexasides:
 8.postasides:
 9.pageasides:
 </code></pre>
