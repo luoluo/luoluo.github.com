@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T13:48:28+08:00</updated>
+  <updated>2012-03-26T13:49:56+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -33,19 +33,14 @@
 
 <p>1.无法装ruby，问题如下</p>
 
-<blockquote>no such file to load &#8211; zlib (LoadError)</blockquote>
+<p>no such file to load &#8211; zlib (LoadError)
+解决办法：</p>
 
+<pre><code>1.rvm package install zlib &lt;br&gt;
+</code></pre>
 
-<p>解决办法：</p>
-
-<blockquote>
-1.rvm package install zlib <br>
-2.rvm remove 1.9.1<br>
-3.rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm <br>
-</blockquote>
-
-
-
+<p>2.rvm remove 1.9.1<br>
+3.rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm <br></p>
 
 <!--more-->
 
