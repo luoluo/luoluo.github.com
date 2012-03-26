@@ -172,11 +172,8 @@ find / -name FileNameToBeFind
 
 Jekyll &amp;amp; Plugins
 1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project
-</code></pre>
-
-<p>   // 生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</p>
-
-<pre><code>2.permalink: /blog/:year/:month/:day/:title/
+#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
+2.permalink: /blog/:year/:month/:day/:title/
 3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
 4.recentposts: 5       # 右侧最近发表模块里blog的数量
   #在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
