@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-26T14:43:10+08:00</updated>
+  <updated>2012-03-26T15:05:55+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -27,6 +27,22 @@
     alias rg='rake generate'
     此时在命令行下输入
     rg 与 rake generate 作用一致
+</code></pre>
+
+<p>按照以上的设置在重新开机后，输入</p>
+
+<pre><code>lo@lo:/etc$ rg
+rg：找不到命令
+</code></pre>
+
+<p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
+
+<pre><code>lo@lo: vim ~/.bashrc
+</code></pre>
+
+<p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
+
+<pre><code>lo@lo:source ~/.bashrc 
 </code></pre>
 ]]></content>
   </entry>
