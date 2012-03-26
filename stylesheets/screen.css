@@ -1,10 +1,12 @@
 /*
-Syntax error: Invalid CSS after "solar-red:": expected pseudoclass or pseudoelement, was "      	#dc322f;"
-        on line 32 of /home/lo/blog/octopress/sass/custom/_colors.scss
+Syntax error: Invalid CSS after "subtitle-color:": expected pseudoclass or pseudoelement, was " lighten($heade..."
+        on line 6 of /home/lo/blog/octopress/sass/custom/_colors.scss
         from line 5 of /home/lo/blog/octopress/sass/screen.scss
 
+1: /home/lo/blog/octopress/sass/screen.scss
+
 Backtrace:
-/home/lo/blog/octopress/sass/custom/_colors.scss:32
+/home/lo/blog/octopress/sass/custom/_colors.scss:6
 /home/lo/blog/octopress/sass/screen.scss:5
 /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.1.5/lib/sass/scss/parser.rb:898:in `expected'
 /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.1.5/lib/sass/scss/parser.rb:841:in `expected'
@@ -63,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"solar-red:\": expected pseudoclass or pseudoelement, was \"      	#dc322f;\"\A         on line 32 of /home/lo/blog/octopress/sass/custom/_colors.scss\A         from line 5 of /home/lo/blog/octopress/sass/screen.scss"; }
+  content: "Syntax error: Invalid CSS after \"subtitle-color:\": expected pseudoclass or pseudoelement, was \" lighten($heade...\"\A         on line 6 of /home/lo/blog/octopress/sass/custom/_colors.scss\A         from line 5 of /home/lo/blog/octopress/sass/screen.scss\A \A 1: /home/lo/blog/octopress/sass/screen.scss"; }
