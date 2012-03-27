@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-27T13:54:38+08:00</updated>
+  <updated>2012-03-27T16:26:05+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Categoriesde Yi Wen]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen"/>
+    <updated>2012-03-27T00:00:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen</id>
+    <content type="html"><![CDATA[<hr />
+
+<p>layout: post
+title: &#8220;categories的疑问&#8221;
+date: 2012-03-27 16:24
+comments: true
+categories: [octopress, cate]</p>
+
+<p>是一下纠结了我好久的Categories问题，能否解决</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Alias 利器]]></title>
