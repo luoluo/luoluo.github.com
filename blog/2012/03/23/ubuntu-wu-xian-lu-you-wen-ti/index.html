@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - LOG.02</title>
+  <title>ubuntu 无线路由问题 - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="About Mar 26th, 2012 Mar 26th, 2012 Tweet Comments Please enable JavaScript to view the comments powered by Disqus. Recent Posts Alias 利器 Find Ming &hellip;">
+  <meta name="description" content="ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？ 在网上看到很多用户遇到了类似的困境。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/about">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti">
   <link href="/blog/favicon.png" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/blog/javascripts/modernizr-2.0.js"></script>
@@ -75,32 +75,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-26T21:49:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time></p>
-  </header>
-  
-  
-
-  
-    <footer>
+    
+      <h1 class="entry-title">Ubuntu 无线路由问题</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -112,13 +95,66 @@
   
 
 
-<time datetime="2012-03-26T21:49:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
+<time datetime="2012-03-23T01:51:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
+
+<p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
+
+<!--more-->
+
+
+<blockquote>
+无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
+你可以把路由的频道改一下，或把网卡的地区改为日本也行。
+
+笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
+</blockquote>
+
+
+<p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
+
+<p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
+
+<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/about/index.html" data-via="luoluo" data-counturl="http://luoluo.github.com/about/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Luoluo</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T01:51:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -128,9 +164,16 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti" title="Previous Post: linux 下文件乱码的问题">&laquo; linux 下文件乱码的问题</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/blog/2012/03/24/here" title="Next Post: here">here &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -267,8 +310,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/about/index.html';
-        var disqus_url = 'http://luoluo.github.com/about/index.html';
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti';
         var disqus_script = 'embed.js';
       
     (function () {
