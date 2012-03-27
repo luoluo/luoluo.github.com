@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-27T17:17:27+08:00</updated>
+  <updated>2012-03-27T17:21:11+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[categories的疑问]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen"/>
+    <updated>2012-03-27T16:24:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen</id>
+    <content type="html"><![CDATA[<p>纠结了我好久的Categories问题
+原来是跌倒在了---上，我来傻傻的以为---的作用是默认无分类，
+却不知实际是语法标签。</p>
+
+<p>注意点，不支持中文。和中文标符？
+经过实验，支持中文；但是不可以把中文逗号作为分割符，分割符要用英文的。
+如果错误的使用中文逗号来分割，结果就会产生一个由逗号连接的“Tag”。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GitHub + Octopress == Geek's Blog]]></title>
