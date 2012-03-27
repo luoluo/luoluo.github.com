@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-27T13:45:36+08:00</updated>
+  <updated>2012-03-27T13:46:39+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -74,7 +74,7 @@ alias is='sudo apt-get install'
 title: &#8220;Find 命令的使用&#8221;
 date: 2012-03-26 12:55
 comments: true
-categories: linux</p>
+categories: Linux</p>
 
 <p>vim 中复制缓存与系统缓存的关系。</p>
 ]]></content>
