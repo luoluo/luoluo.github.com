@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Alias 利器 - LOG.02</title>
+  <title>Category: Coder - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="适用场合：惯用指令很长
-使用目的：简化指令，提高指令输入效率
-使用规则： alias AliasName='NameToBeSimpler' //注意：等号前后不允许空格。 unalias AliasName='NameToBeSimpler' //取消以上的别名设置 举例： alias rg=' &hellip;">
+  <meta name="description" content="Category: Coder">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/blog/2012/03/26/alias-li-qi">
+  <link rel="canonical" href="http://luoluo.github.comblog/categories/coder">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,140 +75,36 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Alias 利器</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-26T14:33:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
+    <h1 class="entry-title">Category: Coder</h1>
     
   </header>
-
-
-<div class="entry-content"><pre><code>适用场合：惯用指令很长
-使用目的：简化指令，提高指令输入效率
-使用规则：
-    alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
-    unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
-举例：
-    alias rg='rake generate'
-    此时在命令行下输入
-    rg 与 rake generate 作用一致
-</code></pre>
-
-<!--more-->
-
-
-<p>
-按照以上的设置在重新开机后，输入</p>
-
-<pre><code>lo@lo:/etc$ rg
-rg：找不到命令
-</code></pre>
-
-<p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
-
-<pre><code>lo@lo: vim ~/.bashrc
-</code></pre>
-
-<p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
-
-<pre><code>lo@lo:source ~/.bashrc 
-</code></pre>
-
-<p>下面列一下我用的alias</p>
-
-<pre><code>alias rg='rake generate'
-alias rd='rake deploy'
-alias update='sudo apt-get update'
-alias ..='cd ..' #据说是死罪
-alias df='df -h'  #以M为单位查看磁盘空间
-alias is='sudo apt-get install' 
-</code></pre>
-
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用宜情，乱用伤身。</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Luoluo</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2012</h2>
+
+<article>
+  
+<h1><a href="/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu">疯狂不是程序员的全部</a></h1>
+<time datetime="2012-03-06T23:54:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>06</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/coder/'>Coder</a>, <a class='category' href='/blog/categories/feelstream/'>FeelStream</a></span>
+</footer>
 
 
-<time datetime="2012-03-26T14:33:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/alias/'>alias</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/03/26/alias-li-qi" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/03/26/alias-li-qi" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/03/26/find-ming-ling-de-shi-yong" title="Previous Post: Find 命令的使用">&laquo; Find 命令的使用</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/03/27/categoriesde-yi-wen" title="Next Post: categories的疑问">categories的疑问 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -334,10 +228,7 @@ alias is='sudo apt-get install'
       var disqus_shortname = 'log02';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/blog/2012/03/26/alias-li-qi';
-        var disqus_url = 'http://luoluo.github.com/blog/2012/03/26/alias-li-qi';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

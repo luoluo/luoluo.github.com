@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | LOG.02]]></title>
-  <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <title><![CDATA[Category: note | LOG.02]]></title>
+  <link href="http://luoluo.github.com/blog/categories/note/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
   <updated>2012-03-27T17:12:02+08:00</updated>
   <id>http://luoluo.github.com/</id>
@@ -12,17 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[categories的疑问]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen"/>
-    <updated>2012-03-27T16:24:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen</id>
-    <content type="html"><![CDATA[<p>纠结了我好久的Categories问题
-原来是跌倒在了---上，我来傻傻的以为---的作用是默认无分类，
-却不知实际是语法标签。</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[GitHub + Octopress == Geek's Blog]]></title>
