@@ -119,47 +119,14 @@
 经过实验，支持中文；但是不可以把中文逗号作为分割符，分割符要用英文的。
 如果错误的使用中文逗号来分割，结果就会产生一个由逗号连接的“Tag”。</p>
 
-<p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：</p>
+<p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：
+{% gist 1366833 categoryList.html %}</p>
 
-<p>{% codeblock lang:category.rb %}</p>
+<script src="https://gist.github.com/1366833.js?file=category_list.rb"></script>
 
-<h1>place this file in your plugins directory and add the tag to your sidebar</h1>
 
-<h1>$ cat source/includes/custom/asides/categories.html</h1>
-
-<h1><section></h1>
-
-<h1><h1>Categories</h1></h1>
-
-<h1><ul id="categories"></h1>
-
-<h1>{% category\list%}</h1>
-
-<h1></ul></h1>
-
-<h1></section></h1>
-
-<p>module Jekyll
-  class CategoryListTag &lt; Liquid::Tag</p>
-
-<pre><code>def render(context)
-  html = ""
-  categories = context.registers[:site].categories.keys
-  categories.sort.each do |category|
-    posts_in_category = context.registers[:site].categories[category].size
-    category_dir = context.registers[:site].config['category_dir']
-    category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase)
-    html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
-  end
-  html
-end
-</code></pre>
-
-<p>  end
-end</p>
-
-<p>Liquid::Template.register_tag(&#8216;category_list&#8217;, Jekyll::CategoryListTag)
-{% endcodeblock %}</p>
+<p>对markdown语法需要学习一下，下划线问题缠了半天。
+晚安！</p>
 </div>
   
   
