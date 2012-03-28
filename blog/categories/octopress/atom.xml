@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-28T23:06:15+08:00</updated>
+  <updated>2012-03-28T23:10:18+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -28,106 +28,45 @@
 
 <p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>lang: category.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;place this file in your plugins directory and add the tag to your sidebar&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">$</span> <span class="n">cat</span> <span class="n">source</span><span class="o">/</span><span class="n">_includes</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">asides</span><span class="o">/</span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&lt;section&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Categories</span><span class="o">&lt;</span><span class="sr">/h1&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;categories&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&lt;li class=&#39;category&#39;&gt;&lt;a href=&#39;/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">backyard</span><span class="o">/</span><span class="s1">&#39;&gt;BackYard (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">coder</span><span class="o">/</span><span class="s1">&#39;&gt;Coder (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">feelstream</span><span class="o">/</span><span class="s1">&#39;&gt;FeelStream (6)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">math</span><span class="o">/</span><span class="s1">&#39;&gt;Math (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">note</span><span class="o">/</span><span class="s1">&#39;&gt;Note (4)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="k">alias</span><span class="o">/</span><span class="s1">&#39;&gt;alias (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">find</span><span class="o">/</span><span class="s1">&#39;&gt;find (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="s1">&#39;&gt;git (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="s1">&#39;&gt;linux (4)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="s1">&#39;&gt;octopress (2)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&gt;&lt;a href=&#39;</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">categories</span><span class="o">/</span><span class="n">ununtu</span><span class="o">/</span><span class="s1">&#39;&gt;ununtu (1)&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'><span class="s1">&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;&lt;/ul&gt;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;&lt;/section&gt;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;module Jekyll</span>
-</span><span class='line'><span class="s1">  class CategoryListTag &amp;lt; Liquid::Tag&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;def render(context)</span>
-</span><span class='line'><span class="s1">  html = &quot;&quot;</span>
-</span><span class='line'><span class="s1">  categories = context.registers[:site].categories.keys</span>
-</span><span class='line'><span class="s1">  categories.sort.each do |category|</span>
-</span><span class='line'><span class="s1">    posts_in_category = context.registers[:site].categories[category].size</span>
-</span><span class='line'><span class="s1">    category_dir = context.registers[:site].config[&#39;</span><span class="n">category_dir</span><span class="s1">&#39;]</span>
-</span><span class='line'><span class="s1">    category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, &#39;</span><span class="o">-</span><span class="s1">&#39;).gsub(/-{2,}/, &#39;</span><span class="o">-</span><span class="s1">&#39;).downcase)</span>
-</span><span class='line'><span class="s1">    html &amp;lt;&amp;lt; &quot;&amp;lt;li class=&#39;</span><span class="n">category</span><span class="s1">&#39;&amp;gt;&amp;lt;a href=&#39;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">luoluo</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="c1">#{category_url}/&#39;&amp;gt;#{category} (#{posts_in_category})&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;\n&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="n">html</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;Liquid::Template.register_tag(&#39;category_list&#39;, Jekyll::CategoryListTag)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:category.rb %}</p>
+
+<h1>place this file in your plugins directory and add the tag to your sidebar</h1>
+
+<h1>$ cat source/includes/custom/asides/categories.html</h1>
+
+<h1><section></h1>
+
+<h1><h1>Categories</h1></h1>
+
+<h1><ul id="categories"></h1>
+
+<h1>{% category\list%}</h1>
+
+<h1></ul></h1>
+
+<h1></section></h1>
+
+<p>module Jekyll
+  class CategoryListTag &lt; Liquid::Tag</p>
+
+<pre><code>def render(context)
+  html = ""
+  categories = context.registers[:site].categories.keys
+  categories.sort.each do |category|
+    posts_in_category = context.registers[:site].categories[category].size
+    category_dir = context.registers[:site].config['category_dir']
+    category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase)
+    html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='http://luoluo.github.com/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
+  end
+  html
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>Liquid::Template.register_tag('category_list', Jekyll::CategoryListTag)
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   

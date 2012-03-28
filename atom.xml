@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-28T23:06:15+08:00</updated>
+  <updated>2012-03-28T23:10:18+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -28,11 +28,11 @@
 
 <p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：</p>
 
-<p>{% codeblock lang: category.rb %}</p>
+<p>{% codeblock lang:category.rb %}</p>
 
 <h1>place this file in your plugins directory and add the tag to your sidebar</h1>
 
-<h1>$ cat source/_includes/custom/asides/categories.html</h1>
+<h1>$ cat source/includes/custom/asides/categories.html</h1>
 
 <h1><section></h1>
 
@@ -40,7 +40,7 @@
 
 <h1><ul id="categories"></h1>
 
-<h1>{% category_list%}</h1>
+<h1>{% category\list%}</h1>
 
 <h1></ul></h1>
 
