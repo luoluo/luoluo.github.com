@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-28T22:57:29+08:00</updated>
+  <updated>2012-03-28T23:00:06+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -82,7 +82,7 @@
 </span><span class='line'>
 </span><span class='line'><span class="sr">&lt;h1&gt;place this file in your plugins directory and add the tag to your sidebar&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">$</span> <span class="n">cat</span> <span class="n">source</span><span class="o">/</span><span class="n">includes</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">asides</span><span class="o">/</span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">$</span> <span class="n">cat</span> <span class="n">source</span><span class="o">/</span><span class="n">_includes</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">asides</span><span class="o">/</span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="sr">&lt;h1&gt;&lt;section&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
