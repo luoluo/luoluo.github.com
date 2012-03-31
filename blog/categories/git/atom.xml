@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-31T16:58:55+08:00</updated>
+  <updated>2012-03-31T17:04:02+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -94,8 +94,21 @@
 <p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</p>
 
 <pre><code>这里只记录下最最基本的使用： 
-find / -name FileNameToBeFind
 </code></pre>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;find /</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>4.octopress的个性化配置
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -153,7 +166,7 @@ find / -name FileNameToBeFind
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">在某篇</span><span class="n">blog</span><span class="err">中使用</span><span class="o">&lt;!--</span> <span class="n">more</span> <span class="o">--&gt;</span><span class="err">，列表页就不会展现该</span><span class="n">blog</span><span class="err">全文，就会显示这个</span><span class="n">read</span> <span class="n">on</span><span class="err">链接，指向</span><span class="n">blog</span><span class="err">全文</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;excerptlink: &quot;Read on\ &amp;amp;\rarr;&quot;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;excerptlink: &quot;Read on &amp;rarr;&quot;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
 </span><span class='line'>  <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
@@ -182,25 +195,36 @@ find / -name FileNameToBeFind
 </span><span class='line'>rake generate       //生成博文
 </span><span class='line'>rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>6.增加第三方插件</p>
-
-<pre><code>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
-
-(2)http://delicious.com/
-
-(3)Tracking ID: UA-30311112-1
-
-(4)Delicious - Share your recent Delicious bookmarks in the sidebar.
-</code></pre>
-
-<p>7.down语法的几点小白困惑：</p>
-
-<pre><code>a.下划线是非法字符，星号也是非法字符
-b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
-c.引用显示的不同风格，延时还是？
-d.是否可以开头空格的风格？
-e.开头不规范会出现无法显示，抑或是延时？
-</code></pre>
+<p>6.增加第三方插件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
+</span><span class='line'>(2)http://delicious.com/
+</span><span class='line'>(3)Tracking ID: UA-30311112-1
+</span><span class='line'>(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div>
+7.down语法的几点小白困惑：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>a.下划线是非法字符，星号也是非法字符
+</span><span class='line'>b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+</span><span class='line'>c.引用显示的不同风格，延时还是？
+</span><span class='line'>d.是否可以开头空格的风格？
+</span><span class='line'>e.开头不规范会出现无法显示，抑或是延时？
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

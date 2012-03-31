@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-31T16:58:55+08:00</updated>
+  <updated>2012-03-31T17:04:02+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -14,19 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Xie Qi]]></title>
+    <title type="html"><![CDATA[血气]]></title>
     <link href="http://luoluo.github.com/blog/2012/03/29/xie-qi"/>
     <updated>2012-03-29T00:00:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/29/xie-qi</id>
-    <content type="html"><![CDATA[<p>ya&#8212;
-layout: post
-title: &#8220;血气&#8221;
-daote: 2012-03-29 21:41
-comments: true</p>
-
-<h2>categories: [杂感, 人生]</h2>
-
-<p>要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。</p>
+    <content type="html"><![CDATA[<p>要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。</p>
 
 <p>看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着&#8221;入学初&#8221;被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。
 辉一直没有大学的状态，大学的生活根本根本不配他四年的汗水，他没有归属感，慌乱的过着大学生活，然而周遭的一切根本提不起他的兴趣。记忆中的意气风发就是在谈论骑行拉萨了吧。  他热爱旅行，火车，公路，冰川，峡口&#8230;有他的足迹。像大多数人一样，我过上了标准的大学生活，足迹留在寝室和教室之间，以尽量多上课来换取内心的安宁，虽然上课可能只是换个地睡觉、玩手机。  我已沦为大学生活的奴隶，靠游戏、网络、睡觉及偶尔的酒精来麻醉自己的神经，我们害怕闲下来，害怕闲时自己会去思考现在和未来，害怕面对。 靠眼前花花绿绿的屏幕来获取视觉的快感，靠游戏里的胜利、击败对手来获得短暂的“成就感”，靠玩游戏的技艺来赢得他人的尊重&#8230;.</p>
@@ -213,8 +205,12 @@ alias is='sudo apt-get install'
 <p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</p>
 
 <pre><code>这里只记录下最最基本的使用： 
-find / -name FileNameToBeFind
 </code></pre>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>4.octopress的个性化配置</p>
 
@@ -257,7 +253,7 @@ find / -name FileNameToBeFind
 </span><span class='line'><span class="n">paginate</span><span class="p">:</span> <span class="mi">10</span>          <span class="c1"># 每页展现blog的数量，如果blog数量大于这个，会产生翻页</span>
 </span><span class='line'><span class="n">recentposts</span><span class="p">:</span> <span class="mi">5</span>       <span class="c1"># 右侧最近发表模块里blog的数量</span>
 </span><span class='line'><span class="c1">#在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</span>
-</span><span class='line'><span class="n">excerptlink</span><span class="p">:</span> <span class="s2">&quot;Read on\ \&amp;</span><span class="se">\r</span><span class="s2">arr;&quot;</span>
+</span><span class='line'><span class="n">excerptlink</span><span class="p">:</span> <span class="s2">&quot;Read on &amp;rarr;&quot;</span>
 </span><span class='line'>      <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
 </span><span class='line'>      <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
 </span><span class='line'>      <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 </span>
@@ -286,23 +282,31 @@ find / -name FileNameToBeFind
 
 <p>6.增加第三方插件</p>
 
-<pre><code>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
+</span><span class='line'>(2)http://delicious.com/
+</span><span class='line'>(3)Tracking ID: UA-30311112-1
+</span><span class='line'>(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure>
 
-(2)http://delicious.com/
-
-(3)Tracking ID: UA-30311112-1
-
-(4)Delicious - Share your recent Delicious bookmarks in the sidebar.
-</code></pre>
 
 <p>7.down语法的几点小白困惑：</p>
 
-<pre><code>a.下划线是非法字符，星号也是非法字符
-b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
-c.引用显示的不同风格，延时还是？
-d.是否可以开头空格的风格？
-e.开头不规范会出现无法显示，抑或是延时？
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符
+</span><span class='line'>  b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+</span><span class='line'>  c.引用显示的不同风格，延时还是？
+</span><span class='line'>  d.是否可以开头空格的风格？
+</span><span class='line'>  e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
