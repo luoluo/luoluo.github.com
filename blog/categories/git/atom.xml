@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-28T23:21:05+08:00</updated>
+  <updated>2012-03-31T16:54:29+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -27,7 +27,7 @@
 <p>no such file to load -- zlib (LoadError)
 解决办法：</p>
 
-<pre><code>1.rvm package install zlib 
+<pre><code>1.rvm pkg install zlib 
 2.rvm remove 1.9.1
 3.rvm install 1.9.1 -C --with-zlib-dir=$rvm 
 </code></pre>
@@ -36,35 +36,54 @@
 
 
 <p>2.openssl error
-在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。</p>
-
-<pre><code>Generating Site with Jekyll
-unchanged sass/screen.scss
-Configuration from /home/lo/blog/octopress/"config.yml"
-/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
-from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
-from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
-from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load'
-from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
-</code></pre>
-
-<p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:</p>
-
-<pre><code>1.sudo apt-get install libssl-dev 
-2.cd ext/openssl 
-  Run the command one after the others. 
-  ruby extconf.rb 
-  make 
-  sudo make install 
-</code></pre>
+在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Generating Site with Jekyll
+</span><span class='line'>unchanged sass/screen.scss
+</span><span class='line'>Configuration from /home/lo/blog/octopress/"config.yml"
+</span><span class='line'>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in &lt;code>require': no such file to load -- openssl (LoadError)
+</span><span class='line'>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in&lt;/code>'
+</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in &lt;code>require'
+</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in&lt;/code>'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in &lt;code>require'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in&lt;/code>block in setup'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in &lt;code>each'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in&lt;/code>setup'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in &lt;code>initialize'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in&lt;/code>new'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in &lt;code>'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in&lt;/code>load'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'</span></code></pre></td></tr></table></div></figure></notextile></div>
+卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install libssl-dev
+</span><span class='line'>cd ext/openssl&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Run the command one after the others.
+</span><span class='line'>ruby extconf.rb
+</span><span class='line'>make
+</span><span class='line'>sudo make install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>然后就神奇的AC了。 原网址:<a href="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 " title="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
@@ -77,45 +96,93 @@ from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'
 find / -name FileNameToBeFind
 </code></pre>
 
-<p>4.octopress的个性化配置</p>
-
-<pre><code>Main Configs
-1.url: http://yoursite.com  # blog地址
-2.title: My Octopress Blog  # blog名称，会出现在左上角 
-3.subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
-4.author: Your Name # 会出现在每篇文章下面的Posted by xxx
-5.simple search: http://google.com/search # 右边搜索框使用的搜索引擎
-6.description: # head.html中meta name="description"的默认content，但一般都被会截断的文章内容替换掉
-
-Jekyll &amp;amp; Plugins
-1.root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project
-#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
-2.permalink: /blog/:year/:month/:day/:title/
-3.paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-4.recentposts: 5       # 右侧最近发表模块里blog的数量
-  #在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
-5.excerptlink: "Read on &amp;rarr;"
-  #右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
-  #也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
-  #然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
-6.defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]
-# 可以给不同的页面配置不同的侧边栏  
-7.blogindexasides:
-8.postasides:
-9.pageasides:
-</code></pre>
-
-<p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
+<p>4.octopress的个性化配置
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>Main Configs
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>url: http://yoursite.com  # blog地址
+</span><span class='line'>title: My Octopress Blog  # blog名称，会出现在左上角
+</span><span class='line'>subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
+</span><span class='line'>author: Your Name # 会出现在每篇文章下面的Posted by xxx
+</span><span class='line'>simple search: http://google.com/search # 右边搜索框使用的搜索引擎
+</span><span class='line'>description: # head.html中meta name="description"的默认content，但一般都被会截断的文章内容替换掉&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Jekyll\ &amp;\amp; Plugins
+</span><span class='line'>root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>permalink: /blog/:year/:month/:day/:title/
+</span><span class='line'>paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
+</span><span class='line'>recentposts: 5       # 右侧最近发表模块里blog的数量
+</span><span class='line'> #在某篇blog中使用&lt;!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
+</span><span class='line'>excerptlink: "Read on\ &amp;\rarr;"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>  #右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
+</span><span class='line'>  #也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
+</span><span class='line'>  #然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code># 可以给不同的页面配置不同的侧边栏  
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>blogindexasides:
+</span><span class='line'>postasides:
+</span><span class='line'>pageasides:</span></code></pre></td></tr></table></div></figure></notextile></div>
+出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
 <p>5.怎么撰写新文章呢？</p>
 
 <p>主要的工具是
-<strong>rake</strong>：</p>
-
-<pre><code>1.rake newpost["postname"] //来产生新的博文 
-2.rake generate       //生成博文 
-3.rake deploy         //将博文上传至服务器 
-</code></pre>
+<strong>rake</strong>：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost["postname"] //来产生新的博文
+</span><span class='line'>rake generate       //生成博文
+</span><span class='line'>rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>6.增加第三方插件</p>
 

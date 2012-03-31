@@ -42,7 +42,7 @@
         <loc>
             http://luoluo.github.com/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog
         </loc>
-        <lastmod>2012-03-27T17:23:17+08:00</lastmod>
+        <lastmod>2012-03-31T16:54:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong</loc>
@@ -57,12 +57,16 @@
         <lastmod>2012-03-28T23:20:54+08:00</lastmod>
     </url>
     <url>
+        <loc>http://luoluo.github.com/blog/2012/03/29/xie-qi</loc>
+        <lastmod>2012-03-29T23:03:02+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://luoluo.github.com/</loc>
-        <lastmod>2012-03-28T23:20:54+08:00</lastmod>
+        <lastmod>2012-03-31T16:54:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://luoluo.github.com/blog/archives/</loc>
-        <lastmod>2012-03-28T23:20:54+08:00</lastmod>
+        <lastmod>2012-03-31T16:54:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://luoluo.github.com/about/</loc>
@@ -71,9 +75,5 @@
     <url>
         <loc>http://luoluo.github.com/about/about.html</loc>
         <lastmod>2012-03-26T21:52:15+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://luoluo.github.com/:wq</loc>
-        <lastmod>2012-03-27T13:50:17+08:00</lastmod>
     </url>
 </urlset>
