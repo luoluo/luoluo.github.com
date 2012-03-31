@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-03-31T16:54:29+08:00</updated>
+  <updated>2012-03-31T16:58:55+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -48,12 +48,13 @@
 <p>1.无法装ruby，问题如下</p>
 
 <p>no such file to load -- zlib (LoadError)
-解决办法：</p>
-
-<pre><code>1.rvm pkg install zlib 
-2.rvm remove 1.9.1
-3.rvm install 1.9.1 -C --with-zlib-dir=$rvm 
-</code></pre>
+解决办法：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib
+</span><span class='line'>rvm remove 1.9.1
+</span><span class='line'>rvm install 1.9.1 -C --with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <!--more-->
 
@@ -120,7 +121,7 @@ find / -name FileNameToBeFind
 </code></pre>
 
 <p>4.octopress的个性化配置
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -155,45 +156,42 @@ find / -name FileNameToBeFind
 <span class='line-number'>33</span>
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Main</span> <span class="no">Configs</span>
+</span><span class='line'><span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span>  <span class="c1"># blog地址</span>
+</span><span class='line'><span class="n">title</span><span class="p">:</span> <span class="no">My</span> <span class="no">Octopress</span> <span class="no">Blog</span>  <span class="c1"># blog名称，会出现在左上角</span>
+</span><span class='line'><span class="n">subtitle</span><span class="p">:</span> <span class="n">A</span> <span class="n">blogging</span> <span class="n">framework</span> <span class="c1"># title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己</span>
+</span><span class='line'><span class="n">author</span><span class="p">:</span> <span class="no">Your</span> <span class="no">Name</span> <span class="c1"># 会出现在每篇文章下面的Posted by xxx</span>
+</span><span class='line'><span class="n">simple</span> <span class="n">search</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">search</span> <span class="c1"># 右边搜索框使用的搜索引擎</span>
+</span><span class='line'><span class="n">description</span><span class="p">:</span> <span class="c1"># head.html中meta name=&quot;description&quot;的默认content，但一般都被会截断的文章内容替换掉&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>Main Configs
-</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="no">Plugins</span>
+</span><span class='line'><span class="n">root</span><span class="p">:</span> <span class="o">/</span> <span class="c1"># 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>url: http://yoursite.com  # blog地址
-</span><span class='line'>title: My Octopress Blog  # blog名称，会出现在左上角
-</span><span class='line'>subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己
-</span><span class='line'>author: Your Name # 会出现在每篇文章下面的Posted by xxx
-</span><span class='line'>simple search: http://google.com/search # 右边搜索框使用的搜索引擎
-</span><span class='line'>description: # head.html中meta name="description"的默认content，但一般都被会截断的文章内容替换掉&lt;/p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1">#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>Jekyll\ &amp;\amp; Plugins
-</span><span class='line'>root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project&lt;/p>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">permalink</span><span class="p">:</span><span class="sr"> /blog/</span><span class="ss">:year</span><span class="o">/</span><span class="ss">:month</span><span class="o">/</span><span class="ss">:day</span><span class="o">/</span><span class="ss">:title</span><span class="o">/</span>
+</span><span class='line'><span class="n">paginate</span><span class="p">:</span> <span class="mi">10</span>          <span class="c1"># 每页展现blog的数量，如果blog数量大于这个，会产生翻页</span>
+</span><span class='line'><span class="n">recentposts</span><span class="p">:</span> <span class="mi">5</span>       <span class="c1"># 右侧最近发表模块里blog的数量&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html
-</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">在某篇</span><span class="n">blog</span><span class="err">中使用</span><span class="o">&lt;!--</span> <span class="n">more</span> <span class="o">--&gt;</span><span class="err">，列表页就不会展现该</span><span class="n">blog</span><span class="err">全文，就会显示这个</span><span class="n">read</span> <span class="n">on</span><span class="err">链接，指向</span><span class="n">blog</span><span class="err">全文</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>permalink: /blog/:year/:month/:day/:title/
-</span><span class='line'>paginate: 10          # 每页展现blog的数量，如果blog数量大于这个，会产生翻页
-</span><span class='line'>recentposts: 5       # 右侧最近发表模块里blog的数量
-</span><span class='line'> #在某篇blog中使用&lt;!-- more -->，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文
-</span><span class='line'>excerptlink: "Read on\ &amp;\rarr;"&lt;/p>
+</span><span class='line'><span class="sr">&lt;p&gt;excerptlink: &quot;Read on\ &amp;amp;\rarr;&quot;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>  #右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html
-</span><span class='line'>  #也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html
-</span><span class='line'>  #然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 
-</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
+</span><span class='line'>  <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
+</span><span class='line'>  <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 </span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>defaultasides: [asides/recentposts.html, asides/github.html, asides/twitter.html]&lt;/p>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">defaultasides</span><span class="p">:</span> <span class="o">[</span><span class="n">asides</span><span class="o">/</span><span class="n">recentposts</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="o">]&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code># 可以给不同的页面配置不同的侧边栏  
-</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;# 可以给不同的页面配置不同的侧边栏  </span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>blogindexasides:
-</span><span class='line'>postasides:
-</span><span class='line'>pageasides:</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class='line'><span class="sr">&lt;p&gt;blogindexasides:</span>
+</span><span class='line'><span class="sr">postasides:</span>
+</span><span class='line'><span class="sr">pageasides:</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
 <p>5.怎么撰写新文章呢？</p>
