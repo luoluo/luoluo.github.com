@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ubuntu 的一个bug修复 - LOG.02</title>
+  <title>ubuntu的BUG修复小记 - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜： 1.linux下的资源管理器： ps 1
+  <meta name="description" content="最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
+不少意外惊喜： 1.linux下的资源管理器： ps 1
 2
 3
 4
@@ -25,7 +26,7 @@ a :选择列出所有程序 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -86,7 +87,7 @@ a :选择列出所有程序 &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Ubuntu 的一个bug修复</h1>
+      <h1 class="entry-title">ubuntu的BUG修复小记</h1>
     
     
       <p class="meta">
@@ -111,7 +112,8 @@ a :选择列出所有程序 &hellip;">
   </header>
 
 
-<div class="entry-content"><p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜：</p>
+<div class="entry-content"><p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
+不少意外惊喜：</p>
 
 <p>1.linux下的资源管理器：</p>
 
@@ -127,9 +129,9 @@ a :选择列出所有程序 &hellip;">
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>ps
-</span><span class='line'>a :选择列出所有程序
-</span><span class='line'>u :列出所有用户程序
-</span><span class='line'>x ;类出所有tty的程序
+</span><span class='line'>a   :选择列出所有程序
+</span><span class='line'>u   :列出所有用户程序
+</span><span class='line'>x   ;类出所有tty的程序
 </span><span class='line'>EG:
 </span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
 
@@ -151,11 +153,11 @@ a :选择列出所有程序 &hellip;">
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID 
 </span><span class='line'>signal:
-</span><span class='line'>-1    :让该PID重新读取它的配置文件
-</span><span class='line'>-9    :杀掉该进程
-</span><span class='line'>-15   :停止该进程
+</span><span class='line'>-1  :让该PID重新读取它的配置文件
+</span><span class='line'>-9  :杀掉该进程
+</span><span class='line'>-15 :停止该进程
 </span><span class='line'>EG：
 </span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
 
@@ -168,14 +170,14 @@ a :选择列出所有程序 &hellip;">
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
-</span><span class='line'>-a    :列出所有的系统信息
-</span><span class='line'>-p    :列出CPU信息
-</span><span class='line'>-n    :列出主机名
-</span><span class='line'>-r    :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>-a  :列出所有的系统信息
+</span><span class='line'>-p  :列出CPU信息 
+</span><span class='line'>-n  :列出主机名
+</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
 
 
 <p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
-top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。原来是一个BUG啊。然后获取了两种解决方案：</p>
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。>原来是一个BUG啊。然后获取了两种解决方案：</p>
 
 <p><1>暂时止痛</p>
 
@@ -238,7 +240,7 @@ https://bugs.launchpad.net
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -251,8 +253,6 @@ https://bugs.launchpad.net
       
         <a class="basic-alignment left" href="/blog/2012/03/29/xie-qi" title="Previous Post: 血气">&laquo; 血气</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/04/02/ubuntude-bugde-xiu-fu" title="Next Post: Ubuntude Bugde Xiu Fu">Ubuntude Bugde Xiu Fu &raquo;</a>
       
     </p>
   </footer>
@@ -279,11 +279,7 @@ https://bugs.launchpad.net
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/04/02/ubuntude-bugde-xiu-fu">Ubuntude Bugde Xiu Fu</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu">ubuntu 的一个bug修复</a>
+        <a href="/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji">ubuntu的BUG修复小记</a>
       </li>
     
       <li class="post">
@@ -296,6 +292,10 @@ https://bugs.launchpad.net
     
       <li class="post">
         <a href="/blog/2012/03/26/alias-li-qi">Alias 利器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/26/find-ming-ling-de-shi-yong">Find 命令的使用</a>
       </li>
     
   </ul>
@@ -405,8 +405,8 @@ https://bugs.launchpad.net
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu';
-        var disqus_url = 'http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu';
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji';
         var disqus_script = 'embed.js';
       
     (function () {
