@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-04-02T00:19:39+08:00</updated>
+  <updated>2012-04-02T00:21:34+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜：</p>
 
 <p>1.linux下的资源管理器：</p>
+
+<!--more-->
+
 
 <p><1>ps
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
