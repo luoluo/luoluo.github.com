@@ -1,0 +1,99 @@
+<p>yout: post
+title: &#8220;ubuntu的bug修复&#8221;
+date: 2012-04-01 23:39
+comments: true</p>
+
+<h2>categories: [linux, ubuntu]</h2>
+
+<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
+不少意外惊喜：</p>
+
+<p>1.linux下的资源管理器：</p>
+
+<!--more-->
+
+
+<p><1>ps</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ps
+</span><span class='line'>a   :选择列出所有程序
+</span><span class='line'>u   :列出所有用户程序
+</span><span class='line'>x   ;类出所有tty的程序
+</span><span class='line'>EG:
+</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
+
+
+<p><2>top</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure>
+
+
+<p>较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
+
+<p><3>kill</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID
+</span><span class='line'>signal:
+</span><span class='line'>-1  :让该PID重新读取它的配置文件
+</span><span class='line'>-9  :杀掉该进程
+</span><span class='line'>-15 :停止该进程
+</span><span class='line'>EG：
+</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
+
+
+<p><4>uname</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
+</span><span class='line'>-a  :列出所有的系统信息
+</span><span class='line'>-p  :列出CPU信息
+</span><span class='line'>-n  :列出主机名
+</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。原来是一个BUG啊。然后获取了两种解决方案：</p>
+
+<p><1>暂时止痛</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启后旧病复发。</p>
+
+<p><2>根治型</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
+</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
+</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
+</span><span class='line'>2) Run:
+</span><span class='line'>sudo apt-get update && sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而这种根治的方案来源于一个强大的站点：
+https://bugs.launchpad.net
+<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。</p>
