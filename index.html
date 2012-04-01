@@ -9,8 +9,14 @@
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。 看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着&#8221;入学初&#8221;被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。
-辉一直没有大学的状态， &hellip;">
+  <meta name="description" content="最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜： 1.linux下的资源管理器： ps 1
+2
+3
+4
+5
+6
+ps
+a :选择列出所有程序 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +89,131 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu">Ubuntu 的一个bug修复</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-01T23:39:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2012</time>
+        
+         | <a href="/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜：</p>
+
+<p>1.linux下的资源管理器：</p>
+
+<p><1>ps</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ps
+</span><span class='line'>a :选择列出所有程序
+</span><span class='line'>u :列出所有用户程序
+</span><span class='line'>x ;类出所有tty的程序
+</span><span class='line'>EG:
+</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
+
+
+<p><2>top</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure>
+
+
+<p>较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
+
+<p><3>kill</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID
+</span><span class='line'>signal:
+</span><span class='line'>-1    :让该PID重新读取它的配置文件
+</span><span class='line'>-9    :杀掉该进程
+</span><span class='line'>-15   :停止该进程
+</span><span class='line'>EG：
+</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
+
+
+<p><4>uname</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
+</span><span class='line'>-a    :列出所有的系统信息
+</span><span class='line'>-p    :列出CPU信息
+</span><span class='line'>-n    :列出主机名
+</span><span class='line'>-r    :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。原来是一个BUG啊。然后获取了两种解决方案：</p>
+
+<p><1>暂时止痛</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启后旧病复发。</p>
+
+<p><2>根治型</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
+</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
+</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
+</span><span class='line'>2) Run:
+</span><span class='line'>sudo apt-get update && sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而这种根治的方案来源于一个强大的站点：
+https://bugs.launchpad.net
+<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/03/29/xie-qi">血气</a></h1>
     
     
@@ -108,7 +239,7 @@
   </header>
 
 
-  <div class="entry-content"><p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg/200px-Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg"></p>
+  <div class="entry-content"><p><img class="middle" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg/200px-Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg"></p>
 
 <p>要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。</p>
 
@@ -547,48 +678,6 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/13/to-do">To Do</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-13T22:42:00+08:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/03/13/to-do#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>  刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了&#8230;   书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里&#8230;  感觉好像在等待什么，我也不知道到底是什么，还不是很清楚自己想要的是什么。   周围弥漫这DOTA、CS，各种安逸的节奏，曾经我们一起敲过的代码，现在还是否有激情继续呢？</p>
-
-<p>这几天看《北爱》，略纠结，晚上的梦或多或少有《北爱》的影子。看了一多半之后不在想继续往下看了，没有了那个冲动，开始十多集的美梦被撵破的情节还是可以给我麻木的内心带来片刻的刺激，让我知道“未来的路，也许很现实”，就如那句歌“外面的世界很精彩，外面的世界很无奈”。   无论贫或富，都有权拥有爱情。  当然权利是可以放弃的，如果为了利益去放弃爱情，我很难想象，你会以怎样的心情去继续生活，你还活着么？   纯真的无所求的爱是最让人憧憬的吧，傻傻的执着的爱是最让人渴求的吧。       “我爱你，和你没关系”，每次听起来，我都为那小姐姐难过，好无辜啊，爱情是不能强求的，正如那句“要么你情我愿，要么互不相干”，强扭的瓜不甜。     其实看到后来，只需回答一个问题“幸福是什么？”不同人看到了不同的幸福的面庞，他们用其所有去交换..       有点点难过，不过，我更愿意相信“艺术源于生活，却高于生活”，《北爱》应该是对真实生活的放大吧，这样释然多了。  无论怎样，我相信爱情，相信我们的未来&#8230;.     想起朋友的一句话&#8221;如果你们的不在一起了，我们就再也不想信爱情了&#8230;&#8221;</p>
-
-<p>好吧，开学快一个月了，预计的适应期早过了，说好的计划差点快全部被抛在脑后了，整顿下行装，重新上路了，迎接明天升起的新的太阳.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -610,6 +699,10 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu">ubuntu 的一个bug修复</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/03/29/xie-qi">血气</a>
       </li>
     
@@ -623,10 +716,6 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
     
       <li class="post">
         <a href="/blog/2012/03/26/find-ming-ling-de-shi-yong">Find 命令的使用</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/25/github-plus-octopress-equals-equals-geeks-blog">GitHub + Octopress == Geek&#8217;s Blog</a>
       </li>
     
   </ul>
@@ -674,8 +763,9 @@ PlanetMath是一本自由、协作的网络数学百科全书。强调同行评�
 <li class='category'><a href='/blog/categories/alias/'>alias (1)</a></li>
 <li class='category'><a href='/blog/categories/find/'>find (1)</a></li>
 <li class='category'><a href='/blog/categories/git/'>git (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (4)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (2)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (1)</a></li>
 <li class='category'><a href='/blog/categories/ununtu/'>ununtu (1)</a></li>
 
   </ul>

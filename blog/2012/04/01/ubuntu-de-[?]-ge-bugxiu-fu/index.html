@@ -5,11 +5,18 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Coder - LOG.02</title>
+  <title>ubuntu 的一个bug修复 - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="Category: Coder">
+  <meta name="description" content="最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜： 1.linux下的资源管理器： ps 1
+2
+3
+4
+5
+6
+ps
+a :选择列出所有程序 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.comblog/categories/coder">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,36 +82,182 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Coder</h1>
+    
+      <h1 class="entry-title">Ubuntu 的一个bug修复</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-01T23:39:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了不少意外惊喜：</p>
 
-  
-  <h2>2012</h2>
+<p>1.linux下的资源管理器：</p>
 
-<article>
-  
-<h1><a href="/blog/2012/03/06/feng-kuang-bu-shi-cheng-xu-yuan-de-quan-bu">疯狂不是程序员的全部</a></h1>
-<time datetime="2012-03-06T23:54:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>06</span> <span class='year'>2012</span></time>
+<p><1>ps</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/coder/'>Coder</a>, <a class='category' href='/blog/categories/feelstream/'>FeelStream</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ps
+</span><span class='line'>a :选择列出所有程序
+</span><span class='line'>u :列出所有用户程序
+</span><span class='line'>x ;类出所有tty的程序
+</span><span class='line'>EG:
+</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p><2>top</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure>
+
+
+<p>较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
+
+<p><3>kill</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID
+</span><span class='line'>signal:
+</span><span class='line'>-1    :让该PID重新读取它的配置文件
+</span><span class='line'>-9    :杀掉该进程
+</span><span class='line'>-15   :停止该进程
+</span><span class='line'>EG：
+</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
+
+
+<p><4>uname</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
+</span><span class='line'>-a    :列出所有的系统信息
+</span><span class='line'>-p    :列出CPU信息
+</span><span class='line'>-n    :列出主机名
+</span><span class='line'>-r    :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。原来是一个BUG啊。然后获取了两种解决方案：</p>
+
+<p><1>暂时止痛</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启后旧病复发。</p>
+
+<p><2>根治型</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
+</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
+</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
+</span><span class='line'>2) Run:
+</span><span class='line'>sudo apt-get update && sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而这种根治的方案来源于一个强大的站点：
+https://bugs.launchpad.net
+<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Luoluo</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-01T23:39:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/29/xie-qi" title="Previous Post: 血气">&laquo; 血气</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -247,7 +400,10 @@
       var disqus_shortname = 'log02';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/04/01/ubuntu-de-%5B%3F%5D-ge-bugxiu-fu';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
