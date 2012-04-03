@@ -9,7 +9,7 @@
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了&#8230; 书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里&#8230; &hellip;">
+  <meta name="description" content="问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。 一个比较有效的解决办法就是转码。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,126 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti">Linux 下文件乱码的问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-21T19:53:00+08:00" pubdate data-updated="true">Mar 21<span>st</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>   问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
+
+<p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
+
+<blockquote>
+1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
+:set fileencoding=utf-8
+2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
+enconv -L zhCN -x UTF-8 filename
+</blockquote>
+
+
+
+
+<blockquote>
+3.iconv 转换，iconv的命令格式如下：
+iconv -f encoding -t encoding inputfile
+比如将一个UTF-8 编码的文件转换成GBK编码
+iconv -f GBK -t UTF-8 file1 -o file2
+</blockquote>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/17/wang-zhan-tui-jian">网站推荐</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-17T10:50:00+08:00" pubdate data-updated="true">Mar 17<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/17/wang-zhan-tui-jian#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>1.http://mathworld.wolfram.com</p>
+
+<blockquote>
+MathWorld是线上数学百科全书，由沃夫朗研究公司（Wolfram Research inc.，WRI）赞助
+<br>
+</blockquote>
+
+
+<p>2.http://planetmath.org/</p>
+
+<blockquote>
+PlanetMath是一本自由、协作的网络数学百科全书。强调同行评审、严密、公开、具教育性、实时内容、内容互连、以及群体协作。   
+  PlanetMath的目标是成为一本综合性的网络数学百科全书。该企划位于弗吉尼亚理工学院暨州立大学的数码图书馆研究实验室。
+</blockquote>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/17/wang-zhan-tui-jian">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -308,6 +428,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/03/mbtizhi-ye-xing-ge-ce-shi">MBTI职业性格测试</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/02/generating-function">Generating Function</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji">ubuntu的BUG修复小记</a>
       </li>
     
@@ -317,14 +445,6 @@
     
       <li class="post">
         <a href="/blog/2012/03/27/categoriesde-yi-wen">categories的疑问</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/26/alias-li-qi">Alias 利器</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/26/find-ming-ling-de-shi-yong">Find 命令的使用</a>
       </li>
     
   </ul>
@@ -365,10 +485,10 @@
   <ul id="blog/categories">
      <li class='category'><a href='/blog/categories/backyard/'>BackYard (1)</a></li>
 <li class='category'><a href='/blog/categories/coder/'>Coder (1)</a></li>
-<li class='category'><a href='/blog/categories/feelstream/'>FeelStream (7)</a></li>
-<li class='category'><a href='/blog/categories/math/'>Math (1)</a></li>
-<li class='category'><a href='/blog/categories/note/'>Note (4)</a></li>
-<li class='category'><a href='/blog/categories/travel/'>Travel (1)</a></li>
+<li class='category'><a href='/blog/categories/feelstream/'>FeelStream (8)</a></li>
+<li class='category'><a href='/blog/categories/math/'>Math (2)</a></li>
+<li class='category'><a href='/blog/categories/note/'>Note (5)</a></li>
+<li class='category'><a href='/blog/categories/travel/'>Travel (2)</a></li>
 <li class='category'><a href='/blog/categories/alias/'>alias (1)</a></li>
 <li class='category'><a href='/blog/categories/find/'>find (1)</a></li>
 <li class='category'><a href='/blog/categories/git/'>git (1)</a></li>
