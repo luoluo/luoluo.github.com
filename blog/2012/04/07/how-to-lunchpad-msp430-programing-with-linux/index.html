@@ -5,24 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Alias 利器 - LOG.02</title>
+  <title>How To:Lunchpad MSP430 programing with Linux - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="1
-2
-3
-4
-5
-6
-7
-8
-9
-适用场合：惯用指令很长
-使用目的：简化指令，提高指令输入效率
-使用规则：
-alias AliasName='NameToBeSimpler' //注意：等号前后不允许空格。
-unalias AliasName='NameToBeSimpler' // &hellip;">
+  <meta name="description" content="天快亮了，反而没有什么倦意，一夜的奋战终见起色，称记忆清晰，做记录，供后车之鉴。开学不久就接到了五一前要交付的任务，4月探头，才逼的自己来做。windows莫名其妙的坏掉，把自己比逼linux这种直接的环境，一直感觉linux环境下自己面对问题，接近点底层，是个不错的选择。可是入门稍有门槛。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -31,7 +18,7 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/blog/2012/03/26/alias-li-qi">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -92,7 +79,7 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Alias 利器</h1>
+      <h1 class="entry-title">How To:Lunchpad MSP430 Programing With Linux</h1>
     
     
       <p class="meta">
@@ -108,7 +95,7 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   
 
 
-<time datetime="2012-03-26T14:33:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
+<time datetime="2012-04-07T04:37:00+08:00" pubdate data-updated="true">Apr 7<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -117,7 +104,97 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>天快亮了，反而没有什么倦意，一夜的奋战终见起色，称记忆清晰，做记录，供后车之鉴。开学不久就接到了五一前要交付的任务，4月探头，才逼的自己来做。windows莫名其妙的坏掉，把自己比逼linux这种直接的环境，一直感觉linux环境下自己面对问题，接近点底层，是个不错的选择。可是入门稍有门槛。毕竟文字的信息传递速度要小于图形化。加上自己的惰性，就迟迟未出发。</p>
+
+<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。</p>
+
+<p>1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。
+ <1>编译环境：mspgcc
+可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：</p>
+
+<blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
+
+
+<pre><code>也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：
+</code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。</p>
+
+<p><2>写入环境：mspdebug
+在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当<sup>D退出mspdebug后，单片机执行新写入的程序，</sup></p>
+
+<p>看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
+这是看到了WIKI的提示，</p>
+
+<blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
+
+
+<p>而UBUNTU11.10 即 ONEIRIC。</p>
+
+<p>于是乎：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
+</span><span class='line'>sudo apt-get install mspdebug
+</span><span class='line'>sudo apt-get install msp430mcu
+</span><span class='line'>sudo apt-get install binutils-msp430
+</span><span class='line'>sudo apt-get install gcc-msp430
+</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后执行：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class='line'>
+</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
+
+
+<p>值得一提的是对端口的设定：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure>
+
+
+<p>并将下表的内容写入其中，:wq</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&quot;0451&quot;,
+</span><span class='line'>ATTRS{idProduct}==&quot;f432&quot;,
+</span><span class='line'>MODE=&quot;0660&quot;, 
+</span><span class='line'>GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>为了使刚刚的修改在重启前生效，执行以下语句：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这是后把原来那个点过灯的单片机插入电脑，发现执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
+
+
+<p>后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
+在执行了:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -126,62 +203,28 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
-</span><span class='line'>使用目的：简化指令，提高指令输入效率
-</span><span class='line'>使用规则：
-</span><span class='line'>alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
-</span><span class='line'>unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
-</span><span class='line'>  举例：
-</span><span class='line'>alias rg='rake generate'
-</span><span class='line'>此时在命令行下输入
-</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
+</span><span class='line'>Erasing...
+</span><span class='line'>Programming...
+</span><span class='line'>Writing  126 bytes to fc00 [section: .text]...
+</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]...
+</span><span class='line'>Done, 158 bytes written
+</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure>
 
 
+<p>单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。</p>
 
-
-<!--more-->
-
-
-<p>
-按照以上的设置在重新开机后，输入</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
-</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure>
-
-
-<p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure>
-
-
-<p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure>
-
-
-<p>下面列一下我用的alias</p>
+<p>以下为重点参考站点：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg='rake generate'
-</span><span class='line'>alias rd='rake deploy'
-</span><span class='line'>alias update='sudo apt-get update'
-</span><span class='line'>alias ..='cd ..' #据说是死罪
-</span><span class='line'>alias df='df -h'  #以M为单位查看磁盘空间
-</span><span class='line'>alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure>
 
 
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。</p>
+
 </div>
 
 
@@ -204,12 +247,12 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   
 
 
-<time datetime="2012-03-26T14:33:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
+<time datetime="2012-04-07T04:37:00+08:00" pubdate data-updated="true">Apr 7<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/alias/'>alias</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+    <a class='category' href='/blog/categories/mcu/'>MCU</a>, <a class='category' href='/blog/categories/msp430/'>MSP430</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
   
 </span>
 
@@ -218,7 +261,7 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/03/26/alias-li-qi" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/03/26/alias-li-qi" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux" data-via="luoluo" data-counturl="http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -229,10 +272,8 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/03/26/find-ming-ling-de-shi-yong" title="Previous Post: Find 命令的使用">&laquo; Find 命令的使用</a>
+        <a class="basic-alignment left" href="/blog/2012/04/03/mbtizhi-ye-xing-ge-ce-shi" title="Previous Post: MBTI职业性格测试">&laquo; MBTI职业性格测试</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/03/27/categoriesde-yi-wen" title="Next Post: categories的疑问">categories的疑问 &raquo;</a>
       
     </p>
   </footer>
@@ -387,8 +428,8 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/blog/2012/03/26/alias-li-qi';
-        var disqus_url = 'http://luoluo.github.com/blog/2012/03/26/alias-li-qi';
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux';
         var disqus_script = 'embed.js';
       
     (function () {
