@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MSP430 | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/msp430/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-04-07T05:59:00+08:00</updated>
+  <updated>2012-04-07T14:40:17+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -58,15 +58,13 @@
 </span><span class='line'>sudo apt-get install binutils-msp430
 </span><span class='line'>sudo apt-get install gcc-msp430
 </span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
-然后执行：
+编译和写入：
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>值得一提的是对端口的设定：
+<p>值得一提的是对端口的设定,这一步应在编译写入前设置：
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
 并将下表的内容写入其中，:wq</p>
