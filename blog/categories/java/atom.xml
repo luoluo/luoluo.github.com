@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-04-09T21:30:21+08:00</updated>
+  <updated>2012-04-09T21:42:48+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[TC at Lineux]]></title>
+    <title type="html"><![CDATA[TC at Linux]]></title>
     <link href="http://luoluo.github.com/blog/2012/04/09/tc-at-lineux"/>
     <updated>2012-04-09T19:58:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/09/tc-at-lineux</id>
@@ -39,14 +39,15 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>2.DOWNLOAD THE TC ARENA
-<a herf="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">DOWNLOAD </a></p>
+<a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
+DOWNLOAD </a></p>
 
 <p>3.CONFIG THE AREAN
-<a herf="http://community.topcoder.com/tc?module=Static&d1=applet&d2=plugins"> 插件下载及配置DOWNLOAD </a>
+<a href="http://community.topcoder.com/tc?module=Static&d1=applet&d2=plugins"> 插件下载及配置DOWNLOAD </a>
 推荐只使用KawigiEdit插件，该插件易于上手。</p>
 
 <p>4.GET ON THE WAY, &amp; GOOD LUCK!
-<a herf="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">官方教程</a></p>
+<a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">官方教程</a></p>
 ]]></content>
   </entry>
   
