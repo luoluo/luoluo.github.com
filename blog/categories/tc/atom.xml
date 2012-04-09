@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TC | LOG.02]]></title>
+  <link href="http://luoluo.github.com/blog/categories/tc/atom.xml" rel="self"/>
+  <link href="http://luoluo.github.com/"/>
+  <updated>2012-04-09T21:26:16+08:00</updated>
+  <id>http://luoluo.github.com/</id>
+  <author>
+    <name><![CDATA[Luoluo]]></name>
+    <email><![CDATA[luoluo1920@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TC at Lineux]]></title>
+    <link href="http://luoluo.github.com/blog/2012/04/09/tc-at-lineux"/>
+    <updated>2012-04-09T19:58:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/04/09/tc-at-lineux</id>
+    <content type="html"><![CDATA[<p>HOW TO： TC ON LINUX</p>
+
+<p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
+
+<p><1>添加partner源：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository "deb http://archive.canonical.com/u    buntu maverick partner"</span></code></pre></td></tr></table></div></figure></notextile></div>
+<2>安装JRE
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
+<3>安装JDK
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
+<4>查看版本
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure></notextile></div>
+<5>设为默认JAVA
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>2.DOWNLOAD THE TC ARENA
+<a herf="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">DOWNLOAD </a></p>
+
+<p>3.CONFIG THE AREAN
+<a herf="http://community.topcoder.com/tc?module=Static&d1=applet&d2=plugins"> 插件下载及配置DOWNLOAD </a>
+推荐只使用KawigiEdit插件，该插件易于上手。</p>
+
+<p>4.GET ON THE WAY, &amp; GOOD LUCK!
+<a herf="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">官方教程</a></p>
+]]></content>
+  </entry>
+  
+</feed>
