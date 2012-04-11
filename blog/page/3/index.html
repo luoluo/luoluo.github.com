@@ -5,19 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ubuntu的BUG修复小记 - LOG.02</title>
+  <title>LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
-不少意外惊喜： 1.linux下的资源管理器： ps 1
-2
-3
-4
-5
-6
-ps
-a :选择列出所有程序 &hellip;">
+  <meta name="description" content="从什么说起呢？？记忆力衰退太猛，由现在写起来好点。就先说说这个BLOG吧。从最初有Blog的想法到现在有一个学期加一个假期了，期间屡试屡爽，可谓历经周折有回到起点。开始的时候，打算找片地，放置以下自己的思绪，以供回忆与分享&#8230;  出于一种对完美的最求，想利用下最先进的Blog技术&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -26,7 +18,7 @@ a :选择列出所有程序 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji">
+  <link rel="canonical" href="http://luoluo.github.com/blog/page/3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -104,13 +96,15 @@ a :选择列出所有程序 &hellip;">
 </nav>
   <div class="container">
     <div class="row-fluid">
-      
-<article class="hentry span9" role="article">
-
+      <div class="span9">
   
+  
+  
+    <article>
+      
   <header class="page-header">
     
-      <h1 class="entry-title">ubuntu的BUG修复小记</h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/03/xiao-jie-0-dot-0">小结0.0</a></h1>
     
     
       <p class="meta">
@@ -126,173 +120,36 @@ a :选择列出所有程序 &hellip;">
   
 
 
-<time datetime="2012-04-01T23:39:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2012</time>
+<time datetime="2012-03-03T21:50:00+08:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2012</time>
         
-         | <a href="#disqus_thread">Comments</a>
+         | <a href="/blog/2012/03/03/xiao-jie-0-dot-0#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
-不少意外惊喜：</p>
+  <div class="entry-content"><p>从什么说起呢？？记忆力衰退太猛，由现在写起来好点。就先说说这个BLOG吧。从最初有Blog的想法到现在有一个学期加一个假期了，期间屡试屡爽，可谓历经周折有回到起点。开始的时候，打算找片地，放置以下自己的思绪，以供回忆与分享&#8230;  出于一种对完美的最求，想利用下最先进的Blog技术&#8212;GITHUB的那对东东。所谓的hacker的blog，是文本下的操作。可是经过了几日的钻研，只是略有进展，一小点一小点前进，最后期末考试给这个计划判了死刑，无果。 然后想到使用个国内的托管型，考虑到国内行业的诚信（现在想想自己真是想多了），马上打消。 还是在硬着头皮钻自己的ZONE。 后来看了一些“牛人”的blog，发现好多都是wordpress，于是心有凄凄然，从自习室跑回寝室操练起来，什么mysql、apache、php去年让我折腰的“红颜”从现江湖，信心满满，打算大干一场，从日出到日落，教程看了一打，结果各种奇奇怪怪的错误，满头大汗，头晕目眩，不知南北&#8230;.</p>
 
-<p>1.linux下的资源管理器：</p>
-
-<!--more-->
-
-
-<p><1>ps</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ps
-</span><span class='line'>a   :选择列出所有程序
-</span><span class='line'>u   :列出所有用户程序
-</span><span class='line'>x   ;类出所有tty的程序
-</span><span class='line'>EG:
-</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
-
-
-<p><2>top</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure>
-
-
-<p>较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
-
-<p><3>kill</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID 
-</span><span class='line'>signal:
-</span><span class='line'>-1  :让该PID重新读取它的配置文件
-</span><span class='line'>-9  :杀掉该进程
-</span><span class='line'>-15 :停止该进程
-</span><span class='line'>EG：
-</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
-
-
-<p><4>uname</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
-</span><span class='line'>-a  :列出所有的系统信息
-</span><span class='line'>-p  :列出CPU信息 
-</span><span class='line'>-n  :列出主机名
-</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
-
-
-<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
-top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。>原来是一个BUG啊。然后获取了两种解决方案：</p>
-
-<p><1>暂时止痛</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure>
-
-
-<p>重启后旧病复发。</p>
-
-<p><2>根治型</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
-</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
-</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
-</span><span class='line'>2) Run:
-</span><span class='line'>sudo apt-get update && sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
-
-
-<p>而这种根治的方案来源于一个强大的站点：
-https://bugs.launchpad.net
-<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Luoluo</span></span>
-
-      
-
-
-
-
-
-
-
-
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/03/xiao-jie-0-dot-0">Read on &rarr;</a>
+    </footer>
   
 
 
-<time datetime="2012-04-01T23:39:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2012</time>
-      
-
-<span class="categories">
+    </article>
   
-    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
-  
-</span>
-
-
-    </p>
+  <ul class="pager">
     
-      <div class="sharing">
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+    <li class="next"><a href="/blog/page/2/">Newer &rarr;</a></li>
+    
+  </ul>
 </div>
-
-    
-    
-    <section>
-      <h1>Comments</h1>
-      <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </section>
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/2012/03/29/xie-qi" title="Previous Post:
-        血气">&laquo; 血气</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2012/04/02/generating-function"
-        title="Next Post: Generating Function">Generating Function
-        &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
 <aside class="sidebar-nav span3">
   
     <section>
@@ -331,7 +188,7 @@ https://bugs.launchpad.net
 <section class="well">
   <ul id="gh_repos" class="nav">
     <li class="nav-header">GitHub Repos</li>
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/luoluo">@luoluo</a> on GitHub
@@ -404,7 +261,6 @@ https://bugs.launchpad.net
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
@@ -420,10 +276,7 @@ https://bugs.launchpad.net
       var disqus_shortname = 'log02';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji';
-        var disqus_url = 'http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
