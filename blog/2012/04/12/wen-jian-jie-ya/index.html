@@ -5,11 +5,18 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: MSP430 - LOG.02</title>
+  <title>文件解压 - LOG.02</title>
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="Category: MSP430">
+  <meta name="description" content="每次文件解压都要去翻鸟哥。今天总结下：
+文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。 x.Z
+压缩命令
+{% codeblock %}
+compress xx
+{% endcodeblock %}
+解压命令
+{% &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luoluo.github.comblog/categories/msp430">
+  <link rel="canonical" href="http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -97,38 +104,165 @@
   <div class="container">
     <div class="row-fluid">
       
-<article role="article" class="span9">
+<article class="hentry span9" role="article">
 
   
   <header class="page-header">
-    <h1 class="entry-title">Category: MSP430</h1>
+    
+      <h1 class="entry-title">文件解压</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-12T20:11:00+08:00" pubdate data-updated="true">Apr 12<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>每次文件解压都要去翻鸟哥。今天总结下：
+文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。</p>
 
-  
-  <h1>2012</h1>
+<!--more-->
 
-<article>
-  <div class="well">
 
-<h2><a href="/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux">How To:Lunchpad MSP430 programing with Linux</a></h2>
-<time datetime="2012-04-07T04:37:00+08:00" pubdate><span class='month'>Apr</span> <span class='day'>07</span> <span class='year'>2012</span></time>
+<p>x.Z
+压缩命令
+{% codeblock %}
+compress xx
+{% endcodeblock %}
+解压命令
+{% codeblock %}
+compress -d xx.Z
+{% endcodeblock %}</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/mcu/'>MCU</a>, <a class='category' href='/blog/categories/msp430/'>MSP430</a>, <a class='category' href='/blog/categories/linux/'>linux</a></span>
-</footer>
+<p>x.gz2
+压缩命令
+{% codeblock %}
+bzip2 -z xx
+{% endcodeblock %}
+解压命令
+{% codeblock %}
+bzip2 -d xx.zp2
+{% endcodeblock %}
+查看压缩文件
+{% codeblock %}
+bzcat xx.zp2
+{% endcodeblock %}</p>
 
+<p>x.tar
+{% codeblock %}
+tar [-zxcvfppP]
+{% endcodeblock %}
+压缩命令
+{% codeblock %}
+tar -cvf xx
+{% endcodeblock %}
+解压命令
+{% codeblock %}
+tar -xvf xx.tar
+{% endcodeblock %}</p>
+
+<p>xx.tar.gz
+压缩命令
+{% codeblock %}
+tar -zcvf xx
+{% endcodeblock %}
+解压命令
+{% codeblock %}
+tar -xcvf xx.tar.gz
+{% endcodeblock %}</p>
+
+<p>xx.bz
+压缩命令
+gzip  xx
+{% codeblock %}
+解压命令
+gzip -d xx.gz
+{% codeblock %}
+查看压缩文件
+zcat xx.gz
+{% codeblock %}</p>
+
+<p>最后意外发现vim命令模式下x有delete作用。
+今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
+很欣赏凯文的清醒、大局观。看到这样一句话：
+我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。
+作为结语。</p>
 </div>
 
-</article>
 
-</div>
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Luoluo</span></span>
+
+      
+
+
+
+
+
+
+
 
   
+
+
+<time datetime="2012-04-12T20:11:00+08:00" pubdate data-updated="true">Apr 12<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linuxbasic/'>LinuxBasic</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/04/12/nuan" title="Previous Post:
+        暖">&laquo; 暖</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
 </article>
 
 <aside class="sidebar-nav span3">
@@ -259,7 +393,10 @@
       var disqus_shortname = 'log02';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya';
+        var disqus_url = 'http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
