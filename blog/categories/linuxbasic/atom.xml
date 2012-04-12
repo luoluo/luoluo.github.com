@@ -4,7 +4,7 @@
   <title><![CDATA[Category: LinuxBasic | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linuxbasic/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-04-12T20:55:30+08:00</updated>
+  <updated>2012-04-12T21:02:07+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -26,61 +26,51 @@
 
 <p>x.Z
 压缩命令
-{% codeblock %}
-compress xx
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 解压命令
-{% codeblock %}
-compress -d xx.Z
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>x.gz2
 压缩命令
-{% codeblock %}
-bzip2 -z xx
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 解压命令
-{% codeblock %}
-bzip2 -d xx.zp2
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
 查看压缩文件
-{% codeblock %}
-bzcat xx.zp2
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>x.tar
-{% codeblock %}
-tar [-zxcvfppP]
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
 压缩命令
-{% codeblock %}
-tar -cvf xx
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 解压命令
-{% codeblock %}
-tar -xvf xx.tar
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>xx.tar.gz
 压缩命令
-{% codeblock %}
-tar -zcvf xx
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 解压命令
-{% codeblock %}
-tar -xcvf xx.tar.gz
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>xx.bz
 压缩命令
-gzip  xx
-{% codeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 解压命令
-gzip -d xx.gz
-{% codeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
 查看压缩文件
-zcat xx.gz
-{% codeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>最后意外发现vim命令模式下x有delete作用。
 今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
