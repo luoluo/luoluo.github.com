@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Math | LOG.02]]></title>
-  <link href="http://luoluo.github.com/blog/categories/math/atom.xml" rel="self"/>
+  <title><![CDATA[Category: C++ | LOG.02]]></title>
+  <link href="http://luoluo.github.com/blog/categories/c-/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
   <updated>2012-05-09T22:28:40+08:00</updated>
   <id>http://luoluo.github.com/</id>
@@ -141,80 +141,6 @@ Comparison function object that, taking two values of the same type than those c
 <h3>Complexity</h3>
 
 <blockquote><p>At most, performs one half as many swaps as the number of elements in the range.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Generating Function]]></title>
-    <link href="http://luoluo.github.com/blog/2012/04/02/generating-function"/>
-    <updated>2012-04-02T19:51:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/04/02/generating-function</id>
-    <content type="html"><![CDATA[<p>先挖坑，清明期间研究下，再写笔记。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[网站推荐]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/17/wang-zhan-tui-jian"/>
-    <updated>2012-03-17T10:50:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/17/wang-zhan-tui-jian</id>
-    <content type="html"><![CDATA[<p>1.http://mathworld.wolfram.com</p>
-
-<blockquote>
-MathWorld是线上数学百科全书，由沃夫朗研究公司（Wolfram Research inc.，WRI）赞助
-<br>
-</blockquote>
-
-
-<p>2.http://planetmath.org/</p>
-
-<blockquote>
-PlanetMath是一本自由、协作的网络数学百科全书。强调同行评审、严密、公开、具教育性、实时内容、内容互连、以及群体协作。   
-  PlanetMath的目标是成为一本综合性的网络数学百科全书。该企划位于弗吉尼亚理工学院暨州立大学的数码图书馆研究实验室。
-</blockquote>
-
-
-<!--more-->
-
-
-<br>
-
-
-<p>3.http://en.wikipedia.org</p>
-
-<p>  http://zh.wikipedia.org</p>
-
-<blockquote>
-  http://oeis.org/wiki/ 
-  整数数列线上大全（On-Line Encyclopedia of Integer Sequences，简称OEIS）是一个网上可搜索的整数数列数据库。它是数学
-  上的重要资源，因每篇文章里都记录了一个整数数列的首几个项、关键字和链结等。截至2009年6月，OEIS 已经有超过 160,000个数列
-</blockquote>
-
-
-<br>
-
-
-<p>4.http://www.cs.uwaterloo.ca/journals/JIS/</p>
-
-<blockquote>
-Journal of Integer Sequences
-This is the home page for the electronic Journal of Integer Sequences, ISSN 1530-7638.
-The journal is devoted to papers dealing with integer sequences and related topics.
-All submissions should be sent to the editor-in-chief
-</blockquote>
-
-
-<br>
-
-
-<p>5.http://www.math.upenn.edu/</p>
-
-<blockquote>
-宾夕法尼亚大学数学学院主页
-</blockquote>
-
-
-
 ]]></content>
   </entry>
   
