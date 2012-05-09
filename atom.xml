@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-05-06T22:29:25+08:00</updated>
+  <updated>2012-05-09T20:18:50+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,6 +12,79 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Graphviz &amp; DOT]]></title>
+    <link href="http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot"/>
+    <updated>2012-05-09T18:29:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot</id>
+    <content type="html"><![CDATA[<h4>脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
+
+<h3>Graphviz:</h3>
+
+<blockquote><p>AT&T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
+
+
+<p><strong>DOT</strong></p>
+
+<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
+
+
+<h4>简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：</h4>
+
+<ul>
+<li>有向</li>
+<li>无向</li>
+</ul>
+
+
+<h3>无向图：<br></h3>
+
+<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：</p>
+
+<figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
+</span><span class='line'>  a -- b -- c;
+</span><span class='line'>  b -- d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
+
+<h3>有向图：<br></h3>
+
+<p>同样是DOT简单的应用。只需用“- >”来表示节点间有关系的。例子如下：</p>
+
+<figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
+</span><span class='line'>  a -> b -> c;
+</span><span class='line'>  b -> d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
+
+<h3>修改样式：</h3>
+
+<p>在花括号内添加边和节点的定义</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape="record"];
+</span><span class='line'>edge [style="dashed"];</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></h5>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[夜空里的绚烂]]></title>
@@ -958,19 +1031,6 @@ All submissions should be sent to the editor-in-chief
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[To Do]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/13/to-do"/>
-    <updated>2012-03-13T22:42:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/13/to-do</id>
-    <content type="html"><![CDATA[<p>  刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了&#8230;   书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里&#8230;  感觉好像在等待什么，我也不知道到底是什么，还不是很清楚自己想要的是什么。   周围弥漫这DOTA、CS，各种安逸的节奏，曾经我们一起敲过的代码，现在还是否有激情继续呢？</p>
-
-<p>这几天看《北爱》，略纠结，晚上的梦或多或少有《北爱》的影子。看了一多半之后不在想继续往下看了，没有了那个冲动，开始十多集的美梦被撵破的情节还是可以给我麻木的内心带来片刻的刺激，让我知道“未来的路，也许很现实”，就如那句歌“外面的世界很精彩，外面的世界很无奈”。   无论贫或富，都有权拥有爱情。  当然权利是可以放弃的，如果为了利益去放弃爱情，我很难想象，你会以怎样的心情去继续生活，你还活着么？   纯真的无所求的爱是最让人憧憬的吧，傻傻的执着的爱是最让人渴求的吧。       “我爱你，和你没关系”，每次听起来，我都为那小姐姐难过，好无辜啊，爱情是不能强求的，正如那句“要么你情我愿，要么互不相干”，强扭的瓜不甜。     其实看到后来，只需回答一个问题“幸福是什么？”不同人看到了不同的幸福的面庞，他们用其所有去交换..       有点点难过，不过，我更愿意相信“艺术源于生活，却高于生活”，《北爱》应该是对真实生活的放大吧，这样释然多了。  无论怎样，我相信爱情，相信我们的未来&#8230;.     想起朋友的一句话&#8221;如果你们的不在一起了，我们就再也不想信爱情了&#8230;&#8221;</p>
-
-<p>好吧，开学快一个月了，预计的适应期早过了，说好的计划差点快全部被抛在脑后了，整顿下行装，重新上路了，迎接明天升起的新的太阳.</p>
 ]]></content>
   </entry>
   
