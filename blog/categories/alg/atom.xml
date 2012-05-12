@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Alg | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/alg/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-05-12T13:51:25+08:00</updated>
+  <updated>2012-05-12T13:55:12+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -39,7 +39,7 @@
 
 <h3>function</h3>
 
-<p>Sort elements in range
+<blockquote><p>Sort elements in range
 Sorts the elements in the range [first,last) into ascending order.</p>
 
 <p>The elements are compared using operator&lt; for the first version, and comp for the second.</p>
@@ -55,7 +55,7 @@ Comparison function object that, taking two values of the same type than those c
 
 <h3>Return value</h3>
 
-<p>none</p>
+<p>none</p></blockquote>
 
 <h3>Example</h3>
 
@@ -146,12 +146,12 @@ Comparison function object that, taking two values of the same type than those c
 
 <h3>Output:</h3>
 
-<p>myvector contains: 12 26 32 33 45 53 71 80</p>
+<blockquote><p>myvector contains: 12 26 32 33 45 53 71 80</p></blockquote>
 
 <h3>Complexity</h3>
 
-<p>Approximately N*logN comparisons on average (where N is last-first).
-In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p>
+<blockquote><p>Approximately N*logN comparisons on average (where N is last-first).
+In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p></blockquote>
 ]]></content>
   </entry>
   
@@ -301,7 +301,7 @@ Comparison function object that, taking two values of the same type than those c
 3 1 2 <br>
 3 2 1 <br></p>
 
-<h4>所以想得到给定数组元素的全排列，首先要排序为单调上升序列。</h4>
+<h4>所以想得到给定数组元素的全排列，首先要<a href="http://luoluo.github.com/blog/2012/05/12/sort/">sort</a>为单调上升序列。</h4>
 
 <h3>Complexity</h3>
 
