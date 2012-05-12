@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-05-09T22:29:14+08:00</updated>
+  <updated>2012-05-12T13:51:25+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -14,11 +14,143 @@
 
   
   <entry>
+    <title type="html"><![CDATA[sort]]></title>
+    <link href="http://luoluo.github.com/blog/2012/05/12/sort"/>
+    <updated>2012-05-12T13:44:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/05/12/sort</id>
+    <content type="html"><![CDATA[<h4>STL中最常用的函数之一，排序的神器。</h4>
+
+<h3>sort</h3>
+
+<figure class='code'><figcaption><span>function sort.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span> <span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span> <span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>function</h3>
+
+<p>Sort elements in range
+Sorts the elements in the range [first,last) into ascending order.</p>
+
+<p>The elements are compared using operator&lt; for the first version, and comp for the second.</p>
+
+<p>Elements that would compare equal to each other are not guaranteed to keep their original relative order.</p>
+
+<h3>Parameters</h3>
+
+<p>first, last
+Random-Access iterators to the initial and final positions of the sequence to be sorted. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+comp
+Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument goes before the second argument in the specific strict weak ordering it defines, and false otherwise.</p>
+
+<h3>Return value</h3>
+
+<p>none</p>
+
+<h3>Example</h3>
+
+<figure class='code'><figcaption><span>example.cpp</span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">// sort algorithm example</span>
+</span><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;vector&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">bool</span> <span class="n">myfunction</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">struct</span> <span class="n">myclass</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);}</span>
+</span><span class='line'><span class="p">}</span> <span class="n">myobject</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span>               <span class="c1">// 32 71 12 45 26 80 53 33</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// using default comparison (operator &lt;):</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>           <span class="c1">//(12 32 45 71)26 80 53 33</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// using function as comp</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myfunction</span><span class="p">);</span> <span class="c1">// 12 32 45 71(26 33 53 80)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// using object as comp</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myobject</span><span class="p">);</span>     <span class="c1">//(12 26 32 33 45 53 71 80)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// print out content:</span>
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;myvector contains:&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">it</span><span class="o">=</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Output:</h3>
+
+<p>myvector contains: 12 26 32 33 45 53 71 80</p>
+
+<h3>Complexity</h3>
+
+<p>Approximately N*logN comparisons on average (where N is last-first).
+In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Next Permutation]]></title>
     <link href="http://luoluo.github.com/blog/2012/05/09/next-permutation"/>
     <updated>2012-05-09T22:06:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/next-permutation</id>
-    <content type="html"><![CDATA[<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的全排列。</h3>
+    <content type="html"><![CDATA[<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
 
 <h2>next_permutation</h2>
 
@@ -113,6 +245,29 @@ Comparison function object that, taking two values of the same type than those c
 <h4>注意</h4>
 
 <p>当输出{1, 1, 1}的全排列时只输出一组“1 1 1”；</p>
+
+<h3>上升全排列</h3>
+
+<p>  <code>int myints[] = {1,2,3};</code>
+输出为：<br>
+1 2 3 <br>
+1 3 2 <br>
+2 1 3 <br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
+
+<p>  <code>int myints[] = {3,2,1};</code>
+输出为：<br>
+3 2 1<br></p>
+
+<p>  <code>int myints[] = {2,3,1};</code>
+输出为：<br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
+
+<h4>所以想得到给定数组元素的全排列，首先要排序为单调上升序列。</h4>
 
 <h3>Complexity</h3>
 
@@ -1024,55 +1179,6 @@ https://bugs.launchpad.net
 <p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
 
 <p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linux 下文件乱码的问题]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti"/>
-    <updated>2012-03-21T19:53:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/21/linux-xia-wen-jian-luan-ma-de-wen-ti</id>
-    <content type="html"><![CDATA[<p>   问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
-
-<p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
-
-<blockquote>
-1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
-:set fileencoding=utf-8
-2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
-enconv -L zhCN -x UTF-8 filename
-</blockquote>
-
-
-
-
-<blockquote>
-3.iconv 转换，iconv的命令格式如下：
-iconv -f encoding -t encoding inputfile
-比如将一个UTF-8 编码的文件转换成GBK编码
-iconv -f GBK -t UTF-8 file1 -o file2
-</blockquote>
-
-
-<!--more-->
-
-
-<p>下面是摘自网上的关于VIM编码的资料：</p>
-
-<blockquote>和所有的流行文本编辑器一样，Vim 可以很好的编辑各种字符编码的文件，这当然包括UCS-2、UTF-8 等流行的 Unicode 编码方式。然而不幸的是，和很多来自 Linux 世界的软件一样，这需要你自己动手设置。
-Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助 :help encoding-names)，它们的意义如下:
-* encoding: Vim 内部使用的字符编码方式，包括 Vim 的 buffer (缓冲区)、菜单文本、消息文本等。默认是根据你的locale选择.用户手册上建议只在 .vimrc 中改变它的值，事实上似乎也只有在.vimrc 中改变它的值才有意义。你可以用另外一种编码来编辑和保存文件，如你的vim的encoding为utf-8,所编辑的文件采用cp936编码,vim会自动将读入的文件转成utf-8(vim的能读懂的方式），而当你写入文件时,又会自动转回成cp936（文件的保存编码).
-* fileencoding: Vim 中当前编辑的文件的字符编码方式，Vim 保存文件时也会将文件保存为这种字符编码方式 (不管是否新文件都如此)。
-* fileencodings: Vim自 动探测fileencoding的顺序列表， 启动时会按照它所列出的字符编码方式逐一探测即将打开的文件的字符编码方式，并且将 fileencoding 设置为最终探测到的字符编码方式。因此最好将Unicode 编码方式放到这个列表的最前面，将拉丁语系编码方式 latin1 放到最后面。
-* termencoding: Vim 所工作的终端 (或者 Windows 的 Console 窗口) 的字符编码方式。如果vim所在的term与vim编码相同，则无需设置。如其不然，你可以用vim的termencoding选项将自动转换成term的编码.这个选项在 Windows 下对我们常用的 GUI 模式的 gVim 无效，而对 Console 模式的Vim 而言就是 Windows 控制台的代码页，并且通常我们不需要改变它。
-好了，解释完了这一堆容易让新手犯糊涂的参数，我们来看看 Vim 的多字符编码方式支持是如何工作的。
-1. Vim 启动，根据 .vimrc 中设置的 encoding 的值来设置 buffer、菜单文本、消息文的字符编码方式。
-2. 读取需要编辑的文件，根据 fileencodings 中列出的字符编码方式逐一探测该文件编码方式。并设置 fileencoding 为探测到的，看起来是正确的 (注1) 字符编码方式。
-3. 对比 fileencoding 和 encoding 的值，若不同则调用 iconv 将文件内容转换为encoding 所描述的字符编码方式，并且把转换后的内容放到为此文件开辟的 buffer 里，此时我们就可以开始编辑这个文件了。注意，完成这一步动作需要调用外部的 iconv.dll(注2)，你需要保证这个文件存在于 $VIMRUNTIME 或者其他列在 PATH 环境变量中的目录里。
-4. 编辑完成后保存文件时，再次对比 fileencoding 和 encoding 的值。若不同，再次调用 iconv 将即将保存的 buffer 中的文本转换为 fileencoding 所描述的字符编码方式，并保存到指定的文件中。同样，这需要调用 iconv.dll由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;)。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示cp936，也就是 GBK 的代码页)。</blockquote>
-
-
-
 ]]></content>
   </entry>
   

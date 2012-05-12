@@ -1,4 +1,4 @@
-<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的全排列。</h3>
+<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
 
 <h2>next_permutation</h2>
 
@@ -93,6 +93,29 @@ Comparison function object that, taking two values of the same type than those c
 <h4>注意</h4>
 
 <p>当输出{1, 1, 1}的全排列时只输出一组“1 1 1”；</p>
+
+<h3>上升全排列</h3>
+
+<p>  <code>int myints[] = {1,2,3};</code>
+输出为：<br>
+1 2 3 <br>
+1 3 2 <br>
+2 1 3 <br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
+
+<p>  <code>int myints[] = {3,2,1};</code>
+输出为：<br>
+3 2 1<br></p>
+
+<p>  <code>int myints[] = {2,3,1};</code>
+输出为：<br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
+
+<h4>所以想得到给定数组元素的全排列，首先要排序为单调上升序列。</h4>
 
 <h3>Complexity</h3>
 
