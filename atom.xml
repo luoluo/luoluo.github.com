@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T17:14:32+08:00</updated>
+  <updated>2012-06-09T17:16:46+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -26,8 +26,6 @@
 那么对于更多个参与者，怎么处理，只需对上述过程拓展，即得到通解：
 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案：
 第i个人对k部分的估价为：
-$$ 5 + 5 $$
-000000000000
 $$
 \begin{align<em>}
   &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
