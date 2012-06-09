@@ -127,23 +127,7 @@ MathJax.Hub.Config({
 此问题可以衍生出一个现实问题：A，B公同租总价为p两房间房子。那么一个合理的分割方案为：A，B分别提供自己的定价方案：假设A对两房子的定价分别为a1,a2(a1+a2=p)；同理B对两房子的定价分别为b1,b2.则我们做以下计算：p1=(a1+b1)/2;p2=(a2+b2)/2;此时，两房子的定价即为p1,p2且满足p1+p2=p。那么房子如何分配呢？a1，b1中的大值者来负责p1，a2，b2中的大值者来负责p2.可以证明，该方案是一种很合理的分个方案。
 那么对于更多个参与者，怎么处理，只需对上述过程拓展，即得到通解：
 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案：
-第i个人对k部分的估价为：
-$$
-\begin{align<em>}
-  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
-  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
-      \vdots &amp; \ddots &amp; \vdots <br />
-      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 <br />
-      \vdots <br />
-      y_n
-    \end{array} \right)
-\end{align</em>}
-$$</p>
+第i个人对k部分的$\exp(-\frac{x^2}{2})$估价为：</p>
 </div>
 
 
