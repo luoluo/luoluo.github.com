@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T21:36:53+08:00</updated>
+  <updated>2012-06-09T21:40:28+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,6 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="http://luoluo.github.com/blog/2012/06/09/test"/>
+    <updated>2012-06-09T21:39:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/06/09/test</id>
+    <content type="html"><![CDATA[<p>$$ \alpha $$</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[从分蛋糕说起]]></title>
@@ -846,14 +854,6 @@ https://bugs.launchpad.net
 </span><span class='line'>alias df='df -h'  #以M为单位查看磁盘空间
 </span><span class='line'>alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure>
 <p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Find 命令的使用]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong"/>
-    <updated>2012-03-26T12:55:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong</id>
-    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。</p>]]></content>
   </entry>
   
 </feed>
