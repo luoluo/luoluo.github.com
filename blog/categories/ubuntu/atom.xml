@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T21:01:50+08:00</updated>
+  <updated>2012-06-09T21:19:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -28,19 +28,19 @@
 
 <p>* 有向 * 无向</p>
 
-<h3 id='id18'>无向图：<br /></h3>
+<h3 id='id19'>无向图：<br /></h3>
 
 <p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下： <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{ a &#8211; b &#8211; c; b &#8211; d; }</span></code></pre></td></tr></table></div></figure></notextile></div> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
 
-<h3 id='id19'>有向图：<br /></h3>
+<h3 id='id20'>有向图：<br /></h3>
 
 <p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下： <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{ a -&gt; b -&gt; c; b -&gt; d; }</span></code></pre></td></tr></table></div></figure></notextile></div> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
 
-<h3 id='id20'>修改样式：</h3>
+<h3 id='id21'>修改样式：</h3>
 
 <p>在花括号内添加边和节点的定义 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>node &lt;span>shape=&#8221;record&#8221;&lt;/span>; edge &lt;span>style=&#8221;dashed&#8221;&lt;/span>;</span></code></pre></td></tr></table></div></figure></notextile></div></p>

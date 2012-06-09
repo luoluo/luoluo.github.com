@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TOOLS | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T21:01:50+08:00</updated>
+  <updated>2012-06-09T21:19:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -22,7 +22,7 @@
 
 <p>我所用的有效的折叠方案：</p>
 
-<h3 id='id36'><code>set menthod=manual</code></h3>
+<h3 id='id39'><code>set menthod=manual</code></h3>
 
 <p>对于代码： <br /><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -41,13 +41,13 @@
 
 <h5 id='_visual_'>使用<code>Esc + Shift + v</code>进入 visual 模式</h5>
 
-<h5 id='id37'>然后<code>number + j</code>选定要折叠的行</h5>
+<h5 id='id40'>然后<code>number + j</code>选定要折叠的行</h5>
 
-<h5 id='id38'>使用<code>s + f</code>折叠选定的行</h5>
+<h5 id='id41'>使用<code>s + f</code>折叠选定的行</h5>
 
-<h5 id='id39'>展开折叠<code>空格</code></h5>
+<h5 id='id42'>展开折叠<code>空格</code></h5>
 
-<h4 id='id40'>折后效果：</h4>
+<h4 id='id43'>折后效果：</h4>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -64,13 +64,13 @@
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="o">+&amp;</span><span class="err">#</span><span class="mi">8211</span><span class="p">;</span> <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h4 id='id41'>打开折叠<code>z+o</code></h4>
+<h4 id='id44'>打开折叠<code>z+o</code></h4>
 
-<h4 id='id42'>打开文件中所有折叠<code>z+O</code></h4>
+<h4 id='id45'>打开文件中所有折叠<code>z+O</code></h4>
 
-<h4 id='id43'>删除一个折叠<code>z+e</code></h4>
+<h4 id='id46'>删除一个折叠<code>z+e</code></h4>
 
-<h4 id='id44'>删除文件中所折叠<code>z+e</code></h4>
+<h4 id='id47'>删除文件中所折叠<code>z+e</code></h4>
 
 <h4 id='_'>折叠不会被写入到文件里，如果使用<code>cat</code> <code>less</code>查看代码，代码将以无任何折叠的方式显示。</h4>
 

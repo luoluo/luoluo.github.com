@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T21:01:50+08:00</updated>
+  <updated>2012-06-09T21:19:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -110,7 +110,31 @@
 
 <p>6.增加第三方插件 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site. (2)http://delicious.com/ (3)Tracking ID: UA-30311112-1 (4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div> 7.down语法的几点小白困惑： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符 b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？ c.引用显示的不同风格，延时还是？ d.是否可以开头空格的风格？ e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div></p>]]></content>
+</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符 b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？ c.引用显示的不同风格，延时还是？ d.是否可以开头空格的风格？ e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3 id='8tex'>8.关于数学公式的编辑。$TeX$</h3>
+
+<p>尝试了以下两种方法：</p>
+
+<h4 id='marukumarkdown'>使用maruku进行markdown解析。</h4>
+
+<pre><code>我个人大力推荐这种解决办法，原因有2：\
+maruku原生态的支持$TeX$
+maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
+
+<h5 id='id28'>设置方法：</h5>
+
+<pre><code>在_config.yml文件里找到：</code></pre>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div> 改为 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: maruku</span></code></pre></td></tr></table></div></figure></notextile></div> 在Gemfile里找到： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;rdiscount&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;maruku&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> 如果没有安装maruku,<code>gem install maruku</code></p>
+
+<h4 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h4>
+
+<p>个人感觉解析像乌龟. <a href='http://www.idryman.org/blog/2012/03/10/writing-math-equations-on-octopress/'>详见</a></p>]]></content>
   </entry>
   
 </feed>
