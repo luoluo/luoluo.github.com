@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Alg | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/alg/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:30:07+08:00</updated>
+  <updated>2012-06-09T20:37:40+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -29,7 +29,7 @@
 
 <p>那么对于更多个参与者，怎么处理，只需对上述过程拓展，即得到通解：
 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案：
-第i个人对k部分的估价为：$x<em>{ik}$其中：
+第i个人对k部分的估价为:$x<em>{ik}$其中：
 $$
 	\sum_k=0^{n}{x</em>{ik}} = p
 $$
