@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:45:16+08:00</updated>
+  <updated>2012-06-09T16:49:27+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -21,44 +21,45 @@
     <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
 
 <h3 id="graphviz">Graphviz:</h3>
-<p>{% blockquote %}
-AT&amp;T Labs Tools for viewing and interacting with graph diagrams.
-Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.
-{% endblockquote %}
+<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
 <strong>DOT</strong>
-{% blockquote %}
-DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.
-{% endblockquote %}
+<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
 ####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
 * 有向
 * 无向</p>
 
 <h3 id="br">无向图：<br /></h3>
 <p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：
-{% codeblock Undirected graph test2 file %}
-graph graphName{
-	a – b – c;
-	b – d;
-}
-{% endcodeblock %} 
-{% img http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png 150 250 %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
+</span><span class='line'>	a – b – c;
+</span><span class='line'>	b – d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
 
 <h3 id="br-1">有向图：<br /></h3>
 <p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：
-{% codeblock Directed graph test2 file %}
-digraph graphName{
-	a -&gt; b -&gt; c;
-	b -&gt; d;
-}
-{% endcodeblock %} 
-{% img http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png 150 250%}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
+</span><span class='line'>	a -&gt; b -&gt; c;
+</span><span class='line'>	b -&gt; d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
 
 <h3 id="section">修改样式：</h3>
 <p>在花括号内添加边和节点的定义
-{% codeblock %} 
-node [shape=”record”];
-edge [style=”dashed”];
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape=”record”];
+</span><span class='line'>edge [style=”dashed”];</span></code></pre></td></tr></table></div></figure></notextile></div> 
 #####此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></p>
 ]]></content>
   </entry>
@@ -73,25 +74,20 @@ edge [style=”dashed”];
 <p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
 
 <p>&lt;1&gt;添加partner源：
-{% codeblock %}
-sudo add-apt-repository “deb http://archive.canonical.com/u    buntu maverick partner” 
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository “deb http://archive.canonical.com/u    buntu maverick partner”</span></code></pre></td></tr></table></div></figure></notextile></div>
 &lt;2&gt;安装JRE
-{% codeblock %}
-sudo apt-get install sun-java6-jre sun-java6-plugin
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;3&gt;安装JDK
-{% codeblock %} 
-sudo apt-get install sun-java6-jdk sun-java6-plugin
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;4&gt;查看版本
-{% codeblock %} 
-java -version
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;5&gt;设为默认JAVA	
-{% codeblock %} 
-sudo update-alternatives –config java
-{% endcodeblock %} </p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives –config java</span></code></pre></td></tr></table></div></figure></notextile></div> </p>
 
 <p>2.DOWNLOAD THE TC ARENA
 <a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
@@ -119,14 +115,12 @@ DOWNLOAD </a></p>
 
 <p>&lt;1&gt;编译环境：mspgcc
 可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：
-{% blockquote%}
-mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components. 
-{% endblockquote%}
+<blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
 也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：
-{% codeblock %}
-lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
-bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure></notextile></div>
 不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。</p>
 
 <p>&lt;2&gt;写入环境：mspdebug
@@ -134,67 +128,74 @@ bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录
 
 <p>看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
 这是看到了WIKI的提示，
-{% blockquote%}
-mspgcc will be available in Ubuntu Oneiric.
-{% endblockquote%}
+<blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
 而UBUNTU11.10 即 ONEIRIC。</p>
 
 <p>于是乎： 
-{% codeblock %}
-sudo apt-get install msp430-libc
-sudo apt-get install mspdebug
-sudo apt-get install msp430mcu
-sudo apt-get install binutils-msp430
-sudo apt-get install gcc-msp430
-sudo apt-get install gdb-msp430
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
+</span><span class='line'>sudo apt-get install mspdebug
+</span><span class='line'>sudo apt-get install msp430mcu
+</span><span class='line'>sudo apt-get install binutils-msp430
+</span><span class='line'>sudo apt-get install gcc-msp430
+</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
 编译和写入：
-{% codeblock %}
-lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
-lo@lo:~$ sudo mspdebug rf2500
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>值得一提的是对端口的设定,这一步应在编译写入前设置：
-{% codeblock %}
-sudo vim /etc/udev/rules.d/46-TI_launchpad.rules
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
 并将下表的内容写入其中，:wq</p>
 
-<p>{% codeblock %}
-ATTRS{idVendor}==&quot;0451&quot;,
-ATTRS{idProduct}==&quot;f432&quot;,
-MODE=&quot;0660&quot;, 
-GROUP=&quot;plugdev&quot;
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&quot;0451&quot;,
+</span><span class='line'>ATTRS{idProduct}==&quot;f432&quot;,
+</span><span class='line'>MODE=&quot;0660&quot;, 
+</span><span class='line'>GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>为了使刚刚的修改在重启前生效，执行以下语句：
-{% codeblock %}
-sudo restart udev
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>这是后把原来那个点过灯的单片机插入电脑，发现执行
-{% codeblock %}
-lo@lo:~$ sudo mspdebug rf2500
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
 后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
 在执行了:
-{% codeblock %}
-(mspdebug) prog blink.elf 
-Erasing…
-Programming…
-Writing  126 bytes to fc00 [section: .text]…
-Writing   32 bytes to ffe0 [section: .vectors]…
-Done, 158 bytes written
-(mspdebug) ^D
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
+</span><span class='line'>Erasing…
+</span><span class='line'>Programming…
+</span><span class='line'>Writing  126 bytes to fc00 [section: .text]…
+</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]…
+</span><span class='line'>Done, 158 bytes written
+</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure></notextile></div>
 单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。</p>
 
 <p>以下为重点参考站点：
-{% codeblock %}
-http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
-http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
-http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
@@ -209,59 +210,72 @@ http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#
 <p>1.linux下的资源管理器：
 <!--more-->
 &lt;1&gt;ps
-{% codeblock %}
-ps
-a   :选择列出所有程序
-u   :列出所有用户程序
-x   ;类出所有tty的程序
-EG:
-lo@lo:~$ ps -aux
-{% endcodeblock %}
-&lt;2&gt;top                                                                                                                                        {% codeblock %}
-lo@lo:~$ top
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ps
+</span><span class='line'>a   :选择列出所有程序
+</span><span class='line'>u   :列出所有用户程序
+</span><span class='line'>x   ;类出所有tty的程序
+</span><span class='line'>EG:
+</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure></notextile></div>
+&lt;2&gt;top                                                                                                                                        <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure></notextile></div>
 较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
 
 <p>&lt;3&gt;kill
-{% codeblock %}
-kill -signal PID 
-signal:
--1  :让该PID重新读取它的配置文件
--9  :杀掉该进程
--15 :停止该进程
-EG：
-lo@lo:~$ kill -9 1234
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID 
+</span><span class='line'>signal:
+</span><span class='line'>-1  :让该PID重新读取它的配置文件
+</span><span class='line'>-9  :杀掉该进程
+</span><span class='line'>-15 :停止该进程
+</span><span class='line'>EG：
+</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>&lt;4&gt;uname
-{% codeblock %}
-uname [-apnr]
--a  :列出所有的系统信息
--p  :列出CPU信息 
--n  :列出主机名
--r  :列出核心版本信息
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
+</span><span class='line'>-a  :列出所有的系统信息
+</span><span class='line'>-p  :列出CPU信息 
+</span><span class='line'>-n  :列出主机名
+</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
 top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：</p>
 
 <p>&lt;1&gt;暂时止痛
-{% codeblock %}
-sudo service udev stop
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure></notextile></div>
 重启后旧病复发。</p>
 
 <p>&lt;2&gt;根治型
-{% codeblock %}
-1) In a terminal, run:
-sudo add-apt-repository ppa:jamesodhunt/bug-829980
-#This will show you some text and ask you to press return to enable this repository.
-2) Run:
-sudo apt-get update &amp;&amp; sudo apt-get upgrade
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
+</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
+</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
+</span><span class='line'>2) Run:
+</span><span class='line'>sudo apt-get update &amp;&amp; sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure></notextile></div>
 而这种根治的方案来源于一个强大的站点：
 https://bugs.launchpad.net
-{% img https://bugs.launchpad.net/@@/launchpad-logo %}这是一个BUG上报，分布式解决的站点。          </p>
+<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。          </p>
 ]]></content>
   </entry>
   
