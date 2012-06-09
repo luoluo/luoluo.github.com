@@ -117,20 +117,11 @@
 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案：
 第i个人对k部分的估价为：
 $$
-\begin{align<em>}
-  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
-  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
-      \vdots &amp; \ddots &amp; \vdots <br />
-      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 <br />
-      \vdots <br />
-      y_n
-    \end{array} \right)
-\end{align</em>}
+\begin{align}
+\mbox{Union: } &amp; A\cup B = {x\mid x\in A \mbox{ or } x\in B} <br />
+\mbox{Concatenation: } &amp; A\circ B  = {xy\mid x\in A \mbox{ and } y\in B} <br />
+\mbox{Star: } &amp; A^\star  = {x<em>1x</em>2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A} <br />
+\end{align}
 $$</p>
 </div>
   
