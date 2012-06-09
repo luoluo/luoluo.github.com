@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MSP430 | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/msp430/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:46:22+08:00</updated>
+  <updated>2012-06-09T20:58:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -24,14 +24,12 @@
 <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
 &lt;1&gt;编译环境：mspgcc
 可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：
-{% blockquote%}
-mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components. 
-{% endblockquote%}
+<blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
 也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：
-{% codeblock %}
-lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
-bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure></notextile></div>
 不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。
 
 &lt;2&gt;写入环境：mspdebug
@@ -39,68 +37,75 @@ bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录
 
 看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
 这是看到了WIKI的提示，
-{% blockquote%}
-mspgcc will be available in Ubuntu Oneiric.
-{% endblockquote%}
+<blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
 而UBUNTU11.10 即 ONEIRIC。
 
 于是乎： 
-{% codeblock %}
-sudo apt-get install msp430-libc
-sudo apt-get install mspdebug
-sudo apt-get install msp430mcu
-sudo apt-get install binutils-msp430
-sudo apt-get install gcc-msp430
-sudo apt-get install gdb-msp430
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
+</span><span class='line'>sudo apt-get install mspdebug
+</span><span class='line'>sudo apt-get install msp430mcu
+</span><span class='line'>sudo apt-get install binutils-msp430
+</span><span class='line'>sudo apt-get install gcc-msp430
+</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
 编译和写入：
-{% codeblock %}
-lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
-lo@lo:~$ sudo mspdebug rf2500
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 值得一提的是对端口的设定,这一步应在编译写入前设置：
-{% codeblock %}
-sudo vim /etc/udev/rules.d/46-TI_launchpad.rules
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
 并将下表的内容写入其中，:wq
 
-{% codeblock %}
-ATTRS{idVendor}==&amp;quot;0451&amp;quot;,
-ATTRS{idProduct}==&amp;quot;f432&amp;quot;,
-MODE=&amp;quot;0660&amp;quot;, 
-GROUP=&amp;quot;plugdev&amp;quot;
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&amp;quot;0451&amp;quot;,
+</span><span class='line'>ATTRS{idProduct}==&amp;quot;f432&amp;quot;,
+</span><span class='line'>MODE=&amp;quot;0660&amp;quot;, 
+</span><span class='line'>GROUP=&amp;quot;plugdev&amp;quot;</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 为了使刚刚的修改在重启前生效，执行以下语句：
-{% codeblock %}
-sudo restart udev
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 这是后把原来那个点过灯的单片机插入电脑，发现执行
-{% codeblock %}
-lo@lo:~$ sudo mspdebug rf2500
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
 后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
 在执行了:
-{% codeblock %}
-(mspdebug) prog blink.elf 
-Erasing...
-Programming...
-Writing  126 bytes to fc00 [section: .text]...
-Writing   32 bytes to ffe0 [section: .vectors]...
-Done, 158 bytes written
-(mspdebug) ^D
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
+</span><span class='line'>Erasing...
+</span><span class='line'>Programming...
+</span><span class='line'>Writing  126 bytes to fc00 [section: .text]...
+</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]...
+</span><span class='line'>Done, 158 bytes written
+</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure></notextile></div>
 单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。
 
 以下为重点参考站点：
-{% codeblock %}
-http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
-http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
-http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu
-{% endcodeblock %}</pre>]]></content>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure></notextile></div></pre>]]></content>
   </entry>
   
 </feed>

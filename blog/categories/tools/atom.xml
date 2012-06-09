@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TOOLS | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:46:22+08:00</updated>
+  <updated>2012-06-09T20:58:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -24,12 +24,20 @@
 
 <h3 id='id36'><code>set menthod=manual</code></h3>
 
-<p>对于代码： <br />{% codeblock example.c %}</p>
-
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;stdio.h&gt;</pre></h1>
-
-<p>int main() { printf(&#8220;Hello World\n&#8221;); return 0; } <br />{% endcodeblock %}</p>
+<p>对于代码： <br /><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="err">&#39;</span><span class="n">include_</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">pre</span> <span class="n">class</span><span class="o">=</span><span class="err">&#39;</span><span class="n">markdown</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">error</span><span class="err">&#39;</span> <span class="n">style</span><span class="o">=</span><span class="err">&#39;</span><span class="n">border</span><span class="o">:</span> <span class="n">solid</span> <span class="mi">3</span><span class="n">px</span> <span class="n">red</span><span class="p">;</span> <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="o">:</span> <span class="n">pink</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">REXML</span> <span class="n">could</span> <span class="n">not</span> <span class="n">parse</span> <span class="n">this</span> <span class="n">XML</span><span class="o">/</span><span class="n">HTML</span><span class="o">:</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8220</span><span class="p">;</span><span class="n">Hello</span> <span class="n">World</span><span class="err">\</span><span class="n">n</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8221</span><span class="p">;);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span> <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h5 id='_visual_'>使用<code>Esc + Shift + v</code>进入 visual 模式</h5>
 
@@ -41,12 +49,20 @@
 
 <h4 id='id40'>折后效果：</h4>
 
-<p>{% codeblock foldedExample.c %}</p>
-
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;stdio.h&gt;</pre></h1>
-
-<p>int main() +&#8211; 4 行: {&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; {% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="err">&#39;</span><span class="n">include_</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">pre</span> <span class="n">class</span><span class="o">=</span><span class="err">&#39;</span><span class="n">markdown</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">error</span><span class="err">&#39;</span> <span class="n">style</span><span class="o">=</span><span class="err">&#39;</span><span class="n">border</span><span class="o">:</span> <span class="n">solid</span> <span class="mi">3</span><span class="n">px</span> <span class="n">red</span><span class="p">;</span> <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="o">:</span> <span class="n">pink</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">REXML</span> <span class="n">could</span> <span class="n">not</span> <span class="n">parse</span> <span class="n">this</span> <span class="n">XML</span><span class="o">/</span><span class="n">HTML</span><span class="o">:</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="o">+&amp;</span><span class="err">#</span><span class="mi">8211</span><span class="p">;</span> <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h4 id='id41'>打开折叠<code>z+o</code></h4>
 

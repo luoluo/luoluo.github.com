@@ -4,7 +4,7 @@
   <title><![CDATA[Category: uCOSII | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/ucosii/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:46:22+08:00</updated>
+  <updated>2012-06-09T20:58:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -18,7 +18,8 @@
     <link href="http://luoluo.github.com/blog/2012/04/15/how-to-ucos-for-msp430.markdown"/>
     <updated>2012-04-15T00:41:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/15/how-to-ucos-for-msp430.markdown</id>
-    <content type="html"><![CDATA[<p>今天磨蹭了一天，也还是没有结果，现在有了源码。有了PARTS。但是编译是终会有这样的错误提示： {% codeblock %} ucos_ii.c:24:21: 致命错误： ucos_ii.h：没有那个文件或目录 编译中断。 {% endcodeblock %} 不清楚是什么问题，明明有那个文件，就是提示不存在。</p>]]></content>
+    <content type="html"><![CDATA[<p>今天磨蹭了一天，也还是没有结果，现在有了源码。有了PARTS。但是编译是终会有这样的错误提示： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ucos_ii.c:24:21: 致命错误： ucos_ii.h：没有那个文件或目录 编译中断。</span></code></pre></td></tr></table></div></figure></notextile></div> 不清楚是什么问题，明明有那个文件，就是提示不存在。</p>]]></content>
   </entry>
   
 </feed>

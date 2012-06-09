@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TC | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/tc/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:46:22+08:00</updated>
+  <updated>2012-06-09T20:58:41+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -25,25 +25,20 @@
 </ol>
 <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
 &lt;1&gt;添加partner源：
-{% codeblock %}
-sudo add-apt-repository &quot;deb http://archive.canonical.com/u    buntu maverick partner&quot; 
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository &quot;deb http://archive.canonical.com/u    buntu maverick partner&quot;</span></code></pre></td></tr></table></div></figure></notextile></div>
 &lt;2&gt;安装JRE
-{% codeblock %}
-sudo apt-get install sun-java6-jre sun-java6-plugin
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;3&gt;安装JDK
-{% codeblock %} 
-sudo apt-get install sun-java6-jdk sun-java6-plugin
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;4&gt;查看版本
-{% codeblock %} 
-java -version
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure></notextile></div> 
 &lt;5&gt;设为默认JAVA	
-{% codeblock %} 
-sudo update-alternatives --config java
-{% endcodeblock %} 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure></notextile></div> 
 
 2.DOWNLOAD THE TC ARENA
 &lt;a href=&quot;http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp&quot;&gt;
