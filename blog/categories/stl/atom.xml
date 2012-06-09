@@ -4,7 +4,7 @@
   <title><![CDATA[Category: STL | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/stl/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:31:31+08:00</updated>
+  <updated>2012-06-09T16:45:16+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -20,22 +20,14 @@
     <id>http://luoluo.github.com/blog/2012/05/12/sort</id>
     <content type="html"><![CDATA[<h4 id="stl">STL中最常用的函数之一，排序的神器。</h4>
 <p>###sort
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>function sort.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
-</span><span class='line'><span class="k">template</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span> <span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">template</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span> <span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock function sort.cpp %}</p>
+<algorithm>
+template &lt;class RandomAccessIterator&gt;
+  void sort ( RandomAccessIterator first, RandomAccessIterator last );
+
+template &lt;class RandomAccessIterator, class Compare&gt;
+  void sort ( RandomAccessIterator first, RandomAccessIterator last, Compare comp );
+{% endcodeblock %}
 ###function
 &gt;Sort elements in range
 &gt;Sorts the elements in the range [first,last) into ascending order.
@@ -54,78 +46,43 @@
 &gt;none
 
 ###Example
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.cpp</span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">// sort algorithm example</span>
-</span><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;vector&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">bool</span> <span class="n">myfunction</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">struct</span> <span class="n">myclass</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">j</span><span class="p">);}</span>
-</span><span class='line'><span class="p">}</span> <span class="n">myobject</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span>               <span class="c1">// 32 71 12 45 26 80 53 33</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using default comparison (operator &amp;lt;):</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>           <span class="c1">//(12 32 45 71)26 80 53 33</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using function as comp</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myfunction</span><span class="p">);</span> <span class="c1">// 12 32 45 71(26 33 53 80)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using object as comp</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myobject</span><span class="p">);</span>     <span class="c1">//(12 26 32 33 45 53 71 80)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// print out content:</span>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot;myvector contains:&quot;</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">it</span><span class="o">=</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">endl</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock example.cpp%}
+// sort algorithm example
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+bool myfunction (int i,int j) { return (i&lt;j); }
+
+struct myclass {
+  bool operator() (int i,int j) { return (i&lt;j);}
+} myobject;
+
+int main () {
+  int myints[] = {32,71,12,45,26,80,53,33};
+  vector<int> myvector (myints, myints+8);               // 32 71 12 45 26 80 53 33
+  vector<int>::iterator it;
+
+  // using default comparison (operator &lt;):
+  sort (myvector.begin(), myvector.begin()+4);           //(12 32 45 71)26 80 53 33
+
+  // using function as comp
+  sort (myvector.begin()+4, myvector.end(), myfunction); // 12 32 45 71(26 33 53 80)
+
+  // using object as comp
+  sort (myvector.begin(), myvector.end(), myobject);     //(12 26 32 33 45 53 71 80)
+
+  // print out content:
+  cout &lt;&lt; "myvector contains:";
+  for (it=myvector.begin(); it!=myvector.end(); ++it)
+    cout &lt;&lt; " " &lt;&lt; *it;
+
+  cout &lt;&lt; endl;
+
+  return 0;
+}
+{% endcodeblock %}
 
 ###Output:
 &gt;myvector contains: 12 26 32 33 45 53 71 80
@@ -144,22 +101,15 @@
     <id>http://luoluo.github.com/blog/2012/05/09/next-permutation</id>
     <content type="html"><![CDATA[<h3 id="tc">做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
 <p>##next_permutation
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>function fun.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'> <span class="k">template</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
-</span><span class='line'>                         <span class="n">BidirectionalIterator</span> <span class="n">last</span> <span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">template</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
-</span><span class='line'>                         <span class="n">BidirectionalIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock function fun.cpp %}
+ template &lt;class BidirectionalIterator&gt;
+  bool next_permutation (BidirectionalIterator first,
+                         BidirectionalIterator last );</p>
+
+<p>template &lt;class BidirectionalIterator, class Compare&gt;
+  bool next_permutation (BidirectionalIterator first,
+                         BidirectionalIterator last, Compare comp);
+{% endcodeblock %}
 ###Transform range to next permutation
 &gt;Rearranges the elements in the range [first, last) into the lexicographically next greater permutation of elements. The comparisons of individual elements are performed using either operator&lt; for the first version, or comp for the second.</p>
 
@@ -185,42 +135,25 @@ Comparison function object that, taking two values of the same type than those c
 </blockquote>
 
 <h3 id="example">Example</h3>
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>next_permutation tset.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">algorithm</span><span class="o">&gt;&lt;/</span><span class="n">iostream</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">cout</span> <span class="err">« “</span><span class="n">The</span> <span class="mi">3</span><span class="o">!</span> <span class="n">possible</span> <span class="n">permutations</span> <span class="n">with</span> <span class="mi">3</span> <span class="nl">elements:</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">do</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">cout</span> <span class="err">« </span><span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="err">« ”</span> <span class="err">”</span> <span class="err">« </span><span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="err">« ”</span> <span class="err">”</span> <span class="err">« </span><span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="err">« </span><span class="n">endl</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>{% codeblock next_permutation tset.cpp %}
+#include <iostream>
+#include <algorithm>
+using namespace std;</algorithm></iostream></p>
+
+<p>int main () {
+  int myints[] = {1,2,3};</p>
+
+<p>cout « “The 3! possible permutations with 3 elements:\n”;</p>
+
+<p>sort (myints,myints+3);</p>
+
+<p>do {
+    cout « myints[0] « ” ” « myints[1] « ” ” « myints[2] « endl;
+  } while ( next_permutation (myints,myints+3) );</p>
+
+<p>return 0;
+}
+{% endcodeblock %}
 ###Output:
 The 3! possible permutations with 3 elements:</p>
 

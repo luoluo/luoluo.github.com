@@ -4,7 +4,7 @@
   <title><![CDATA[Category: LinuxBasic | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linuxbasic/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:31:31+08:00</updated>
+  <updated>2012-06-09T16:45:16+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -22,33 +22,24 @@
 <p>我所用的有效的折叠方案：
 ###<code>set menthod=manual</code>
 对于代码： <br />
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock example.c %}
+#include <stdio.h>
+int main()
+{
+	printf("Hello World\n");
+	return 0;
+}     
+{% endcodeblock %}
 #####使用`Esc + Shift + v`进入 visual 模式
 #####然后`number + j`选定要折叠的行
 #####使用`s + f`折叠选定的行
 #####展开折叠`空格`
 ####折后效果：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'><span class="o">+--</span>  <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">------------------------------------------------------------</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock foldedExample.c %}
+#include <stdio.h>
+int main()
++--  4 行: {------------------------------------------------------------
+{% endcodeblock %}
 ####打开折叠`z+o`
 ####打开文件中所有折叠`z+O`
 ####删除一个折叠`z+e` 
@@ -76,51 +67,64 @@ and to mark the end of the folder.   </p>
 <!--more-->
 x.Z
 压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+compress xx
+{% endcodeblock %}
 解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+compress -d xx.Z
+{% endcodeblock %}</p>
 
 <p>x.gz2
 压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+bzip2 -z xx
+{% endcodeblock %}
 解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+bzip2 -d xx.zp2
+{% endcodeblock %}
 查看压缩文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+bzcat xx.zp2
+{% endcodeblock %}</p>
 
 <p>x.tar
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+tar [-zxcvfppP]
+{% endcodeblock %}
 压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+tar -cvf xx
+{% endcodeblock %}
 解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+tar -xvf xx.tar
+{% endcodeblock %}</p>
 
 <p>xx.tar.gz
 压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+tar -zcvf xx
+{% endcodeblock %}
 解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+tar -xcvf xx.tar.gz
+{% endcodeblock %}</p>
 
 <p>xx.bz
 压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+gzip  xx
+{% endcodeblock %}
 解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+gzip -d xx.gz
+{% endcodeblock %}
 查看压缩文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+zcat xx.gz
+{% endcodeblock %}</p>
 
 <p>最后意外发现vim命令模式下x有delete作用。
 今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
@@ -135,49 +139,40 @@ x.Z
     <link href="http://luoluo.github.com/blog/2012/03/26/alias-li-qi"/>
     <updated>2012-03-26T14:33:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/26/alias-li-qi</id>
-    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
-</span><span class='line'>使用目的：简化指令，提高指令输入效率
-</span><span class='line'>使用规则：
-</span><span class='line'>alias AliasName=’NameToBeSimpler’   //注意：等号前后不允许空格。
-</span><span class='line'>unalias AliasName=’NameToBeSimpler’  //取消以上的别名设置 
-</span><span class='line'>	举例：
-</span><span class='line'>alias rg=’rake generate’
-</span><span class='line'>此时在命令行下输入
-</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div>
+    <content type="html"><![CDATA[<p>{% codeblock %}
+适用场合：惯用指令很长
+使用目的：简化指令，提高指令输入效率
+使用规则：
+alias AliasName=’NameToBeSimpler’   //注意：等号前后不允许空格。
+unalias AliasName=’NameToBeSimpler’  //取消以上的别名设置 
+	举例：
+alias rg=’rake generate’
+此时在命令行下输入
+rg 与 rake generate 作用一致
+{% endcodeblock %}
 <!--more-->	
 按照以上的设置在重新开机后，输入
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
-</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+lo@lo:/etc$ rg
+rg：找不到命令
+{% endcodeblock %}
 说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+lo@lo: vim ~/.bashrc
+{% endcodeblock %}
 此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+lo@lo:source ~/.bashrc 
+{% endcodeblock %}
 下面列一下我用的alias
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg=’rake generate’
-</span><span class='line'>alias rd=’rake deploy’
-</span><span class='line'>alias update=’sudo apt-get update’
-</span><span class='line'>alias ..=’cd ..’ #据说是死罪
-</span><span class='line'>alias df=’df -h’  #以M为单位查看磁盘空间
-</span><span class='line'>alias is=’sudo apt-get install’</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+alias rg=’rake generate’
+alias rd=’rake deploy’
+alias update=’sudo apt-get update’
+alias ..=’cd ..’ #据说是死罪
+alias df=’df -h’  #以M为单位查看磁盘空间
+alias is=’sudo apt-get install’ 
+{% endcodeblock %}</p>
 
 <p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。		</p>
 ]]></content>

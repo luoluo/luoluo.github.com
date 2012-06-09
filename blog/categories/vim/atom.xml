@@ -4,7 +4,7 @@
   <title><![CDATA[Category: VIM | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:31:31+08:00</updated>
+  <updated>2012-06-09T16:45:16+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -22,33 +22,24 @@
 <p>我所用的有效的折叠方案：
 ###<code>set menthod=manual</code>
 对于代码： <br />
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock example.c %}
+#include <stdio.h>
+int main()
+{
+	printf("Hello World\n");
+	return 0;
+}     
+{% endcodeblock %}
 #####使用`Esc + Shift + v`进入 visual 模式
 #####然后`number + j`选定要折叠的行
 #####使用`s + f`折叠选定的行
 #####展开折叠`空格`
 ####折后效果：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'><span class="o">+--</span>  <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">------------------------------------------------------------</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock foldedExample.c %}
+#include <stdio.h>
+int main()
++--  4 行: {------------------------------------------------------------
+{% endcodeblock %}
 ####打开折叠`z+o`
 ####打开文件中所有折叠`z+O`
 ####删除一个折叠`z+e` 

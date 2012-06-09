@@ -4,7 +4,7 @@
   <title><![CDATA[Category: BackYard | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/backyard/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:31:31+08:00</updated>
+  <updated>2012-06-09T16:45:16+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -21,45 +21,44 @@
     <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
 
 <h3 id="graphviz">Graphviz:</h3>
-<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
+<p>{% blockquote %}
+AT&amp;T Labs Tools for viewing and interacting with graph diagrams.
+Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.
+{% endblockquote %}
 <strong>DOT</strong>
-<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
+{% blockquote %}
+DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.
+{% endblockquote %}
 ####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
 * 有向
 * 无向</p>
 
 <h3 id="br">无向图：<br /></h3>
 <p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
-</span><span class='line'>	a – b – c;
-</span><span class='line'>	b – d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
+{% codeblock Undirected graph test2 file %}
+graph graphName{
+	a – b – c;
+	b – d;
+}
+{% endcodeblock %} 
+{% img http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png 150 250 %}</p>
 
 <h3 id="br-1">有向图：<br /></h3>
 <p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
-</span><span class='line'>	a -&gt; b -&gt; c;
-</span><span class='line'>	b -&gt; d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
+{% codeblock Directed graph test2 file %}
+digraph graphName{
+	a -&gt; b -&gt; c;
+	b -&gt; d;
+}
+{% endcodeblock %} 
+{% img http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png 150 250%}</p>
 
 <h3 id="section">修改样式：</h3>
 <p>在花括号内添加边和节点的定义
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape=”record”];
-</span><span class='line'>edge [style=”dashed”];</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %} 
+node [shape=”record”];
+edge [style=”dashed”];
+{% endcodeblock %} 
 #####此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></p>
 ]]></content>
   </entry>
