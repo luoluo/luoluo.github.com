@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T17:33:52+08:00</updated>
+  <updated>2012-06-09T17:36:30+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -26,13 +26,11 @@
 那么对于更多个参与者，怎么处理，只需对上述过程拓展，即得到通解：
 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案：
 第i个人对k部分的$x_y$估价为：
+$\sum$
 $$
-\begin{align}
-\mbox{Union: } &amp; A\cup B = {x\mid x\in A \mbox{ or } x\in B} <br />
-\mbox{Concatenation: } &amp; A\circ B  = {xy\mid x\in A \mbox{ and } y\in B} <br />
-\mbox{Star: } &amp; A^\star  = {x<em>1x</em>2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A} <br />
-\end{align}
+\sum
 $$</p>
+
 ]]></content>
   </entry>
   
