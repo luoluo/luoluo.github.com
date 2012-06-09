@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:54:03+08:00</updated>
+  <updated>2012-06-09T17:11:58+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,57 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Graphviz &amp; DOT]]></title>
-    <link href="http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot"/>
-    <updated>2012-05-09T18:29:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot</id>
-    <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
-
-<h3 id="graphviz">Graphviz:</h3>
-<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
-<strong>DOT</strong>
-<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
-####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
-* 有向
-* 无向</p>
-
-<h3 id="br">无向图：<br /></h3>
-<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
-</span><span class='line'>	a – b – c;
-</span><span class='line'>	b – d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
-
-<h3 id="br-1">有向图：<br /></h3>
-<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
-</span><span class='line'>	a -&gt; b -&gt; c;
-</span><span class='line'>	b -&gt; d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
-
-<h3 id="section">修改样式：</h3>
-<p>在花括号内添加边和节点的定义
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape=”record”];
-</span><span class='line'>edge [style=”dashed”];</span></code></pre></td></tr></table></div></figure></notextile></div> 
-#####此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[TC at Linux]]></title>
@@ -280,27 +229,64 @@ https://bugs.launchpad.net
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ubuntu 无线路由问题]]></title>
-    <link href="http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti"/>
-    <updated>2012-03-23T01:51:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/03/23/ubuntu-wu-xian-lu-you-wen-ti</id>
-    <content type="html"><![CDATA[<p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
+    <title type="html"><![CDATA[Alias 利器]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/26/alias-li-qi"/>
+    <updated>2012-03-26T14:33:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/26/alias-li-qi</id>
+    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
+</span><span class='line'>使用目的：简化指令，提高指令输入效率
+</span><span class='line'>使用规则：
+</span><span class='line'>alias AliasName=’NameToBeSimpler’   //注意：等号前后不允许空格。
+</span><span class='line'>unalias AliasName=’NameToBeSimpler’  //取消以上的别名设置 
+</span><span class='line'>	举例：
+</span><span class='line'>alias rg=’rake generate’
+</span><span class='line'>此时在命令行下输入
+</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div>
+<!--more-->	
+按照以上的设置在重新开机后，输入
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
+</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div>
+说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+下面列一下我用的alias
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg=’rake generate’
+</span><span class='line'>alias rd=’rake deploy’
+</span><span class='line'>alias update=’sudo apt-get update’
+</span><span class='line'>alias ..=’cd ..’ #据说是死罪
+</span><span class='line'>alias df=’df -h’  #以M为单位查看磁盘空间
+</span><span class='line'>alias is=’sudo apt-get install’</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
-
-<!--more-->
-<blockquote>
-无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
-你可以把路由的频道改一下，或把网卡的地区改为日本也行。
-
-笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
-</blockquote>
-
-<p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
-
-<p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
-
-<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
+<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。		</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Find 命令的使用]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong"/>
+    <updated>2012-03-26T12:55:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong</id>
+    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。</p>
 ]]></content>
   </entry>
   
