@@ -4,7 +4,7 @@
   <title><![CDATA[LOG.02]]></title>
   <link href="http://luoluo.github.com/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T16:21:05+08:00</updated>
+  <updated>2012-06-09T16:23:01+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -18,67 +18,55 @@
     <link href="http://luoluo.github.com/blog/2012/05/18/floding-in-vim"/>
     <updated>2012-05-18T12:36:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/18/floding-in-vim</id>
-    <content type="html"><![CDATA[<h5>对于结构复杂代码，VIM折叠功能对于思路清晰化、代码结构可读化，均有奇效。</h5>
+    <content type="html"><![CDATA[<h5 id="vim">对于结构复杂代码，VIM折叠功能对于思路清晰化、代码结构可读化，均有奇效。</h5>
+<p>我所用的有效的折叠方案：
+###<code>set menthod=manual</code>
+对于代码：   </p>
 
-<p>我所用的有效的折叠方案：</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>example.c </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h3><code>set menthod=manual</code></h3>
+<h5 id="esc--shift--v-visual-">使用<code>Esc + Shift + v</code>进入 visual 模式</h5>
+<p>#####然后<code>number + j</code>选定要折叠的行
+#####使用<code>s + f</code>折叠选定的行
+#####展开折叠<code>空格</code>
+####折后效果：</p>
 
-<p>对于代码：</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>foldedExample.c </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line"><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class="line"><span class="o">+--</span>  <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">------------------------------------------------------------</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>example.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<h4 id="zo">打开折叠<code>z+o</code></h4>
+<p>####打开文件中所有折叠<code>z+O</code>
+####删除一个折叠<code>z+e</code> 
+####删除文件中所折叠<code>z+e</code> 
+####折叠不会被写入到文件里，如果使用<code>cat</code> <code>less</code>查看代码，代码将以无任何折叠的方式显示。</p>
 
-
-<h5>使用<code>Esc + Shift + v</code>进入 visual 模式</h5>
-
-<h5>然后<code>number + j</code>选定要折叠的行</h5>
-
-<h5>使用<code>s + f</code>折叠选定的行</h5>
-
-<h5>展开折叠<code>空格</code></h5>
-
-<h4>折后效果：</h4>
-
-<figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'><span class="o">+--</span>  <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">------------------------------------------------------------</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>打开折叠<code>z+o</code></h4>
-
-<h4>打开文件中所有折叠<code>z+O</code></h4>
-
-<h4>删除一个折叠<code>z+e</code></h4>
-
-<h4>删除文件中所折叠<code>z+e</code></h4>
-
-<h4>折叠不会被写入到文件里，如果使用<code>cat</code> <code>less</code>查看代码，代码将以无任何折叠的方式显示。</h4>
-
-<blockquote><p>A folder is just a tag which tells vim to display something as a folder. So it is also possible to write a file with folders.
+<blockquote>
+  <p>A folder is just a tag which tells vim to display something as a folder. So it is also possible to write a file with folders.
 To mark the start of a folder just use for example in a comment of a source file)
-and to mark the end of the folder.</p></blockquote>
+and to mark the end of the folder.   </p>
+</blockquote>
 
-<h5><a href="http://vimdoc.sourceforge.net/htmldoc/fold.html">ForMore</a></h5>
-
-<h5><a href="https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun">Awesome</a></h5>
+<h5 id="formorehttpvimdocsourceforgenethtmldocfoldhtml"><a href="http://vimdoc.sourceforge.net/htmldoc/fold.html">ForMore</a></h5>
+<p>#####<a href="https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun">Awesome</a></p>
 ]]></content>
   </entry>
   
@@ -96,130 +84,128 @@ and to mark the end of the folder.</p></blockquote>
     <link href="http://luoluo.github.com/blog/2012/05/12/sort"/>
     <updated>2012-05-12T13:44:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/12/sort</id>
-    <content type="html"><![CDATA[<h4>STL中最常用的函数之一，排序的神器。</h4>
+    <content type="html"><![CDATA[<h4 id="stl">STL中最常用的函数之一，排序的神器。</h4>
+<p>###sort</p>
 
-<h3>sort</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>function sort.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
+</span><span class="line"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&gt;</span>
+</span><span class="line">  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
+</span><span class="line">  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span> <span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>function sort.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
-</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span> <span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span> <span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>function</h3>
-
-<blockquote><p>Sort elements in range
+<h3 id="function">function</h3>
+<blockquote>
+  <p>Sort elements in range
 Sorts the elements in the range [first,last) into ascending order.</p>
 
-<p>The elements are compared using operator&lt; for the first version, and comp for the second.</p>
+  <p>The elements are compared using operator&lt; for the first version, and comp for the second.</p>
 
-<p>Elements that would compare equal to each other are not guaranteed to keep their original relative order.</p>
+  <p>Elements that would compare equal to each other are not guaranteed to keep their original relative order.</p>
 
-<h3>Parameters</h3>
-
-<p>first, last
+  <h3 id="parameters">Parameters</h3>
+  <p>first, last
 Random-Access iterators to the initial and final positions of the sequence to be sorted. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
 comp
 Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument goes before the second argument in the specific strict weak ordering it defines, and false otherwise.</p>
 
-<h3>Return value</h3>
+  <h3 id="return-value">Return value</h3>
+  <p>none</p>
+</blockquote>
 
-<p>none</p></blockquote>
+<h3 id="example">Example</h3>
 
-<h3>Example</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>example.cpp</span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">// sort algorithm example</span>
+</span><span class="line"><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;vector&gt;</span>
+</span><span class="line"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">bool</span> <span class="n">myfunction</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="k">struct</span> <span class="n">myclass</span> <span class="p">{</span>
+</span><span class="line">  <span class="kt">bool</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);}</span>
+</span><span class="line"><span class="p">}</span> <span class="n">myobject</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
+</span><span class="line">  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span>               <span class="c1">// 32 71 12 45 26 80 53 33</span>
+</span><span class="line">  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">// using default comparison (operator &lt;):</span>
+</span><span class="line">  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>           <span class="c1">//(12 32 45 71)26 80 53 33</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">// using function as comp</span>
+</span><span class="line">  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myfunction</span><span class="p">);</span> <span class="c1">// 12 32 45 71(26 33 53 80)</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">// using object as comp</span>
+</span><span class="line">  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myobject</span><span class="p">);</span>     <span class="c1">//(12 26 32 33 45 53 71 80)</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">// print out content:</span>
+</span><span class="line">  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;myvector contains:&quot;</span><span class="p">;</span>
+</span><span class="line">  <span class="k">for</span> <span class="p">(</span><span class="n">it</span><span class="o">=</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+</span><span class="line">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>example.cpp</span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">// sort algorithm example</span>
-</span><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;vector&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">bool</span> <span class="n">myfunction</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">struct</span> <span class="n">myclass</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">);}</span>
-</span><span class='line'><span class="p">}</span> <span class="n">myobject</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span>               <span class="c1">// 32 71 12 45 26 80 53 33</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using default comparison (operator &lt;):</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>           <span class="c1">//(12 32 45 71)26 80 53 33</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using function as comp</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myfunction</span><span class="p">);</span> <span class="c1">// 12 32 45 71(26 33 53 80)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// using object as comp</span>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myobject</span><span class="p">);</span>     <span class="c1">//(12 26 32 33 45 53 71 80)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// print out content:</span>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;myvector contains:&quot;</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">it</span><span class="o">=</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<h3 id="output">Output:</h3>
+<blockquote>
+  <p>myvector contains: 12 26 32 33 45 53 71 80</p>
+</blockquote>
 
-
-<h3>Output:</h3>
-
-<blockquote><p>myvector contains: 12 26 32 33 45 53 71 80</p></blockquote>
-
-<h3>Complexity</h3>
-
-<blockquote><p>Approximately N*logN comparisons on average (where N is last-first).
-In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p></blockquote>
+<h3 id="complexity">Complexity</h3>
+<blockquote>
+  <p>Approximately N*logN comparisons on average (where N is last-first).
+In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p>
+</blockquote>
 ]]></content>
   </entry>
   
@@ -228,128 +214,125 @@ In the worst case, up to N2, depending on specific sorting algorithm used by lib
     <link href="http://luoluo.github.com/blog/2012/05/09/next-permutation"/>
     <updated>2012-05-09T22:06:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/next-permutation</id>
-    <content type="html"><![CDATA[<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
+    <content type="html"><![CDATA[<h3 id="tc">做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
+<p>##next_permutation</p>
 
-<h2>next_permutation</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>function fun.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"> <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="o">&gt;</span>
+</span><span class="line">  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
+</span><span class="line">                         <span class="n">BidirectionalIterator</span> <span class="n">last</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
+</span><span class="line">  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
+</span><span class="line">                         <span class="n">BidirectionalIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>function fun.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'> <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
-</span><span class='line'>                         <span class="n">BidirectionalIterator</span> <span class="n">last</span> <span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span>
-</span><span class='line'>                         <span class="n">BidirectionalIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
+<h3 id="transform-range-to-next-permutation">Transform range to next permutation</h3>
+<blockquote>
+  <p>Rearranges the elements in the range [first, last) into the lexicographically next greater permutation of elements. The comparisons of individual elements are performed using either operator&lt; for the first version, or comp for the second.</p>
+</blockquote>
 
+<blockquote>
+  <p>A permutation is each one of the N! possible arrangements the elements can take (where N is the number of elements in the range). Different permutations can be ordered according on how they compare lexicographicaly to each other; The first such-sorted possible permutation (the one that would compare lexicographically smaller to all other permutations) is the one which has all its elements sorted in ascending order, and the largest has all its elements sorted in descending order.</p>
+</blockquote>
 
-<h3>Transform range to next permutation</h3>
+<blockquote>
+  <p>If the function can determine the next higher permutation, it rearranges the elements as such and returns true. If that was not possible (because it is already at the largest), it rearranges the elements according to the first permutation (sorted in ascending order) and returns false.</p>
+</blockquote>
 
-<blockquote><p>Rearranges the elements in the range [first, last) into the lexicographically next greater permutation of elements. The comparisons of individual elements are performed using either operator&lt; for the first version, or comp for the second.</p>
-
-<p>A permutation is each one of the N! possible arrangements the elements can take (where N is the number of elements in the range). Different permutations can be ordered according on how they compare lexicographicaly to each other; The first such-sorted possible permutation (the one that would compare lexicographically smaller to all other permutations) is the one which has all its elements sorted in ascending order, and the largest has all its elements sorted in descending order.</p>
-
-<p>If the function can determine the next higher permutation, it rearranges the elements as such and returns true. If that was not possible (because it is already at the largest), it rearranges the elements according to the first permutation (sorted in ascending order) and returns false.</p></blockquote>
-
-<h3>Parameters</h3>
-
-<blockquote><p>first, last
+<h3 id="parameters">Parameters</h3>
+<blockquote>
+  <p>first, last
 Bidirectional iterators to the initial and final positions of the sequence. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
 comp
-Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument is to be considered less than the second argument.</p></blockquote>
+Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument is to be considered less than the second argument.</p>
+</blockquote>
 
-<h3>Return value</h3>
+<h3 id="return-value">Return value</h3>
+<blockquote>
+  <p>true if the function could rearrange the object as a lexicographicaly greater permutation. Otherwise, the function returns false to indicate that the arrangement is not greater than the previous, but the lowest possible (sorted in ascending order).</p>
+</blockquote>
 
-<blockquote><p>true if the function could rearrange the object as a lexicographicaly greater permutation. Otherwise, the function returns false to indicate that the arrangement is not greater than the previous, but the lowest possible (sorted in ascending order).</p></blockquote>
+<h3 id="example">Example</h3>
 
-<h3>Example</h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>next_permutation tset.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class="line"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The 3! possible permutations with 3 elements:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>next_permutation tset.cpp </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The 3! possible permutations with 3 elements:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">do</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Output:</h3>
-
+<h3 id="output">Output:</h3>
 <p>The 3! possible permutations with 3 elements:</p>
 
-<p>1 2 3 <br>
-1 3 2 <br>
-2 1 3 <br>
-2 3 1 <br>
-3 1 2 <br>
-3 2 1 <br></p>
+<p>1 2 3 <br />
+1 3 2 <br />
+2 1 3 <br />
+2 3 1 <br />
+3 1 2 <br />
+3 2 1 <br />
+####注意
+当输出{1, 1, 1}的全排列时只输出一组“1 1 1”；
+###上升全排列
+  <code>int myints[] = {1,2,3};</code>
+输出为：<br />
+1 2 3 <br />
+1 3 2 <br />
+2 1 3 <br />
+2 3 1 <br />
+3 1 2 <br />
+3 2 1 <br /></p>
 
-<h4>注意</h4>
+<p><code>int myints[] = {3,2,1};</code>
+输出为：<br />
+3 2 1<br /></p>
 
-<p>当输出{1, 1, 1}的全排列时只输出一组“1 1 1”；</p>
+<p><code>int myints[] = {2,3,1};</code>
+输出为：<br />
+2 3 1 <br />
+3 1 2 <br />
+3 2 1 <br />
+####所以想得到给定数组元素的全排列，首先要<a href="http://luoluo.github.com/blog/2012/05/12/sort/">sort</a>为单调上升序列。
+###Complexity
+&gt;At most, performs one half as many swaps as the number of elements in the range.</p>
 
-<h3>上升全排列</h3>
-
-<p>  <code>int myints[] = {1,2,3};</code>
-输出为：<br>
-1 2 3 <br>
-1 3 2 <br>
-2 1 3 <br>
-2 3 1 <br>
-3 1 2 <br>
-3 2 1 <br></p>
-
-<p>  <code>int myints[] = {3,2,1};</code>
-输出为：<br>
-3 2 1<br></p>
-
-<p>  <code>int myints[] = {2,3,1};</code>
-输出为：<br>
-2 3 1 <br>
-3 1 2 <br>
-3 2 1 <br></p>
-
-<h4>所以想得到给定数组元素的全排列，首先要<a href="http://luoluo.github.com/blog/2012/05/12/sort/">sort</a>为单调上升序列。</h4>
-
-<h3>Complexity</h3>
-
-<blockquote><p>At most, performs one half as many swaps as the number of elements in the range.</p></blockquote>
 ]]></content>
   </entry>
   
@@ -358,71 +341,55 @@ Comparison function object that, taking two values of the same type than those c
     <link href="http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot"/>
     <updated>2012-05-09T18:29:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot</id>
-    <content type="html"><![CDATA[<h4>脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
+    <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
 
-<h3>Graphviz:</h3>
-
-<blockquote><p>AT&T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
-
-
+<h3 id="graphviz">Graphviz:</h3>
+<blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br />Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
 <p><strong>DOT</strong></p>
-
 <blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
+<p>####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
+* 有向
+* 无向</p>
 
-
-<h4>简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：</h4>
-
-<ul>
-<li>有向</li>
-<li>无向</li>
-</ul>
-
-
-<h3>无向图：<br></h3>
-
+<h3 id="br">无向图：<br /></h3>
 <p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：</p>
 
-<figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
-</span><span class='line'>  a -- b -- c;
-</span><span class='line'>  b -- d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Undirected graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">graph graphName{
+</span><span class="line">	a -- b -- c;
+</span><span class="line">	b -- d;
+</span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250" /></p>
 
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
+<h3 id="br-1">有向图：<br /></h3>
+<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：</p>
 
-<h3>有向图：<br></h3>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Directed graph test2 file </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">digraph graphName{
+</span><span class="line">	a -&gt; b -&gt; c;
+</span><span class="line">	b -&gt; d;
+</span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>同样是DOT简单的应用。只需用“- >”来表示节点间有关系的。例子如下：</p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250" /></p>
 
-<figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
-</span><span class='line'>  a -> b -> c;
-</span><span class='line'>  b -> d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
-
-<h3>修改样式：</h3>
-
+<h3 id="section">修改样式：</h3>
 <p>在花括号内添加边和节点的定义</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape="record"];
-</span><span class='line'>edge [style="dashed"];</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">node [shape="record"];
+</span><span class="line">edge [style="dashed"];</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h5>此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></h5>
+<h5 id="linkhttpwwwicodeitorge4bdbfe794a8graphvize7bb98e588b6e6b581e7a88be59bbe">此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></h5>
 ]]></content>
   </entry>
   
@@ -438,9 +405,10 @@ Comparison function object that, taking two values of the same type than those c
 <p>当我呆在一个小空间里太久，结果产生错觉，以为自己掌握了整个人生。触摸世界成了坐井观天，甚至根本不会去想世界的五彩。越来越发觉世界真的好大好大，琦丽无比，就如梦中的情人，朦胧的美感，唯有用心去细细体味。越来越觉得人可以活得很丰富很丰富，有时，我们可以像一只目不转睛般伏猎几日的非洲狮；有时，我们可以像一只冲破牢笼回归自然的幼鸟。</p>
 
 <p>长大了么？开始觉得人要学会适应孤独，“一个人要活得像一支队伍”。
-还记得那“的叔”，满脸微笑兴奋的指着我说：“这么小耍啥子朋友”。一边指给我们乘车的方向，而后又对我们说“有没有十八岁？”。我笑着想小鸡啄米般点头&#8230;</p>
+还记得那“的叔”，满脸微笑兴奋的指着我说：“这么小耍啥子朋友”。一边指给我们乘车的方向，而后又对我们说“有没有十八岁？”。我笑着想小鸡啄米般点头…</p>
 
-<p>记录一下短期到计划，充实的暑假前的生活，啃书，听歌，给亲人朋友问候，生活再规律一点点&#8230;</p>
+<p>记录一下短期到计划，充实的暑假前的生活，啃书，听歌，给亲人朋友问候，生活再规律一点点…</p>
+
 ]]></content>
   </entry>
   
@@ -465,92 +433,76 @@ Comparison function object that, taking two values of the same type than those c
     <updated>2012-04-12T20:11:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya</id>
     <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下：
-文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。</p>
-
+文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。
 <!--more-->
-
-
-<p>x.Z
+x.Z
 压缩命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>解压命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>x.gz2
 压缩命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>解压命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>查看压缩文件</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>x.tar</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>压缩命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>解压命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>xx.tar.gz
 压缩命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>解压命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>xx.bz
 压缩命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>解压命令</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>查看压缩文件</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>最后意外发现vim命令模式下x有delete作用。
 今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
@@ -579,16 +531,23 @@ Comparison function object that, taking two values of the same type than those c
 <p>身边的朋友要么游戏的醉生梦死，要么开始做各种项目。两边都有人来拉我入伙，真有点犹犹豫豫，不知所措。又是一年银杏黄，朋友们拉我做的项目各种应
 用、网络、加密…… 一时心动的有，可想一下要做大半年，还是摇摇头，微笑的说不了。 很久前就决定了要做什么，可是现在要做的真的还有很多。。  要从数学（算法）和计算机系统（包含硬件）两方面深入。 总觉的要先投入时间，把操作系统做好才有希望做出点有用的东东。还觉得关键时候的较量就是在数学上的较量，抑或思维上的较量。</p>
 
-<p>周末的时候，睡意朦胧，接到阳仔的电话，叫我去考试。手机上赫然写着8：5X，顿时清醒，飞奔下床，带着昨夜收拾好的东西，RUSH。路上不忘打电话问下一夜火车的她到没。放心后，到教室，听力开始放了。冷静的拿出东西，装电池，调频……不知多久没有早读，念英语了&#8230;.做起来没有想象中那么不顺手，感觉蛮简单的，由于无前期准备付出，所以没有报希望，这段时间在忙其他的。 做起来也很轻松的。    时间默默流淌，老师一句“还有10分钟”，把我叫醒，从投入做题中，从梦回高三……    还有两篇作文作文……   作文还是答题卡填写答案的我开始纠结，是写作文还是抄写答案。想到可以等老师收的时候拖一下，在10分钟内秒掉两篇“作文”，开始抄答案到答题卡上，刚刚10多题，考试的钟声想起，老师缓缓走过来。50+的选择题还没有开始涂。老师一副公正的表情对着我，“考试 时间到了……”，第一次考试没完成……  增加了人生的阅历了，不过它也深深的刺了我一刀。  英语已变的这么陌生。该拾起来了，毕竟自己还是蛮喜欢的。</p>
+<p>周末的时候，睡意朦胧，接到阳仔的电话，叫我去考试。手机上赫然写着8：5X，顿时清醒，飞奔下床，带着昨夜收拾好的东西，RUSH。路上不忘打电话问下一夜火车的她到没。放心后，到教室，听力开始放了。冷静的拿出东西，装电池，调频……不知多久没有早读，念英语了….做起来没有想象中那么不顺手，感觉蛮简单的，由于无前期准备付出，所以没有报希望，这段时间在忙其他的。 做起来也很轻松的。    时间默默流淌，老师一句“还有10分钟”，把我叫醒，从投入做题中，从梦回高三……    还有两篇作文作文……   作文还是答题卡填写答案的我开始纠结，是写作文还是抄写答案。想到可以等老师收的时候拖一下，在10分钟内秒掉两篇“作文”，开始抄答案到答题卡上，刚刚10多题，考试的钟声想起，老师缓缓走过来。50+的选择题还没有开始涂。老师一副公正的表情对着我，“考试 时间到了……”，第一次考试没完成……  增加了人生的阅历了，不过它也深深的刺了我一刀。  英语已变的这么陌生。该拾起来了，毕竟自己还是蛮喜欢的。</p>
 
 <p>5.1前只有几件事做好就可以了：
-<1>单片机跑起系统
-<2>做几场比赛
-<3>其中考试漂亮点</p>
+&lt;1&gt;单片机跑起系统
+&lt;2&gt;做几场比赛
+&lt;3&gt;其中考试漂亮点</p>
 
-<p><4>母函数|CSAPP的笔记找时间好好写。</p>
+<table>
+  <tbody>
+    <tr>
+      <td>&lt;4&gt;母函数</td>
+      <td>CSAPP的笔记找时间好好写。</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>NEVER STOP PRACTISING
+<p>NEVER STOP PRACTISING 
 NEVER STOP PROGRAMMING</p>
 ]]></content>
   </entry>
@@ -602,42 +561,37 @@ NEVER STOP PROGRAMMING</p>
 
 <p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
 
-<p><1>添加partner源：</p>
+<p>&lt;1&gt;添加partner源：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository "deb http://archive.canonical.com/u    buntu maverick partner"</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo add-apt-repository "deb http://archive.canonical.com/u    buntu maverick partner"</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>&lt;2&gt;安装JRE</p>
 
-<p><2>安装JRE</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure>
+<p>&lt;3&gt;安装JDK</p>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><3>安装JDK</p>
+<p>&lt;4&gt;查看版本</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">java -version</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>&lt;5&gt;设为默认JAVA	</p>
 
-<p><4>查看版本</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
-
-
-<p><5>设为默认JAVA</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>2.DOWNLOAD THE TC ARENA
 <a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
 DOWNLOAD </a></p>
 
 <p>3.CONFIG THE AREAN
-<a href="http://community.topcoder.com/tc?module=Static&d1=applet&d2=plugins"> 插件下载及配置DOWNLOAD </a>
+<a href="http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins"> 插件下载及配置DOWNLOAD </a>
 推荐只使用KawigiEdit插件，该插件易于上手。</p>
 
 <p>4.GET ON THE WAY, &amp; GOOD LUCK!
@@ -652,125 +606,106 @@ DOWNLOAD </a></p>
     <id>http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux</id>
     <content type="html"><![CDATA[<p>天快亮了，反而没有什么倦意，一夜的奋战终见起色，称记忆清晰，做记录，供后车之鉴。开学不久就接到了五一前要交付的任务，4月探头，才逼的自己来做。windows莫名其妙的坏掉，把自己比逼linux这种直接的环境，一直感觉linux环境下自己面对问题，接近点底层，是个不错的选择。可是入门稍有门槛。毕竟文字的信息传递速度要小于图形化。加上自己的惰性，就迟迟未出发。</p>
 
-<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。</p>
-
+<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。
 <!--more-->
+1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
 
-
-<p>1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
-
-<p><1>编译环境：mspgcc
+<p>&lt;1&gt;编译环境：mspgcc
 可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：</p>
-
 <blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
-
-
 <p>也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
-</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+</span><span class="line">bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。</p>
 
-<p><2>写入环境：mspdebug
-在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当<sup>D退出mspdebug后，单片机执行新写入的程序，</sup></p>
+<p>&lt;2&gt;写入环境：mspdebug
+在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当^D退出mspdebug后，单片机执行新写入的程序，</p>
 
 <p>看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
 这是看到了WIKI的提示，</p>
-
 <blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
-
-
 <p>而UBUNTU11.10 即 ONEIRIC。</p>
 
-<p>于是乎：</p>
+<p>于是乎： </p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
-</span><span class='line'>sudo apt-get install mspdebug
-</span><span class='line'>sudo apt-get install msp430mcu
-</span><span class='line'>sudo apt-get install binutils-msp430
-</span><span class='line'>sudo apt-get install gcc-msp430
-</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install msp430-libc
+</span><span class="line">sudo apt-get install mspdebug
+</span><span class="line">sudo apt-get install msp430mcu
+</span><span class="line">sudo apt-get install binutils-msp430
+</span><span class="line">sudo apt-get install gcc-msp430
+</span><span class="line">sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>编译和写入：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
-</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class="line">lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>值得一提的是对端口的设定,这一步应在编译写入前设置：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>并将下表的内容写入其中，:wq</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&quot;0451&quot;,
-</span><span class='line'>ATTRS{idProduct}==&quot;f432&quot;,
-</span><span class='line'>MODE=&quot;0660&quot;, 
-</span><span class='line'>GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">ATTRS{idVendor}==&quot;0451&quot;,
+</span><span class="line">ATTRS{idProduct}==&quot;f432&quot;,
+</span><span class="line">MODE=&quot;0660&quot;, 
+</span><span class="line">GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>为了使刚刚的修改在重启前生效，执行以下语句：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo restart udev</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>这是后把原来那个点过灯的单片机插入电脑，发现执行</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
 在执行了:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
-</span><span class='line'>Erasing...
-</span><span class='line'>Programming...
-</span><span class='line'>Writing  126 bytes to fc00 [section: .text]...
-</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]...
-</span><span class='line'>Done, 158 bytes written
-</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">(mspdebug) prog blink.elf 
+</span><span class="line">Erasing...
+</span><span class="line">Programming...
+</span><span class="line">Writing  126 bytes to fc00 [section: .text]...
+</span><span class="line">Writing   32 bytes to ffe0 [section: .vectors]...
+</span><span class="line">Done, 158 bytes written
+</span><span class="line">(mspdebug) ^D</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。</p>
 
 <p>以下为重点参考站点：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
-</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
-</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+</span><span class="line">http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+</span><span class="line">http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>
@@ -783,11 +718,7 @@ DOWNLOAD </a></p>
     <content type="html"><![CDATA[<p>在浏览博客时看到测试，想起高考的时候的测试，早就忘记结果了，当时也没有好好参考。今天来感，就在两个不同网站测试了下，结果一致的出乎意料————INFJ。</p>
 
 <!--more-->
-
-
-<blockquote><p>Psytopic分析：您的性格类型是“INFJ”(内向+直觉+情感+判断) </p><p>寻求思想、关系、物质等之间的意义和联系。希望了解什么能够激励人，对人有很强的洞察力。有责任心，坚持自己的价值观。对于怎样更好的服务大众有清晰的远景。在对于目标的实现过程中有计划而且果断坚定。 </p><p>INFJ型的人生活在思想的世界里。他们是独立的、有独创性的思想家，具有强烈的感情、坚定的原则和正直的人性。即使面对怀疑，INFJ型的人仍相信自己的看法与决定。他们对自己的评价高于其他的一切，包括流行观点 和存在的权威，这种内在的观念激发着他们的积极性。通常INFJ型的人具有本能的洞察力，能够看到事物更深层的含义。即使他人无法分享他们的热情，但灵感对于他们重要而令人信服。 INFJ型的人忠诚、坚定、富有理想 。他们珍视正直，十分坚定以至达到倔强的地步。因为他们的说服能力，以及对于什么对公共利益最有利有清楚的看法，所以 INFJ型的人会成为伟大的领导者。由于他们的贡献，他们通常会受到尊重或敬佩。因为珍视友谊 和和睦，INFJ型的人喜欢说服别人，使之相信他们的观点是正确的。通过运用嘉许和赞扬，而不是争吵和威胁，他们赢得了他人的合作。他们愿意毫无保留地激励同伴，避免争吵。通常INFJ型的人是深思熟虑的决策者，他 们觉得问题使人兴奋，在行动之前他们通常要仔细地考虑。他们喜欢每次全神贯注于一件事情，这会造成一段时期的专心致志。满怀热情与同情心，INFJ型的人强烈地渴望为他人的幸福做贡献。他们注意其他人的情感和利 益，能够很好地处理复杂的人。INFJ型的人本身具有深厚复杂的性格，既敏感又热切。他们内向，很难被人了解，但是愿意同自己信任的人分享内在的自我。他们往往有一个交往深厚、持久的小规模的朋友圈，在合适的氛 围中能产生充分的个人热情和激情。 </p><p>您适合的领域有：咨询、教育、科研等领域 文化、艺术、设计等</p><p>您适合的职业有：</p><p>· 特殊教育教师<br/>· 建筑设计师<br/>· 培训经理/培训师<br/>· 职业指导顾问<br/>· 心理咨询师<br/>· 网站编辑<br/>· 作家<br/>· 仲裁人<br/>· 人力资源经理<br/>· 事业发展顾问<br/>· 营销人员<br/>· 企业组织发展顾问<br/>· 职位分析人员<br/>· 媒体特约规划师<br/>· 编辑／艺术指导（杂志）<br/>· 口译人员<br/>· 社会科学工作者<br/>· 心理诊疗师<br/>· 大学教师（人文学科、艺术类）<br/>· 心理学、教育学、社会学、哲学及其它领域的研究人员<br/>· 作家<br/>· 诗人<br/>· 剧作家<br/>· 电影编剧<br/>· 电影导演<br/>· 画家<br/>· 雕塑家<br/>· 音乐家<br/>· 艺术顾问<br/>· 设计师</p></blockquote>
-
-
+<blockquote><p>Psytopic分析：您的性格类型是“INFJ”(内向+直觉+情感+判断) </p><p>寻求思想、关系、物质等之间的意义和联系。希望了解什么能够激励人，对人有很强的洞察力。有责任心，坚持自己的价值观。对于怎样更好的服务大众有清晰的远景。在对于目标的实现过程中有计划而且果断坚定。 </p><p>INFJ型的人生活在思想的世界里。他们是独立的、有独创性的思想家，具有强烈的感情、坚定的原则和正直的人性。即使面对怀疑，INFJ型的人仍相信自己的看法与决定。他们对自己的评价高于其他的一切，包括流行观点 和存在的权威，这种内在的观念激发着他们的积极性。通常INFJ型的人具有本能的洞察力，能够看到事物更深层的含义。即使他人无法分享他们的热情，但灵感对于他们重要而令人信服。 INFJ型的人忠诚、坚定、富有理想 。他们珍视正直，十分坚定以至达到倔强的地步。因为他们的说服能力，以及对于什么对公共利益最有利有清楚的看法，所以 INFJ型的人会成为伟大的领导者。由于他们的贡献，他们通常会受到尊重或敬佩。因为珍视友谊 和和睦，INFJ型的人喜欢说服别人，使之相信他们的观点是正确的。通过运用嘉许和赞扬，而不是争吵和威胁，他们赢得了他人的合作。他们愿意毫无保留地激励同伴，避免争吵。通常INFJ型的人是深思熟虑的决策者，他 们觉得问题使人兴奋，在行动之前他们通常要仔细地考虑。他们喜欢每次全神贯注于一件事情，这会造成一段时期的专心致志。满怀热情与同情心，INFJ型的人强烈地渴望为他人的幸福做贡献。他们注意其他人的情感和利 益，能够很好地处理复杂的人。INFJ型的人本身具有深厚复杂的性格，既敏感又热切。他们内向，很难被人了解，但是愿意同自己信任的人分享内在的自我。他们往往有一个交往深厚、持久的小规模的朋友圈，在合适的氛 围中能产生充分的个人热情和激情。 </p><p>您适合的领域有：咨询、教育、科研等领域 文化、艺术、设计等</p><p>您适合的职业有：</p><p>· 特殊教育教师<br />· 建筑设计师<br />· 培训经理/培训师<br />· 职业指导顾问<br />· 心理咨询师<br />· 网站编辑<br />· 作家<br />· 仲裁人<br />· 人力资源经理<br />· 事业发展顾问<br />· 营销人员<br />· 企业组织发展顾问<br />· 职位分析人员<br />· 媒体特约规划师<br />· 编辑／艺术指导（杂志）<br />· 口译人员<br />· 社会科学工作者<br />· 心理诊疗师<br />· 大学教师（人文学科、艺术类）<br />· 心理学、教育学、社会学、哲学及其它领域的研究人员<br />· 作家<br />· 诗人<br />· 剧作家<br />· 电影编剧<br />· 电影导演<br />· 画家<br />· 雕塑家<br />· 音乐家<br />· 艺术顾问<br />· 设计师</p></blockquote>
 <p>测试网址：<a herf="http://www.psytopic.com/" title="http://www.psytopic.com/">MBTJ测试</a></p>
 ]]></content>
   </entry>
@@ -809,95 +740,85 @@ DOWNLOAD </a></p>
     <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
 不少意外惊喜：</p>
 
-<p>1.linux下的资源管理器：</p>
-
+<p>1.linux下的资源管理器：
 <!--more-->
+&lt;1&gt;ps</p>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">ps
+</span><span class="line">a   :选择列出所有程序
+</span><span class="line">u   :列出所有用户程序
+</span><span class="line">x   ;类出所有tty的程序
+</span><span class="line">EG:
+</span><span class="line">lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><1>ps</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ps
-</span><span class='line'>a   :选择列出所有程序
-</span><span class='line'>u   :列出所有用户程序
-</span><span class='line'>x   ;类出所有tty的程序
-</span><span class='line'>EG:
-</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure>
-
-
-<p><2>top</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure>
-
+<p>&lt;2&gt;top                                                                                                                                      <br />
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">lo@lo:~$ top</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
 <p>较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
 
-<p><3>kill</p>
+<p>&lt;3&gt;kill</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID 
-</span><span class='line'>signal:
-</span><span class='line'>-1  :让该PID重新读取它的配置文件
-</span><span class='line'>-9  :杀掉该进程
-</span><span class='line'>-15 :停止该进程
-</span><span class='line'>EG：
-</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">kill -signal PID 
+</span><span class="line">signal:
+</span><span class="line">-1  :让该PID重新读取它的配置文件
+</span><span class="line">-9  :杀掉该进程
+</span><span class="line">-15 :停止该进程
+</span><span class="line">EG：
+</span><span class="line">lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>&lt;4&gt;uname</p>
 
-<p><4>uname</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
-</span><span class='line'>-a  :列出所有的系统信息
-</span><span class='line'>-p  :列出CPU信息 
-</span><span class='line'>-n  :列出主机名
-</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">uname [-apnr]
+</span><span class="line">-a  :列出所有的系统信息
+</span><span class="line">-p  :列出CPU信息 
+</span><span class="line">-n  :列出主机名
+</span><span class="line">-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
-top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。>原来是一个BUG啊。然后获取了两种解决方案：</p>
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：</p>
 
-<p><1>暂时止痛</p>
+<p>&lt;1&gt;暂时止痛</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo service udev stop</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>重启后旧病复发。</p>
 
-<p><2>根治型</p>
+<p>&lt;2&gt;根治型</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
-</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
-</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
-</span><span class='line'>2) Run:
-</span><span class='line'>sudo apt-get update && sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">1) In a terminal, run:
+</span><span class="line">sudo add-apt-repository ppa:jamesodhunt/bug-829980
+</span><span class="line">#This will show you some text and ask you to press return to enable this repository.
+</span><span class="line">2) Run:
+</span><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>而这种根治的方案来源于一个强大的站点：
 https://bugs.launchpad.net
-<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。</p>
+<img src="https://bugs.launchpad.net/@@/launchpad-logo" />这是一个BUG上报，分布式解决的站点。          </p>
 ]]></content>
   </entry>
   
@@ -906,20 +827,21 @@ https://bugs.launchpad.net
     <link href="http://luoluo.github.com/blog/2012/03/29/xie-qi"/>
     <updated>2012-03-29T00:00:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/29/xie-qi</id>
-    <content type="html"><![CDATA[<p><img class="middle" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg/200px-Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg"></p>
+    <content type="html"><![CDATA[<p><img class="middle" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg/200px-Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg" /></p>
 
 <p>要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。</p>
 
-<p>看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着&#8221;入学初&#8221;被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。
-辉一直没有大学的状态，大学的生活根本根本不配他四年的汗水，他没有归属感，慌乱的过着大学生活，然而周遭的一切根本提不起他的兴趣。记忆中的意气风发就是在谈论骑行拉萨了吧。  他热爱旅行，火车，公路，冰川，峡口&#8230;有他的足迹。像大多数人一样，我过上了标准的大学生活，足迹留在寝室和教室之间，以尽量多上课来换取内心的安宁，虽然上课可能只是换个地睡觉、玩手机。  我已沦为大学生活的奴隶，靠游戏、网络、睡觉及偶尔的酒精来麻醉自己的神经，我们害怕闲下来，害怕闲时自己会去思考现在和未来，害怕面对。 靠眼前花花绿绿的屏幕来获取视觉的快感，靠游戏里的胜利、击败对手来获得短暂的“成就感”，靠玩游戏的技艺来赢得他人的尊重&#8230;.</p>
+<p>看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着”入学初”被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。
+辉一直没有大学的状态，大学的生活根本根本不配他四年的汗水，他没有归属感，慌乱的过着大学生活，然而周遭的一切根本提不起他的兴趣。记忆中的意气风发就是在谈论骑行拉萨了吧。  他热爱旅行，火车，公路，冰川，峡口…有他的足迹。像大多数人一样，我过上了标准的大学生活，足迹留在寝室和教室之间，以尽量多上课来换取内心的安宁，虽然上课可能只是换个地睡觉、玩手机。  我已沦为大学生活的奴隶，靠游戏、网络、睡觉及偶尔的酒精来麻醉自己的神经，我们害怕闲下来，害怕闲时自己会去思考现在和未来，害怕面对。 靠眼前花花绿绿的屏幕来获取视觉的快感，靠游戏里的胜利、击败对手来获得短暂的“成就感”，靠玩游戏的技艺来赢得他人的尊重….     </p>
 
 <p>我不敢说这是生活，我不敢说我有生活。写在最前面的话，是给有血气的少年的。</p>
 
 <p>“指点江山，激昂文字”的少年们哪里去了？？每每谈起入学时对一切都像打鸡血那样的日子只会傻傻一笑，就如当初满怀激情的那个人不是你自己。我们怎么比时间变的都快，我们的适应里比变化还快，因为麻木的心对一切只须逆来顺受。我们的快乐由何而来，或则我们是否快乐？？ 快感是否也是欲壑难穷，靠在电脑前疯狂的点击鼠标键盘就能让一个人开心或郁闷几天，我们的感情世界是否有些苍白与廉价。</p>
 
-<p>最近读了季老的《做人与做事》、劳伦斯的传，顿时产生了深深的无知感，感觉自己像是被阉割过的大多数一样。我们是机器工业时代的难民。自然被我们遗忘，我们不知敬畏自然、不知敬畏生命，我们常常目空一切，却不知自己什么都不是。我们不了解人为何而活，或许更为可能的情况是我们根本不会去考虑这个问题，不会有这个问题。</p>
+<p>最近读了季老的《做人与做事》、劳伦斯的传，顿时产生了深深的无知感，感觉自己像是被阉割过的大多数一样。我们是机器工业时代的难民。自然被我们遗忘，我们不知敬畏自然、不知敬畏生命，我们常常目空一切，却不知自己什么都不是。我们不了解人为何而活，或许更为可能的情况是我们根本不会去考虑这个问题，不会有这个问题。 </p>
 
 <p>我们的内心是否梦想、勇气。你是否敢去做自己现在最想做的事，放下一切，随心去旅行，用心去触碰这世界。是否愿意为自己的梦想买单，在这最美的年龄，是否愿意疯一把，写几个只属于自己的故事与人生里。我们的血气让狗吃了？？</p>
+
 ]]></content>
   </entry>
   
@@ -929,17 +851,15 @@ https://bugs.launchpad.net
     <updated>2012-03-27T16:24:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/27/categoriesde-yi-wen</id>
     <content type="html"><![CDATA[<p>纠结了我好久的Categories问题
-原来是跌倒在了&#8212;上，我来傻傻的以为&#8212;的作用是默认无分类，
+原来是跌倒在了—上，我来傻傻的以为—的作用是默认无分类，
 却不知实际是语法标签。</p>
 
 <p>注意点，不支持中文。和中文标符？
 经过实验，支持中文；但是不可以把中文逗号作为分割符，分割符要用英文的。
 如果错误的使用中文逗号来分割，结果就会产生一个由逗号连接的“Tag”。</p>
 
-<p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：</p>
-
-<script src="https://gist.github.com/1366833.js?file=category_list.rb"></script>
-
+<p>后记：如何在Sidebar里显示自己的分类。这里使用了网有做的插件。代码如下：
+<script src="https://gist.github.com/1366833.js?file=category_list.rb"></script></p>
 
 <p>对markdown语法需要学习一下，下划线问题缠了半天。
 晚安！</p>
@@ -952,70 +872,59 @@ https://bugs.launchpad.net
     <updated>2012-03-26T14:33:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/26/alias-li-qi</id>
     <content type="html"><![CDATA[
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
-</span><span class='line'>使用目的：简化指令，提高指令输入效率
-</span><span class='line'>使用规则：
-</span><span class='line'>alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
-</span><span class='line'>unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
-</span><span class='line'>  举例：
-</span><span class='line'>alias rg='rake generate'
-</span><span class='line'>此时在命令行下输入
-</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure>
-
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">适用场合：惯用指令很长
+</span><span class="line">使用目的：简化指令，提高指令输入效率
+</span><span class="line">使用规则：
+</span><span class="line">alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
+</span><span class="line">unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
+</span><span class="line">	举例：
+</span><span class="line">alias rg='rake generate'
+</span><span class="line">此时在命令行下输入
+</span><span class="line">rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <!--more-->
+<p>按照以上的设置在重新开机后，输入</p>
 
-
-<p>
-按照以上的设置在重新开机后，输入</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
-</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:/etc$ rg
+</span><span class="line">rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>下面列一下我用的alias</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg='rake generate'
-</span><span class='line'>alias rd='rake deploy'
-</span><span class='line'>alias update='sudo apt-get update'
-</span><span class='line'>alias ..='cd ..' #据说是死罪
-</span><span class='line'>alias df='df -h'  #以M为单位查看磁盘空间
-</span><span class='line'>alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">alias rg='rake generate'
+</span><span class="line">alias rd='rake deploy'
+</span><span class="line">alias update='sudo apt-get update'
+</span><span class="line">alias ..='cd ..' #据说是死罪
+</span><span class="line">alias df='df -h'  #以M为单位查看磁盘空间
+</span><span class="line">alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。</p>
+<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。		</p>
 ]]></content>
   </entry>
   
@@ -1039,144 +948,132 @@ https://bugs.launchpad.net
 
 <p>1.无法装ruby，问题如下</p>
 
-<p>no such file to load &#8211; zlib (LoadError)
+<p>no such file to load – zlib (LoadError)
 解决办法：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib 
-</span><span class='line'>rvm remove 1.9.1
-</span><span class='line'>rvm install 1.9.1 -C --with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure>
-
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">rvm pkg install zlib 
+</span><span class="line">rvm remove 1.9.1
+</span><span class="line">rvm install 1.9.1 -C --with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <!--more-->
 
-
 <p>2.openssl error
-在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。</p>
+在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 </p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Generating Site with Jekyll
-</span><span class='line'>unchanged sass/screen.scss
-</span><span class='line'>Configuration from /home/lo/blog/octopress/"config.yml"
-</span><span class='line'>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
-</span><span class='line'>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
-</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
-</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load'
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Generating Site with Jekyll
+</span><span class="line">unchanged sass/screen.scss
+</span><span class="line">Configuration from /home/lo/blog/octopress/"config.yml"
+</span><span class="line">/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `require': no such file to load -- openssl (LoadError)
+</span><span class="line">from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in `'
+</span><span class="line">from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `require'
+</span><span class="line">from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in `'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `require'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in `block in setup'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `each'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in `setup'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in `initialize'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `new'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in `'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `load'
+</span><span class="line">from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `'</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install libssl-dev 
-</span><span class='line'>cd ext/openssl 
-</span><span class='line'>
-</span><span class='line'>Run the command one after the others. 
-</span><span class='line'>ruby extconf.rb 
-</span><span class='line'>make 
-</span><span class='line'>sudo make install</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install libssl-dev 
+</span><span class="line">cd ext/openssl 
+</span><span class="line">
+</span><span class="line">Run the command one after the others. 
+</span><span class="line">ruby extconf.rb 
+</span><span class="line">make 
+</span><span class="line">sudo make install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<p>然后就神奇的AC了。 原网址:<a href="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
-" title="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
-">http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
+<p>然后就神奇的AC了。 原网址:<a href="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/ " title="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/ ">http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 </a></p>
 
-<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</p>
+<p>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。
+	这里只记录下最最基本的使用： </p>
 
-<pre><code>这里只记录下最最基本的使用： 
-</code></pre>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">	<span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>4.octopress的个性化配置</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Main</span> <span class="no">Configs</span>
-</span><span class='line'><span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span>  <span class="c1"># blog地址</span>
-</span><span class='line'><span class="n">title</span><span class="p">:</span> <span class="no">My</span> <span class="no">Octopress</span> <span class="no">Blog</span>  <span class="c1"># blog名称，会出现在左上角 </span>
-</span><span class='line'><span class="n">subtitle</span><span class="p">:</span> <span class="n">A</span> <span class="n">blogging</span> <span class="n">framework</span> <span class="c1"># title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己</span>
-</span><span class='line'><span class="n">author</span><span class="p">:</span> <span class="no">Your</span> <span class="no">Name</span> <span class="c1"># 会出现在每篇文章下面的Posted by xxx</span>
-</span><span class='line'><span class="n">simple</span> <span class="n">search</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">search</span> <span class="c1"># 右边搜索框使用的搜索引擎</span>
-</span><span class='line'><span class="n">description</span><span class="p">:</span> <span class="c1"># head.html中meta name=&quot;description&quot;的默认content，但一般都被会截断的文章内容替换掉</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="no">Plugins</span>
-</span><span class='line'><span class="n">root</span><span class="p">:</span> <span class="o">/</span> <span class="c1"># 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project</span>
-</span><span class='line'>    <span class="c1">#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</span>
-</span><span class='line'><span class="n">permalink</span><span class="p">:</span><span class="sr"> /blog/</span><span class="ss">:year</span><span class="o">/</span><span class="ss">:month</span><span class="o">/</span><span class="ss">:day</span><span class="o">/</span><span class="ss">:title</span><span class="o">/</span>
-</span><span class='line'><span class="n">paginate</span><span class="p">:</span> <span class="mi">10</span>          <span class="c1"># 每页展现blog的数量，如果blog数量大于这个，会产生翻页</span>
-</span><span class='line'><span class="n">recentposts</span><span class="p">:</span> <span class="mi">5</span>       <span class="c1"># 右侧最近发表模块里blog的数量</span>
-</span><span class='line'><span class="c1">#在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</span>
-</span><span class='line'><span class="n">excerptlink</span><span class="p">:</span> <span class="s2">&quot;Read on &amp;rarr;&quot;</span>
-</span><span class='line'>      <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
-</span><span class='line'>      <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
-</span><span class='line'>      <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 </span>
-</span><span class='line'><span class="n">defaultasides</span><span class="p">:</span> <span class="o">[</span><span class="n">asides</span><span class="o">/</span><span class="n">recentposts</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="o">]</span>
-</span><span class='line'>  <span class="c1"># 可以给不同的页面配置不同的侧边栏  </span>
-</span><span class='line'><span class="n">blogindexasides</span><span class="p">:</span>
-</span><span class='line'><span class="n">postasides</span><span class="p">:</span>
-</span><span class='line'><span class="n">pageasides</span><span class="p">:</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="no">Main</span> <span class="no">Configs</span>
+</span><span class="line"><span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span>  <span class="c1"># blog地址</span>
+</span><span class="line"><span class="n">title</span><span class="p">:</span> <span class="no">My</span> <span class="no">Octopress</span> <span class="no">Blog</span>  <span class="c1"># blog名称，会出现在左上角 </span>
+</span><span class="line"><span class="n">subtitle</span><span class="p">:</span> <span class="n">A</span> <span class="n">blogging</span> <span class="n">framework</span> <span class="c1"># title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己</span>
+</span><span class="line"><span class="n">author</span><span class="p">:</span> <span class="no">Your</span> <span class="no">Name</span> <span class="c1"># 会出现在每篇文章下面的Posted by xxx</span>
+</span><span class="line"><span class="n">simple</span> <span class="n">search</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">search</span> <span class="c1"># 右边搜索框使用的搜索引擎</span>
+</span><span class="line"><span class="n">description</span><span class="p">:</span> <span class="c1"># head.html中meta name=&quot;description&quot;的默认content，但一般都被会截断的文章内容替换掉</span>
+</span><span class="line">
+</span><span class="line"><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="no">Plugins</span>
+</span><span class="line"><span class="n">root</span><span class="p">:</span> <span class="o">/</span> <span class="c1"># 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project</span>
+</span><span class="line">    <span class="c1">#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</span>
+</span><span class="line"><span class="n">permalink</span><span class="p">:</span><span class="sr"> /blog/</span><span class="ss">:year</span><span class="o">/</span><span class="ss">:month</span><span class="o">/</span><span class="ss">:day</span><span class="o">/</span><span class="ss">:title</span><span class="o">/</span>
+</span><span class="line"><span class="n">paginate</span><span class="p">:</span> <span class="mi">10</span>          <span class="c1"># 每页展现blog的数量，如果blog数量大于这个，会产生翻页</span>
+</span><span class="line"><span class="n">recentposts</span><span class="p">:</span> <span class="mi">5</span>       <span class="c1"># 右侧最近发表模块里blog的数量</span>
+</span><span class="line"><span class="c1">#在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</span>
+</span><span class="line"><span class="n">excerptlink</span><span class="p">:</span> <span class="s2">&quot;Read on &amp;rarr;&quot;</span>
+</span><span class="line">      <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
+</span><span class="line">      <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
+</span><span class="line">      <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 </span>
+</span><span class="line"><span class="n">defaultasides</span><span class="p">:</span> <span class="o">[</span><span class="n">asides</span><span class="o">/</span><span class="n">recentposts</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="o">]</span>
+</span><span class="line">	<span class="c1"># 可以给不同的页面配置不同的侧边栏  </span>
+</span><span class="line"><span class="n">blogindexasides</span><span class="p">:</span>
+</span><span class="line"><span class="n">postasides</span><span class="p">:</span>
+</span><span class="line"><span class="n">pageasides</span><span class="p">:</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
@@ -1185,40 +1082,36 @@ https://bugs.launchpad.net
 <p>主要的工具是
 <strong>rake</strong>：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost["postname"] //来产生新的博文 
-</span><span class='line'>rake generate       //生成博文 
-</span><span class='line'>rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">rake newpost["postname"] //来产生新的博文 
+</span><span class="line">rake generate       //生成博文 
+</span><span class="line">rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>6.增加第三方插件</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
-</span><span class='line'>(2)http://delicious.com/
-</span><span class='line'>(3)Tracking ID: UA-30311112-1
-</span><span class='line'>(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
+</span><span class="line">(2)http://delicious.com/
+</span><span class="line">(3)Tracking ID: UA-30311112-1
+</span><span class="line">(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>7.down语法的几点小白困惑：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符
-</span><span class='line'>  b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
-</span><span class='line'>  c.引用显示的不同风格，延时还是？
-</span><span class='line'>  d.是否可以开头空格的风格？
-</span><span class='line'>  e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">a.下划线是非法字符，星号也是非法字符
+</span><span class="line">	b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+</span><span class="line">	c.引用显示的不同风格，延时还是？
+</span><span class="line">	d.是否可以开头空格的风格？
+</span><span class="line">	e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>
