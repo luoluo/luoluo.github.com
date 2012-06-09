@@ -9,7 +9,7 @@
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="去年就开始搭建一个自己的Blog，结果在“重重困难”和期末考试前，停下了脚步。现在又启程了。正在进行中，把今天的收获记录下。 期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。 无法装ruby，问题如下 no such &hellip;">
+  <meta name="description" content="去年就开始搭建一个自己的Blog，结果在“重重困难”和期末考试前，停下了脚步。现在又启程了。正在进行中，把今天的收获记录下。 期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。 1.无法装ruby，问题如下 no &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -123,9 +123,7 @@ MathJax.Hub.Config({
 
 <p>期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。</p>
 
-<ol>
-<li>无法装ruby，问题如下</li>
-</ol>
+<h2 id='1ruby'>1.无法装ruby，问题如下</h2>
 
 <p>no such file to load &#8211; zlib (LoadError) 解决办法：</p>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
@@ -134,9 +132,9 @@ MathJax.Hub.Config({
 </pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib 
 </span><span class='line'>rvm remove 1.9.1
 </span><span class='line'>rvm install 1.9.1 -C --with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure><!--more-->
-<ol>
-<li>openssl error 在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。</li>
-</ol>
+<h2 id='2openssl_error'>2.openssl error</h2>
+
+<p>在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。</p>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -189,15 +187,13 @@ MathJax.Hub.Config({
 '>http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 </a></p>
 
-<ol>
-<li>如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。 这里只记录下最最基本的使用：</li>
-</ol>
+<h2 id='3linuxfindfindman_find_'>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</h2>
+
+<pre><code>这里只记录下最最基本的使用： </code></pre>
 <figure class='code'> <div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'>	<span class='n'>find</span> <span class='o'>/</span> <span class='o'>-</span><span class='nb'>name</span> <span class='no'>FileNameToBeFind</span>
 </span></code></pre></td></tr></table></div></figure>
-<ol>
-<li>octopress的个性化配置</li>
-</ol>
+<h2 id='4octopress'>4.octopress的个性化配置</h2>
 <figure class='code'> <div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -249,7 +245,7 @@ MathJax.Hub.Config({
 </span></code></pre></td></tr></table></div></figure>
 <p>出处：<a href='http://linyi.heroku.com/blog/config-octopress.html' title='http://linyi.heroku.com/blog/config-octopress.html'>http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
-<p>5.怎么撰写新文章呢？</p>
+<h2 id='5'>5.怎么撰写新文章呢？</h2>
 
 <p>主要的工具是 <strong>rake</strong>：</p>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
@@ -258,7 +254,7 @@ MathJax.Hub.Config({
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost["postname"] //来产生新的博文 
 </span><span class='line'>rake generate       //生成博文 
 </span><span class='line'>rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure>
-<p>6.增加第三方插件</p>
+<h2 id='6'>6.增加第三方插件</h2>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -267,9 +263,7 @@ MathJax.Hub.Config({
 </span><span class='line'>(2)http://delicious.com/
 </span><span class='line'>(3)Tracking ID: UA-30311112-1
 </span><span class='line'>(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure>
-<ol>
-<li>down语法的几点小白困惑：</li>
-</ol>
+<h2 id='7down'>7.down语法的几点小白困惑：</h2>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -280,17 +274,17 @@ MathJax.Hub.Config({
 </span><span class='line'>	c.引用显示的不同风格，延时还是？
 </span><span class='line'>	d.是否可以开头空格的风格？
 </span><span class='line'>	e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure>
-<h3 id='8tex'>8.关于数学公式的编辑。$TeX$</h3>
+<h2 id='8tex'>8.关于数学公式的编辑。$TeX$</h2>
 
 <p>尝试了以下两种方法：</p>
 
-<h4 id='marukumarkdown'>使用maruku进行markdown解析。</h4>
+<h3 id='marukumarkdown'>使用maruku进行markdown解析。</h3>
 
 <pre><code>我个人大力推荐这种解决办法，原因有2：\
 maruku原生态的支持$TeX$
 maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
 
-<h5 id='id48'>设置方法：</h5>
+<h4 id='id48'>设置方法：</h4>
 
 <pre><code>在_config.yml文件里找到：</code></pre>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
@@ -300,11 +294,13 @@ maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
 </pre></td><td class='code'><pre><code class=''><span class='line'>markdown: maruku</span></code></pre></td></tr></table></div></figure>
 <p>在Gemfile里找到：</p>
 <figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'rdiscount'</span></code></pre></td></tr></table></div></figure><figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'rdiscount'</span></code></pre></td></tr></table></div></figure>
+<p>改为</p>
+<figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem 'maruku'</span></code></pre></td></tr></table></div></figure>
 <pre><code>如果没有安装maruku,`gem install maruku`</code></pre>
 
-<h4 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h4>
+<h3 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h3>
 
 <p>个人感觉解析像乌龟. <a href='http://www.idryman.org/blog/2012/03/10/writing-math-equations-on-octopress/'>详见</a></p></div>
 

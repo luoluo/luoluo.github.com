@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T21:19:41+08:00</updated>
+  <updated>2012-06-09T21:22:15+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -36,15 +36,14 @@
 
 <p>期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。</p>
 
-<ol>
-<li>无法装ruby，问题如下</li>
-</ol>
+<h2 id='1ruby'>1.无法装ruby，问题如下</h2>
 
 <p>no such file to load &#8211; zlib (LoadError) 解决办法： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib rvm remove 1.9.1 rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 <!--more-->
-<ol>
-<li>openssl error 在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h2 id='2openssl_error'>2.openssl error</h2>
+
+<p>在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -63,10 +62,8 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install libssl-dev 
-</span><span class='line'>cd ext/openssl &lt;/code>&lt;/li>
-</span><span class='line'>&lt;/ol>
+</span><span class='line'>cd ext/openssl &lt;/code>&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>Run the command one after the others. ruby extconf.rb make sudo make install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -75,26 +72,24 @@
 '>http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 </a></p>
 
-<ol>
-<li>
-<p>如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。 这里只记录下最最基本的使用： <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h2 id='3linuxfindfindman_find_'>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</h2>
+
+<pre><code>这里只记录下最最基本的使用： </code></pre>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-</li>
 
-<li>
-<p>octopress的个性化配置 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h2 id='4octopress'>4.octopress的个性化配置</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="no">Main</span> <span class="no">Configs</span> <span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span> <span class="c1"># blog地址 title: My Octopress Blog # blog名称，会出现在左上角 subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己 author: Your Name # 会出现在每篇文章下面的Posted by xxx simple search: http://google.com/search # 右边搜索框使用的搜索引擎 description: # head.html中meta name=&amp;#8221;description&amp;#8221;的默认content，但一般都被会截断的文章内容替换掉&lt;/p&gt;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/li&gt;</span>
-</span><span class='line'><span class="sr">&lt;/o</span><span class="n">l</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="c1">#38; Plugins root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project #生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html permalink: /blog/:year/:month/:day/:title/ paginate: 10 # 每页展现blog的数量，如果blog数量大于这个，会产生翻页 recentposts: 5 # 右侧最近发表模块里blog的数量&lt;/p&gt;</span>
 </span><span class='line'>
@@ -103,36 +98,42 @@
 </span><span class='line'><span class="sr">&lt;p&gt;excerptlink: &amp;#8220;Read on &amp;#8594;&amp;#8221; #右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html #也可以增加一些自己的页面，比如在/sou</span><span class="n">rce</span><span class="o">/</span><span class="n">includes</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">asides</span><span class="o">/</span><span class="err">下增加</span><span class="n">about</span><span class="o">.</span><span class="n">html</span> <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 defaultasides: &lt;span&gt;asides/recentposts.html, asides/github.html, asides/twitter.html&lt;/span&gt; # 可以给不同的页面配置不同的侧边栏&lt;br /&gt;blogindexasides: postasides: pageasides: </span>
 </span></code></pre></td></tr></table></div></figure></notextile></div> 出处：<a href='http://linyi.heroku.com/blog/config-octopress.html' title='http://linyi.heroku.com/blog/config-octopress.html'>http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
-<p>5.怎么撰写新文章呢？</p>
+<h2 id='5'>5.怎么撰写新文章呢？</h2>
 
 <p>主要的工具是 <strong>rake</strong>： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost&lt;span>&#8220;postname&#8221;&lt;/span> //来产生新的博文 rake generate //生成博文 rake deploy //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>6.增加第三方插件 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site. (2)http://delicious.com/ (3)Tracking ID: UA-30311112-1 (4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div> 7.down语法的几点小白困惑： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h2 id='6'>6.增加第三方插件</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site. (2)http://delicious.com/ (3)Tracking ID: UA-30311112-1 (4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id='7down'>7.down语法的几点小白困惑：</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符 b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？ c.引用显示的不同风格，延时还是？ d.是否可以开头空格的风格？ e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h3 id='8tex'>8.关于数学公式的编辑。$TeX$</h3>
+<h2 id='8tex'>8.关于数学公式的编辑。$TeX$</h2>
 
 <p>尝试了以下两种方法：</p>
 
-<h4 id='marukumarkdown'>使用maruku进行markdown解析。</h4>
+<h3 id='marukumarkdown'>使用maruku进行markdown解析。</h3>
 
 <pre><code>我个人大力推荐这种解决办法，原因有2：\
 maruku原生态的支持$TeX$
 maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
 
-<h5 id='id28'>设置方法：</h5>
+<h4 id='id28'>设置方法：</h4>
 
 <pre><code>在_config.yml文件里找到：</code></pre>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>markdown: rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div> 改为 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>markdown: maruku</span></code></pre></td></tr></table></div></figure></notextile></div> 在Gemfile里找到： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;rdiscount&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;rdiscount&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> 改为 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;maruku&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> 如果没有安装maruku,<code>gem install maruku</code></p>
 
-<h4 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h4>
+<h3 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h3>
 
 <p>个人感觉解析像乌龟. <a href='http://www.idryman.org/blog/2012/03/10/writing-math-equations-on-octopress/'>详见</a></p>]]></content>
   </entry>
