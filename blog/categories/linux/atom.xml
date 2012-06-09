@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-06-09T20:37:40+08:00</updated>
+  <updated>2012-06-09T20:46:22+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -18,50 +18,29 @@
     <link href="http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot"/>
     <updated>2012-05-09T18:29:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot</id>
-    <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
+    <content type="html"><![CDATA[<h4 id='tlgraphviz__dot_language_wiki__'>脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
 
-<h3 id="graphviz">Graphviz:</h3>
-<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
-<strong>DOT</strong>
-<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
-####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
-* 有向
-* 无向</p>
+<h3 id='graphviz'>Graphviz:</h3>
 
-<h3 id="br">无向图：<br /></h3>
-<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
-</span><span class='line'>	a – b – c;
-</span><span class='line'>	b – d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
+<p>{% blockquote %} AT&amp;T Labs Tools for viewing and interacting with graph diagrams. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs. {% endblockquote %} <strong>DOT</strong> {% blockquote %} DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003. {% endblockquote %}</p>
 
-<h3 id="br-1">有向图：<br /></h3>
-<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
-</span><span class='line'>	a -&gt; b -&gt; c;
-</span><span class='line'>	b -&gt; d;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
-<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
+<h4 id='dotgraphvizgraphviz'>简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：</h4>
 
-<h3 id="section">修改样式：</h3>
-<p>在花括号内添加边和节点的定义
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape=”record”];
-</span><span class='line'>edge [style=”dashed”];</span></code></pre></td></tr></table></div></figure></notextile></div> 
-#####此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></p>
-]]></content>
+<p>* 有向 * 无向</p>
+
+<h3 id='id6'>无向图：<br /></h3>
+
+<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下： {% codeblock Undirected graph test2 file %} graph graphName{ a &#8211; b &#8211; c; b &#8211; d; } {% endcodeblock %} {% img http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png 150 250 %}</p>
+
+<h3 id='id7'>有向图：<br /></h3>
+
+<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下： {% codeblock Directed graph test2 file %} digraph graphName{ a -&gt; b -&gt; c; b -&gt; d; } {% endcodeblock %} {% img http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png 150 250%}</p>
+
+<h3 id='id8'>修改样式：</h3>
+
+<p>在花括号内添加边和节点的定义 {% codeblock %} node <span>shape=&#8221;record&#8221;</span>; edge <span>style=&#8221;dashed&#8221;</span>; {% endcodeblock %}</p>
+
+<h5 id='link'>此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href='http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/'>link</a></h5>]]></content>
   </entry>
   
   <entry>
@@ -71,35 +50,42 @@
     <id>http://luoluo.github.com/blog/2012/04/09/tc-at-lineux</id>
     <content type="html"><![CDATA[<p>HOW TO： TC ON LINUX</p>
 
-<p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
-
-<p>&lt;1&gt;添加partner源：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository “deb http://archive.canonical.com/u    buntu maverick partner”</span></code></pre></td></tr></table></div></figure></notextile></div>
+<ol>
+<li>JAVA ENVIRONMENT（SUN-JAVA6）</li>
+</ol>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;1&gt;添加partner源：
+{% codeblock %}
+sudo add-apt-repository &quot;deb http://archive.canonical.com/u    buntu maverick partner&quot; 
+{% endcodeblock %}
 &lt;2&gt;安装JRE
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %}
+sudo apt-get install sun-java6-jre sun-java6-plugin
+{% endcodeblock %} 
 &lt;3&gt;安装JDK
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %} 
+sudo apt-get install sun-java6-jdk sun-java6-plugin
+{% endcodeblock %} 
 &lt;4&gt;查看版本
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %} 
+java -version
+{% endcodeblock %} 
 &lt;5&gt;设为默认JAVA	
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives –config java</span></code></pre></td></tr></table></div></figure></notextile></div> </p>
+{% codeblock %} 
+sudo update-alternatives --config java
+{% endcodeblock %} 
 
-<p>2.DOWNLOAD THE TC ARENA
-<a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
-DOWNLOAD </a></p>
+2.DOWNLOAD THE TC ARENA
+&lt;a href=&quot;http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp&quot;&gt;
+DOWNLOAD &lt;/a&gt;
+	
 
-<p>3.CONFIG THE AREAN
-<a href="http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins"> 插件下载及配置DOWNLOAD </a>
-推荐只使用KawigiEdit插件，该插件易于上手。</p>
+3.CONFIG THE AREAN
+&lt;a href=&quot;http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins&quot;&gt; 插件下载及配置DOWNLOAD &lt;/a&gt;
+推荐只使用KawigiEdit插件，该插件易于上手。
 
-<p>4.GET ON THE WAY, &amp; GOOD LUCK!
-<a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">官方教程</a></p>
-]]></content>
+4.GET ON THE WAY, &amp; GOOD LUCK!
+&lt;a href=&quot;http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions&quot;&gt;官方教程&lt;/a&gt;</pre>]]></content>
   </entry>
   
   <entry>
@@ -109,94 +95,87 @@ DOWNLOAD </a></p>
     <id>http://luoluo.github.com/blog/2012/04/07/how-to-lunchpad-msp430-programing-with-linux</id>
     <content type="html"><![CDATA[<p>天快亮了，反而没有什么倦意，一夜的奋战终见起色，称记忆清晰，做记录，供后车之鉴。开学不久就接到了五一前要交付的任务，4月探头，才逼的自己来做。windows莫名其妙的坏掉，把自己比逼linux这种直接的环境，一直感觉linux环境下自己面对问题，接近点底层，是个不错的选择。可是入门稍有门槛。毕竟文字的信息传递速度要小于图形化。加上自己的惰性，就迟迟未出发。</p>
 
-<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。
-<!--more-->
-1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
-
-<p>&lt;1&gt;编译环境：mspgcc
+<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。 <!--more--> 1.LINUX下MSP430编程环境的搭建： 这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;1&gt;编译环境：mspgcc
 可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：
-<blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
+{% blockquote%}
+mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components. 
+{% endblockquote%}
 也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
-</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure></notextile></div>
-不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。</p>
+{% codeblock %}
+lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录
+{% endcodeblock %}
+不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。
 
-<p>&lt;2&gt;写入环境：mspdebug
-在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当^D退出mspdebug后，单片机执行新写入的程序，</p>
+&lt;2&gt;写入环境：mspdebug
+在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当^D退出mspdebug后，单片机执行新写入的程序，
 
-<p>看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
+看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
 这是看到了WIKI的提示，
-<blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
-而UBUNTU11.10 即 ONEIRIC。</p>
+{% blockquote%}
+mspgcc will be available in Ubuntu Oneiric.
+{% endblockquote%}
+而UBUNTU11.10 即 ONEIRIC。
 
-<p>于是乎： 
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
-</span><span class='line'>sudo apt-get install mspdebug
-</span><span class='line'>sudo apt-get install msp430mcu
-</span><span class='line'>sudo apt-get install binutils-msp430
-</span><span class='line'>sudo apt-get install gcc-msp430
-</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
+于是乎： 
+{% codeblock %}
+sudo apt-get install msp430-libc
+sudo apt-get install mspdebug
+sudo apt-get install msp430mcu
+sudo apt-get install binutils-msp430
+sudo apt-get install gcc-msp430
+sudo apt-get install gdb-msp430
+{% endcodeblock %}
 编译和写入：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
-</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+lo@lo:~$ sudo mspdebug rf2500
+{% endcodeblock %}
 
-<p>值得一提的是对端口的设定,这一步应在编译写入前设置：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
-并将下表的内容写入其中，:wq</p>
+值得一提的是对端口的设定,这一步应在编译写入前设置：
+{% codeblock %}
+sudo vim /etc/udev/rules.d/46-TI_launchpad.rules
+{% endcodeblock %}
+并将下表的内容写入其中，:wq
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&quot;0451&quot;,
-</span><span class='line'>ATTRS{idProduct}==&quot;f432&quot;,
-</span><span class='line'>MODE=&quot;0660&quot;, 
-</span><span class='line'>GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+ATTRS{idVendor}==&amp;quot;0451&amp;quot;,
+ATTRS{idProduct}==&amp;quot;f432&amp;quot;,
+MODE=&amp;quot;0660&amp;quot;, 
+GROUP=&amp;quot;plugdev&amp;quot;
+{% endcodeblock %}
 
-<p>为了使刚刚的修改在重启前生效，执行以下语句：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+为了使刚刚的修改在重启前生效，执行以下语句：
+{% codeblock %}
+sudo restart udev
+{% endcodeblock %}
 
-<p>这是后把原来那个点过灯的单片机插入电脑，发现执行
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+这是后把原来那个点过灯的单片机插入电脑，发现执行
+{% codeblock %}
+lo@lo:~$ sudo mspdebug rf2500
+{% endcodeblock %}
 后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
 在执行了:
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
-</span><span class='line'>Erasing…
-</span><span class='line'>Programming…
-</span><span class='line'>Writing  126 bytes to fc00 [section: .text]…
-</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]…
-</span><span class='line'>Done, 158 bytes written
-</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure></notextile></div>
-单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。</p>
+{% codeblock %}
+(mspdebug) prog blink.elf 
+Erasing...
+Programming...
+Writing  126 bytes to fc00 [section: .text]...
+Writing   32 bytes to ffe0 [section: .vectors]...
+Done, 158 bytes written
+(mspdebug) ^D
+{% endcodeblock %}
+单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。
 
-<p>以下为重点参考站点：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
-</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
-</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
+以下为重点参考站点：
+{% codeblock %}
+http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu
+{% endcodeblock %}</pre>]]></content>
   </entry>
   
   <entry>
@@ -204,79 +183,65 @@ DOWNLOAD </a></p>
     <link href="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji"/>
     <updated>2012-04-01T23:39:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji</id>
-    <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
-不少意外惊喜：</p>
+    <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了 不少意外惊喜：</p>
 
-<p>1.linux下的资源管理器：
-<!--more-->
+<ol>
+<li>linux下的资源管理器： <!--more--> <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
 &lt;1&gt;ps
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ps
-</span><span class='line'>a   :选择列出所有程序
-</span><span class='line'>u   :列出所有用户程序
-</span><span class='line'>x   ;类出所有tty的程序
-</span><span class='line'>EG:
-</span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure></notextile></div>
-&lt;2&gt;top                                                                                                                                        <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure></notextile></div>
-较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
+{% codeblock %}
+ps
+a   :选择列出所有程序
+u   :列出所有用户程序
+x   ;类出所有tty的程序
+EG:
+lo@lo:~$ ps -aux
+{% endcodeblock %}
+&lt;2&gt;top                                                                                                                                        {% codeblock %}
+lo@lo:~$ top
+{% endcodeblock %}
+较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</pre></li>
+</ol>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;3&gt;kill
+{% codeblock %}
+kill -signal PID 
+signal:
+-1  :让该PID重新读取它的配置文件
+-9  :杀掉该进程
+-15 :停止该进程
+EG：
+lo@lo:~$ kill -9 1234
+{% endcodeblock %}
 
-<p>&lt;3&gt;kill
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>kill -signal PID 
-</span><span class='line'>signal:
-</span><span class='line'>-1  :让该PID重新读取它的配置文件
-</span><span class='line'>-9  :杀掉该进程
-</span><span class='line'>-15 :停止该进程
-</span><span class='line'>EG：
-</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+&lt;4&gt;uname
+{% codeblock %}
+uname [-apnr]
+-a  :列出所有的系统信息
+-p  :列出CPU信息 
+-n  :列出主机名
+-r  :列出核心版本信息
+{% endcodeblock %}
 
-<p>&lt;4&gt;uname
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>uname [-apnr]
-</span><span class='line'>-a  :列出所有的系统信息
-</span><span class='line'>-p  :列出CPU信息 
-</span><span class='line'>-n  :列出主机名
-</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：
 
-<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
-top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：</p>
+&lt;1&gt;暂时止痛
+{% codeblock %}
+sudo service udev stop
+{% endcodeblock %}
+重启后旧病复发。
 
-<p>&lt;1&gt;暂时止痛
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure></notextile></div>
-重启后旧病复发。</p>
-
-<p>&lt;2&gt;根治型
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1) In a terminal, run:
-</span><span class='line'>sudo add-apt-repository ppa:jamesodhunt/bug-829980
-</span><span class='line'>#This will show you some text and ask you to press return to enable this repository.
-</span><span class='line'>2) Run:
-</span><span class='line'>sudo apt-get update &amp;&amp; sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure></notextile></div>
+&lt;2&gt;根治型
+{% codeblock %}
+1) In a terminal, run:
+sudo add-apt-repository ppa:jamesodhunt/bug-829980
+#This will show you some text and ask you to press return to enable this repository.
+2) Run:
+sudo apt-get update &amp;&amp; sudo apt-get upgrade
+{% endcodeblock %}
 而这种根治的方案来源于一个强大的站点：
 https://bugs.launchpad.net
-<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。          </p>
-]]></content>
+{% img https://bugs.launchpad.net/@@/launchpad-logo %}这是一个BUG上报，分布式解决的站点。          </pre>]]></content>
   </entry>
   
   <entry>
@@ -287,21 +252,17 @@ https://bugs.launchpad.net
     <content type="html"><![CDATA[<p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
 
 <p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
-
-<!--more-->
-<blockquote>
+<!--more--><blockquote>
 无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
 你可以把路由的频道改一下，或把网卡的地区改为日本也行。
 
 笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
 </blockquote>
-
 <p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
 
 <p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
 
-<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
-]]></content>
+<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>]]></content>
   </entry>
   
 </feed>
