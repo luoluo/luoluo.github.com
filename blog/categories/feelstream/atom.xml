@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FeelStream | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/feelstream/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2012-05-12T13:58:17+08:00</updated>
+  <updated>2012-06-09T15:59:15+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -12,91 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[夜空里的绚烂]]></title>
-    <link href="http://luoluo.github.com/blog/2012/05/04/ye-kong-li-de-xuan-lan"/>
-    <updated>2012-05-04T20:34:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/05/04/ye-kong-li-de-xuan-lan</id>
-    <content type="html"><![CDATA[<p>五一已过。任务没有完成。好久没有静下来想点什么、做点什么了。但时间还是一样的过。看一下自己的备忘表，已经快一周没有记录与勾画了。想起一句话“宁要一个结束，也不要千万个开始”。“善始者实繁，克终者盖寡”,总是习惯于做那个分母。</p>
-
-<p>好久没有失眠了，好久没有清醒的过活。好像只有稀里糊涂的安逸才能在夜里顺其自然的入眠。细想一下最近过的还好。充满幸福感的五一。</p>
-
-<p>当我呆在一个小空间里太久，结果产生错觉，以为自己掌握了整个人生。触摸世界成了坐井观天，甚至根本不会去想世界的五彩。越来越发觉世界真的好大好大，琦丽无比，就如梦中的情人，朦胧的美感，唯有用心去细细体味。越来越觉得人可以活得很丰富很丰富，有时，我们可以像一只目不转睛般伏猎几日的非洲狮；有时，我们可以像一只冲破牢笼回归自然的幼鸟。</p>
-
-<p>长大了么？开始觉得人要学会适应孤独，“一个人要活得像一支队伍”。
-还记得那“的叔”，满脸微笑兴奋的指着我说：“这么小耍啥子朋友”。一边指给我们乘车的方向，而后又对我们说“有没有十八岁？”。我笑着想小鸡啄米般点头...</p>
-
-<p>记录一下短期到计划，充实的暑假前的生活，啃书，听歌，给亲人朋友问候，生活再规律一点点...</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[文件解压]]></title>
-    <link href="http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya"/>
-    <updated>2012-04-12T20:11:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya</id>
-    <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下：
-文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。</p>
-
-<!--more-->
-
-
-<p>x.Z
-压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
-解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>x.gz2
-压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
-解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
-查看压缩文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>x.tar
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
-压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
-解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>xx.tar.gz
-压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
-解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>xx.bz
-压缩命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
-解压命令
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
-查看压缩文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>最后意外发现vim命令模式下x有delete作用。
-今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
-很欣赏凯文的清醒、大局观。看到这样一句话：
-我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。
-作为结语。</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[小结0.1]]></title>
@@ -116,9 +31,6 @@
 <3>其中考试漂亮点</p>
 
 <p><4>母函数|CSAPP的笔记找时间好好写。</p>
-
-<p>NEVER STOP PRACTISING
-NEVER STOP PROGRAMMING</p>
 ]]></content>
   </entry>
   
@@ -156,6 +68,28 @@ NEVER STOP PROGRAMMING</p>
 <p>最近读了季老的《做人与做事》、劳伦斯的传，顿时产生了深深的无知感，感觉自己像是被阉割过的大多数一样。我们是机器工业时代的难民。自然被我们遗忘，我们不知敬畏自然、不知敬畏生命，我们常常目空一切，却不知自己什么都不是。我们不了解人为何而活，或许更为可能的情况是我们根本不会去考虑这个问题，不会有这个问题。</p>
 
 <p>我们的内心是否梦想、勇气。你是否敢去做自己现在最想做的事，放下一切，随心去旅行，用心去触碰这世界。是否愿意为自己的梦想买单，在这最美的年龄，是否愿意疯一把，写几个只属于自己的故事与人生里。我们的血气让狗吃了？？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[here]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/24/here"/>
+    <updated>2012-03-24T21:12:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/24/here</id>
+    <content type="html"><![CDATA[<p>Here is the very first blog of geek.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[To Do]]></title>
+    <link href="http://luoluo.github.com/blog/2012/03/13/to-do"/>
+    <updated>2012-03-13T22:42:00+08:00</updated>
+    <id>http://luoluo.github.com/blog/2012/03/13/to-do</id>
+    <content type="html"><![CDATA[<p>  刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了...   书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里...  感觉好像在等待什么，我也不知道到底是什么，还不是很清楚自己想要的是什么。   周围弥漫这DOTA、CS，各种安逸的节奏，曾经我们一起敲过的代码，现在还是否有激情继续呢？</p>
+
+<p>这几天看《北爱》，略纠结，晚上的梦或多或少有《北爱》的影子。看了一多半之后不在想继续往下看了，没有了那个冲动，开始十多集的美梦被撵破的情节还是可以给我麻木的内心带来片刻的刺激，让我知道“未来的路，也许很现实”，就如那句歌“外面的世界很精彩，外面的世界很无奈”。   无论贫或富，都有权拥有爱情。  当然权利是可以放弃的，如果为了利益去放弃爱情，我很难想象，你会以怎样的心情去继续生活，你还活着么？   纯真的无所求的爱是最让人憧憬的吧，傻傻的执着的爱是最让人渴求的吧。       “我爱你，和你没关系”，每次听起来，我都为那小姐姐难过，好无辜啊，爱情是不能强求的，正如那句“要么你情我愿，要么互不相干”，强扭的瓜不甜。     其实看到后来，只需回答一个问题“幸福是什么？”不同人看到了不同的幸福的面庞，他们用其所有去交换..       有点点难过，不过，我更愿意相信“艺术源于生活，却高于生活”，《北爱》应该是对真实生活的放大吧，这样释然多了。  无论怎样，我相信爱情，相信我们的未来....     想起朋友的一句话"如果你们的不在一起了，我们就再也不想信爱情了..."</p>
+
+<p>好吧，开学快一个月了，预计的适应期早过了，说好的计划差点快全部被抛在脑后了，整顿下行装，重新上路了，迎接明天升起的新的太阳.</p>
 ]]></content>
   </entry>
   
