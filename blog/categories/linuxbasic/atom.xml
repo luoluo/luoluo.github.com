@@ -4,7 +4,7 @@
   <title><![CDATA[Category: LinuxBasic | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/linuxbasic/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-01-12T16:20:43+08:00</updated>
+  <updated>2013-02-28T12:49:54+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -18,69 +18,52 @@
     <link href="http://luoluo.github.com/blog/2012/05/18/floding-in-vim"/>
     <updated>2012-05-18T12:36:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/18/floding-in-vim</id>
-    <content type="html"><![CDATA[<h5 id='vim'>对于结构复杂代码，VIM折叠功能对于思路清晰化、代码结构可读化，均有奇效。</h5>
-
-<p>我所用的有效的折叠方案：</p>
-
-<h3 id='id10'><code>set menthod=manual</code></h3>
-
-<p>对于代码： <br /><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
+    <content type="html"><![CDATA[<h5 id="vim">对于结构复杂代码，VIM折叠功能对于思路清晰化、代码结构可读化，均有奇效。</h5>
+<p>我所用的有效的折叠方案：
+###<code>set menthod=manual</code>
+对于代码： <br />
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.c </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="err">&#39;</span><span class="n">include_</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">pre</span> <span class="n">class</span><span class="o">=</span><span class="err">&#39;</span><span class="n">markdown</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">error</span><span class="err">&#39;</span> <span class="n">style</span><span class="o">=</span><span class="err">&#39;</span><span class="n">border</span><span class="o">:</span> <span class="n">solid</span> <span class="mi">3</span><span class="n">px</span> <span class="n">red</span><span class="p">;</span> <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="o">:</span> <span class="n">pink</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">REXML</span> <span class="n">could</span> <span class="n">not</span> <span class="n">parse</span> <span class="n">this</span> <span class="n">XML</span><span class="o">/</span><span class="n">HTML</span><span class="o">:</span>
-</span><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8220</span><span class="p">;</span><span class="n">Hello</span> <span class="n">World</span><span class="err">\</span><span class="n">n</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8221</span><span class="p">;);</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span> <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5 id='_visual_'>使用<code>Esc + Shift + v</code>进入 visual 模式</h5>
-
-<h5 id='id11'>然后<code>number + j</code>选定要折叠的行</h5>
-
-<h5 id='id12'>使用<code>s + f</code>折叠选定的行</h5>
-
-<h5 id='id13'>展开折叠<code>空格</code></h5>
-
-<h4 id='id14'>折后效果：</h4>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+#####使用`Esc + Shift + v`进入 visual 模式
+#####然后`number + j`选定要折叠的行
+#####使用`s + f`折叠选定的行
+#####展开折叠`空格`
+####折后效果：
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>foldedExample.c </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="err">&#39;</span><span class="n">include_</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">pre</span> <span class="n">class</span><span class="o">=</span><span class="err">&#39;</span><span class="n">markdown</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">error</span><span class="err">&#39;</span> <span class="n">style</span><span class="o">=</span><span class="err">&#39;</span><span class="n">border</span><span class="o">:</span> <span class="n">solid</span> <span class="mi">3</span><span class="n">px</span> <span class="n">red</span><span class="p">;</span> <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="o">:</span> <span class="n">pink</span><span class="err">&#39;</span><span class="o">&gt;</span><span class="n">REXML</span> <span class="n">could</span> <span class="n">not</span> <span class="n">parse</span> <span class="n">this</span> <span class="n">XML</span><span class="o">/</span><span class="n">HTML</span><span class="o">:</span>
-</span><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="o">+&amp;</span><span class="err">#</span><span class="mi">8211</span><span class="p">;</span> <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">8212</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h4 id='id15'>打开折叠<code>z+o</code></h4>
-
-<h4 id='id16'>打开文件中所有折叠<code>z+O</code></h4>
-
-<h4 id='id17'>删除一个折叠<code>z+e</code></h4>
-
-<h4 id='id18'>删除文件中所折叠<code>z+e</code></h4>
-
-<h4 id='_'>折叠不会被写入到文件里，如果使用<code>cat</code> <code>less</code>查看代码，代码将以无任何折叠的方式显示。</h4>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class='line'><span class="o">+--</span>  <span class="mi">4</span> <span class="err">行</span><span class="o">:</span> <span class="p">{</span><span class="o">------------------------------------------------------------</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+####打开折叠`z+o`
+####打开文件中所有折叠`z+O`
+####删除一个折叠`z+e` 
+####删除文件中所折叠`z+e` 
+####折叠不会被写入到文件里，如果使用`cat` `less`查看代码，代码将以无任何折叠的方式显示。</stdio.h></stdio.h></p>
 
 <blockquote>
-<p>A folder is just a tag which tells vim to display something as a folder. So it is also possible to write a file with folders. To mark the start of a folder just use for example in a comment of a source file) and to mark the end of the folder.</p>
+  <p>A folder is just a tag which tells vim to display something as a folder. So it is also possible to write a file with folders.
+To mark the start of a folder just use for example in a comment of a source file)
+and to mark the end of the folder.   </p>
 </blockquote>
 
-<h5 id='formore'><a href='http://vimdoc.sourceforge.net/htmldoc/fold.html'>ForMore</a></h5>
-
-<h5 id='awesome'><a href='https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun'>Awesome</a></h5>]]></content>
+<h5 id="formorehttpvimdocsourceforgenethtmldocfoldhtml"><a href="http://vimdoc.sourceforge.net/htmldoc/fold.html">ForMore</a></h5>
+<p>#####<a href="https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun">Awesome</a></p>
+]]></content>
   </entry>
   
   <entry>
@@ -88,30 +71,63 @@
     <link href="http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya"/>
     <updated>2012-04-12T20:11:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya</id>
-    <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下： 文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。 <!--more--> x.Z 压缩命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div> 解压命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+    <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下：
+文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。
+<!--more-->
+x.Z
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>x.gz2 压缩命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div> 解压命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div> 查看压缩文件 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>x.gz2
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
+查看压缩文件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>x.tar <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar &lt;span>-zxcvfppP&lt;/span></span></code></pre></td></tr></table></div></figure></notextile></div> 压缩命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div> 解压命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>x.tar
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>xx.tar.gz 压缩命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div> 解压命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>xx.tar.gz
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>xx.bz 压缩命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip xx</span></code></pre></td></tr></table></div></figure></notextile></div> 解压命令 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div> 查看压缩文件 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>xx.bz
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
+查看压缩文件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>最后意外发现vim命令模式下x有delete作用。 今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。 很欣赏凯文的清醒、大局观。看到这样一句话： 我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。 作为结语。</p>]]></content>
+<p>最后意外发现vim命令模式下x有delete作用。
+今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
+很欣赏凯文的清醒、大局观。看到这样一句话：
+我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。
+作为结语。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -120,13 +136,51 @@
     <updated>2012-03-26T14:33:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/26/alias-li-qi</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长 使用目的：简化指令，提高指令输入效率 使用规则： alias AliasName=&#8217;NameToBeSimpler&#8217; //注意：等号前后不允许空格。 unalias AliasName=&#8217;NameToBeSimpler&#8217; //取消以上的别名设置 举例： alias rg=&#8217;rake generate&#8217; 此时在命令行下输入 rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div> <!--more--> 按照以上的设置在重新开机后，输入 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div> 说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div> 此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div> 下面列一下我用的alias <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg=&#8217;rake generate&#8217; alias rd=&#8217;rake deploy&#8217; alias update=&#8217;sudo apt-get update&#8217; alias ..=&#8217;cd ..&#8217; #据说是死罪 alias df=&#8217;df -h&#8217; #以M为单位查看磁盘空间 alias is=&#8217;sudo apt-get install&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
+</span><span class='line'>使用目的：简化指令，提高指令输入效率
+</span><span class='line'>使用规则：
+</span><span class='line'>alias AliasName=’NameToBeSimpler’   //注意：等号前后不允许空格。
+</span><span class='line'>unalias AliasName=’NameToBeSimpler’  //取消以上的别名设置 
+</span><span class='line'>	举例：
+</span><span class='line'>alias rg=’rake generate’
+</span><span class='line'>此时在命令行下输入
+</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div>
+<!--more-->	
+按照以上的设置在重新开机后，输入
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
+</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div>
+说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+下面列一下我用的alias
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg=’rake generate’
+</span><span class='line'>alias rd=’rake deploy’
+</span><span class='line'>alias update=’sudo apt-get update’
+</span><span class='line'>alias ..=’cd ..’ #据说是死罪
+</span><span class='line'>alias df=’df -h’  #以M为单位查看磁盘空间
+</span><span class='line'>alias is=’sudo apt-get install’</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。</p>]]></content>
+<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。		</p>
+]]></content>
   </entry>
   
   <entry>
@@ -134,7 +188,8 @@
     <link href="http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong"/>
     <updated>2012-03-26T12:55:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/26/find-ming-ling-de-shi-yong</id>
-    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。</p>]]></content>
+    <content type="html"><![CDATA[<p>vim 中复制缓存与系统缓存的关系。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -145,18 +200,23 @@
     <content type="html"><![CDATA[<p>问题的出现在与Windows下与linux下的文件编码的差异。在wendows下的默认文件编码方式是GBK(gb2312)；而在Linux下的默认编码方式为UTF-8.这样在linux系统下打开一个在Win下编辑的文件就常常会出现乱码。</p>
 
 <p>一个比较有效的解决办法就是转码。在网上找到的一个很有效的工具就是：ICONV。其常见使用格式如下</p>
+
 <blockquote>
 1.在Vim中直接进行转换文件 编码 ,比如将一个文件 转换成utf-8格式
 :set fileencoding=utf-8
 2. enconv 转换文件 编码 ，比如要将一个GBK编码 的文件 转换成UTF-8编码 ，操作如下
 enconv -L zhCN -x UTF-8 filename
-</blockquote><blockquote>
+</blockquote>
+
+<blockquote>
 3.iconv 转换，iconv的命令格式如下：
 iconv -f encoding -t encoding inputfile
 比如将一个UTF-8 编码的文件转换成GBK编码
 iconv -f GBK -t UTF-8 file1 -o file2
-</blockquote><!--more-->
+</blockquote>
+<!--more-->
 <p>下面是摘自网上的关于VIM编码的资料：</p>
+
 <blockquote>和所有的流行文本编辑器一样，Vim 可以很好的编辑各种字符编码的文件，这当然包括UCS-2、UTF-8 等流行的 Unicode 编码方式。然而不幸的是，和很多来自 Linux 世界的软件一样，这需要你自己动手设置。
 Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助 :help encoding-names)，它们的意义如下:
 * encoding: Vim 内部使用的字符编码方式，包括 Vim 的 buffer (缓冲区)、菜单文本、消息文本等。默认是根据你的locale选择.用户手册上建议只在 .vimrc 中改变它的值，事实上似乎也只有在.vimrc 中改变它的值才有意义。你可以用另外一种编码来编辑和保存文件，如你的vim的encoding为utf-8,所编辑的文件采用cp936编码,vim会自动将读入的文件转成utf-8(vim的能读懂的方式），而当你写入文件时,又会自动转回成cp936（文件的保存编码).
@@ -167,7 +227,9 @@ Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fi
 1. Vim 启动，根据 .vimrc 中设置的 encoding 的值来设置 buffer、菜单文本、消息文的字符编码方式。
 2. 读取需要编辑的文件，根据 fileencodings 中列出的字符编码方式逐一探测该文件编码方式。并设置 fileencoding 为探测到的，看起来是正确的 (注1) 字符编码方式。
 3. 对比 fileencoding 和 encoding 的值，若不同则调用 iconv 将文件内容转换为encoding 所描述的字符编码方式，并且把转换后的内容放到为此文件开辟的 buffer 里，此时我们就可以开始编辑这个文件了。注意，完成这一步动作需要调用外部的 iconv.dll(注2)，你需要保证这个文件存在于 $VIMRUNTIME 或者其他列在 PATH 环境变量中的目录里。
-4. 编辑完成后保存文件时，再次对比 fileencoding 和 encoding 的值。若不同，再次调用 iconv 将即将保存的 buffer 中的文本转换为 fileencoding 所描述的字符编码方式，并保存到指定的文件中。同样，这需要调用 iconv.dll由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;)。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示cp936，也就是 GBK 的代码页)。</blockquote>]]></content>
+4. 编辑完成后保存文件时，再次对比 fileencoding 和 encoding 的值。若不同，再次调用 iconv 将即将保存的 buffer 中的文本转换为 fileencoding 所描述的字符编码方式，并保存到指定的文件中。同样，这需要调用 iconv.dll由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;)。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示cp936，也就是 GBK 的代码页)。</blockquote>
+
+]]></content>
   </entry>
   
 </feed>

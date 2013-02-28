@@ -171,49 +171,61 @@ unalias AliasName='NameToBeSimpler' // &hellip;">
   </header>
 
 
-<div class="entry-content"><figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>适用场合：惯用指令很长
-</span><span class='line'>使用目的：简化指令，提高指令输入效率
-</span><span class='line'>使用规则：
-</span><span class='line'>alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
-</span><span class='line'>unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
-</span><span class='line'>	举例：
-</span><span class='line'>alias rg='rake generate'
-</span><span class='line'>此时在命令行下输入
-</span><span class='line'>rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure><!--more-->
+<div class="entry-content">
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">适用场合：惯用指令很长
+</span><span class="line">使用目的：简化指令，提高指令输入效率
+</span><span class="line">使用规则：
+</span><span class="line">alias AliasName='NameToBeSimpler'   //注意：等号前后不允许空格。
+</span><span class="line">unalias AliasName='NameToBeSimpler'  //取消以上的别名设置 
+</span><span class="line">	举例：
+</span><span class="line">alias rg='rake generate'
+</span><span class="line">此时在命令行下输入
+</span><span class="line">rg 与 rake generate 作用一致</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<!--more-->
 <p>按照以上的设置在重新开机后，输入</p>
-<figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:/etc$ rg
-</span><span class='line'>rg：找不到命令</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:/etc$ rg
+</span><span class="line">rg：找不到命令</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>说明，rg命令已经失效了。为了使我们设置的别名长久有效，要把别名写在指定位置的文件里。</p>
-<figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo: vim ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>此时使用rg，仍然是无效的，只有重启才可以生效。当然还有另外一种办法可以让他立即生效：</p>
-<figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:source ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>下面列一下我用的alias</p>
-<figure class='code'><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rg='rake generate'
-</span><span class='line'>alias rd='rake deploy'
-</span><span class='line'>alias update='sudo apt-get update'
-</span><span class='line'>alias ..='cd ..' #据说是死罪
-</span><span class='line'>alias df='df -h'  #以M为单位查看磁盘空间
-</span><span class='line'>alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure>
-<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。</p></div>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">alias rg='rake generate'
+</span><span class="line">alias rd='rake deploy'
+</span><span class="line">alias update='sudo apt-get update'
+</span><span class="line">alias ..='cd ..' #据说是死罪
+</span><span class="line">alias df='df -h'  #以M为单位查看磁盘空间
+</span><span class="line">alias is='sudo apt-get install'</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>alias 是一把利器，但是最好不要使用的尺度太大，免得离开自己的机器就会失去“安全感”。小用怡情，乱用伤身。		</p>
+</div>
 
 
   <footer>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Note | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/note/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-01-12T16:20:43+08:00</updated>
+  <updated>2013-02-28T12:49:54+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -20,22 +20,28 @@
     <id>http://luoluo.github.com/blog/2012/04/09/xiao-jie-0-dot-1</id>
     <content type="html"><![CDATA[<p>最近过得略忙乱，WIN莫名不可重装的坏点，断了我游戏的念。</p>
 
-<p>身边的朋友要么游戏的醉生梦死，要么开始做各种项目。两边都有人来拉我入伙，真有点犹犹豫豫，不知所措。又是一年银杏黄，朋友们拉我做的项目各种应 用、网络、加密…… 一时心动的有，可想一下要做大半年，还是摇摇头，微笑的说不了。 很久前就决定了要做什么，可是现在要做的真的还有很多。。 要从数学（算法）和计算机系统（包含硬件）两方面深入。 总觉的要先投入时间，把操作系统做好才有希望做出点有用的东东。还觉得关键时候的较量就是在数学上的较量，抑或思维上的较量。</p>
+<p>身边的朋友要么游戏的醉生梦死，要么开始做各种项目。两边都有人来拉我入伙，真有点犹犹豫豫，不知所措。又是一年银杏黄，朋友们拉我做的项目各种应
+用、网络、加密…… 一时心动的有，可想一下要做大半年，还是摇摇头，微笑的说不了。 很久前就决定了要做什么，可是现在要做的真的还有很多。。  要从数学（算法）和计算机系统（包含硬件）两方面深入。 总觉的要先投入时间，把操作系统做好才有希望做出点有用的东东。还觉得关键时候的较量就是在数学上的较量，抑或思维上的较量。</p>
 
-<p>周末的时候，睡意朦胧，接到阳仔的电话，叫我去考试。手机上赫然写着8：5X，顿时清醒，飞奔下床，带着昨夜收拾好的东西，RUSH。路上不忘打电话问下一夜火车的她到没。放心后，到教室，听力开始放了。冷静的拿出东西，装电池，调频……不知多久没有早读，念英语了&#8230;.做起来没有想象中那么不顺手，感觉蛮简单的，由于无前期准备付出，所以没有报希望，这段时间在忙其他的。 做起来也很轻松的。 时间默默流淌，老师一句“还有10分钟”，把我叫醒，从投入做题中，从梦回高三…… 还有两篇作文作文…… 作文还是答题卡填写答案的我开始纠结，是写作文还是抄写答案。想到可以等老师收的时候拖一下，在10分钟内秒掉两篇“作文”，开始抄答案到答题卡上，刚刚10多题，考试的钟声想起，老师缓缓走过来。50+的选择题还没有开始涂。老师一副公正的表情对着我，“考试 时间到了……”，第一次考试没完成…… 增加了人生的阅历了，不过它也深深的刺了我一刀。 英语已变的这么陌生。该拾起来了，毕竟自己还是蛮喜欢的。</p>
+<p>周末的时候，睡意朦胧，接到阳仔的电话，叫我去考试。手机上赫然写着8：5X，顿时清醒，飞奔下床，带着昨夜收拾好的东西，RUSH。路上不忘打电话问下一夜火车的她到没。放心后，到教室，听力开始放了。冷静的拿出东西，装电池，调频……不知多久没有早读，念英语了….做起来没有想象中那么不顺手，感觉蛮简单的，由于无前期准备付出，所以没有报希望，这段时间在忙其他的。 做起来也很轻松的。    时间默默流淌，老师一句“还有10分钟”，把我叫醒，从投入做题中，从梦回高三……    还有两篇作文作文……   作文还是答题卡填写答案的我开始纠结，是写作文还是抄写答案。想到可以等老师收的时候拖一下，在10分钟内秒掉两篇“作文”，开始抄答案到答题卡上，刚刚10多题，考试的钟声想起，老师缓缓走过来。50+的选择题还没有开始涂。老师一副公正的表情对着我，“考试 时间到了……”，第一次考试没完成……  增加了人生的阅历了，不过它也深深的刺了我一刀。  英语已变的这么陌生。该拾起来了，毕竟自己还是蛮喜欢的。</p>
 
-<ol>
-<li>1前只有几件事做好就可以了： <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+<p>5.1前只有几件事做好就可以了：
 &lt;1&gt;单片机跑起系统
 &lt;2&gt;做几场比赛
-&lt;3&gt;其中考试漂亮点</pre></li>
-</ol>
-<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;4&gt;母函数|CSAPP的笔记找时间好好写。
+&lt;3&gt;其中考试漂亮点</p>
 
+<table>
+  <tbody>
+    <tr>
+      <td>&lt;4&gt;母函数</td>
+      <td>CSAPP的笔记找时间好好写。</td>
+    </tr>
+  </tbody>
+</table>
 
-NEVER STOP PRACTISING 
-NEVER STOP PROGRAMMING</pre>]]></content>
+<p>NEVER STOP PRACTISING 
+NEVER STOP PROGRAMMING</p>
+]]></content>
   </entry>
   
   <entry>
@@ -43,7 +49,8 @@ NEVER STOP PROGRAMMING</pre>]]></content>
     <link href="http://luoluo.github.com/blog/2012/04/02/generating-function"/>
     <updated>2012-04-02T19:51:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/02/generating-function</id>
-    <content type="html"><![CDATA[<p>先挖坑，清明期间研究下，再写笔记。</p>]]></content>
+    <content type="html"><![CDATA[<p>先挖坑，清明期间研究下，再写笔记。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -55,52 +62,79 @@ NEVER STOP PROGRAMMING</pre>]]></content>
 
 <p>期间遇到了好多好多的问题。加上Ubuntu的特殊情况，带来了奇奇怪怪的小问题，在此需要十分感谢互联网上的那些热心Hackers。</p>
 
-<h2 id='1ruby'>1.无法装ruby，问题如下</h2>
+<h2 id="ruby">1.无法装ruby，问题如下</h2>
 
-<p>no such file to load &#8211; zlib (LoadError) 解决办法： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib rvm remove 1.9.1 rvm install 1.9.1 -C &#8211;with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>no such file to load – zlib (LoadError)
+解决办法：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm pkg install zlib 
+</span><span class='line'>rvm remove 1.9.1
+</span><span class='line'>rvm install 1.9.1 -C –with-zlib-dir=$rvm</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
 <!--more-->
-<h2 id='2openssl_error'>2.openssl error</h2>
 
-<p>在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h2 id="openssl-error">2.openssl error</h2>
+<p>在配置好main Configs后，rake gegerate的报错如下：原来是openssl 的问题。 
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Generating Site with Jekyll unchanged sass/screen.scss Configuration from /home/lo/blog/octopress/&#8221;config.yml&#8221; /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in &lt;code>require&#39;: no such file to load -- openssl (LoadError)
-</span><span class='line'>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in &lt;/code>&#8217; from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in &lt;code>require&#39;
-</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in &lt;/code>&#8217; from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in &lt;code>require&#39;
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in &lt;/code>block in setup&#8217; from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in &lt;code>each&#39;
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in &lt;/code>setup&#8217; from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in &lt;code>initialize&#39;
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in &lt;/code>new&#8217; from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in &lt;code>&#39;
-</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in &lt;/code>load&#8217; from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in &lt;code>&#39;</span></code></pre></td></tr></table></div></figure></notextile></div>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Generating Site with Jekyll
+</span><span class='line'>unchanged sass/screen.scss
+</span><span class='line'>Configuration from /home/lo/blog/octopress/”config.yml”
+</span><span class='line'>/home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in &lt;code>require': no such file to load -- openssl (LoadError)
+</span><span class='line'>from /home/lo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/net/https.rb:92:in &lt;/code>’
+</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in &lt;code>require'
+</span><span class='line'>from /home/lo/blog/octopress/plugins/gist_tag.rb:10:in &lt;/code>’
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in &lt;code>require'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:76:in &lt;/code>block in setup’
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in &lt;code>each'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:75:in &lt;/code>setup’
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/lib/jekyll/site.rb:30:in &lt;code>initialize'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in &lt;/code>new’
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/gems/jekyll-0.11.0/bin/jekyll:224:in &lt;code>'
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in &lt;/code>load’
+</span><span class='line'>from /home/lo/.rvm/gems/ruby-1.9.2-p290/bin/jekyll:19:in `’</span></code></pre></td></tr></table></div></figure></notextile></div>
 卡了半天最后还是十分感谢互联网的Hackers，让我从泥潭中巴腿而出。解决方案就是修复openssl:
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install libssl-dev 
-</span><span class='line'>cd ext/openssl &lt;/code>&lt;/p>
+</span><span class='line'>cd ext/openssl &lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>Run the command one after the others. ruby extconf.rb make sudo make install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>&lt;p>Run the command one after the others. 
+</span><span class='line'>ruby extconf.rb 
+</span><span class='line'>make 
+</span><span class='line'>sudo make install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>然后就神奇的AC了。 原网址:<a href='http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
-' title='http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
-'>http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
+<p>然后就神奇的AC了。 原网址:<a href="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/ " title="http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/ ">http://blog.dhavalparikh.co.in/2011/10/solve-no-such-file-to-load-openssl-error/
 </a></p>
 
-<h2 id='3linuxfindfindman_find_'>3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</h2>
+<h2 id="linuxfindfindman-find-">3.如何在linux系统中找到以个文件或文件夹，这里真正的使用了FIND命令，感觉神轻气爽.具体的FIND使用规则：man find 好点。</h2>
+<pre><code>这里只记录下最最基本的使用：  <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</code></pre>
 
-<pre><code>这里只记录下最最基本的使用： </code></pre>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="nb">name</span> <span class="no">FileNameToBeFind</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2 id='4octopress'>4.octopress的个性化配置</h2>
-
+<h2 id="octopress">4.octopress的个性化配置</h2>
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -108,49 +142,104 @@ NEVER STOP PROGRAMMING</pre>]]></content>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="no">Main</span> <span class="no">Configs</span> <span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span> <span class="c1"># blog地址 title: My Octopress Blog # blog名称，会出现在左上角 subtitle: A blogging framework # title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己 author: Your Name # 会出现在每篇文章下面的Posted by xxx simple search: http://google.com/search # 右边搜索框使用的搜索引擎 description: # head.html中meta name=&amp;#8221;description&amp;#8221;的默认content，但一般都被会截断的文章内容替换掉&lt;/p&gt;</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Main</span> <span class="no">Configs</span>
+</span><span class='line'><span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">yoursite</span><span class="o">.</span><span class="n">com</span>  <span class="c1"># blog地址</span>
+</span><span class='line'><span class="n">title</span><span class="p">:</span> <span class="no">My</span> <span class="no">Octopress</span> <span class="no">Blog</span>  <span class="c1"># blog名称，会出现在左上角 </span>
+</span><span class='line'><span class="n">subtitle</span><span class="p">:</span> <span class="n">A</span> <span class="n">blogging</span> <span class="n">framework</span> <span class="c1"># title下面的副标题，可以用来放你的喜欢的名人名言，或者简单介绍下自己</span>
+</span><span class='line'><span class="n">author</span><span class="p">:</span> <span class="no">Your</span> <span class="no">Name</span> <span class="c1"># 会出现在每篇文章下面的Posted by xxx</span>
+</span><span class='line'><span class="n">simple</span> <span class="n">search</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">search</span> <span class="c1"># 右边搜索框使用的搜索引擎</span>
+</span><span class='line'><span class="n">description</span><span class="p">:</span> <span class="c1"># head.html中meta name=”description”的默认content，但一般都被会截断的文章内容替换掉&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="c1">#38; Plugins root: / # 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project #生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html permalink: /blog/:year/:month/:day/:title/ paginate: 10 # 每页展现blog的数量，如果blog数量大于这个，会产生翻页 recentposts: 5 # 右侧最近发表模块里blog的数量&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;blogblogread_onblog&#39;</span><span class="o">&gt;</span><span class="err">在某篇</span><span class="n">blog</span><span class="err">中使用</span><span class="o">&lt;!--</span> <span class="n">more</span> <span class="o">--&gt;</span><span class="err">，列表页就不会展现该</span><span class="n">blog</span><span class="err">全文，就会显示这个</span><span class="n">read</span> <span class="n">on</span><span class="err">链接，指向</span><span class="n">blog</span><span class="err">全文</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;excerptlink: &amp;#8220;Read on &amp;#8594;&amp;#8221; #右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html #也可以增加一些自己的页面，比如在/sou</span><span class="n">rce</span><span class="o">/</span><span class="n">includes</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">asides</span><span class="o">/</span><span class="err">下增加</span><span class="n">about</span><span class="o">.</span><span class="n">html</span> <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 defaultasides: &lt;span&gt;asides/recentposts.html, asides/github.html, asides/twitter.html&lt;/span&gt; # 可以给不同的页面配置不同的侧边栏&lt;br /&gt;blogindexasides: postasides: pageasides: </span>
-</span></code></pre></td></tr></table></div></figure></notextile></div> 出处：<a href='http://linyi.heroku.com/blog/config-octopress.html' title='http://linyi.heroku.com/blog/config-octopress.html'>http://linyi.heroku.com/blog/config-octopress.html</a></p>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="no">Jekyll</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="no">Plugins</span>
+</span><span class='line'><span class="n">root</span><span class="p">:</span> <span class="o">/</span> <span class="c1"># 网站的根目录，如果你网站是http://site.com/project这样的形式，就要写成 root: /project</span>
+</span><span class='line'>    <span class="c1">#生成文章的url形式，比如不喜欢url中带时间，习惯后缀加html，可以写成 /blog/:title.html</span>
+</span><span class='line'><span class="n">permalink</span><span class="p">:</span><span class="sr"> /blog/</span><span class="ss">:year</span><span class="o">/</span><span class="ss">:month</span><span class="o">/</span><span class="ss">:day</span><span class="o">/</span><span class="ss">:title</span><span class="o">/</span>
+</span><span class='line'><span class="n">paginate</span><span class="p">:</span> <span class="mi">10</span>          <span class="c1"># 每页展现blog的数量，如果blog数量大于这个，会产生翻页</span>
+</span><span class='line'><span class="n">recentposts</span><span class="p">:</span> <span class="mi">5</span>       <span class="c1"># 右侧最近发表模块里blog的数量</span>
+</span><span class='line'><span class="c1">#在某篇blog中使用&lt;!-- more --&gt;，列表页就不会展现该blog全文，就会显示这个read on链接，指向blog全文</span>
+</span><span class='line'><span class="n">excerptlink</span><span class="p">:</span> <span class="err">“</span><span class="no">Read</span> <span class="n">on</span> <span class="err">→”</span>
+</span><span class='line'>      <span class="c1">#右侧边栏的展现，有些要下面的设置配合，比如你没有配置githubuser，则这儿也不会展现github.html</span>
+</span><span class='line'>      <span class="c1">#也可以增加一些自己的页面，比如在/source/includes/custom/asides/下增加about.html</span>
+</span><span class='line'>      <span class="c1">#然后在列表中增加custom/asides/about.html即可，这儿前后的顺序，就代表了页面上下的次序 </span>
+</span><span class='line'><span class="n">defaultasides</span><span class="p">:</span> <span class="o">[</span><span class="n">asides</span><span class="o">/</span><span class="n">recentposts</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">asides</span><span class="o">/</span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="o">]</span>
+</span><span class='line'>	<span class="c1"># 可以给不同的页面配置不同的侧边栏&lt;br /&gt;</span>
+</span><span class='line'><span class="n">blogindexasides</span><span class="p">:</span>
+</span><span class='line'><span class="n">postasides</span><span class="p">:</span>
+</span><span class='line'><span class="n">pageasides</span><span class="p">:</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+出处：<a href="http://linyi.heroku.com/blog/config-octopress.html" title="http://linyi.heroku.com/blog/config-octopress.html">http://linyi.heroku.com/blog/config-octopress.html</a></p>
 
-<h2 id='5'>5.怎么撰写新文章呢？</h2>
+<h2 id="section">5.怎么撰写新文章呢？</h2>
 
-<p>主要的工具是 <strong>rake</strong>： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost&lt;span>&#8220;postname&#8221;&lt;/span> //来产生新的博文 rake generate //生成博文 rake deploy //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>主要的工具是
+<strong>rake</strong>：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake newpost[“postname”] //来产生新的博文 
+</span><span class='line'>rake generate       //生成博文 
+</span><span class='line'>rake deploy         //将博文上传至服务器</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h2 id='6'>6.增加第三方插件</h2>
-
+<h2 id="section-1">6.增加第三方插件</h2>
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site. (2)http://delicious.com/ (3)Tracking ID: UA-30311112-1 (4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(1).Disqus Comments - Add your disqus short name to enable disqus comments on your site.
+</span><span class='line'>(2)http://delicious.com/
+</span><span class='line'>(3)Tracking ID: UA-30311112-1
+</span><span class='line'>(4)Delicious - Share your recent Delicious bookmarks in the sidebar.</span></code></pre></td></tr></table></div></figure></notextile></div>
+##7.down语法的几点小白困惑：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符
+</span><span class='line'>	b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？
+</span><span class='line'>	c.引用显示的不同风格，延时还是？
+</span><span class='line'>	d.是否可以开头空格的风格？
+</span><span class='line'>	e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h2 id='7down'>7.down语法的几点小白困惑：</h2>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>a.下划线是非法字符，星号也是非法字符 b.有非法字符、非法语法的post无法正常显示？OR是post延时比较高？ c.引用显示的不同风格，延时还是？ d.是否可以开头空格的风格？ e.开头不规范会出现无法显示，抑或是延时？</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2 id='8tex'>8.关于数学公式的编辑。$TeX$</h2>
-
-<p>尝试了以下两种方法：</p>
-
-<h3 id='marukumarkdown'>使用maruku进行markdown解析。</h3>
-
-<pre><code>我个人大力推荐这种解决办法，原因有2：\
-maruku原生态的支持$TeX$
-maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
-
-<h4 id='id4'>设置方法：</h4>
-
-<pre><code>在_config.yml文件里找到：</code></pre>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div> 改为 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: maruku</span></code></pre></td></tr></table></div></figure></notextile></div> 在Gemfile里找到： <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;rdiscount&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> 改为 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem &#8216;maruku&#8217;</span></code></pre></td></tr></table></div></figure></notextile></div> 如果没有安装maruku,<code>gem install maruku</code> 然后发现了另外一个问题：在换了主题之后，解析失败了，原来，还是需要MathJax的。MathJax的设置：把下面的代码添加到<code>/source/_includes/custom/head.html</code>文件里： <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>head.html </span></figcaption>
+<h2 id="tex">8.关于数学公式的编辑。$TeX$</h2>
+<p>尝试了以下两种方法：
+###使用maruku进行markdown解析。
+	我个人大力推荐这种解决办法，原因有2：\
+	maruku原生态的支持$TeX$
+	maruku的解析速度要明显快于后者(个人感觉如此)
+####设置方法：
+	在_config.yml文件里找到：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div>
+改为
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: maruku</span></code></pre></td></tr></table></div></figure></notextile></div>
+在Gemfile里找到：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem ‘rdiscount’</span></code></pre></td></tr></table></div></figure></notextile></div>
+改为
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem ‘maruku’</span></code></pre></td></tr></table></div></figure></notextile></div>
+如果没有安装maruku,<code>gem install maruku</code>
+然后发现了另外一个问题：在换了主题之后，解析失败了，原来，还是需要MathJax的。MathJax的设置：把下面的代码添加到<code>/source/_includes/custom/head.html</code>文件里：
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>head.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -176,36 +265,51 @@ maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'> <span class="c">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&#39;text/x-mathjax-config&#39;</span><span class="nt">&gt;</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
 </span><span class='line'>    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
 </span><span class='line'>      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
 </span><span class='line'>      <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>  <span class="p">});</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;&lt;script </span><span class="na">type=</span><span class="s">&#39;text/x-mathjax-config&#39;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
 </span><span class='line'>      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
 </span><span class='line'>        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
 </span><span class='line'>      <span class="p">}</span>
 </span><span class='line'>    <span class="p">});</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;&lt;pre</span> <span class="na">class=</span><span class="s">&#39;markdown-html-error&#39;</span> <span class="na">style=</span><span class="s">&#39;border: solid 3px red; background-color: pink&#39;</span><span class="nt">&gt;</span>REXML could not parse this XML/HTML:
-</span><span class='line'><span class="ni">&amp;lt;</span>script type=<span class="ni">&amp;quot;</span>text/x-mathjax-config<span class="ni">&amp;quot;&amp;gt;</span>
-</span><span class='line'>    MathJax.Hub.Queue(function() {
-</span><span class='line'>        var all = MathJax.Hub.getAllJax(), i;
-</span><span class='line'>        for(i=0; i <span class="ni">&amp;lt;</span> all.length; i += 1) {
-</span><span class='line'>            all[i].SourceElement().parentNode.className += <span class="ni">&amp;apos;</span> has-jax<span class="ni">&amp;apos;</span>;
-</span><span class='line'>        }
-</span><span class='line'>    });
-</span><span class='line'><span class="ni">&amp;lt;</span>/script<span class="ni">&amp;gt;</span><span class="nt">&lt;/pre&gt;&lt;script </span><span class="na">src=</span><span class="s">&#39;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39;</span> <span class="na">type=</span><span class="s">&#39;text/javascript&#39;</span><span class="nt">&gt;</span>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">&#39; has-jax&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div> <a href='http://steshaw.org/'>参考</a></p>
-
-<h3 id='kramdown__mathjax'>使用kramdown &amp; MathJax</h3>
-
-<p>个人感觉解析像乌龟. <a href='http://www.idryman.org/blog/2012/03/10/writing-math-equations-on-octopress/'>详见</a></p>]]></content>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<a href="http://steshaw.org/">参考</a>
+###使用kramdown &amp; MathJax
+个人感觉解析像乌龟.
+<a href="http://www.idryman.org/blog/2012/03/10/writing-math-equations-on-octopress/">详见</a></p>
+]]></content>
   </entry>
   
   <entry>
@@ -213,44 +317,43 @@ maruku的解析速度要明显快于后者(个人感觉如此)</code></pre>
     <link href="http://luoluo.github.com/blog/2012/03/17/wang-zhan-tui-jian"/>
     <updated>2012-03-17T10:50:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/17/wang-zhan-tui-jian</id>
-    <content type="html"><![CDATA[<ol>
-<li>http://mathworld.wolfram.com</li>
-</ol>
+    <content type="html"><![CDATA[<p>1.http://mathworld.wolfram.com   </p>
+
 <blockquote>
 MathWorld是线上数学百科全书，由沃夫朗研究公司（Wolfram Research inc.，WRI）赞助
 <br />
 </blockquote>
-<ol>
-<li>
-<p>http://planetmath.org/ <br /><blockquote>
+<p>2.http://planetmath.org/   </p>
+<blockquote>
 PlanetMath是一本自由、协作的网络数学百科全书。强调同行评审、严密、公开、具教育性、实时内容、内容互连、以及群体协作。   
-PlanetMath的目标是成为一本综合性的网络数学百科全书。该企划位于弗吉尼亚理工学院暨州立大学的数码图书馆研究实验室。
-</blockquote> <!--more--> <br /></p>
-</li>
-
-<li>
-<p>http://en.wikipedia.org</p>
+  PlanetMath的目标是成为一本综合性的网络数学百科全书。该企划位于弗吉尼亚理工学院暨州立大学的数码图书馆研究实验室。
+</blockquote>
+<!--more-->
+<p><br />
+3.http://en.wikipedia.org</p>
 
 <p>http://zh.wikipedia.org</p>
-</li>
-</ol>
+
 <blockquote>
   http://oeis.org/wiki/ 
   整数数列线上大全（On-Line Encyclopedia of Integer Sequences，简称OEIS）是一个网上可搜索的整数数列数据库。它是数学
   上的重要资源，因每篇文章里都记录了一个整数数列的首几个项、关键字和链结等。截至2009年6月，OEIS 已经有超过 160,000个数列
-</blockquote><br />
-<ol>
-<li>http://www.cs.uwaterloo.ca/journals/JIS/ <br /><blockquote>
+</blockquote>
+<p><br />
+4.http://www.cs.uwaterloo.ca/journals/JIS/   </p>
+<blockquote>
 Journal of Integer Sequences
 This is the home page for the electronic Journal of Integer Sequences, ISSN 1530-7638.
 The journal is devoted to papers dealing with integer sequences and related topics.
 All submissions should be sent to the editor-in-chief
-</blockquote> <br /></li>
-
-<li>http://www.math.upenn.edu/ <blockquote>
+</blockquote>
+<p><br />
+5.http://www.math.upenn.edu/</p>
+<blockquote>
 宾夕法尼亚大学数学学院主页
-</blockquote></li>
-</ol>]]></content>
+</blockquote>
+
+]]></content>
   </entry>
   
   <entry>
@@ -258,11 +361,13 @@ All submissions should be sent to the editor-in-chief
     <link href="http://luoluo.github.com/blog/2012/03/13/to-do"/>
     <updated>2012-03-13T22:42:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/13/to-do</id>
-    <content type="html"><![CDATA[<p>刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了&#8230; 书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里&#8230; 感觉好像在等待什么，我也不知道到底是什么，还不是很清楚自己想要的是什么。 周围弥漫这DOTA、CS，各种安逸的节奏，曾经我们一起敲过的代码，现在还是否有激情继续呢？</p>
+    <content type="html"><![CDATA[<p>刚刚给之前的笔记搬家时，进入了自己去年写的WIKI，是写技术的小细节，SVN、VIM、等工具被放在了冷藏库里。不知有多久没有写代码了，也不知有多久没有看程序、算法等书了…   书架上的新书、厚书逐渐多了起来； CSAPP被打入了冷宫，CM被忽冷忽热，剩下的神书也凉在那里…  感觉好像在等待什么，我也不知道到底是什么，还不是很清楚自己想要的是什么。   周围弥漫这DOTA、CS，各种安逸的节奏，曾经我们一起敲过的代码，现在还是否有激情继续呢？</p>
 
-<p>这几天看《北爱》，略纠结，晚上的梦或多或少有《北爱》的影子。看了一多半之后不在想继续往下看了，没有了那个冲动，开始十多集的美梦被撵破的情节还是可以给我麻木的内心带来片刻的刺激，让我知道“未来的路，也许很现实”，就如那句歌“外面的世界很精彩，外面的世界很无奈”。 无论贫或富，都有权拥有爱情。 当然权利是可以放弃的，如果为了利益去放弃爱情，我很难想象，你会以怎样的心情去继续生活，你还活着么？ 纯真的无所求的爱是最让人憧憬的吧，傻傻的执着的爱是最让人渴求的吧。 “我爱你，和你没关系”，每次听起来，我都为那小姐姐难过，好无辜啊，爱情是不能强求的，正如那句“要么你情我愿，要么互不相干”，强扭的瓜不甜。 其实看到后来，只需回答一个问题“幸福是什么？”不同人看到了不同的幸福的面庞，他们用其所有去交换.. 有点点难过，不过，我更愿意相信“艺术源于生活，却高于生活”，《北爱》应该是对真实生活的放大吧，这样释然多了。 无论怎样，我相信爱情，相信我们的未来&#8230;. 想起朋友的一句话&#8221;如果你们的不在一起了，我们就再也不想信爱情了&#8230;&#8221;</p>
+<p>这几天看《北爱》，略纠结，晚上的梦或多或少有《北爱》的影子。看了一多半之后不在想继续往下看了，没有了那个冲动，开始十多集的美梦被撵破的情节还是可以给我麻木的内心带来片刻的刺激，让我知道“未来的路，也许很现实”，就如那句歌“外面的世界很精彩，外面的世界很无奈”。   无论贫或富，都有权拥有爱情。  当然权利是可以放弃的，如果为了利益去放弃爱情，我很难想象，你会以怎样的心情去继续生活，你还活着么？   纯真的无所求的爱是最让人憧憬的吧，傻傻的执着的爱是最让人渴求的吧。       “我爱你，和你没关系”，每次听起来，我都为那小姐姐难过，好无辜啊，爱情是不能强求的，正如那句“要么你情我愿，要么互不相干”，强扭的瓜不甜。     其实看到后来，只需回答一个问题“幸福是什么？”不同人看到了不同的幸福的面庞，他们用其所有去交换..       有点点难过，不过，我更愿意相信“艺术源于生活，却高于生活”，《北爱》应该是对真实生活的放大吧，这样释然多了。  无论怎样，我相信爱情，相信我们的未来….     想起朋友的一句话”如果你们的不在一起了，我们就再也不想信爱情了…”</p>
 
-<p>好吧，开学快一个月了，预计的适应期早过了，说好的计划差点快全部被抛在脑后了，整顿下行装，重新上路了，迎接明天升起的新的太阳.</p>]]></content>
+<p>好吧，开学快一个月了，预计的适应期早过了，说好的计划差点快全部被抛在脑后了，整顿下行装，重新上路了，迎接明天升起的新的太阳.</p>
+
+]]></content>
   </entry>
   
 </feed>

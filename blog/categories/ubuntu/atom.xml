@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | LOG.02]]></title>
   <link href="http://luoluo.github.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-01-12T16:20:43+08:00</updated>
+  <updated>2013-02-28T12:49:54+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -18,34 +18,50 @@
     <link href="http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot"/>
     <updated>2012-05-09T18:29:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/graphviz-and-dot</id>
-    <content type="html"><![CDATA[<h4 id='tlgraphviz__dot_language_wiki__'>脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
+    <content type="html"><![CDATA[<h4 id="tlgraphviz--dot-language-wiki--">脑袋里有一个模糊的“思维导图”的东东，当然之前没有“思维导图”的概念，最近浏览TL时，偶得一利器Graphviz &amp; DOT language. 恰是吾之所求。下面是WIKI &amp; 官网的简介。</h4>
 
-<h3 id='graphviz'>Graphviz:</h3>
+<h3 id="graphviz">Graphviz:</h3>
+<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams.<br/>Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote>
+<strong>DOT</strong>
+<blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote>
+####简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：
+* 有向
+* 无向</p>
 
-<p><blockquote><p>AT&amp;T Labs Tools for viewing and interacting with graph diagrams. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. Automatic graph drawing has many important applications in software engineering, database and web design, networking, and in visual interfaces for many other domains. Graphviz is open source graph visualization software. It has several main graph layout programs.</p></blockquote> <strong>DOT</strong> <blockquote><p>DOT is a plain text graph description language. It is a simple way of describing graphs that both humans and computer programs can use. DOT graphs are typically files that end with the .gv (or .dot) extension. The .gv extension is preferred, as the .dot file extension is used by Microsoft Office 2003.</p></blockquote></p>
-
-<h4 id='dotgraphvizgraphviz'>简而言之，我们用dot语言来表达我们的思想，将流程、关系利用Graphviz“翻译”图形化。Graphviz主要支持两种关系图：</h4>
-
-<p>* 有向 * 无向</p>
-
-<h3 id='id19'>无向图：<br /></h3>
-
-<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下： <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
+<h3 id="br">无向图：<br /></h3>
+<p>这是DOT最简单的应用。只需用“- -”来表示节点间有关系的。例子如下：
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Undirected graph test2 file </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{ a &#8211; b &#8211; c; b &#8211; d; }</span></code></pre></td></tr></table></div></figure></notextile></div> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>graph graphName{
+</span><span class='line'>	a – b – c;
+</span><span class='line'>	b – d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/DotLanguageUndirected.svg/220px-DotLanguageUndirected.svg.png" width="150" height="250"></p>
 
-<h3 id='id20'>有向图：<br /></h3>
-
-<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下： <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
+<h3 id="br-1">有向图：<br /></h3>
+<p>同样是DOT简单的应用。只需用“- &gt;”来表示节点间有关系的。例子如下：
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Directed graph test2 file </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{ a -&gt; b -&gt; c; b -&gt; d; }</span></code></pre></td></tr></table></div></figure></notextile></div> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>digraph graphName{
+</span><span class='line'>	a -&gt; b -&gt; c;
+</span><span class='line'>	b -&gt; d;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div> 
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/DotLanguageDirected.svg/168px-DotLanguageDirected.svg.png" width="150" height="250"></p>
 
-<h3 id='id21'>修改样式：</h3>
-
-<p>在花括号内添加边和节点的定义 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>node &lt;span>shape=&#8221;record&#8221;&lt;/span>; edge &lt;span>style=&#8221;dashed&#8221;&lt;/span>;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5 id='link'>此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href='http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/'>link</a></h5>]]></content>
+<h3 id="section">修改样式：</h3>
+<p>在花括号内添加边和节点的定义
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>node [shape=”record”];
+</span><span class='line'>edge [style=”dashed”];</span></code></pre></td></tr></table></div></figure></notextile></div> 
+#####此外，还支持子图绘制、数据结构图形化等进阶功能。参见：<a href="http://www.icodeit.org/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/">link</a></p>
+]]></content>
   </entry>
   
   <entry>
@@ -53,10 +69,11 @@
     <link href="http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji"/>
     <updated>2012-04-01T23:39:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/01/ubuntude-bugxiu-fu-xiao-ji</id>
-    <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了 不少意外惊喜：</p>
+    <content type="html"><![CDATA[<p>最近一段时间系统各种龟速，WIN7莫名启动缓慢，而ubuntu运行缓慢，把WIN7换成了fedora却发现ruby的换环境同样不容易构建。耗费了大半天无果，回来研究ubuntu的问题。得到了
+不少意外惊喜：</p>
 
-<ol>
-<li>linux下的资源管理器： <!--more--> <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+<p>1.linux下的资源管理器：
+<!--more-->
 &lt;1&gt;ps
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -72,10 +89,9 @@
 </span><span class='line'>lo@lo:~$ ps -aux</span></code></pre></td></tr></table></div></figure></notextile></div>
 &lt;2&gt;top                                                                                                                                        <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ top</span></code></pre></td></tr></table></div></figure></notextile></div>
-较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</pre></li>
-</ol>
-<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;3&gt;kill
+较ps而言的，top有其极大的有点，“动态”（每5秒刷新一次）。</p>
+
+<p>&lt;3&gt;kill
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -89,9 +105,9 @@
 </span><span class='line'>-9  :杀掉该进程
 </span><span class='line'>-15 :停止该进程
 </span><span class='line'>EG：
-</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class='line'>lo@lo:~$ kill -9 1234</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-&lt;4&gt;uname
+<p>&lt;4&gt;uname
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -101,17 +117,17 @@
 </span><span class='line'>-a  :列出所有的系统信息
 </span><span class='line'>-p  :列出CPU信息 
 </span><span class='line'>-n  :列出主机名
-</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class='line'>-r  :列出核心版本信息</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
-top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：
+<p>2.BUG的表现：把一个cpu时刻占用在100%左右，系统变身蜗牛。
+top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着一个CPU。而且简单的kill后，马上“原地复活”。后来还是GOOGLE的强大火力下找到了组织。&gt;原来是一个BUG啊。然后获取了两种解决方案：</p>
 
-&lt;1&gt;暂时止痛
+<p>&lt;1&gt;暂时止痛
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo service udev stop</span></code></pre></td></tr></table></div></figure></notextile></div>
-重启后旧病复发。
+重启后旧病复发。</p>
 
-&lt;2&gt;根治型
+<p>&lt;2&gt;根治型
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -124,7 +140,8 @@ top命令使用后，看到一个upstart-udev-bridge的进程无赖的占用着�
 </span><span class='line'>sudo apt-get update &amp;&amp; sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure></notextile></div>
 而这种根治的方案来源于一个强大的站点：
 https://bugs.launchpad.net
-<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。          </pre>]]></content>
+<img src="https://bugs.launchpad.net/@@/launchpad-logo">这是一个BUG上报，分布式解决的站点。          </p>
+]]></content>
   </entry>
   
   <entry>
@@ -135,17 +152,21 @@ https://bugs.launchpad.net
     <content type="html"><![CDATA[<p>ubuntu 11.10 后，笔记本常常出现搜不到寝室路由的无线信号，但是在这种情况下却可以搜到其他人的无线信号。笔记本是WINDOWS和UBUNTU的双系统，当切换到WINDOWS下时，就可以正常的搜索到并成功连接。问题出现在了哪里呢？</p>
 
 <p>在网上看到很多用户遇到了类似的困境。最后采用的一个很有效的解决办法是：更改路由器的频段，由原来的自动改为9.据说大于9的时候就会出现连接异常，依照这样的理论在自动频段下就会“偶尔”出现连不上的情况。</p>
-<!--more--><blockquote>
+
+<!--more-->
+<blockquote>
 无线网卡默认是支持1-11频道（美国/中国），如果你的路由设为13或14频道就会出现这状况。
 你可以把路由的频道改一下，或把网卡的地区改为日本也行。
 
 笔记本电脑内置了Intel无线网卡，那有一种特殊情况需要注意，就是Intel无线网卡一般都只内置了11个信道，而目前国内的大多数无线路由器都提供了13个通信信道。当无线路由器的信道设置为12或13时，Intel的无线网卡是无法搜索到无线路由器的，表现出来就是找不到无线网络，跟你描述的情况很类似。解决方法很简单，就是手动将无线路由器的信道设置为1～11中一个即可，不要使用12和13两个信道。
 </blockquote>
+
 <p>还有网友的解决方案是：把宿舍网络ssid改了一下就能搜索到了。不过应该没有什么理论可靠性。</p>
 
 <p>具体问题是来自哪里，现在还没有弄清楚的能力，以后知识多了，再来解决。</p>
 
-<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>]]></content>
+<p>在这里看到了更多关于信道、路由的知识：http://skday.com/archives/384/</p>
+]]></content>
   </entry>
   
 </feed>
