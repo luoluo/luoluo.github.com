@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Alg | lf2012]]></title>
   <link href="http://luoluo.github.com/blog/categories/alg/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-02-28T18:10:29+08:00</updated>
+  <updated>2013-02-28T18:19:45+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -14,108 +14,145 @@
 
   
   <entry>
-    <title type="html"><![CDATA[从分蛋糕说起]]></title>
-    <link href="http://luoluo.github.com/blog/2012/06/04/cong-fen-dan-gao-shuo-qi"/>
-    <updated>2012-06-04T16:04:00+08:00</updated>
-    <id>http://luoluo.github.com/blog/2012/06/04/cong-fen-dan-gao-shuo-qi</id>
-    <content type="html"><![CDATA[<p>网友如下求助：如何分配总租值为2700的三个房间，使三人都满意。如果是两个人分得话，马上就想到了“小熊分蛋糕”的问题。 说熊妈妈两个熊宝宝一块蛋糕，一个合理的分割方案是：宝宝1切蛋糕，宝宝2选择蛋糕。此方案有一个妙处在于，博弈双方各占优势，又各占劣势，宝宝1切割的优势与选择的劣势的结合使得他必须尽可能降低其切割优势，因为他必须对他的切割劣势埋单，即切割尽可能平均。这样的结果就是：切割方不在具有优势，选择方就也丧失了劣势，因为前者已经放弃了优势(因为他选择尽可能平均分配)，使得他的选择的优势也失去了意义。最终的结果是：该分配双方均不占优势，双方均觉得公平。利用这个方案，可以很好的解决两个人分割利益\责任的问题，我们只需使一方为划分者，另一方为选择方就可以了。</p>
-
-<p>显然，这个方案只能局限与两人分割情形。那么对于多人分割又当如何处理呢？</p>
-
-<p>这里先说一下上述问题的升级版：假设熊妈妈给了宝宝们两块味道不同的蛋糕，一个合理的分割方案是：宝宝1切蛋糕1，宝宝2切蛋糕2，切某一蛋糕的宝宝就会丧失那次切割的选择权，即：宝宝2在选择蛋糕1的部分具有优先权，宝宝1在选择蛋糕2的部分具有优先选择权。如果两个宝宝的口味一致，即蛋糕对他们来说具有相同价值，那么就把问题转化为了两个基本分蛋糕的问题。 如果两个宝宝对蛋糕喜好的口味不一致，那么博弈的结果可能就是宝宝各会分得自己喜爱的完整蛋糕。</p>
-
-<p>此问题可以衍生出一个现实问题：A，B公同租总价为p两房间房子。那么一个合理的分割方案为：A，B分别提供自己的定价方案：假设A对两房子的定价分别为 $a_1,a_2(a_1+a_2=p)$；同理B对两房子的定价分别为$b_1,b_2$.则我们做以下计算：$p_1=(a_1+b_1)/2;p_2=(a_2+b_2)/2$;此时，两房子的定价即为$p_1,p_2$且满足$p_1+p_2=p$。那么房子如何分配呢？$a_1，b_1$中的大值者来负责$p_1，a_2，b_2$中的大值者来负责$p_2$.可以证明，该方案是一种很合理的分个方案。</p>
-
-<p>那么对于更多个参与者，怎么处理，只需对上述过程拓展，即得到通解： 对n个人分担\负责价值p(分为n个子部分)的问题来说，解决方案： 第i个人对k部分的估价为:$x_{ik}$其中： $$ \sum_{k=0}^{n}{x_{ik}} = p $$ 那么我们对第k部分的定价为： $$ p_k = \sum_{i=0}^n{p_{ik}} / n $$ 此时，所有部分的总价仍为p： $$ \sum_{k=0}^{n}{p_k} = \sum_{k=0}^n\sum_{i=0}^n{p_{ik}} / n = \sum_{i=0}^n\sum_{k=0}^n{p_{ik}} / n = \sum_{i=0}^np / n = p $$ 不仅如此，此方案的精妙之处在于很离的分配。价钱确定以后，怎么分配？ 分配规则很SIMPLE:对没一间部分出价最高的拥有该部分的，要对该部分付费。这里利用了一个博弈心理：如果你想拥有一个部分K，那么你就要出足量的钱来保证在所有人里出钱最多，这样的事件有两面性：一方面，你会拥有最爱的部分；另一方面，你要付出足量的钱来保证。二者作用的结果就是使参与者投出自己认为合适的钱到合适的部分上，最终的分配结果不会有抱怨不公平方：因为每个参与者都有权力决定分配结果，对结果不满意，只能怪自己。付出越大，收获希望越大，投入产出成正比，所以积极的方案.</p>]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Sort]]></title>
     <link href="http://luoluo.github.com/blog/2012/05/12/sort"/>
     <updated>2012-05-12T13:44:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/12/sort</id>
-    <content type="html"><![CDATA[<h4 id='stl'>STL中最常用的函数之一，排序的神器。</h4>
+    <content type="html"><![CDATA[<h4>STL中最常用的函数之一，排序的神器。</h4>
 
-<h3 id='sort'>sort</h3>
+<h3>sort</h3>
 
-<p>{% codeblock function sort.cpp %} <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;algorithm&gt;
-template &lt;class RandomAccessIterator&gt;
-  void sort ( RandomAccessIterator first, RandomAccessIterator last );</pre></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>function sort.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span> <span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">sort</span> <span class="p">(</span> <span class="n">RandomAccessIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">RandomAccessIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span> <span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>template <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;class RandomAccessIterator, class Compare&gt;
-  void sort ( RandomAccessIterator first, RandomAccessIterator last, Compare comp );
-{% endcodeblock %}</pre></p>
+<h3>function</h3>
 
-<h3 id='function'>function</h3>
-
-<blockquote>
-<p>Sort elements in range Sorts the elements in the range <span>first,last) into ascending order.</span></p>
+<blockquote><p>Sort elements in range
+Sorts the elements in the range [first,last) into ascending order.</p>
 
 <p>The elements are compared using operator&lt; for the first version, and comp for the second.</p>
 
 <p>Elements that would compare equal to each other are not guaranteed to keep their original relative order.</p>
-</blockquote>
 
-<h3 id='parameters'>Parameters</h3>
+<h3>Parameters</h3>
 
-<blockquote>
-<p>first, last Random-Access iterators to the initial and final positions of the sequence to be sorted. The range used is <span>first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last. comp Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument goes before the second argument in the specific strict weak ordering it defines, and false otherwise.</span></p>
-</blockquote>
+<p>first, last
+Random-Access iterators to the initial and final positions of the sequence to be sorted. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+comp
+Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument goes before the second argument in the specific strict weak ordering it defines, and false otherwise.</p>
 
-<h3 id='return_value'>Return value</h3>
+<h3>Return value</h3>
 
-<blockquote>
-<p>none</p>
-</blockquote>
+<p>none</p></blockquote>
 
-<h3 id='example'>Example</h3>
+<h3>Example</h3>
 
-<p>{% codeblock example.cpp%} // sort algorithm example</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.cpp</span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="c1">// sort algorithm example&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">bool</span> <span class="n">myfunction</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">struct</span> <span class="n">myclass</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">j</span><span class="p">);}</span>
+</span><span class='line'><span class="p">}</span> <span class="n">myobject</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">33</span><span class="p">};</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span> <span class="n">myints</span><span class="o">+</span><span class="mi">8</span><span class="p">);</span>               <span class="c1">// 32 71 12 45 26 80 53 33</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="c1">// using default comparison (operator &amp;lt;):</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>           <span class="c1">//(12 32 45 71)26 80 53 33&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="c1">// using function as comp</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myfunction</span><span class="p">);</span> <span class="c1">// 12 32 45 71(26 33 53 80)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="c1">// using object as comp</span>
+</span><span class='line'>  <span class="n">sort</span> <span class="p">(</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">myobject</span><span class="p">);</span>     <span class="c1">//(12 26 32 33 45 53 71 80)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="c1">// print out content:</span>
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot;myvector contains:&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">it</span><span class="o">=</span><span class="n">myvector</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">myvector</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">endl</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;iostream&gt;</pre></h1>
+<h3>Output:</h3>
 
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;algorithm&gt;</pre></h1>
+<blockquote><p>myvector contains: 12 26 32 33 45 53 71 80</p></blockquote>
 
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;vector&gt;</pre></h1>
+<h3>Complexity</h3>
 
-<p>using namespace std;</p>
-
-<p>bool myfunction (int i,int j) { return (i</p>
-
-<p>struct myclass { bool operator() (int i,int j) { return (i</p>
-
-<p>int main () { int myints<span /> = {32,71,12,45,26,80,53,33}; vector<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;int&gt; myvector (myints, myints+8);               // 32 71 12 45 26 80 53 33
-  vector&lt;int&gt;::iterator it;</pre></p>
-
-<p>// using default comparison (operator &lt;): sort (myvector.begin(), myvector.begin()+4); //(12 32 45 71)26 80 53 33</p>
-
-<p>// using function as comp sort (myvector.begin()+4, myvector.end(), myfunction); // 12 32 45 71(26 33 53 80)</p>
-
-<p>// using object as comp sort (myvector.begin(), myvector.end(), myobject); //(12 26 32 33 45 53 71 80)</p>
-
-<p>// print out content: cout &#171;&#160;&#8220;myvector contains:&#8221;; for (it=myvector.begin(); it!=myvector.end(); ++it) cout &#171;&#160;&#8221; &#8221; &#171;&#160;<em>it;</em></p>
-
-<p>cout &#171;&#160;endl;</p>
-
-<p>return 0; } {% endcodeblock %}</p>
-
-<h3 id='output'>Output:</h3>
-
-<blockquote>
-<p>myvector contains: 12 26 32 33 45 53 71 80</p>
-</blockquote>
-
-<h3 id='complexity'>Complexity</h3>
-
-<blockquote>
-<p>Approximately N<em>logN comparisons on average (where N is last-first). In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</em></p>
-</blockquote>]]></content>
+<blockquote><p>Approximately N*logN comparisons on average (where N is last-first).
+In the worst case, up to N2, depending on specific sorting algorithm used by library implementation.</p></blockquote>
+]]></content>
   </entry>
   
   <entry>
@@ -123,94 +160,153 @@ template &lt;class RandomAccessIterator&gt;
     <link href="http://luoluo.github.com/blog/2012/05/09/next-permutation"/>
     <updated>2012-05-09T22:06:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/05/09/next-permutation</id>
-    <content type="html"><![CDATA[<h3 id='tc'>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
+    <content type="html"><![CDATA[<h3>做TC练习的时候，学习高手的代码，看到了这个神器。用于生成不重复的且不小于当前排列的全排列。</h3>
 
-<h2 id='next_permutation'>next_permutation</h2>
+<h2>next_permutation</h2>
 
-<p>{% codeblock function fun.cpp %} template <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;class BidirectionalIterator&gt;
-  bool next_permutation (BidirectionalIterator first,
-                         BidirectionalIterator last );</pre></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>function fun.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'> <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>                     <span class="n">BidirectionalIterator</span> <span class="n">last</span> <span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirectionalIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">BidirectionalIterator</span> <span class="n">first</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>                     <span class="n">BidirectionalIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">comp</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>template <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;class BidirectionalIterator, class Compare&gt;
-  bool next_permutation (BidirectionalIterator first,
-                         BidirectionalIterator last, Compare comp);
-{% endcodeblock %}</pre></p>
+<h3>Transform range to next permutation</h3>
 
-<h3 id='transform_range_to_next_permutation'>Transform range to next permutation</h3>
+<blockquote><p>Rearranges the elements in the range [first, last) into the lexicographically next greater permutation of elements. The comparisons of individual elements are performed using either operator&lt; for the first version, or comp for the second.</p>
 
-<blockquote>
-<p>Rearranges the elements in the range <span>first, last) into the lexicographically next greater permutation of elements. The comparisons of individual elements are performed using either operator&lt; for the first version, or comp for the second.</span></p>
-</blockquote>
-
-<blockquote>
 <p>A permutation is each one of the N! possible arrangements the elements can take (where N is the number of elements in the range). Different permutations can be ordered according on how they compare lexicographicaly to each other; The first such-sorted possible permutation (the one that would compare lexicographically smaller to all other permutations) is the one which has all its elements sorted in ascending order, and the largest has all its elements sorted in descending order.</p>
-</blockquote>
 
-<blockquote>
-<p>If the function can determine the next higher permutation, it rearranges the elements as such and returns true. If that was not possible (because it is already at the largest), it rearranges the elements according to the first permutation (sorted in ascending order) and returns false.</p>
-</blockquote>
+<p>If the function can determine the next higher permutation, it rearranges the elements as such and returns true. If that was not possible (because it is already at the largest), it rearranges the elements according to the first permutation (sorted in ascending order) and returns false.</p></blockquote>
 
-<h3 id='parameters'>Parameters</h3>
+<h3>Parameters</h3>
 
-<blockquote>
-<p>first, last Bidirectional iterators to the initial and final positions of the sequence. The range used is <span>first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last. comp Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument is to be considered less than the second argument.</span></p>
-</blockquote>
+<blockquote><p>first, last
+Bidirectional iterators to the initial and final positions of the sequence. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+comp
+Comparison function object that, taking two values of the same type than those contained in the range, returns true if the first argument is to be considered less than the second argument.</p></blockquote>
 
-<h3 id='return_value'>Return value</h3>
+<h3>Return value</h3>
 
-<blockquote>
-<p>true if the function could rearrange the object as a lexicographicaly greater permutation. Otherwise, the function returns false to indicate that the arrangement is not greater than the previous, but the lowest possible (sorted in ascending order).</p>
-</blockquote>
+<blockquote><p>true if the function could rearrange the object as a lexicographicaly greater permutation. Otherwise, the function returns false to indicate that the arrangement is not greater than the previous, but the lowest possible (sorted in ascending order).</p></blockquote>
 
-<h3 id='example'>Example</h3>
+<h3>Example</h3>
 
-<p>{% codeblock next_permutation tset.cpp %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>next_permutation tset.cpp </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot;The 3! possible permutations with 3 elements:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">do</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">next_permutation</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;iostream&gt;</pre></h1>
-
-<h1 id='include_'>include <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
-&lt;algorithm&gt;</pre></h1>
-
-<p>using namespace std;</p>
-
-<p>int main () { int myints<span /> = {1,2,3};</p>
-
-<p>cout &#171;&#160;&#8220;The 3! possible permutations with 3 elements:\n&#8221;;</p>
-
-<p>sort (myints,myints+3);</p>
-
-<p>do { cout &#171;&#160;myints<span>0</span> &#171;&#160;&#8221; &#8221; &#171;&#160;myints<span>1</span> &#171;&#160;&#8221; &#8221; &#171;&#160;myints<span>2</span> &#171;&#160;endl; } while ( next_permutation (myints,myints+3) );</p>
-
-<p>return 0; } {% endcodeblock %}</p>
-
-<h3 id='output'>Output:</h3>
+<h3>Output:</h3>
 
 <p>The 3! possible permutations with 3 elements:</p>
 
-<p>1 2 3 <br /> 1 3 2 <br /> 2 1 3 <br /> 2 3 1 <br /> 3 1 2 <br /> 3 2 1 <br /></p>
+<p>1 2 3 <br>
+1 3 2 <br>
+2 1 3 <br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
 
-<h4 id='id22'>注意</h4>
+<h4>注意</h4>
 
 <p>当输出{1, 1, 1}的全排列时只输出一组“1 1 1”；</p>
 
-<h3 id='id23'>上升全排列</h3>
+<h3>上升全排列</h3>
 
-<p><code>int myints[] = {1,2,3};</code> 输出为：<br /> 1 2 3 <br /> 1 3 2 <br /> 2 1 3 <br /> 2 3 1 <br /> 3 1 2 <br /> 3 2 1 <br /></p>
+<p>  <code>int myints[] = {1,2,3};</code>
+输出为：<br>
+1 2 3 <br>
+1 3 2 <br>
+2 1 3 <br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
 
-<p><code>int myints[] = {3,2,1};</code> 输出为：<br /> 3 2 1<br /></p>
+<p>  <code>int myints[] = {3,2,1};</code>
+输出为：<br>
+3 2 1<br></p>
 
-<p><code>int myints[] = {2,3,1};</code> 输出为：<br /> 2 3 1 <br /> 3 1 2 <br /> 3 2 1 <br /></p>
+<p>  <code>int myints[] = {2,3,1};</code>
+输出为：<br>
+2 3 1 <br>
+3 1 2 <br>
+3 2 1 <br></p>
 
-<h4 id='sort'>所以想得到给定数组元素的全排列，首先要<a href='http://luoluo.github.com/blog/2012/05/12/sort/'>sort</a>为单调上升序列。</h4>
+<h4>所以想得到给定数组元素的全排列，首先要<a href="http://luoluo.github.com/blog/2012/05/12/sort/">sort</a>为单调上升序列。</h4>
 
-<h3 id='complexity'>Complexity</h3>
+<h3>Complexity</h3>
 
-<blockquote>
-<p>At most, performs one half as many swaps as the number of elements in the range.</p>
-</blockquote>]]></content>
+<blockquote><p>At most, performs one half as many swaps as the number of elements in the range.</p></blockquote>
+]]></content>
   </entry>
   
 </feed>

@@ -9,8 +9,8 @@
   <meta name="author" content="Luoluo">
 
   
-  <meta name="description" content="HOW TO： TC ON LINUX 1.JAVA ENVIRONMENT（SUN-JAVA6） &lt;1&gt;添加partner源： 1
-sudo add-apt-repository "deb http://archive.canonical.com/u buntu maverick &hellip;">
+  <meta name="description" content="HOW TO： TC ON LINUX 1.JAVA ENVIRONMENT（SUN-JAVA6） 添加partner源： 1
+sudo add-apt-repository "deb http://archive.canonical.com/u buntu maverick partner" &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -163,37 +163,42 @@ sudo add-apt-repository "deb http://archive.canonical.com/u buntu maverick &hell
 
 <p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
 
-<p>&lt;1&gt;添加partner源：</p>
+<p><1>添加partner源：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo add-apt-repository "deb http://archive.canonical.com/u    buntu maverick partner"</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository "deb http://archive.canonical.com/u    buntu maverick partner"</span></code></pre></td></tr></table></div></figure>
 
-<p>&lt;2&gt;安装JRE</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><2>安装JRE</p>
 
-<p>&lt;3&gt;安装JDK</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>&lt;4&gt;查看版本</p>
+<p><3>安装JDK</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">java -version</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure>
 
-<p>&lt;5&gt;设为默认JAVA	</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><4>查看版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
+
+
+<p><5>设为默认JAVA</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives --config java</span></code></pre></td></tr></table></div></figure>
+
 
 <p>2.DOWNLOAD THE TC ARENA
 <a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
 DOWNLOAD </a></p>
 
 <p>3.CONFIG THE AREAN
-<a href="http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins"> 插件下载及配置DOWNLOAD </a>
+<a href="http://community.topcoder.com/tc?module=Static&d1=applet&d2=plugins"> 插件下载及配置DOWNLOAD </a>
 推荐只使用KawigiEdit插件，该插件易于上手。</p>
 
 <p>4.GET ON THE WAY, &amp; GOOD LUCK!
@@ -283,10 +288,6 @@ DOWNLOAD </a></p>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/04/cong-fen-dan-gao-shuo-qi">从分蛋糕说起</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/05/18/floding-in-vim">FLODING IN VIM</a>
       </li>
     
@@ -296,6 +297,10 @@ DOWNLOAD </a></p>
     
       <li class="post">
         <a href="/blog/2012/05/12/sort">Sort</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/09/next-permutation">Next Permutation</a>
       </li>
     
   </ul>
@@ -345,7 +350,7 @@ DOWNLOAD </a></p>
 <section>
  <h1>Categories</h1>
   <ul id="blog/categories">
-     <li class='category'><a href='/blog/categories/alg/'>Alg (3)</a></li>
+     <li class='category'><a href='/blog/categories/alg/'>Alg (2)</a></li>
 <li class='category'><a href='/blog/categories/backyard/'>BackYard (2)</a></li>
 <li class='category'><a href='/blog/categories/c-/'>C++ (2)</a></li>
 <li class='category'><a href='/blog/categories/coder/'>Coder (1)</a></li>
@@ -354,7 +359,7 @@ DOWNLOAD </a></p>
 <li class='category'><a href='/blog/categories/linuxbasic/'>LinuxBasic (5)</a></li>
 <li class='category'><a href='/blog/categories/mcu/'>MCU (2)</a></li>
 <li class='category'><a href='/blog/categories/msp430/'>MSP430 (2)</a></li>
-<li class='category'><a href='/blog/categories/math/'>Math (5)</a></li>
+<li class='category'><a href='/blog/categories/math/'>Math (4)</a></li>
 <li class='category'><a href='/blog/categories/note/'>Note (6)</a></li>
 <li class='category'><a href='/blog/categories/stl/'>STL (2)</a></li>
 <li class='category'><a href='/blog/categories/tc/'>TC (1)</a></li>

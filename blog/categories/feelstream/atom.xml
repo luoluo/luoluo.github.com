@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FeelStream | lf2012]]></title>
   <link href="http://luoluo.github.com/blog/categories/feelstream/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-02-28T18:10:29+08:00</updated>
+  <updated>2013-02-28T18:19:45+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -24,9 +24,11 @@
 
 <p>当我呆在一个小空间里太久，结果产生错觉，以为自己掌握了整个人生。触摸世界成了坐井观天，甚至根本不会去想世界的五彩。越来越发觉世界真的好大好大，琦丽无比，就如梦中的情人，朦胧的美感，唯有用心去细细体味。越来越觉得人可以活得很丰富很丰富，有时，我们可以像一只目不转睛般伏猎几日的非洲狮；有时，我们可以像一只冲破牢笼回归自然的幼鸟。</p>
 
-<p>长大了么？开始觉得人要学会适应孤独，“一个人要活得像一支队伍”。 还记得那“的叔”，满脸微笑兴奋的指着我说：“这么小耍啥子朋友”。一边指给我们乘车的方向，而后又对我们说“有没有十八岁？”。我笑着想小鸡啄米般点头&#8230;</p>
+<p>长大了么？开始觉得人要学会适应孤独，“一个人要活得像一支队伍”。
+还记得那“的叔”，满脸微笑兴奋的指着我说：“这么小耍啥子朋友”。一边指给我们乘车的方向，而后又对我们说“有没有十八岁？”。我笑着想小鸡啄米般点头...</p>
 
-<p>记录一下短期到计划，充实的暑假前的生活，啃书，听歌，给亲人朋友问候，生活再规律一点点&#8230;</p>]]></content>
+<p>记录一下短期到计划，充实的暑假前的生活，啃书，听歌，给亲人朋友问候，生活再规律一点点...</p>
+]]></content>
   </entry>
   
   <entry>
@@ -34,17 +36,66 @@
     <link href="http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya"/>
     <updated>2012-04-12T20:11:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/12/wen-jian-jie-ya</id>
-    <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下： 文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。 <!--more--> x.Z 压缩命令 {% codeblock %} compress xx {% endcodeblock %} 解压命令 {% codeblock %} compress -d xx.Z {% endcodeblock %}</p>
+    <content type="html"><![CDATA[<p>每次文件解压都要去翻鸟哥。今天总结下：
+文件后缀名有：x.Z \ x.gz2 x.tar x.tar.gz x.gz.值得一提的是查看压缩文件不一定需要解压文件。</p>
 
-<p>x.gz2 压缩命令 {% codeblock %} bzip2 -z xx {% endcodeblock %} 解压命令 {% codeblock %} bzip2 -d xx.zp2 {% endcodeblock %} 查看压缩文件 {% codeblock %} bzcat xx.zp2 {% endcodeblock %}</p>
+<!--more-->
 
-<p>x.tar {% codeblock %} tar <span>-zxcvfppP</span> {% endcodeblock %} 压缩命令 {% codeblock %} tar -cvf xx {% endcodeblock %} 解压命令 {% codeblock %} tar -xvf xx.tar {% endcodeblock %}</p>
 
-<p>xx.tar.gz 压缩命令 {% codeblock %} tar -zcvf xx {% endcodeblock %} 解压命令 {% codeblock %} tar -xcvf xx.tar.gz {% endcodeblock %}</p>
+<p>x.Z
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compress xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compress -d xx.Z</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>xx.bz 压缩命令 {% codeblock %} gzip xx {% endcodeblock %} 解压命令 {% codeblock %} gzip -d xx.gz {% endcodeblock %} 查看压缩文件 {% codeblock %} zcat xx.gz {% endcodeblock %}</p>
+<p>x.gz2
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -z xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzip2 -d xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div>
+查看压缩文件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bzcat xx.zp2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>最后意外发现vim命令模式下x有delete作用。 今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。 很欣赏凯文的清醒、大局观。看到这样一句话： 我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。 作为结语。</p>]]></content>
+<p>x.tar
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar [-zxcvfppP]</span></code></pre></td></tr></table></div></figure></notextile></div>
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -cvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xvf xx.tar</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>xx.tar.gz
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -zcvf xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar -xcvf xx.tar.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>xx.bz
+压缩命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip  xx</span></code></pre></td></tr></table></div></figure></notextile></div>
+解压命令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gzip -d xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div>
+查看压缩文件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zcat xx.gz</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>最后意外发现vim命令模式下x有delete作用。
+今天刷豆瓣，发现了一个很丰富的人。突然感觉自己有时侯活得糊涂。
+很欣赏凯文的清醒、大局观。看到这样一句话：
+我们享乐的时刻，我们忘记了自己，忘记了我们的存在；这时候，我们变成为另外的一个人，一个陌生的存在体，我们隔离了自己。
+作为结语。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -52,7 +103,23 @@
     <link href="http://luoluo.github.com/blog/2012/04/09/xiao-jie-0-dot-1"/>
     <updated>2012-04-09T20:47:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/09/xiao-jie-0-dot-1</id>
-    <content type="html"><![CDATA[Liquid error: incompatible character encodings: UTF-8 and ASCII-8BIT]]></content>
+    <content type="html"><![CDATA[<p>最近过得略忙乱，WIN莫名不可重装的坏点，断了我游戏的念。</p>
+
+<p>身边的朋友要么游戏的醉生梦死，要么开始做各种项目。两边都有人来拉我入伙，真有点犹犹豫豫，不知所措。又是一年银杏黄，朋友们拉我做的项目各种应
+用、网络、加密…… 一时心动的有，可想一下要做大半年，还是摇摇头，微笑的说不了。 很久前就决定了要做什么，可是现在要做的真的还有很多。。  要从数学（算法）和计算机系统（包含硬件）两方面深入。 总觉的要先投入时间，把操作系统做好才有希望做出点有用的东东。还觉得关键时候的较量就是在数学上的较量，抑或思维上的较量。</p>
+
+<p>周末的时候，睡意朦胧，接到阳仔的电话，叫我去考试。手机上赫然写着8：5X，顿时清醒，飞奔下床，带着昨夜收拾好的东西，RUSH。路上不忘打电话问下一夜火车的她到没。放心后，到教室，听力开始放了。冷静的拿出东西，装电池，调频……不知多久没有早读，念英语了....做起来没有想象中那么不顺手，感觉蛮简单的，由于无前期准备付出，所以没有报希望，这段时间在忙其他的。 做起来也很轻松的。    时间默默流淌，老师一句“还有10分钟”，把我叫醒，从投入做题中，从梦回高三……    还有两篇作文作文……   作文还是答题卡填写答案的我开始纠结，是写作文还是抄写答案。想到可以等老师收的时候拖一下，在10分钟内秒掉两篇“作文”，开始抄答案到答题卡上，刚刚10多题，考试的钟声想起，老师缓缓走过来。50+的选择题还没有开始涂。老师一副公正的表情对着我，“考试 时间到了……”，第一次考试没完成……  增加了人生的阅历了，不过它也深深的刺了我一刀。  英语已变的这么陌生。该拾起来了，毕竟自己还是蛮喜欢的。</p>
+
+<p>5.1前只有几件事做好就可以了：
+<1>单片机跑起系统
+<2>做几场比赛
+<3>其中考试漂亮点</p>
+
+<p><4>母函数|CSAPP的笔记找时间好好写。</p>
+
+<p>NEVER STOP PRACTISING
+NEVER STOP PROGRAMMING</p>
+]]></content>
   </entry>
   
   <entry>
@@ -61,18 +128,13 @@
     <updated>2012-04-03T12:31:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/04/03/mbtizhi-ye-xing-ge-ce-shi</id>
     <content type="html"><![CDATA[<p>在浏览博客时看到测试，想起高考的时候的测试，早就忘记结果了，当时也没有好好参考。今天来感，就在两个不同网站测试了下，结果一致的出乎意料————INFJ。</p>
+
 <!--more-->
-<p>{% blockquote %} Psytopic分析：您的性格类型是“INFJ”(内向+直觉+情感+判断)</p>
 
-<p>寻求思想、关系、物质等之间的意义和联系。希望了解什么能够激励人，对人有很强的洞察力。有责任心，坚持自己的价值观。对于怎样更好的服务大众有清晰的远景。在对于目标的实现过程中有计划而且果断坚定。</p>
 
-<p>INFJ型的人生活在思想的世界里。他们是独立的、有独创性的思想家，具有强烈的感情、坚定的原则和正直的人性。即使面对怀疑，INFJ型的人仍相信自己的看法与决定。他们对自己的评价高于其他的一切，包括流行观点 和存在的权威，这种内在的观念激发着他们的积极性。通常INFJ型的人具有本能的洞察力，能够看到事物更深层的含义。即使他人无法分享他们的热情，但灵感对于他们重要而令人信服。 INFJ型的人忠诚、坚定、富有理想 。他们珍视正直，十分坚定以至达到倔强的地步。因为他们的说服能力，以及对于什么对公共利益最有利有清楚的看法，所以 INFJ型的人会成为伟大的领导者。由于他们的贡献，他们通常会受到尊重或敬佩。因为珍视友谊 和和睦，INFJ型的人喜欢说服别人，使之相信他们的观点是正确的。通过运用嘉许和赞扬，而不是争吵和威胁，他们赢得了他人的合作。他们愿意毫无保留地激励同伴，避免争吵。通常INFJ型的人是深思熟虑的决策者，他 们觉得问题使人兴奋，在行动之前他们通常要仔细地考虑。他们喜欢每次全神贯注于一件事情，这会造成一段时期的专心致志。满怀热情与同情心，INFJ型的人强烈地渴望为他人的幸福做贡献。他们注意其他人的情感和利 益，能够很好地处理复杂的人。INFJ型的人本身具有深厚复杂的性格，既敏感又热切。他们内向，很难被人了解，但是愿意同自己信任的人分享内在的自我。他们往往有一个交往深厚、持久的小规模的朋友圈，在合适的氛 围中能产生充分的个人热情和激情。</p>
-
-<p>您适合的领域有：咨询、教育、科研等领域 文化、艺术、设计等</p>
-
-<p>您适合的职业有：</p>
-
-<p>· 特殊教育教师 · 建筑设计师 · 培训经理/培训师 · 职业指导顾问 · 心理咨询师 · 网站编辑 · 作家 · 仲裁人 · 人力资源经理 · 事业发展顾问 · 营销人员 · 企业组织发展顾问 · 职位分析人员 · 媒体特约规划师 · 编辑／艺术指导（杂志） · 口译人员 · 社会科学工作者 · 心理诊疗师 · 大学教师（人文学科、艺术类） · 心理学、教育学、社会学、哲学及其它领域的研究人员 · 作家 · 诗人 · 剧作家 · 电影编剧 · 电影导演 · 画家 · 雕塑家 · 音乐家 · 艺术顾问 · 设计师 {% endblockquote %} 测试网址：<a herf='http://www.psytopic.com/' title='http://www.psytopic.com/'>MBTJ测试</a></p>]]></content>
+<p><blockquote><p>Psytopic分析：您的性格类型是“INFJ”(内向+直觉+情感+判断)</p></p><p><p>寻求思想、关系、物质等之间的意义和联系。希望了解什么能够激励人，对人有很强的洞察力。有责任心，坚持自己的价值观。对于怎样更好的服务大众有清晰的远景。在对于目标的实现过程中有计划而且果断坚定。</p></p><p><p>INFJ型的人生活在思想的世界里。他们是独立的、有独创性的思想家，具有强烈的感情、坚定的原则和正直的人性。即使面对怀疑，INFJ型的人仍相信自己的看法与决定。他们对自己的评价高于其他的一切，包括流行观点 和存在的权威，这种内在的观念激发着他们的积极性。通常INFJ型的人具有本能的洞察力，能够看到事物更深层的含义。即使他人无法分享他们的热情，但灵感对于他们重要而令人信服。 INFJ型的人忠诚、坚定、富有理想 。他们珍视正直，十分坚定以至达到倔强的地步。因为他们的说服能力，以及对于什么对公共利益最有利有清楚的看法，所以 INFJ型的人会成为伟大的领导者。由于他们的贡献，他们通常会受到尊重或敬佩。因为珍视友谊 和和睦，INFJ型的人喜欢说服别人，使之相信他们的观点是正确的。通过运用嘉许和赞扬，而不是争吵和威胁，他们赢得了他人的合作。他们愿意毫无保留地激励同伴，避免争吵。通常INFJ型的人是深思熟虑的决策者，他 们觉得问题使人兴奋，在行动之前他们通常要仔细地考虑。他们喜欢每次全神贯注于一件事情，这会造成一段时期的专心致志。满怀热情与同情心，INFJ型的人强烈地渴望为他人的幸福做贡献。他们注意其他人的情感和利 益，能够很好地处理复杂的人。INFJ型的人本身具有深厚复杂的性格，既敏感又热切。他们内向，很难被人了解，但是愿意同自己信任的人分享内在的自我。他们往往有一个交往深厚、持久的小规模的朋友圈，在合适的氛 围中能产生充分的个人热情和激情。</p></p><p><p>您适合的领域有：咨询、教育、科研等领域 文化、艺术、设计等</p></p><p><p>您适合的职业有：</p></p><p><p>· 特殊教育教师<br/>· 建筑设计师<br/>· 培训经理/培训师<br/>· 职业指导顾问<br/>· 心理咨询师<br/>· 网站编辑<br/>· 作家<br/>· 仲裁人<br/>· 人力资源经理<br/>· 事业发展顾问<br/>· 营销人员<br/>· 企业组织发展顾问<br/>· 职位分析人员<br/>· 媒体特约规划师<br/>· 编辑／艺术指导（杂志）<br/>· 口译人员<br/>· 社会科学工作者<br/>· 心理诊疗师<br/>· 大学教师（人文学科、艺术类）<br/>· 心理学、教育学、社会学、哲学及其它领域的研究人员<br/>· 作家<br/>· 诗人<br/>· 剧作家<br/>· 电影编剧<br/>· 电影导演<br/>· 画家<br/>· 雕塑家<br/>· 音乐家<br/>· 艺术顾问<br/>· 设计师</p></blockquote>
+测试网址：<a herf="http://www.psytopic.com/" title="http://www.psytopic.com/">MBTJ测试</a></p>
+]]></content>
   </entry>
   
   <entry>
@@ -80,11 +142,12 @@
     <link href="http://luoluo.github.com/blog/2012/03/29/xie-qi"/>
     <updated>2012-03-29T00:00:00+08:00</updated>
     <id>http://luoluo.github.com/blog/2012/03/29/xie-qi</id>
-    <content type="html"><![CDATA[<p>{% img middle http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg/200px-Grave_of_W._B._Yeats%3B_Drumecliff,_Co_Sligo.jpg %}</p>
+    <content type="html"><![CDATA[<p><img class="middle" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_of_W.<em>B.</em>Yeats%3B_Drumecliff,<em>Co_Sligo.jpg/200px-Grave_of_W.</em>B.<em>Yeats%3B_Drumecliff,</em>Co_Sligo.jpg"></p>
 
 <p>要有最朴素的生活，与最遥远的梦想。即使明日天寒地冻，路远马亡。</p>
 
-<p>看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着&#8221;入学初&#8221;被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。 辉一直没有大学的状态，大学的生活根本根本不配他四年的汗水，他没有归属感，慌乱的过着大学生活，然而周遭的一切根本提不起他的兴趣。记忆中的意气风发就是在谈论骑行拉萨了吧。 他热爱旅行，火车，公路，冰川，峡口&#8230;有他的足迹。像大多数人一样，我过上了标准的大学生活，足迹留在寝室和教室之间，以尽量多上课来换取内心的安宁，虽然上课可能只是换个地睡觉、玩手机。 我已沦为大学生活的奴隶，靠游戏、网络、睡觉及偶尔的酒精来麻醉自己的神经，我们害怕闲下来，害怕闲时自己会去思考现在和未来，害怕面对。 靠眼前花花绿绿的屏幕来获取视觉的快感，靠游戏里的胜利、击败对手来获得短暂的“成就感”，靠玩游戏的技艺来赢得他人的尊重&#8230;.</p>
+<p>看到他往新买来的旅行包了装衣物，才知道，他真的要出发。恍然快两年过，躺在湖边草坪上畅谈人生的时光被标记着"入学初"被扔在记忆角落，那些对大学失望的总总，以及出去漂游的梦想早已盖满灰尘。
+辉一直没有大学的状态，大学的生活根本根本不配他四年的汗水，他没有归属感，慌乱的过着大学生活，然而周遭的一切根本提不起他的兴趣。记忆中的意气风发就是在谈论骑行拉萨了吧。  他热爱旅行，火车，公路，冰川，峡口...有他的足迹。像大多数人一样，我过上了标准的大学生活，足迹留在寝室和教室之间，以尽量多上课来换取内心的安宁，虽然上课可能只是换个地睡觉、玩手机。  我已沦为大学生活的奴隶，靠游戏、网络、睡觉及偶尔的酒精来麻醉自己的神经，我们害怕闲下来，害怕闲时自己会去思考现在和未来，害怕面对。 靠眼前花花绿绿的屏幕来获取视觉的快感，靠游戏里的胜利、击败对手来获得短暂的“成就感”，靠玩游戏的技艺来赢得他人的尊重....</p>
 
 <p>我不敢说这是生活，我不敢说我有生活。写在最前面的话，是给有血气的少年的。</p>
 
@@ -92,7 +155,8 @@
 
 <p>最近读了季老的《做人与做事》、劳伦斯的传，顿时产生了深深的无知感，感觉自己像是被阉割过的大多数一样。我们是机器工业时代的难民。自然被我们遗忘，我们不知敬畏自然、不知敬畏生命，我们常常目空一切，却不知自己什么都不是。我们不了解人为何而活，或许更为可能的情况是我们根本不会去考虑这个问题，不会有这个问题。</p>
 
-<p>我们的内心是否梦想、勇气。你是否敢去做自己现在最想做的事，放下一切，随心去旅行，用心去触碰这世界。是否愿意为自己的梦想买单，在这最美的年龄，是否愿意疯一把，写几个只属于自己的故事与人生里。我们的血气让狗吃了？？</p>]]></content>
+<p>我们的内心是否梦想、勇气。你是否敢去做自己现在最想做的事，放下一切，随心去旅行，用心去触碰这世界。是否愿意为自己的梦想买单，在这最美的年龄，是否愿意疯一把，写几个只属于自己的故事与人生里。我们的血气让狗吃了？？</p>
+]]></content>
   </entry>
   
 </feed>

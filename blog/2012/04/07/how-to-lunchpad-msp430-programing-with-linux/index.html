@@ -160,106 +160,125 @@
 
 <div class="entry-content"><p>天快亮了，反而没有什么倦意，一夜的奋战终见起色，称记忆清晰，做记录，供后车之鉴。开学不久就接到了五一前要交付的任务，4月探头，才逼的自己来做。windows莫名其妙的坏掉，把自己比逼linux这种直接的环境，一直感觉linux环境下自己面对问题，接近点底层，是个不错的选择。可是入门稍有门槛。毕竟文字的信息传递速度要小于图形化。加上自己的惰性，就迟迟未出发。</p>
 
-<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。
-<!--more-->
-1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
+<p>早就体会到实践的巨大力量，想重单片机起步逐渐理解计算机系统，并在最后系统。可是之前却是止步与WINDOWS，机缘巧合，投身LINUX麾下，顿感原来的那种清爽感。按需分配。</p>
 
-<p>&lt;1&gt;编译环境：mspgcc
+<!--more-->
+
+
+<p>1.LINUX下MSP430编程环境的搭建：  这个环境大概可以分为两个主要的部分：编译环境、写入环境。</p>
+
+<p><1>编译环境：mspgcc
 可以说绝大多数的时间都耗在了，在网上看了N多的教程，于是乎走了N多的弯路。情况是：</p>
+
 <blockquote><p>mspgcc4 is no longer supported. All contributions have been incorporated into mspgcc, which has newer versions of all components.</p></blockquote>
+
+
 <p>也就是说，mspgcc4是不在被支持的了，而mspgcc更新过后继承支持mspgcc4的特性。而网上看到的绝大多数教程是基于mspgcc4的，利用网上反复的教程，我在install 与 rm间徘徊，系统的错误提示很SIMPLE：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
-</span><span class="line">bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ /opt/msp-gcc-4.4.5/bin/msp-gcc -oS -o blink.elf blink.c
+</span><span class='line'>bash: /opt/msp-gcc-4.4.5/bin/msp-gcc: 没有那个文件或目录</span></code></pre></td></tr></table></div></figure>
+
 
 <p>不知为何，mspgcc总是在躲起来，甚至 find 也没法，或则说它没有出现过。真是很奇怪。试了又试，错误提示一直未变。</p>
 
-<p>&lt;2&gt;写入环境：mspdebug
-在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当^D退出mspdebug后，单片机执行新写入的程序，</p>
+<p><2>写入环境：mspdebug
+在单片机挂载到计算机上后，可以执行写入。在挂在后，单片机不再执行原有的程序，而是静静的等待写入，当<sup>D退出mspdebug后，单片机执行新写入的程序，</sup></p>
 
 <p>看到了那样的提示，才暮然发现自己只需一个编译器和写入器，干嘛不直接安装呢？
 这是看到了WIKI的提示，</p>
+
 <blockquote><p>mspgcc will be available in Ubuntu Oneiric.</p></blockquote>
+
+
 <p>而UBUNTU11.10 即 ONEIRIC。</p>
 
-<p>于是乎： </p>
+<p>于是乎：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install msp430-libc
-</span><span class="line">sudo apt-get install mspdebug
-</span><span class="line">sudo apt-get install msp430mcu
-</span><span class="line">sudo apt-get install binutils-msp430
-</span><span class="line">sudo apt-get install gcc-msp430
-</span><span class="line">sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install msp430-libc
+</span><span class='line'>sudo apt-get install mspdebug
+</span><span class='line'>sudo apt-get install msp430mcu
+</span><span class='line'>sudo apt-get install binutils-msp430
+</span><span class='line'>sudo apt-get install gcc-msp430
+</span><span class='line'>sudo apt-get install gdb-msp430</span></code></pre></td></tr></table></div></figure>
+
 
 <p>编译和写入：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
-</span><span class="line">lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ msp430-gcc -oS -o blink.elf blink.c
+</span><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
+
 
 <p>值得一提的是对端口的设定,这一步应在编译写入前设置：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/udev/rules.d/46-TI_launchpad.rules</span></code></pre></td></tr></table></div></figure>
+
 
 <p>并将下表的内容写入其中，:wq</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">ATTRS{idVendor}==&quot;0451&quot;,
-</span><span class="line">ATTRS{idProduct}==&quot;f432&quot;,
-</span><span class="line">MODE=&quot;0660&quot;, 
-</span><span class="line">GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ATTRS{idVendor}==&quot;0451&quot;,
+</span><span class='line'>ATTRS{idProduct}==&quot;f432&quot;,
+</span><span class='line'>MODE=&quot;0660&quot;, 
+</span><span class='line'>GROUP=&quot;plugdev&quot;</span></code></pre></td></tr></table></div></figure>
+
 
 <p>为了使刚刚的修改在重启前生效，执行以下语句：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo restart udev</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo restart udev</span></code></pre></td></tr></table></div></figure>
+
 
 <p>这是后把原来那个点过灯的单片机插入电脑，发现执行</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lo@lo:~$ sudo mspdebug rf2500</span></code></pre></td></tr></table></div></figure>
+
 
 <p>后，原来一闪一闪的LED等灭了；单片机静静的等待着写入。
 在执行了:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">(mspdebug) prog blink.elf 
-</span><span class="line">Erasing...
-</span><span class="line">Programming...
-</span><span class="line">Writing  126 bytes to fc00 [section: .text]...
-</span><span class="line">Writing   32 bytes to ffe0 [section: .vectors]...
-</span><span class="line">Done, 158 bytes written
-</span><span class="line">(mspdebug) ^D</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(mspdebug) prog blink.elf 
+</span><span class='line'>Erasing...
+</span><span class='line'>Programming...
+</span><span class='line'>Writing  126 bytes to fc00 [section: .text]...
+</span><span class='line'>Writing   32 bytes to ffe0 [section: .vectors]...
+</span><span class='line'>Done, 158 bytes written
+</span><span class='line'>(mspdebug) ^D</span></code></pre></td></tr></table></div></figure>
+
 
 <p>单片机重新一闪一闪，不过执行的程序是新写如的了，即Programing Enviroment Done。</p>
 
 <p>以下为重点参考站点：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
-</span><span class="line">http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
-</span><span class="line">http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://www.sakoman.com/OMAP/how-to-develop-msp430-launchpad-code-on-linux.html
+</span><span class='line'>http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+</span><span class='line'>http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Linux_installation#Ubuntu</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
@@ -346,10 +365,6 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/04/cong-fen-dan-gao-shuo-qi">从分蛋糕说起</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/05/18/floding-in-vim">FLODING IN VIM</a>
       </li>
     
@@ -359,6 +374,10 @@
     
       <li class="post">
         <a href="/blog/2012/05/12/sort">Sort</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/09/next-permutation">Next Permutation</a>
       </li>
     
   </ul>
@@ -408,7 +427,7 @@
 <section>
  <h1>Categories</h1>
   <ul id="blog/categories">
-     <li class='category'><a href='/blog/categories/alg/'>Alg (3)</a></li>
+     <li class='category'><a href='/blog/categories/alg/'>Alg (2)</a></li>
 <li class='category'><a href='/blog/categories/backyard/'>BackYard (2)</a></li>
 <li class='category'><a href='/blog/categories/c-/'>C++ (2)</a></li>
 <li class='category'><a href='/blog/categories/coder/'>Coder (1)</a></li>
@@ -417,7 +436,7 @@
 <li class='category'><a href='/blog/categories/linuxbasic/'>LinuxBasic (5)</a></li>
 <li class='category'><a href='/blog/categories/mcu/'>MCU (2)</a></li>
 <li class='category'><a href='/blog/categories/msp430/'>MSP430 (2)</a></li>
-<li class='category'><a href='/blog/categories/math/'>Math (5)</a></li>
+<li class='category'><a href='/blog/categories/math/'>Math (4)</a></li>
 <li class='category'><a href='/blog/categories/note/'>Note (6)</a></li>
 <li class='category'><a href='/blog/categories/stl/'>STL (2)</a></li>
 <li class='category'><a href='/blog/categories/tc/'>TC (1)</a></li>
