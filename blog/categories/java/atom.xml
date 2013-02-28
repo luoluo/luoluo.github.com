@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | lf2012]]></title>
   <link href="http://luoluo.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://luoluo.github.com/"/>
-  <updated>2013-02-28T16:46:21+08:00</updated>
+  <updated>2013-02-28T18:10:29+08:00</updated>
   <id>http://luoluo.github.com/</id>
   <author>
     <name><![CDATA[Luoluo]]></name>
@@ -20,35 +20,42 @@
     <id>http://luoluo.github.com/blog/2012/04/09/tc-at-lineux</id>
     <content type="html"><![CDATA[<p>HOW TO： TC ON LINUX</p>
 
-<p>1.JAVA ENVIRONMENT（SUN-JAVA6）</p>
-
-<p>&lt;1&gt;添加partner源：
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository “deb http://archive.canonical.com/u    buntu maverick partner”</span></code></pre></td></tr></table></div></figure></notextile></div>
+<ol>
+<li>JAVA ENVIRONMENT（SUN-JAVA6）</li>
+</ol>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;1&gt;添加partner源：
+{% codeblock %}
+sudo add-apt-repository &quot;deb http://archive.canonical.com/u    buntu maverick partner&quot; 
+{% endcodeblock %}
 &lt;2&gt;安装JRE
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jre sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %}
+sudo apt-get install sun-java6-jre sun-java6-plugin
+{% endcodeblock %} 
 &lt;3&gt;安装JDK
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install sun-java6-jdk sun-java6-plugin</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %} 
+sudo apt-get install sun-java6-jdk sun-java6-plugin
+{% endcodeblock %} 
 &lt;4&gt;查看版本
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure></notextile></div> 
+{% codeblock %} 
+java -version
+{% endcodeblock %} 
 &lt;5&gt;设为默认JAVA	
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-alternatives –config java</span></code></pre></td></tr></table></div></figure></notextile></div> </p>
+{% codeblock %} 
+sudo update-alternatives --config java
+{% endcodeblock %} 
 
-<p>2.DOWNLOAD THE TC ARENA
-<a href="http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp">
-DOWNLOAD </a></p>
+2.DOWNLOAD THE TC ARENA
+&lt;a href=&quot;http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp&quot;&gt;
+DOWNLOAD &lt;/a&gt;
+	
 
-<p>3.CONFIG THE AREAN
-<a href="http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins"> 插件下载及配置DOWNLOAD </a>
-推荐只使用KawigiEdit插件，该插件易于上手。</p>
+3.CONFIG THE AREAN
+&lt;a href=&quot;http://community.topcoder.com/tc?module=Static&amp;d1=applet&amp;d2=plugins&quot;&gt; 插件下载及配置DOWNLOAD &lt;/a&gt;
+推荐只使用KawigiEdit插件，该插件易于上手。
 
-<p>4.GET ON THE WAY, &amp; GOOD LUCK!
-<a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">官方教程</a></p>
-]]></content>
+4.GET ON THE WAY, &amp; GOOD LUCK!
+&lt;a href=&quot;http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions&quot;&gt;官方教程&lt;/a&gt;</pre>]]></content>
   </entry>
   
 </feed>
