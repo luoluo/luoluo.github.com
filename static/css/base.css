@@ -1,0 +1,106 @@
+
+body {
+  font: 15px/1.5 Georgia,"Times New Roman",Times,"Hiragino Sans GB","Hiragino Kaku Gothic Pro","STXihei",Hei,SimSun,"WenQuanYi Micro Hei",sans-serif;
+  padding: 0;
+  background: black;
+  margin: auto;
+  padding: 0;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+  	width: 100%;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (min-width: 401px) {
+  body {
+  	width: 660px;
+  }
+}
+
+#Top {
+  background: lightblue;
+  padding: 10px 20px 10px 20px;
+}
+
+#Nav {
+  margin: 0px 0px 0px 30px;
+}
+
+#Content {
+  background: white;
+  padding: 10px 20px 20px 30px;
+}
+
+#Bottom {
+  background: lightgray;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+}
+
+.post-title {
+    /* font-size:smaller; */
+    font-size:x-large;
+}
+.post-time{
+    font-size:small;
+}
+.post-content {
+}
+.archive {
+}
+.archive-date {
+    display: inline-block;
+    margin: 0px 20px 0px 20px;
+    width: 125px;
+}
+#tensep {
+    width:10px;
+}
+.archive-link {
+    display: inline-block;
+}
+code {
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+    font-size: small;
+    background-color: #eff0f1;
+}
+pre {
+    padding: 5px 10px 5px 15px;
+    display: block;
+    background-color: #eff0f1;
+    width: auto;
+    overflow: scroll;
+    font-size: 13px;
+}
+.math {
+  display: inline-block;
+}
+sup {
+}
+.category-name {
+  display: block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+.category-tag {
+  padding: 0px 20px 0px 20px;
+}
+.category-detail {
+  padding: 0px 20px 0px 20px;
+}
+
+.content-image {
+  max-width: 100%;
+}
+.image-div {
+  max-width: 100%;
+}

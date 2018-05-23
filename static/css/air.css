@@ -1,0 +1,17 @@
+HEADLINE
+    font-family: Georgia,"Times New Roman",serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #600;
+	line-height: 22px;
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 1px
+
+DATE
+        font-family: Georgia,"Times New Roman",serif;
+	font-size: 10px;
+	line-height: 22px;
+	text-transform: uppercase;
+	letter-spacing: 2px; 
+

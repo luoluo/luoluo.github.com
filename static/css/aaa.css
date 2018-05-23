@@ -1,0 +1,119 @@
+.highlight .n { color: #fe0} /* Name */
+.highlight .o { color: #fb659c} /* Operator */
+.highlight .nl { color: #fe0} /* Name.Label */
+.highlight .nv { color: #fe0} /* Name.Variable */
+.highlight .nn { color: #ff8f0f} /* Name.Variable */
+.highlight .no { color: #e100ff} /* Name.Constant */
+.p { color: #0582ff} /* Keyword.Reserved */
+
+.s { color: #e10e0e} /* Literal.String */
+.sc { color: #d70909} /* Literal.String.Char */
+.nf { color: #dcdc04} /* Name.Function*/
+
+.kc { color: #0582ff} /* Keyword.Constant */
+.kd { color: #0582ff} /* Keyword.Declaration */
+.kn { color: #0582ff} /* Keyword.Namespace */
+.kp { color: #0582ff} /* Keyword.Pseudo */
+.kr { color: #0582ff} /* Keyword.Reserved */
+.mi { color: #ffc61a} /* int */
+.mo { color: #ffc61a} /* fuhao */
+.mn { color: #ffc61a} /* fuhaoli de shizi*/
+.mf { color: #ffc61a} /* float */
+
+.ow { color: #0582ff} /* Operator.Word */
+
+.c { color: #00e000 } /* Comment */
+.cm { color: #0c0 } /* Comment.Multiline */
+.cp { color: #ff0fb7} /* Comment.Preproc */
+.c1 { color: #0c0 } /* Comment.Single */
+.cs { color: #0c0} /* Comment.Special */
+.highlight  { 
+
+background: #111111;
+
+color: #ffffff ;
+
+padding: 0.2em 0.9em;
+  margin-bottom: 1em;
+	font: normal normal normal 115%/normal 'Monaco', 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace !important;
+  line-height: 1.1em;
+  overflow: auto;
+	font-size: 1.0em;
+	border: 1px solid #CCC;
+
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+
+
+}
+.hll { background-color: #ffffcc }
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #6687ff } /* Keyword */
+.ge { font-style: italic } /* Generic.Emph */
+.gh { font-weight: bold } /* Generic.Heading */
+.gp { font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { font-weight: bold } /* Generic.Subheading */
+.kt { color: #2b91af } /* Keyword.Type */
+.nc { color: #2b91af } /* Name.Class */
+.sb { color: #a31515 } /* Literal.String.Backtick */
+.sd { color: #a31515 } /* Literal.String.Doc */
+.s2 { color: #a31515 } /* Literal.String.Double */
+.se { color: #a31515 } /* Literal.String.Escape */
+.sh { color: #eb1919} /* Literal.String.Heredoc */
+.si { color: #a31515 } /* Literal.String.Interpol */
+.sx { color: #a31515 } /* Literal.String.Other */
+.sr { color: #a31515 } /* Literal.String.Regex */
+.s1 { color: #a31515 } /* Literal.String.Single */
+body {
+  font: 14px/1.5 cursive, sans-serif, fantasy, monospace, serif,  verdana, helvetica-neue, helvetica, arial;
+  padding: 0;
+  background: black;
+  margin: 10px 40px 10px 100px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  rubyt-decoration: none;
+}
+
+a:hover {
+  rubyt-decoration: underline;
+}
+
+#main {
+  width: 760px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+}
+header {
+  padding: 0 10px;
+  overflow: hidden;
+}
+h1 {
+  margin: 0;
+}
+
+nav ul, ul.entries {
+  list-style-type: none;
+}
+nav li a {
+  float: left;
+  margin: 5px;
+}
+.content {
+  padding: 10px;
+}
+ul.entries li {
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+  width: 600px;
+}
+
+ul.entries img {
+  width: 600px;
+.ss { color: #a31515 } /* Literal.String.Symbol */
