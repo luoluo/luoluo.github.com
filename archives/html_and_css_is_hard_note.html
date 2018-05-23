@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> HTML&amp;CSS is Hard Note </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> HTML&amp;CSS is Hard Note </div>
+    <div class="post-time"> 2017-02-21 19:21:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h3>Basic HTML</h3>
+
+<p><strong>block-level elements:</strong></p>
+
+<pre><code>&lt;head&gt; contains all the meatadata like page title, css stylesheet, and other things not necessarily want the user to see.
+&lt;body&gt; tag represents the visible content of the page.
+&lt;title&gt; browser display it in the page tab.
+&lt;p&gt;
+&lt;h1-h6&gt; headings are like title, but they are actually displayed on the page.
+&lt;ul&gt; unordered lists
+&lt;li&gt; list
+
+    &lt;ul&gt;
+      &lt;li&gt;Add a "ul" element (it stands for unordered list)&lt;/li&gt;
+      &lt;li&gt;Add each item in its own "li" element&lt;/li&gt;
+      &lt;li&gt;They don't need to be in any particular order&lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;ol&gt; ordered list
+</code></pre>
+
+<p><strong>inline elements:</strong></p>
+
+<pre><code>&lt;em&gt; italic
+&lt;strong&gt; blod
+</code></pre>
+
+<p>HTML vs CSS (structure versus presentation)
+HTML markup should provide sematic information about your content-not presentation infomation</p>
+
+<p><strong>css hierarchy for every web page:</strong></p>
+
+<ol>
+<li>The browser's default stylesheet</li>
+<li>User defined stylesheet</li>
+<li>External stylesheet</li>
+<li>Page-specific stylesheet</li>
+<li>Inline styles</li>
+</ol>
+
+<h3>CSS box model:</h3>
+
+<ol>
+<li><strong>Block boxes</strong> always appear <strong>below</strong> the previous block element.</li>
+<li>The <strong>width of block boxes</strong> is set automatically based on the width of its parent container.</li>
+<li>The default <strong>height of block boxes</strong> is based on the content it contains.</li>
+<li><strong>Inline boxes</strong> don't affect <strong>vertical spacing</strong>.</li>
+<li>The <strong>width of inline boxes</strong> is based on the contents it contains, not the width of the parent container.</li>
+</ol>
+
+<p><strong>box properties:</strong></p>
+
+<ol>
+<li>Content: The text, image or other media in the element.</li>
+<li>Padding: The space between box's content and its border.</li>
+<li>Border: The line between box's margin and padding.</li>
+<li>Margin: The space between the box and surrounding boxes.</li>
+</ol>
+
+<p>css example:</p>
+
+<pre><code>padding: 50px;  /* each side 50px */
+padding: 10px 20px;  /* Vertical Horizontal */
+padding: 10px 20px 10px 20px;  /* Top Right Bottom Left */
+border: 1px solid #5D6063; /* Size Style Color */
+</code></pre>
+
+<p><strong>padding vs margin:</strong></p>
+
+<ol>
+<li>The padding of a box has color, while margins are always transparent.</li>
+<li>Padding is include in the click area of an element, while margins aren't.</li>
+<li>Margins collapse vertically, while padding doesn't.</li>
+</ol>
+
+<p><strong>margin collapse prevent:</strong></p>
+
+<ol>
+<li>Only consecutive elements can collapse into each other. Put an element with non-zero height between. </li>
+<li>Use padding instead.</li>
+<li>Stick to top-only or bottom-only margin convention.</li>
+</ol>
+
+<p>align box:
+text-align:
+block-align: auto-margin, float left/right, flexbox.</p>
+
+<h3>CSS-selector</h3>
+
+<p><strong>type selector</strong></p>
+
+<pre><code>body {
+}
+</code></pre>
+
+<p><strong>class selector</strong></p>
+
+<pre><code>&lt;div class="class-name" &gt; xx &lt;/div&gt;
+.class-name {
+}
+</code></pre>
+
+<p>modify class style</p>
+
+<pre><code>&lt;div class="class-name modify-info" &gt; xx &lt;/div&gt;
+.class-name {
+}
+.modify-info {
+}
+</code></pre>
+
+<p><strong>id selector</strong></p>
+
+<pre><code>&lt;div id="bottom1"&gt; xx &lt;/div&gt;
+#bottom1 {
+}
+</code></pre>
+
+<h3>Float</h3>
+
+<pre><code>float: left; /* left align */
+float: right; /* right align */
+float: none; /* default align */
+margin: 0 auto; /* center align */
+</code></pre>
+
+<p>Float multiple elements in the same direction, they will stack horizontally.
+By default, the height of our floated elements don't contribute to the vertical position of the footer,
+so it simply sticks to itself below the last element that was not <em>floated</em>.</p>
+
+<p><strong>clearing float:</strong></p>
+
+<pre><code>.footer {
+    clear: both; /* clear left/right/both */
+}
+</code></pre>
+
+<p><strong>hidden overflow:</strong></p>
+
+<pre><code>.content {
+    overflow: hidden;
+}
+</code></pre>
+
+<p>To summarize, when you have an extra unfloated HTML element at the bottom of a container div, use the clear 
+solution. Otherwise, add an overflow: hidden declaration to the container element. </p>
+
+<h3>Flexbox</h3>
+
+<p><em>horizontal align: justify-content</em> <br />
+<em>vertical align: align-item</em>   </p>
+
+<pre><code>.container {
+    /* ... */
+    display: flex;
+    justify-content: cneter; /* center/flex-start/flex-end/space-around/space-between */
+    align-item: center; /* center/flex-start(top)/flex-end(bottom)/stretch/baseline */
+    flex-wrap: wrap; /* wrap/nowrap */
+    flex-direction: row; /* row/cloumn/row-reverse/column-reverse */
+}
+.flex-item {
+    order: 1; /* 1(first)/-1(last) */
+    margin-left: auto;
+    flex: 1; /* 1/initial */
+}
+</code></pre>
+
+<h3>Advanced-positioning:</h3>
+
+<p><strong>positioning scheme</strong>: <em>static, relative, absolute, fixed</em>.</p>
+
+<p><strong>relative-positioning</strong>: moves the elements around <em>relative</em> to where they would normally appear in the static flow of the page.</p>
+
+<pre><code>.item-relative {
+    position: relative;
+    top: 30px; /* bottom: -30px; */
+    left: 30px; /* right: -30px; */
+}
+</code></pre>
+
+<p>Relative-positioning works similarly to margin but with one very important difference: neither the surrounding elements or parent element are affected by the <code>top</code> and <code>left</code> value. Everything renders as if .item-relative was in its original position.</p>
+
+<p><strong>absolute-positioning</strong> is just like relative-position, but the offset if relative to the entire browser window instead of the original position of the element.</p>
+
+<pre><code>.item-absolute {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+</code></pre>
+
+<p>The other interesting effect is that it completely removes an element from the normal flow of the page.</p>
+
+<p><strong>relatively absolute</strong>
+Absolute elements is alwasy relative to the closed elements that is a <em>positioned elements</em>.</p>
+
+<p><strong>Fixed elements</strong> has a lot common with absolute positioning: it's very manual, the element is removed from the the normal flow of the page, and the coordinate system is relative to the entire browser window. The key difference is that fixed elements don't scrolled with the rest of page.</p>
+
+<pre><code>.item-fixed {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+</code></pre>
+
+<p><strong>z-index</strong>: let you control the depth of the elements on the page.</p>
+
+<pre><code>.dropdown &gt; span {
+    z-index: 2;
+    position: relative; /* This is important */
+}
+</code></pre>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

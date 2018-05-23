@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> [无穷递归]两面镜子对照的效果 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> [无穷递归]两面镜子对照的效果 </div>
+    <div class="post-time"> 2011-12-11 22:49:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>两面镜子对照，在其中一面镜子里你能看到多少面镜子？</p>
+
+<p>一直有个疑问是两面镜子中间有一盏蜡烛，中间会不会变得越来越亮？ 实际上是不会的,但是光去哪了呢？  </p>
+
+<p>我觉的应该分<em>两种</em>情况来分析：   </p>
+
+<p>1.光源只是瞬时的，这种情况下，光能量会不断在两个镜面见反射，不断衰减，最后近似耗尽。</p>
+
+<p>2.光源是持续的光源，任一时刻到达一个镜面的光分为两部分： 直接来自光源的和反射来的。反射来的又可以分为1次反射，2次....n次。反射光会有能量增强效果，但因为反射不是完全反射，同以束光，几次反射后的光能量较低。镜子的作用是收集能量，而能量应该是以瞬时来衡量的。因为反射的效果，几次反射后的光能量较低，可以忽略，所以光 不会无限增强.</p>
+
+<p>对任意时刻到达镜子的反射光都有一个反射次数标记n表示反射次数，当n大于一个值时可以忽略了，读任意一个镜子考虑都是一样的.    </p>
+
+<p>这里易出的问题是对研究对象的选取。如果你以光为研究对象，无限想象下去就觉得会无限加强，问题出在忽略了光能量应该是时间到函数，到达镜面到光能量是时间函数，随着时间的推移，原来的能量会变为下一时刻的考虑能量，加一个反射次数，这样的话，势必会有一部分能量不用去再参考了。能量随着时间来耗散。具体的数学推导有时间再来，今天要睡觉了，突然看到这样的一个问题，有点想法，记下来....</p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

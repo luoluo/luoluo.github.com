@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> 常见文件系统性能 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> 常见文件系统性能 </div>
+    <div class="post-time"> 2013-04-25 21:26:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h6>本文为一篇译文，<a href="http://oss.sgi.com/projects/xfs/papers/filesystem-perf-tm.pdf">原文</a></h6>
+
+<p>Linux上流行的文件系统：<em>Ext2, Ext3, ReiserFS,XFS, and JFS</em>(2002)</p>
+
+<h3>Filesystem Descriptions</h3>
+
+<h4>2.1 Ext2</h4>
+
+<p>由Wayne Davidson设计, 是ext文件系统的加强版。Ext2 是standard Linux filesystem. </p>
+
+<h4>2.2 Ext3</h4>
+
+<p>Ext3是一种日志式文件系统，是对ext2系统的扩展，它兼容ext2。</p>
+
+<h4>2.3 ReiserFS</h4>
+
+<p>由Hans Reiser开发, ReiserFS 成为standard Linux Kernel的部分（自2.4.1起）。
+ReiserFS 使用B*平衡树来组织 描述符、文件、数据。ReiserFS 支持节省空间策略(tailpacking),把小文件移到B*树的叶子。</p>
+
+<h4>2.4 XFS</h4>
+
+<p>XFS 是journaling filesystem支持<em>元数据journaling</em>
+XFS 使用allocation groups 和 extentbased allocations 来提高磁盘上数据的Locality(空间局部性).目前XFS并不是标准Linux 的一部分。</p>
+
+<h4>2.5 JFS</h4>
+
+<p>IBM的JFS [JFS], 起源于AIX,被移植到OS/2‚后又回到AIX并支持Linux.
+JFS的技术优势有：extent-based storage allocation, variable block
+sizes, dynamic disk inode allocation, and sparse and dense file support. </p>
+
+<p>JFS 是一个journaling 文件系统支持metadata logging.
+尽管JFS不属于 standard Linux kernel，但是有patchsets.</p>
+
+<h3>优势对比</h3>
+
+<p>1) 总体而言,Ext2的表现要优于Ext3.
+一般情况下，Ext3 在data=writeback时和
+data=ordered时效率一样. 在某些特定条件下，
+Ext3 data=ordered 时快些；而有些时候，
+data=writeback快. 当系统比较大时，Ext3(data=writeback)表现优于Ext2.</p>
+
+<p>2) 对小文件(平均&lt;=5KB)和频繁的文件操作,ReiserFS能表现最好。</p>
+
+<p>3) 对File-I/O频繁的工作，如pgmeter，所有的文件系统表现相近。</p>
+
+<p>4) 当性能次重要时，对小系统和频繁文件操作的系统，XFS和JFS都不是好选择。</p>
+
+<p>5) 对小的SMP systems 如medium system,对顺序读工作，XFS和JFS都是很好的选择</p>
+
+<p>6) JFS对SMP(对称多处理)随线程数增加而表现乏力。</p>
+
+<p>7) 对于有大量的I/O操作的大系统，XFS性能最优.</p>
+
+<h3>日志文件系统(Journaling file system)</h3>
+
+<p>Journaling file system is a file system that keeps track of the changes that will be made in a journal (usually a circular log in a dedicated area of the file system) before committing them to the main file system. In the event of a system crash or power failure, such file systems are quicker to bring back online and less likely to become corrupted.    </p>
+
+<p>日志文件系统是跟踪磁盘内容的变化，记录文件改变到一个日志里，而记录动作是在将改变提交到主文件系统前的发生的。即当系统意外（如断电）中断时，下次启动时读取日志记录文件就可以恢复未完成的写操作，而这只需几秒。</p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

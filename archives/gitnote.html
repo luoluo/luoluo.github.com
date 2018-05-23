@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Git note </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Git note </div>
+    <div class="post-time"> 2013-08-08 19:50:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h3>-1.Error:</h3>
+
+<pre><code>lo@ubuntu:~/try/java/test$ git push origin master
+To git@github.com:luoluo/test.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:luoluo/test.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+lo@ubuntu:~/try/java/test$ git pull
+ssh_exchange_identification: Connection closed by remote host
+fatal: The remote end hung up unexpectedly
+lo@ubuntu:~/try/java/test$ git pull --rebase
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details
+
+    git pull &lt;remote&gt; &lt;branch&gt;
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream master origin/&lt;branch&gt;
+
+lo@ubuntu:~/try/java/test$
+</code></pre>
+
+<h4>solution1:</h4>
+
+<pre><code>lo@ubuntu:~/try/java/test$ git push -f origin master
+Counting objects: 62, done.
+Compressing objects: 100% (55/55), done.
+Writing objects: 100% (62/62), 31.05 KiB, done.
+Total 62 (delta 12), reused 0 (delta 0)
+To git@github.com:luoluo/test.git
+ + 7cd94a0...7785ccf master -&gt; master (forced update)
+lo@ubuntu:~/try/java/test$
+</code></pre>
+
+<h4>solution2:</h4>
+
+<pre><code>lo@ubuntu:~/config$ git pull --rebase origin master
+From github.com:luoluo/config
+ * branch            master     -&gt; FETCH_HEAD
+First, rewinding head to replay your work on top of it...
+Applying: config
+lo@ubuntu:~/config$ ls
+README.md
+lo@ubuntu:~/config$
+</code></pre>
+
+<h3>0.Error:fatal: remote origin already exists</h3>
+
+<pre><code>lo@ubuntu:~/try/java/test$ git remote add origin git@github.com:luoluo/test.git
+fatal: remote origin already exists.
+</code></pre>
+
+<h4>solution:</h4>
+
+<pre><code>git remote rm origin
+git remote add origin git@github.com:luoluo/test.git
+</code></pre>
+
+<h3>1.Pretty git branch graphs</h3>
+
+<h4>Wtire in ~/.gitconfig</h4>
+
+<p>{% highlight sh %}
+[user]
+    name = luoluo
+    email = luoluo1920@gmail.com
+[alias]
+    log1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    log2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+{% endhighlight %}</p>
+
+<h3>2.Error master branch and 'origin/master' have diverged</h3>
+
+<h4>Status</h4>
+
+<pre><code>... o --- o --- A --- B origin/master (upstream work)
+                 \
+                  C master (your work)
+</code></pre>
+
+<h4>Solution 1</h4>
+
+<pre><code>git merge origin/master
+... o --- o --- A --- B origin/master (upstream work)
+                 \     \
+                  C --- M master (your work)
+</code></pre>
+
+<h4>Solution 2</h4>
+
+<pre><code>git rebase origin master
+... o --- o --- A --- B origin/master (upstream work)
+                       \
+                        C' master (your work)
+</code></pre>
+
+<h4>Best Solution</h4>
+
+<pre><code>git pull --rebase
+</code></pre>
+
+<h3>3.Errot Your branch is ahead of 'origin/master' by 2 commits.</h3>
+
+<h4>Solution 1</h4>
+
+<pre><code>git reset --hard origin/master  #Not good enough
+</code></pre>
+
+<h4>Solution 2</h4>
+
+<pre><code>git push origin master
+</code></pre>
+
+<h3>4.git pull Error</h3>
+
+<pre><code>git pull
+Updating b84f92b..5c60a57
+error: Your local changes to the following files would be overwritten by merge:
+    src/appsearch/indexserve/src/main/java/com/dolphin/estore/appsearch/QueryBuilder.java
+    src/appsearch/indexserve/src/main/java/com/dolphin/estore/appsearch/test/SearchTest.java
+Please, commit your changes or stash them before you can merge.
+Aborting
+git stash
+git pull
+git stash pop
+</code></pre>
+
+<h3>5.Error On branch master</h3>
+
+<h4>On branch master Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.</h4>
+
+<h3>6. Error</h3>
+
+<pre><code>git push -u origin master
+ERROR: Permission to user/repo denied to user/repo
+</code></pre>
+
+<h4>solution</h4>
+
+<pre><code>This error means the key you are pushing with is attached to another repository as a *deploy key*, and does not have access to the repository you are trying to push to. To remedy this, *remove the deploy key from the repository and attach the key to your user account instead*.
+</code></pre>
+
+<h3>7. Write .gitignore</h3>
+
+<pre><code>When commit we want git to untrack somefile. If we create a .gitignore file. git will use its rules when we commit.
+</code></pre>
+
+<h4>Example .gitignore</h4>
+
+<pre><code># Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+######################
+*~
+</code></pre>
+
+<h3>.gitconfig</h3>
+
+<pre><code>[user]
+    name = luoluo
+    email = luoluo1920@gmail.com
+[alias]
+    log1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    log2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+[core]
+    editor = vim
+</code></pre>
+
+<h4>Tips</h4>
+
+<p>Note that git will not ignore a file that was already tracked before a rule was added to this file to ignore it. In such a case the file must be un-tracked, usually with </p>
+
+<pre><code>git rm --cached filename
+</code></pre>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

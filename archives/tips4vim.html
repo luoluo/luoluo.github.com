@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Tips for vim </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Tips for vim </div>
+    <div class="post-time"> 2013-10-26 12:36:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h5>1.How to copy between two terminals using vim?</h5>
+
+<ol>
+<li>open file a</li>
+<li>copy the items (using yy)</li>
+<li><em>close file a (Main point)</em></li>
+<li>open file b</li>
+<li>paste the items</li>
+<li>save and exist file b</li>
+</ol>
+
+<h5>2.How to copy to system clipboard?</h5>
+
+<pre><code>if `:echo has('clipboard')` return 0
+    install clipboard first by running
+    sudo apt-get install vim-gtk
+else `:set clipboard=unnamedplus`
+    use "+y | "+2yy to copy and +p to paste
+</code></pre>
+
+<h5>3.How to put the current line to the top of the screen?</h5>
+
+<p>From time to time, I'm typing at the bottom of the screen.So I need to go back to the top.   </p>
+
+<h4>solution:</h4>
+
+<pre><code>z&lt;return&gt; || zt #to the top
+zb #to the bottom
+zz #to the middle
+</code></pre>
+
+<h5>Tips:All of those command keep the cursor where it was</h5>
+
+<h3>4.vim moving between windows?</h3>
+
+<h4>C-w</h4>
+
+<h3>5.Debug using vim?</h3>
+
+<h4>makefile + pyclewn + vim</h4>
+
+<p>Use pyclewn to debug C/Python (Using gdb/pdb) <br />
+<em>*See more on *</em>
+<a href="http://pyclewn.sourceforge.net/">pyclewn org</a></p>
+
+<h3>6.vim paste indent problem?</h3>
+
+<p>When I paste code into document from clipboard, I get extra space in new line:    </p>
+
+<pre><code>line    
+    line   
+        line
+</code></pre>
+
+<h4>To solve this:</h4>
+
+<pre><code>:set paste   #turn on the paste mode
+#do the paste you need
+:set nopaste  #turn off the paste mode
+</code></pre>
+
+<h3>7.using book mark?</h3>
+
+<pre><code>Command  Description
+ma   set mark a at current cursor location
+'a   jump to line of mark a
+`a   jump to position of mark a
+d'a  delete from current line to line of mark a
+d`a  delete from current posi to posi of mark a
+c'a  change from current line to line of mark a
+y`a  yank   from cursor to position of mark a (to unnamed buffer)
+:marks   list all the current marks
+:marks aB    list marks a, B
+</code></pre>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

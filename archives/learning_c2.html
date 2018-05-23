@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> A byte of C After </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> A byte of C After </div>
+    <div class="post-time"> 2013-03-16 20:42:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>目标 <br />
+白话C，最短时间内写出简单C程序(<em>进阶篇</em>)</p>
+
+<p>关键字  </p>
+
+<ul>
+<li>1.数据聚合</li>
+<li>2.运算符</li>
+<li>3.函数++</li>
+</ul>
+
+<p>上期解答<a href="/archives/learningc.markdown">问题传送门</a></p>
+
+<pre><code>#include &lt;stdio.h&gt;
+int is_prime(int x) // 1
+{
+    int i;
+    for(i = 2;i * i &lt; x;i++)
+        if((x % i) == 0) 
+            return 0;
+    return 1;
+}
+int main() 
+{
+    int i, count, sum;
+    for(i = 500, sum = 0, count = 0;i &lt; 1000;i++){ // 2
+        if(is_prime(i)){
+            count++;        
+            sum += i;
+        }            
+    }
+    printf("There are %d primes, sum is %d\n", count, sum);
+    return 0;
+}
+</code></pre>
+
+<p>解释两处： <br />
+1.自己定义的函数<code>is_prime</code>用于判断数的素性; <br />
+2.for循环的初始部分有错？？NO!逗号运算符[]   </p>
+
+<p>数据聚合</p>
+
+<blockquote>
+  <p>问题：已知每个人的成绩，求每个人与平均分间的差。
+  如果只有几个人，可以定义几个变量解决问题。可是若有成百上千的个体，定义变量使用将是多么痛苦。<code>数组</code>应运而生，数组是解决同类个体聚合的利器。</p>
+</blockquote>
+
+<h4>数组 []</h4>
+
+<pre><code>#include &lt;stdio.h&gt;
+int main(){
+    float scores[6] = {3, 4, 8, 9, 5, 7};//数组的定义
+    //float scores[] = {3, 4, 8, 9, 5, 7};也可以 
+
+    float average = 0;
+    int i;
+    for(i = 0;i &lt; 6;i++)
+        average += scores[i];
+
+    average /= 6.0;
+
+    for(i = 0;i &lt; 6;i++){
+         scores[i] -= average;
+         printf("%f\t", scores[i]);
+    }    
+}
+</code></pre>
+
+<p>上面解答只针对一门成绩，如果有多门呢？ 建立多个数组？？如果可以把名字，学号成绩合起来定义一种类型，处理将简单，直接。</p>
+
+<h4>结构 struct</h4>
+
+<pre><code>#include &lt;stdio.h&gt;
+int main(){
+    struct student{        //定义结构类型
+        char name[20];        
+        int id;
+        float score1, score2;
+    }; //此处分号不要丢
+    struct student s1 = {"Lili", 201006, 5.5, 6.6};  //定义一个结构变量
+    printf("name:%s id:%d score:%f %f\n", s1.name, s1.id, s1.score1, s1.score2);
+
+    struct student stu[6] = {        //定义结构数组
+            {"Lili", 201001, 5.5, 6.6},
+            {"Lilk", 201002, 5.5, 2.6},
+            {"Lile", 201003, 8.5, 9.6},
+            {"Lils", 201004, 9.5, 8.6},
+            {"Lilz", 201005, 3.5, 2.6},
+            {"Lilw", 201006, 2.5, 8.6}
+                            };
+    int i;
+    float aver1, aver2;
+    for(i = 0, aver1 = 0, aver2 = 0;i &lt; 6;i++){
+        aver1 += stu[i].score1;        
+        aver2 += stu[i].score2;        
+    }
+    aver1 /= 6.0;
+    aver2 /= 6.0;
+    for(i = 0;i &lt; 6;i++){
+        stu[i].score1 -= aver1; 
+        stu[i].score2 -= aver2;
+    }
+    for(i = 0;i &lt; 6;i++)
+        printf("name:%s id:%d stucore:%f %f\n", stu[i].name, stu[i].id, stu[i].score1, stu[i].score2);
+}
+</code></pre>
+
+<h4>运算符</h4>
+
+<p>注意几点   </p>
+
+<ul>
+<li>1.位运算(&amp; | ^)符优先级<strong>高于</strong>逻辑运算符(&amp;&amp; || );</li>
+<li>2.取模运算符(%) 的两个操作数都要是 <strong>整型</strong> ;</li>
+<li>3.运算符用于构成表达式,<em>表达式产生值</em>;</li>
+<li>4.赋值运算符(=),赋值表达式产生值，结合型自右向左;</li>
+<li>5.函数调用也是表达式(上表不全),表达式产生值。</li>
+</ul>
+
+<h4>函数(递归)</h4>
+
+<p>阶乘的计算</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+int f(int x){
+    if(x &lt;= 1) //递归返回边界
+        return 1;
+    else return x * f(x -1);
+}
+int main()
+{
+    printf("%d\n", f(6));
+    return 0;
+}
+</code></pre>
+
+<p>递归就是函数调用本身，递归一定有返回边界；</p>
+
+<h4>小结，有码有真相</h4>
+
+<p>写出求斐波那契数的函数fib(n)</p>
+
+<pre><code>int fib(int n){
+     //-------
+}
+</code></pre>
+
+<p><a href="/archives/learning_c3.markdown">答案戳这里</a></p>
+
+<p>下期将有指针、宏、常用函数</p>
+
+<p>PS:本来打算都写在这期的，结果太多了...</p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> MapReduce框架详解 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> MapReduce框架详解 </div>
+    <div class="post-time"> 2018-02-19 10:40:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>Apache Hadoop简介</h4>
+
+<blockquote>
+  <p>The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. </p>
+</blockquote>
+
+<p>Apache Hadoop是一个分布式计算框架，采用极简的表述模型，在由多台计算机组成的机器集群上，分布式处理计算任务。</p>
+
+<p>Apache Hadoop由以下几部分组成：</p>
+
+<ul>
+<li>Hadoop Common: 通用组件，以此来构建其他基础模块</li>
+<li>Hadoop Distributed File System (HDFS™): 分布式文件系统，提供数据访问高吞吐</li>
+<li>Hadoop YARN: 任务调度&amp;集群资源管理器</li>
+<li>Hadoop MapReduce: 基于yarn实现的大数据并行处理框架</li>
+</ul>
+
+<p>本文讲重点介绍Hadoop MapReduce。</p>
+
+<h4>编程模型</h4>
+
+<p>MapReduce提供两种抽象：</p>
+
+<pre><code>Map：
+（k1, v1）=&gt; list(k2, v2)
+Reduce:
+  (k2, list(v2)) =&gt; list(v3)
+</code></pre>
+
+<p>抽象的好处:程序员只需专注业务，调度、分发、容错均由集群保证，大大降低研发成本及门槛。</p>
+
+<p>屏蔽细节:</p>
+
+<ul>
+<li>map输入分partition，reduce输入划分</li>
+<li>计算资源、存储相关map和reduce的调度</li>
+<li>Failover</li>
+<li>数据分发</li>
+</ul>
+
+<h4>举个栗子</h4>
+
+<p>最最经典的word-count</p>
+
+<pre><code>map(String key, String value):
+    // key: document name
+    // value: document contents
+    for each word w in value:
+        EmitIntermediate(w, "1");
+
+reduce(String key, Iterator values):
+    // key: a word
+    // values: a list of counts
+    int result = 0;
+    for each v in values:
+        result += ParseInt(v);
+    Emit(AsString(result));
+</code></pre>
+
+<p>过程简述</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/mapreduce1.png" alt="x" /> </div>
+
+<ol>
+<li>获取输入，并将输入分片</li>
+<li>mapper读取输入，处理，输出</li>
+<li>将mapper输出按key排序，发送至对应reducer</li>
+<li>reducer处理，输出</li>
+</ol>
+
+<h4>更多例子</h4>
+
+<ul>
+<li>分布式grep</li>
+<li>站点PV统计</li>
+<li>站点内链反向链接统计</li>
+<li>搜索引擎倒排索引构建</li>
+<li>分布式排序</li>
+<li>...</li>
+</ul>
+
+<h4>执行过程概述</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/mapreduce2.png" alt="x" /> </div>
+
+<p>组成部分</p>
+
+<ul>
+<li>an input reader</li>
+<li>a Map function</li>
+<li>a partition function</li>
+<li>a compare function</li>
+<li>a Reduce function</li>
+<li>an output writer</li>
+</ul>
+
+<h4>执行过程详述</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/mapreduce3.png" alt="x" /> </div>
+
+<ul>
+<li>Split: split input into M pieces, key space into R pieces.</li>
+<li>Assign: M mapper task &amp; R reducer task to idle workers.</li>
+<li>Map run: read splitted input, transform by map function, buffer to memory.</li>
+<li>Spill: Map write to local disk (partition) =&gt; pass info to master, then master info the reducer.</li>
+<li>Shuffle: when notified, reducer start to read. On read end, reducer sort input.</li>
+<li>Reducer run: iterate over the sorted key and corresponding value set pass to reduce function. Output is appended to the final output file.</li>
+<li>Weak up user program, program returns to user code.</li>
+</ul>
+
+<h4>Master 数据结构</h4>
+
+<p>Master存储的信息：map任务、reduce任务的执行状态；集群worker机器的状态（以供调度） <br />
+Task的状态集：idle，in-process，complete</p>
+
+<p>Master是map处理结果流转到reduce的中间人</p>
+
+<ul>
+<li>对于已完成的map任务，master存储R个分片结果地址</li>
+<li>每当map处理完成后，结果信息便存储至master</li>
+<li>master立即将信息推送至处理中的reducer任务</li>
+</ul>
+
+<h4>容错机制</h4>
+
+<p>Worker容错：</p>
+
+<p>心跳检查来发现故障worker，master周期性ping所有worker，以发现故障worker。 <br />
+当worker故障，机器上的处理结果将无法访问，计算任务无法执行。故需其上<code>complete</code> map重置为<code>idle</code>，<code>in-process</code> map、reduce重置为<code>idle</code>，供重新调度执行。
+当故障worker被新worker替代后，map任务重新执行信息将周知对应reduce。</p>
+
+<p>Master容错：</p>
+
+<p>通过check point机制来容错。</p>
+
+<p>一致性保证：</p>
+
+<p>对于map和reduce为<code>de-terministic functions</code>，则不论中间过程是否存在失败task，处理结果应相同。
+通过<code>atomic commits</code>机制来保证处理一致性。    </p>
+
+<ul>
+<li>map、reduce均将结果写至临时文件</li>
+<li>map任务完成后，将结果文件信息提交至master，若master已接受过此map任务的信息，则后续信息将被忽略</li>
+<li>reduce任务完成后，则重命名临时结果文件为最终输出文件，重命名过程具有原子性，由底层文件系统保证</li>
+</ul>
+
+<h4>相关项目</h4>
+
+<ul>
+<li>Hive <a href="http://hive.apache.org/">http://hive.apache.org/</a></li>
+<li>Hadoop <a href="http://hadoop.apache.org/">http://hadoop.apache.org/</a></li>
+<li>Spark  <a href="http://spark.apache.org/">http://spark.apache.org/</a></li>
+<li>Pig  <a href="http://pig.apache.org/">http://pig.apache.org/</a></li>
+<li>Tez <a href="http://tez.apache.org/">http://tez.apache.org/</a></li>
+<li>Hbase <a href="http://hbase.apache.org/">http://hbase.apache.org/</a></li>
+</ul>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Hash in Java </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Hash in Java </div>
+    <div class="post-time"> 2013-08-14 20:50:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>Hash is a useful tool in everyday programming work. Here is a brief summary.</p>
+
+<h3>HashMap &amp; HashSet</h3>
+
+<h4>HashSet</h4>
+
+<pre><code>import java.util.HashSet;
+import java.util.Iterator;
+
+public class hashSetTest {
+    private static final HashSet&lt;String&gt; set = new HashSet&lt;String&gt;() {
+        {
+            add("A");
+            add("B");
+            add("C");
+            add("D");
+            add("E");
+        }
+    };
+    public static void main(String[] argc) {
+        if(set.isEmpty()) {
+            System.out.println("is set empty? " + set.isEmpty());
+        }
+        if(set.contains("A")) {
+            System.out.println("is set contains A? " + set.contains("A"));
+        }
+
+        Iterator i = set.iterator();
+        while(i.hasNext()) {
+            System.out.println("has values: " + i.next());
+        }
+
+        set.remove("A");
+        if(set.contains("A")) {
+            System.out.println("is set contains A? " + set.contains("A"));
+        }
+
+        System.out.println("set size = " + set.size());
+        set.clear();
+        System.out.println("set size = " + set.size());
+    }
+
+}
+</code></pre>
+
+<h4>Run result</h4>
+
+<pre><code>is set contains A? true
+has values: D
+has values: E
+has values: A
+has values: B
+has values: C
+set size = 4
+set size = 0
+
+Process finished with exit code 0
+</code></pre>
+
+<h4>HashMap</h4>
+
+<pre><code>import java.util.HashMap;
+
+public class hashTest {
+    private static final HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt; () {
+        {
+            put("A", 1);
+            put("B", 2);
+            put("C", 3);
+            put("D", 4);
+        }
+
+    };
+    public static void main(String[] argc) {
+        if(map.containsKey("A")) {
+            System.out.println("is map Contains key A? " + map.containsKey("A"));
+        }
+        if(map.containsValue(1)) {
+            System.out.println("is map Contains value 1? " + map.containsKey("A"));
+        }
+        if(map.isEmpty()){
+            System.out.println("is map empty? " + map.isEmpty());
+        }
+        System.out.println("map size = " + map.size());
+        for(String key : map.keySet()) {
+            System.out.println(key + "-&gt;" + map.get(key));
+        }
+
+        map.clear();
+        if(map.isEmpty()){
+            System.out.println("is map empty? " + map.isEmpty());
+        }
+    }
+}
+</code></pre>
+
+<h4>Run result</h4>
+
+<pre><code>is map Contains key A? true
+is map Contains value 1? true
+map size = 4
+D-&gt;4
+A-&gt;1
+B-&gt;2
+C-&gt;3
+is map empty? true
+
+Process finished with exit code 0
+</code></pre>
+
+<h4>Well, that's all.</h4>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

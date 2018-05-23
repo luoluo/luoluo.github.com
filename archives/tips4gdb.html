@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Gdb 使用笔记 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Gdb 使用笔记 </div>
+    <div class="post-time"> 2013-12-19 18:52:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>1.在Debug之前，编译时允许debug.</h4>
+
+<pre><code>g++ -g xxx.cpp -o xxx
+</code></pre>
+
+<h4>2.使用gdb来debug,常用命令：</h4>
+
+<pre><code>gdb xxx     # 开始debug
+break       # 设置断点
+    break function-name/line-number/ClassName::funcName
+delete/d    # 删除断点
+    delete  # 删除所有断点，观察点，捕捉点
+    delete breakpoint-number-or-range
+run         # 开始运行
+
+where       # 显示当前执行和所在函数
+next/n      # 执行下一条语句,不进入函数
+continue/c  # 执行到下一个 断点 前
+until
+    until line-number
+step/s      # 执行下一条语句，会进入函数
+finish      # 执行到当前函数结束
+
+info
+    info frame
+    info args
+    info locals
+
+list/l      # 列出代码
+    list line-number/function/start#,end#
+
+print/p     # 打印变量的值
+    print variable-name
+    print *array-variable@length
+
+quit/q      # 退出GDB
+</code></pre>
+
+<h4>3.gdb对STL的支持.</h4>
+
+<p>使用<strong>GDB</strong>打印<em>vector</em>、<em>stack</em>等抽象STL数据结构是，打印出的内容是无意义的。而GDB 7.0就支持 pretty-printers. 把pretty-printers 和 libstdc++ 组合起来就产生了打印 C++ 容器的最好工具，具体操作如下：    </p>
+
+<pre><code>1.将Python libstdc++ printer check out 到本地。
+svn co svn://gcc.gnu.org/svn/gcc/trunk/libstdc++-v3/python
+2.把以下内容加到~/.gdbinit.
+python
+import sys
+sys.path.insert(0, '/path/to/gdb_printers/python')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+end    
+注意，以上的路径要一致，即.gdbinit里的路径和实际check out的地址要一致。
+</code></pre>
+
+<h4>4.gdb对多线程的支持.</h4>
+
+<pre><code>1. kill -11 pid          # 手动触发core： 
+2. gdb bin core.xxx      # gdb 调试：
+3. (gdb) info threads    # 展示所以线程
+4. (gdb) thread 4        # 切换至特定线程
+5. (gdb) bt              # 打印栈信息
+6. thread apply [thread-id-list] [all] args   # 打印出所有进程的情况
+</code></pre>
+
+<h4>5.gdb代码搜索路径</h4>
+
+<pre><code>1. directory                    # 重置源码路径为默认值('$cdir:$cwd')
+2. set directories path-list    # 添加path-list到搜索路径
+3. show directories             # 打印当前搜索路径
+</code></pre>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

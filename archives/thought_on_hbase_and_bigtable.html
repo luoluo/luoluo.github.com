@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> HBase </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> HBase </div>
+    <div class="post-time"> 2018-04-25 08:45:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>Apache Hive简介</h4>
+
+<blockquote>
+  <p>The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.</p>
+</blockquote>
+
+<p>Apache Hive是使用<code>SQL</code>来便捷读写、管理海量分布式数据的工具。Hive可将已有数据结构化，配合命令行工具及<code>JDBC</code>来做分析处理。</p>
+
+<p>本文讲重点介绍Hive.</p>
+
+<h4>数据场景</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive1.png" alt="x" /> </div>
+
+<p>随着大数据处理、人工智能浪潮的雄起，数据愈发成为企业的核心价值所在。高效的收集、存储、分析、应用数据逐渐成为企业的竞争力所在。 <br />
+线上业务一般会记录大量数据，来详细描述用户的各类行为，此类数据可能以日志、数据库、消息队列等形式体现。为方便统一处理，由数据中间层完成数据统一存储，存储至可靠的分布式文件系统。而后，由分布式计算框架（如mapreduce、spark）对数据深入的分析处理。分析过程即包含简单的统计、分析、报表等，又可包含数据挖掘、机器学习、深度学习等深入挖掘。对于统计、分析、报表类任务，起初多由<code>MapReduce</code>来完成，但限于研发工作量大、代码编写相对复杂、重复性工作多、缺乏统一处理等。聪明智慧的大师们，为我们带来了Hive，世界从此更加精彩。</p>
+
+<p>MapReduce的局限性</p>
+
+<ul>
+<li>必须使用M/R模型 </li>
+<li>不易重用</li>
+<li>易出错</li>
+<li>复杂任务支持差:</li>
+<li><ul>
+<li>需写多轮MR任务</li>
+</ul></li>
+<li><ul>
+<li>需编写JOIN、UNION、GROUP BY等数据库操作 </li>
+</ul></li>
+<li><ul>
+<li>数据schema含义难以维护</li>
+</ul></li>
+</ul>
+
+<h4>概述</h4>
+
+<p>Apache Hive是基于Apache Hadoop的数据仓库，使用 SQL来对分布式大数据集读写、管理，主要功能:</p>
+
+<ul>
+<li>提供类SQL数据接口</li>
+<li>提供ETL、数据分析、报表等数据仓库功能</li>
+<li>将数据结构化的机制</li>
+<li>可直接访问HDFS及Hbase上的文件</li>
+<li>Query可执行于Apache Tez， Spark及MR之上</li>
+</ul>
+
+<h4>数据模型</h4>
+
+<ul>
+<li>表(table)</li>
+<li><ul>
+<li>支持操作Join，Union</li>
+</ul></li>
+<li><ul>
+<li>存储于HDFS，支持外表(external tables)</li>
+</ul></li>
+<li>分片(partition)</li>
+<li><ul>
+<li>可以有一个或多个分片字段</li>
+</ul></li>
+<li><ul>
+<li>分片决定数据的存储结构</li>
+</ul></li>
+<li><ul>
+<li>table location/ds=xxx</li>
+</ul></li>
+<li>桶(bucket)</li>
+<li><ul>
+<li>只有一个字段作为分桶依据</li>
+</ul></li>
+<li><ul>
+<li>决定一个目录下有多少个文件</li>
+</ul></li>
+</ul>
+
+<p>举个栗子：</p>
+
+<pre><code>hdfs://hdfs-prefix/path/to/wh/db_name/table_name/partition/buckets
+
+Table:
+hdfs://hdfs-prefix/wh/db/web_user_cost_day/
+hdfs://hdfs-prefix/wh/db/all_web_pv_hour/
+...                     \_ table name _/
+
+Partition:
+hdfs://hdfs-prefix/wh/db/web_user_cost_day/time_stamp=20160910/
+hdfs://hdfs-prefix/wh/db/web_user_cost_day/time_stamp=20160911/
+...                     \_  table name  _/\_ partition name _/
+
+Bucket:
+hdfs://hdfs-prefix/wh/db/web_user_cost_day/time_stamp=20160910/b1
+hdfs://hdfs-prefix/wh/db/web_user_cost_day/time_stamp=20160910/b2
+...                     \_  table name  _/\_ partition name _/\_bucket name_/
+</code></pre>
+
+<h4>HiveQL</h4>
+
+<p>例子（word count）</p>
+
+<pre><code>DROP TABLE IF EXISTS docs;
+CREATE TABLE docs(line STRING);
+LOAD DATA INPATH 'input_file' OVERWRITE INTO TABLE docs;
+CREATE TABLE word_counts AS
+    SELECT word, count(1) AS counts FROM
+        (SELECT explode(split(line, '\s')) AS word FROM docs) temp
+    GROUP BY word
+    ORDER BY word;
+</code></pre>
+
+<p>HiveQL——DDL(Hive Data Definition Language)</p>
+
+<pre><code>CREATE DATABASE/SCHEMA, TABLE, VIEW, FUNCTION, INDEX
+DROP DATABASE/SCHEMA, TABLE, VIEW, INDEXTRUNCATE TABLE
+ALTER DATABASE/SCHEMA, TABLE, VIEW
+MSCK REPAIR TABLE (or ALTER TABLE RECOVER PARTITIONS)
+SHOW DATABASES/SCHEMAS, TABLES, TBLPROPERTIES, PARTITIONS, FUNCTIONS, INDEX[ES], COLUMNS, CREATE TABLE
+DESCRIBE DATABASE/SCHEMA, table_name, view_name
+</code></pre>
+
+<p>HiveQL——DML(Hive Data Manipulation Language)</p>
+
+<pre><code>Loading files into tables
+Inserting data into Hive Tables from queries
+Writing data into the filesystem from queries
+Inserting values into tables from SQL
+Update (hive 0.14+)
+Delete (hive 0.14+)
+</code></pre>
+
+<p>HiveQL——DML(Hive Data Manipulation Language)</p>
+
+<pre><code>LOAD DATA [LOCAL] INPATH ‘filepath’ [OVERWRITE]
+INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)]
+INSERT INTO TABLE tablename1 [PARTITION(partcol1=val1,partcol2=val2 ...)] select_statement1 FROM from_statement;
+INSERT OVERWRITE [LOCAL] DIRECTORY directory1
+     [ROW FORMAT row_format] [STORED AS file_format]
+     SELECT ... FROM ...
+INSERT INTO TABLE tablename [PARTITION (partcol1[=val1],partcol2[=val2] ...)] VALUES values_row [, values_row ...]
+</code></pre>
+
+<p>HiveQL——UDF/UDAF/UDTF</p>
+
+<pre><code>Built-in Functions
+    Mathematical Functions
+    Collection Functions
+    Type Conversion Functions
+    Date Functions
+
+Built-in Aggregate Functions
+    count, sum, max, min, avg
+    percentile
+    collect_set, collect_list
+
+Built-in Table-Generating Functions
+    Explode
+    posexplode
+</code></pre>
+
+<h4>实现细节</h4>
+
+<p>HiveQL——Join</p>
+
+<pre><code>INSERT OVERWRITE TABLE pv_users 
+    SELECT pv.pageid, u.age
+        FROM page_view pv
+    JOIN user u
+    ON (pv.userid = u.userid);
+</code></pre>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive2.png" alt="x" /> </div>
+
+<p>HiveQL——Group By</p>
+
+<pre><code>SELECT pageid, age, count(1) 
+    FROM pv_users
+GROUP BY pageid, age;
+</code></pre>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive3.png" alt="x" /> </div>
+
+<h4>架构</h4>
+
+<p>架构总览</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive4.png" alt="x" /> </div>
+
+<ul>
+<li>UI: 用户接口，提交query和操作</li>
+<li>Driver: 接收query，处理会话</li>
+<li>Complier: 处理query，query语法分析</li>
+<li>Executor: 执行Complier生成的执行计划</li>
+<li>MetaStore: 存储结构化信息，字段含义、序列化信息、存储路径</li>
+</ul>
+
+<p>详细任务流</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive5.png" alt="x" /> </div>
+
+<p>Metastore</p>
+
+<ul>
+<li>特性</li>
+<li><ul>
+<li>数据抽象</li>
+</ul></li>
+<li><ul>
+<li>数据检索</li>
+</ul></li>
+<li>Metastore 对象</li>
+<li><ul>
+<li>Database 对table的命名空间</li>
+</ul></li>
+<li><ul>
+<li>Table 表的元信息(列信息，存储、序列化)</li>
+</ul></li>
+<li><ul>
+<li>Partition 分片信息</li>
+</ul></li>
+<li>模式</li>
+<li><ul>
+<li>Local/Embedded Metastore Database (Derby)</li>
+</ul></li>
+<li><ul>
+<li>Remote Metastore Database</li>
+</ul></li>
+</ul>
+
+<h4>与传统数据库对比</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/hive6.png" alt="x" /> </div>
+
+<h4>相关项目</h4>
+
+<ul>
+<li>Hive <a href="http://hive.apache.org/">http://hive.apache.org/</a></li>
+<li>Hadoop <a href="http://hadoop.apache.org/">http://hadoop.apache.org/</a></li>
+<li>Spark  <a href="http://spark.apache.org/">http://spark.apache.org/</a></li>
+<li>Pig  <a href="http://pig.apache.org/">http://pig.apache.org/</a></li>
+<li>Tez <a href="http://tez.apache.org/">http://tez.apache.org/</a></li>
+<li>Hbase <a href="http://hbase.apache.org/">http://hbase.apache.org/</a></li>
+</ul>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Sqlite3 usage </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Sqlite3 usage </div>
+    <div class="post-time"> 2013-07-02 16:17:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>Recently I wirte a spider to grasp the infomation. And I have to store the data somewhere for reuse. And I chose sqlite. Here are the command used in python.</p>
+
+<pre><code># import the package
+import sqlite3
+
+# connect to a db
+con = sqlire3.connect("dbname")
+
+# get a cursor
+cur = con.cursor()
+
+# initial db
+cur.execute(
+    ("creat table if not exists "
+     "tablename(id integer, name text, score real)))
+
+# insert into db
+val = [12, 'asdf', 12.0]
+cur.execute('insert into doc values(?,?,?)', val)
+con.commit()
+
+# select from db
+result = cur.execute('select * from doc')
+
+# use the selected result
+rows = result.fetchall()
+for row in rows:
+    print row
+    row = result.fetchone()
+    print row
+
+# update db
+cur.execute('update doc det score = ? where id = ?', (score, id))
+con.commit()
+
+# merge two db(same data format)
+# write db2 to db1
+import sqlite3
+con1 = sqlite3.connect("db1")
+con2 = sqlite3.connect("db2")
+cur1 = con1.cursor()
+cur2 = con2.cursor()
+f = cur2.execute("select * from doc")
+rows = f.fetchall()
+for row in rows:
+    cur1.execute("insert into doc values(?, ?,..etc.. ,?)," row)
+con1.commit()    
+
+# get sub-db
+import sqlite3
+con1 = sqlite3.connect("db1")
+con2 = sqlite3.connect("db2")
+cur1 = con1.cursor()
+cur2 = con2.cursor()
+f = cur2.execute("select * from doc")
+rows = f.fetchall()
+i = 0
+for row in rows:
+    if i &lt; 50: #store top 50
+        cur1.execute("insert into doc values(?, ?,..etc.. ,?)," row)
+    i += 1
+con1.commit()
+
+# view db in shell
+lo@ubuntu:sqlite3 dbname    
+SQLite version 3.7.13 2012-06-11 02:05:22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite select * from doc;
+</code></pre>
+
+<h4>tips:</h4>
+
+<p>Don't forget to commit().</p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

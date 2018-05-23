@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Rails 飞起来 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Rails 飞起来 </div>
+    <div class="post-time"> 2013-04-11 19:17:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>一入Rails深似海，从此MVC不离手 </p>
+
+<p><strong>Rails是什么</strong></p>
+
+<p>一个符合实际需要而且高效的Web框架.  </p>
+
+<p><strong>Rails提供了什么</strong></p>
+
+<p>快速建立Web应用 </p>
+
+<pre><code>rails new tickets  便建立了tickets应用
+</code></pre>
+
+<p><strong>支架</strong>  </p>
+
+<p>快速完成 CRUD操作(创建(C)\读取(R)\更新(U)\删除(D) 均以数据库为中心)</p>
+
+<pre><code>rails generate scaffold ticket name:string address:string price:decimal
+</code></pre>
+
+<p><strong>数据库管理</strong></p>
+
+<pre><code>rake migrate #数据的迁移
+rails generate AddPhoneToTickets phone:string  #增加新的数据项
+rake db:migrate #数据的迁移
+</code></pre>
+
+<p><strong>View浏览器支持预览</strong></p>
+
+<pre><code>rails server #访问http://localhost:3000/tickets
+</code></pre>
+
+<p><strong>Rails应用 = 模型(model) + 视图(view) + 控制器(controller)</strong></p>
+
+<p><em>Model</em></p>
+
+<p>模型代码管理如何从数据库中读写数据.</p>
+
+<pre><code>class Ticket &lt; ActiveRecord::Base 
+    attr_accessible :address, :name, :price, :phone #model.rb 增加新的数据项记得修改
+end
+</code></pre>
+
+<p><em>View</em></p>
+
+<p>视图是展现给用户看的部分，即浏览器中所见。 <br />
+增加新的数据项记得修改 <em>views/tickets/</em>目录下的html文件   </p>
+
+<p><em>Controller</em></p>
+
+<p>决定<em>模型</em>和<em>视图</em>的交互。决定了那些数据需要从模型中获取；以及视图中的那一部分将显示这些数据。</p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

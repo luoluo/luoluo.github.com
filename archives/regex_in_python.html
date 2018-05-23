@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="static/css/base.css" />
+
+    <link rel="icon" href="static/img/icon_tiger.png">
+    <title> Regex In Python </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="archives"> Archive </a>
+              </li>
+              <li>
+                <a href="categories"> Categories</a>
+              </li>
+              <li>
+                <a href="notes"> Note</a>
+              </li>
+              <li>
+                <a href="about"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Regex In Python </div>
+    <div class="post-time"> 2013-07-17 13:14:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <p>Regex is a important tool when dealing text. In <code>python</code> we have a library named <code>re</code>. <br />
+Most of the <em>regular expression operations</em> are available as <em>module-level function and RegexObject methods</em>.</p>
+
+<p><em>import the lib</em></p>
+
+<pre><code>import re
+</code></pre>
+
+<p><em>re.compile(pattern, flag=0)</em></p>
+
+<blockquote>
+  <p>Compile a regular expression pattern into a regular expression object, which can be used for matching using its <code>match()</code> and <code>search()</code> methods, described below.</p>
+</blockquote>
+
+<pre><code>import re
+text = 'I love China'
+regexs = [re.compile(p)
+        for p in ['love', 'll']
+    ]
+for regex in regexs:
+    print regex.pattern
+    if regex.search(text):
+        print "Match"
+    else:
+        print "Not Match"
+</code></pre>
+
+<p><em>re.search(pattern, string)</em></p>
+
+<blockquote>
+  <p>Scan through string looking for a location where the regular expression pattern produces a match, and return a corresponding <code>MatchObject</code> instance.Return <code>None</code> if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.</p>
+</blockquote>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'I love China'
+regexs = [re.compile(p)
+        for p in ['love', 'll']
+     ]
+for regex in regexs:
+    print regex.pattern
+    match = re.search(regex, text):
+    if match:
+        print "Match"
+    else:
+        print "Not Match"
+</code></pre>
+
+<p><em>RegexObject.search(string)</em></p>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'I love China'
+pattern = 'love'
+match = re.search(pattern, text)
+s = match.start()
+e = match.end()
+print 'Found "%s"\nin "%s"\nfrom %d to %d ("%s")' % \
+      (match.re.pattern, match.string, s, e, text[s:e])
+</code></pre>
+
+<p><em>re.match(pattern, srting)</em></p>
+
+<blockquote>
+  <p>If zero or more characters at the beginning of string match this regular expression, return a corresponding <code>MatchObject</code> instance. Return <code>None</code> if the string does not match the pattern; note that this is different from a zero-length match.</p>
+</blockquote>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'His phone 12345 number is 67890'
+regex = re.compile(r'.*?(\d+).*?(\d+)')
+match = re.match(regex, text)
+if match: 
+    print match.group(1),match.group(2),
+</code></pre>
+
+<p><em>RegexObject.match(string)</em></p>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'His phone 12345 number is 67890'
+regex = re.compile(r'.*?(\d+).*?(\d+)')
+match = regex.match(text)
+if match: 
+    print match.group(1), match.group(2),
+</code></pre>
+
+<h4>Match object has many attributes:</h4>
+
+<p><strong>Match more than one</strong></p>
+
+<p><em>re.findall(pattern, string)</em></p>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'this is a text'
+pattern = 'is'
+matchs = re.findall(pattern, text)
+for match in matchs:
+    print match
+
+lo@ubuntu:~/try/regex$ python searchall.py 
+is
+is
+</code></pre>
+
+<p><em>re.finditer(pattern, string)</em></p>
+
+<pre><code>#!/usr/bin/python
+#encoding:utf-8
+import re
+text = 'this is a text'
+pattern = 'is'
+matchs = re.finditer(pattern, text)
+for match in matchs:
+    s = match.start()
+    e = match.end()
+    print "Found ", text[s:e], "at: ", s, e
+
+lo@ubuntu:~/try/regex$ python searchall.py 
+Found  is at:  2 4
+Found  is at:  5 7
+</code></pre>
+
+<p><strong>Pattern Syntax</strong> <br />
+<em>Repetition</em>
+{a, b}</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>*</td>
+  <td>equivalent to {0,}</td>
+</tr>
+<tr>
+  <td>+</td>
+  <td>equivalent to {1,}</td>
+</tr>
+<tr>
+  <td>?</td>
+  <td>equivalent to {0,1}</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>#!/usr/bin/python
+#encoding: utf-8
+import re
+text = '101000111'
+patterns = [
+        '10',
+        '10?',
+        '10*',
+        '10+',
+        '10{3}',
+        '10{1,3}'
+        ]
+
+print 'orginal string: ', text
+
+for pattern in patterns:
+    matchs = re.finditer(pattern, text)
+    for match in matchs:
+        s = match.start()
+        e = match.end()
+        substr = text[s:e]
+        print 'pattern: ', pattern,' Found: ', substr, 'at', s, e
+
+
+@ubuntu:~/try/regex$ python repetition.py 
+orginal string:  101000111
+pattern:  10  Found:  10 at 0 2
+pattern:  10  Found:  10 at 2 4
+pattern:  10?  Found:  10 at 0 2
+pattern:  10?  Found:  10 at 2 4
+pattern:  10?  Found:  1 at 6 7
+pattern:  10?  Found:  1 at 7 8
+pattern:  10?  Found:  1 at 8 9
+pattern:  10*  Found:  10 at 0 2
+pattern:  10*  Found:  1000 at 2 6
+pattern:  10*  Found:  1 at 6 7
+pattern:  10*  Found:  1 at 7 8
+pattern:  10*  Found:  1 at 8 9
+pattern:  10+  Found:  10 at 0 2
+pattern:  10+  Found:  1000 at 2 6
+pattern:  10{3}  Found:  1000 at 2 6
+pattern:  10{1,3}  Found:  10 at 0 2
+pattern:  10{1,3}  Found:  1000 at 2 6
+</code></pre>
+
+<h3>Character set</h3>
+
+<p>[a|b]    [a-z]     [0-9]   [a-zA-Z]</p>
+
+<pre><code>#!/usr/bin/python
+#encoding utf-8
+import re
+text = 'string is not 12324, 234 IS NOT STRING'
+patterns =[
+        '[a-z]+',
+        '[A-Z]+',
+        '[0-9]+',
+        '[a-zA-Z]+',
+        '[a-zA-Z0-9]+'
+    ]
+print "orginal string: ", text
+
+for pattern in patterns:
+    print "pattern is: ", pattern
+    matchs = re.findall(pattern, text)
+    for match in matchs:
+        print match
+
+
+lo@ubuntu:~/try/regex$ python searchset.py 
+orginal string:  string is not 12324, 234 IS NOT STRING
+pattern is:  [a-z]+
+string
+is
+not
+pattern is:  [A-Z]+
+IS
+NOT
+STRING
+pattern is:  [0-9]+
+12324
+234
+pattern is:  [a-zA-Z]+
+string
+is
+not
+IS
+NOT
+STRING
+pattern is:  [a-zA-Z0-9]+
+string
+is
+not
+12324
+234
+IS
+NOT
+STRING
+</code></pre>
+
+<p><strong>Greedy Or Non-greedy(minimal fashion)</strong></p>
+
+<p><em>Escape sequences</em> #TODO</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>\d</td>
+  <td>any decimal digit</td>
+</tr>
+<tr>
+  <td>\D</td>
+  <td>any character that is not a decimal digit</td>
+</tr>
+<tr>
+  <td>\w</td>
+  <td>any 'word' character</td>
+</tr>
+<tr>
+  <td>\W</td>
+  <td>any 'non-word' character</td>
+</tr>
+<tr>
+  <td>\s</td>
+  <td>any whitespace character</td>
+</tr>
+<tr>
+  <td>\S</td>
+  <td>any character that is not a whitespace character</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>Anchors</em></p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>^</td>
+  <td>the current match point is at the start of the subject string</td>
+</tr>
+<tr>
+  <td>$</td>
+  <td>the current match point is at the end of the subject string</td>
+</tr>
+<tr>
+  <td>\b</td>
+  <td>word boundary</td>
+</tr>
+<tr>
+  <td>\B</td>
+  <td>not a word boundary</td>
+</tr>
+<tr>
+  <td>\A</td>
+  <td>start of subject (independent of multiline mode)</td>
+</tr>
+<tr>
+  <td>\Z</td>
+  <td>end of subject or newline at end (independent of multiline mode)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Reference:</h3>
+
+<p><a href="http://docs.python.org/2/library/re.html">python.org</a> <br />
+<a href="http://www.php.net/manual/zh/reference.pcre.pattern.syntax.php">regex php</a></p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>
