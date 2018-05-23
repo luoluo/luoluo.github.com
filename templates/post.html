@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="post-top">
+    <div class="post-title"> {{post.title}} </div>
+    <div class="post-time"> {{post.date}}:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        {{post.content|safe}}
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+{% endblock %}

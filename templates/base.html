@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> about </title>
+    <title> {{title}} </title>
   </head>
   <body>
     <div id="Top">
@@ -42,36 +42,7 @@
         </nav>
     </div> 
 
-    <div id="Content">  
-
-<div class="post-top">
-    <div class="post-title"> 关于我 </div>
-    <div class="post-time"> 2018-02-12 22:49:00 +0800 </div>
-    <!-- TODO
-    <div class="post-tag"> think </div>
-    -->
-</div>
-
-<div class="post-main">
-    <div class="post-content">
-        <p>我是一只小老斧，很高兴认识各路朋友</p>
-
-<p>我的足迹： <br />
-<img src="/static/img/icon_github.svg" alt="" /> <a href="https://github.com/luoluo">github</a> <br />
-<img src="/static/img/icon_stackoverflow.svg " alt="" /> <a href="https://stackoverflow.com/users/1099230/luoluo">stackoverflow</a> <br />
-<img src="/static/img/icon_douban.svg" alt="" /> <a href="https://www.douban.com/people/luoluo1920/">douban</a> <br />
-<img src="/static/img/icon_email.svg" alt="" /> <a href="">luoluo1920#gmail#com</a> <br />
-<img src="/static/img/icon_wechat.svg" alt="" /> <a href="">Vxiaolaofu</a>    </p>
-
-<p><strong><em>Things worth doing typically take time and effort</em></strong></p>
-
-    </div>
-</div>
-
-<div class="post-bottom">
-</div>
-
- </div>
+    <div id="Content"> {% block content %}{% endblock %} </div>
 
     <div id="Bottom">
         Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>

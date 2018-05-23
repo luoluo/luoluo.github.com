@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="category-tag">
+{% for (category, values) in categories %}
+    <div class="category"> 
+        <div class="category-link"> <a href="/categories#{{category}}">{{category}} {{values|length}}</a></div>
+    </div>
+{% endfor %}
+</div>
+
+<div class="category-detail">
+{% for (category, values) in categories %}
+    <div class="category"> 
+        <h2 id="{{category}}"> {{category}}</h2>
+        {% for post in values %}
+        <div class="archive"> 
+            <div class="archive-link"> <a href="/archives/{{post.link}}"> {{post.title}} </a></div>
+        </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
