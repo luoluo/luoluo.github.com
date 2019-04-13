@@ -53,6 +53,8 @@ class Resources(object):
         return self.about
 
     def get(self, link):
+		# TODO add debug conf, this should open when writing new article
+        # self.init()
         return self.post_mapping.get(link)
 
     def posts(self):

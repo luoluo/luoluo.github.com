@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+
+    <link rel="icon" href="/static/img/icon_tiger.png">
+    <title> MillWheel &amp; Flink </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="/archives.html"> Archive </a>
+              </li>
+              <li>
+                <a href="/categories.html"> Categories</a>
+              </li>
+              <li>
+                <a href="/notes.html"> Note</a>
+              </li>
+              <li>
+                <a href="/about.html"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> MillWheel &amp; Flink </div>
+    <div class="post-time"> 2019-04-13 13:45:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>MillWheel</h4>
+
+<blockquote>
+  <p>MillWheel is a framework for building <em>low-latency</em> data-processing applications that is widely used at Google. Users specify a directed computation graph and application code for individual nodes, and the system manages <em>persistent state</em> and the <em>continuous flow</em> of records, all within the envelope of the framework’s <em>fault-tolerance guarantees</em>.</p>
+</blockquote>
+
+<h4>概述</h4>
+
+<p>核心诉求：</p>
+
+<ol>
+<li>Latency</li>
+<li>Fault Tolerance</li>
+<li>Scale</li>
+<li>Versatile Programming Model(Persistent state/Low watermark/Window)</li>
+</ol>
+
+<hr />
+
+<ol>
+<li>Data should be available to consumers as soon as it is published</li>
+<li><em>Persistent state</em> abstractions should be available to user code, and should be integrated into the system’s overall consistency model.</li>
+<li><em>Out-of-order</em> data should be handled gracefully by the system.</li>
+<li>A monotonically increasing <em>low watermark</em> of data timestamps should be computed by the system.</li>
+<li><em>Latency</em> should stay constant as the system scales to more machines.</li>
+<li>The system should provide <em>exactly-once</em> delivery of records.</li>
+</ol>
+
+<p>系统抽象</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_overview.png" alt="x" width=450 /> </div>
+
+<ol>
+<li>inputs and outputs in MillWheel are represented by (key, value, timestamp) triples.</li>
+<li>Delivery Guarantee: All internal updates within the MillWheel framework resulting from record processing are atomically checkpointed per-key and records are delivered exactly once.</li>
+</ol>
+
+<h4>核心概念</h4>
+
+<p>Definition of a single node in a MillWheel topology</p>
+
+<pre><code>computation SpikeDetector {
+    input_streams {
+        stream model_updates {
+            key_extractor = 'SearchQuery'
+        }
+        stream window_counts {
+            key_extractor = 'SearchQuery'
+        }
+    }
+    output_streams {
+        stream anomalies {
+            record_format = 'AnomalyMessage'
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>Computations</li>
+<li>Keys</li>
+<li>Streams</li>
+<li>Persistent State</li>
+<li>Low Watermarks</li>
+<li>Timers</li>
+</ul>
+
+<h5>Computations</h5>
+
+<p>Application logic lives in computations, which encapsulate arbitrary user code.
+Computation code is written to operate in the context of a single key, and is agnostic to the distribution of keys among different machines.</p>
+
+<h5>Keys</h5>
+
+<ul>
+<li>Keys are the primary abstraction for aggregation and comparison between different records in MillWheel. </li>
+<li>For every record in the system, the consumer specifies a key extraction function, which assigns a key to the record. </li>
+<li>Computation code is run in the context of a specific key and is only granted access to state for that specific key.</li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_key2.png" alt="x" width=300 /> <img class="content-image" src="/static/img/millwhell_key1.png" alt="x" width=300 /> </div>
+
+<p>Per-key processing is serialized over time, such that only one record can be processed for a given key at once. Multiple keys can be run in parallel.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_key1.png" alt="x" width=400 /> </div>
+
+<p>Multiple computations can extract different keys from the same stream. Key extractors are specified by the consumer of a stream.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_key2.png" alt="x" width=400 /> </div>
+
+<h5>Streams</h5>
+
+<p>Streams are the delivery mechanism between different computations in MillWheel.
+A computation subscribes to zero or more input streams and publishes one or more output streams, and the system guarantees delivery along these channels.
+Key-extraction functions are specified by each consumer on a per-stream basis, such that multiple consumers can subscribe to the same stream and aggregate its data in different ways.</p>
+
+<h5>Persistent State</h5>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_state.png" alt="x" width=550 /> </div>
+
+<p>Persistent state in MillWheel is an opaque byte string that is managed on a per-key basis.
+Persistent state is backed by a replicated, highly available data store (e.g. Bigtable [7] or Spanner [9]), which ensures data integrity in a way that is completely transparent to the end user. 
+Common uses of state include counters aggregated over windows of records and buffered data for a join.</p>
+
+<h5>Low Watermarks</h5>
+
+<p>The low watermark for a computation provides a bound on the timestamps of future records arriving at that computation.
+Low watermark values are seeded by injectors, which send data into MillWheel from external systems. 
+Measurement of pending work in external systems is often an estimate, so in practice, computations should expect a small rate of late records – records behind the low watermark – from such systems.
+Definition: </p>
+
+<pre><code>low watermark of A = min(oldest work of A, low watermark of C : C outputs to A)
+</code></pre>
+
+<h5>Timers</h5>
+
+<p>Timers are per-key programmatic hooks that trigger at a specific wall time or low watermark value.
+Timers are created and run in the context of a computation, and accordingly can run arbitrary code. 
+Once set, timers are guaranteed to fire in increasing timestamp order. They are journaled in persistent state and can survive process restarts and machine failures. 
+Timers are per-key programmatic hooks that trigger at a specific wall time or low watermark value. </p>
+
+<h4>API</h4>
+
+<pre><code>class Computation {
+    // Hooks called by the system.
+    void ProcessRecord(Record data);
+    void ProcessTimer(Timer timer);
+
+    // Accessors for other abstractions.
+    void SetTimer(string tag, int64 time);
+    void ProduceRecord(
+        Record data, string stream);
+    StateType MutablePersistentState();
+};
+</code></pre>
+
+<ul>
+<li>Computation API</li>
+<li>Injector and Low Watermark API </li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell1.png" alt="x" width=500 /> </div>
+
+<h4>Fault Tolerance</h4>
+
+<ul>
+<li>Delivery Guarantees</li>
+<li><ul>
+<li>Exactly-Once Delivery </li>
+</ul></li>
+<li><ul>
+<li>Strong Productions </li>
+</ul></li>
+<li><ul>
+<li>Weak Productions and Idempotency</li>
+</ul></li>
+<li>State Manipulation</li>
+<li>Checkpoints</li>
+</ul>
+
+<h5>Exactly-Once Delivery</h5>
+
+<p>Deliveries in MillWheel are retried until they are ACKed in order to meet our at-least-once requirement.
+The system assigns unique IDs to all records at production time. We identify duplicate records by including this unique ID for the record in the same atomic write as the state modification.
+Since we cannot necessarily store all duplication data in-memory, we maintain a Bloom filter of known record fingerprints, to provide a fast path for records that we have provably never seen before.</p>
+
+<h6>Strong Productions</h6>
+
+<p>Since MillWheel handles inputs that are not necessarily ordered or deterministic, we checkpoint produced records before delivery in the same atomic write as state modification.
+We call this pattern of checkpointing before record production strong productions.</p>
+
+<h6>Weak Productions and Idempotency</h6>
+
+<p>For weak productions, rather than checkpointing record productions before delivery, we broadcast downstream deliveries optimistically, prior to persisting state.
+Empirically, this introduces a new problem, in that the completion times of consecutive stages of the pipeline are now strictly coupled as they wait for downstream ACKs of records. 
+Combined with the possibility of machine failure, this can greatly increase end-to-end latency for straggler productions aspipeline depth increases.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_fault_tolerance0.png" alt="x" width=400 /> </div>
+
+<h5>Checkpoints</h5>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_snapshot0.png" alt="x" width=550 /> </div>
+
+<p>Barrier separates the records in the data stream into the set of records that goes into the current snapshot, and the records that go into the next snapshot.
+Each barrier carries the ID of the snapshot whose records it pushed in front of it. 
+Barriers do not interrupt the flow of the stream and are hence very lightweight. </p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_snapshot1.png" alt="x" width=550 /> </div>
+
+<p>Operators that receive more than one input stream
+As soon as the operator receives snapshot barrier n from an incoming stream, it cannot process any further records from that stream.
+Streams that report barrier n are temporarily set aside. 
+Once the last stream has received barrier n, the operator emits all pending outgoing records, and then emits snapshot n barriers itself.
+After that, it resumes processing records from all input streams, processing records from the input buffers before processing the records from the streams.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/millwhell_snapshot2.png" alt="x" width=550 /> </div>
+
+<h4>References</h4>
+
+<ul>
+<li>MillWheel: Fault-Tolerant Stream Processing at Internet Scale</li>
+<li>Apache Flink™: Stream and Batch Processing in a Single Engine</li>
+<li>Lightweight Asynchronous Snapshots for Distributed Dataflows</li>
+<li>https://ci.apache.org/projects/flink/flink-docs-release-1.4/internals/stream_checkpointing.html#introduction</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

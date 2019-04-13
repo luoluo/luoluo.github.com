@@ -1,0 +1,49 @@
+---
+layout: post
+title: "Add user to linux"
+date: 2013-07-01 19:17
+comments: true
+categories: [Skill]
+---
+When my workmate has spent lots of time working to get a ubuntu run on computer, but failed. We finally decided to copy my virtual ubuntu to him and add a new user account for him, which turns out to be a good good idea.
+The command used are as follows:
+
+	geek@ubuntuServ:/etc/skel
+	sudo adduser thegeek    
+	Password:                                          
+	Adding user 'thegeek’…                             
+	Adding new group 'thegeek’ (1004).                 
+	Adding new user 'thegeek’ (1004) with group 'thegeek’.    
+	Creating home directory '/home/thegeek’.                  
+	Copying files from '/etc/skel’                            
+	Enter new UNIX password:                                  
+	Retype new UNIX password:                                 
+	No password supplied                                      
+	Enter new UNIX password:                                  
+	Retype new UNIX password:                                 
+	passwd: password updated successfully                     
+	Changing the user information for thegeek                 
+	Enter the new value, or press ENTER for the default       
+	Full Name []: The Geek                                    
+	Room Number []: 0                                         
+	Work Phone []: 555-1212                                   
+	Home Phone []: 555-1212                                   
+	Other []:                                                 
+	Is the information correct? [y/N] y                       
+	
+At here we've done. The next time you log in the system, you choose the new user to log in and finally you get the right system you want.
+
+The user command:     
+
+	su -      
+	Password:        
+	su: Authentication failure       
+
+To fix:
+
+	su -      
+	$ sudo passwd root     
+	[sudo] password for ramesh:     
+	Enter new UNIX password:     
+	Retype new UNIX password:     
+	passwd: password updated successfully     
