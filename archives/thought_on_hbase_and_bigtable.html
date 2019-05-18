@@ -54,25 +54,155 @@
 
 <div class="post-main">
     <div class="post-content">
-        <h4>Apache HBase简介</h4>
+        <h3>概述</h3>
 
 <blockquote>
-  <p>Apache HBase™ is the Hadoop database, a distributed, scalable, big data store.</p>
+  <p><em>Bigtable</em> is a distributed storage system for managing structured data that is designed to scale to a very large size: petabytes of data across thousands of commodity servers.  <em>Apache HBase™</em> is the Hadoop database, a distributed, scalable, big data store.</p>
 </blockquote>
 
-<h4>概述</h4>
+<h3>数据模型</h3>
 
-<h4>数据模型</h4>
+<p>Bigtable是一个稀疏、多维、有序的分布式map，map由(rowkey, column, timestamp)来索引。</p>
 
-<h4>相关项目</h4>
+<pre><code>(row:string, column:string, time:int64) → string
+</code></pre>
+
+<p>Bigtable可抽象为三维Excel表格，具体来说：</p>
 
 <ul>
-<li>Hive <a href="http://hive.apache.org/">http://hive.apache.org/</a></li>
-<li>Hadoop <a href="http://hadoop.apache.org/">http://hadoop.apache.org/</a></li>
-<li>Spark  <a href="http://spark.apache.org/">http://spark.apache.org/</a></li>
-<li>Pig  <a href="http://pig.apache.org/">http://pig.apache.org/</a></li>
-<li>Tez <a href="http://tez.apache.org/">http://tez.apache.org/</a></li>
+<li>数据可以有多行，每行由一个rowkey指定</li>
+<li>一行数据可以有多列(Column)，列可自由扩展</li>
+<li>行列可以定位到一个Cell，Cell多版本</li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/table1.png" alt="x" width=600 /> </div>
+
+<p>上图是论文中给出的网页库应用实例，行名是网址的逆序(保证同一站点数据集中)。列簇（column family）<code>contents</code>包含的源码内容，列簇<code>anchor</code>包含引用该网站的文本，具体来说<code>cnnsi.com</code>和<code>my.look.ca</code>均指向<code>CNN</code>的首页。每个<code>anchor</code> cell只有1个版本数据，<code>content</code>列的cell有3个版本数据。</p>
+
+<p>逻辑视图：</p>
+
+<pre><code>{
+    "com.cnn.www" : {
+        contents: {
+            t6: contents:html: "&lt;html&gt;..."
+            t5: contents:html: "&lt;html&gt;..."
+            t3: contents:html: "&lt;html&gt;..."
+        },
+        anchor: {
+            t9: anchor:cnnsi.com = "CNN"
+            t8: anchor:my.look.ca = "CNN.com"
+        }
+    }
+}
+</code></pre>
+
+<h5>Raws</h5>
+
+<p>Rowkey是一个二进制串，Bigtable里的数据按照rowkey的字典序排列, 同时按照rowkey的区间将数据动态分区，每个分区称为一个<code>tablet</code>.数据按rowkey排列，并做range分区，数据按区间<code>scan</code>会非常快，譬如获取某host下所有网页，只需指明起止区间即可快速获取.</p>
+
+<h5>Column/Column family</h5>
+
+<p>Column组织为一个Column family, column family需在建表时指明，column可按需来建立，column必须属于某一column family；column family下可有任意数量的column，数据的存储和读取上都是按照column family来组织的，故使用相关度高的column应组织在相同的column family下.</p>
+
+<h5>Timestamps</h5>
+
+<p>Bigtable的Cell均支持多版本，版本由timestamp来指明，timestamp可由bigtable来指明（系统时间），也可由应用本身来指明，对数据冲突敏感的应用最好自己来管理版本，毕竟分布式系统中的时间不是可靠的。Bigtable提供基于版本的<code>GC</code>策略，策略为column falmily粒度，有两类：1. 指明数据的TTL，超过TTL数据被GC；2. 指明数据保留版本数量（最多保存多少版本，最少保存多少版本），实际场景中该GC策略极其有用。</p>
+
+<h3>Data Model Operations / API</h3>
+
+<h4>Hbase shell command</h4>
+
+<h5>Put</h5>
+
+<pre><code>hbase(main):003:0&gt; put 'test', 'row1', 'cf:a', 'value1'
+0 row(s) in 0.0850 seconds
+
+hbase(main):004:0&gt; put 'test', 'row2', 'cf:b', 'value2'
+0 row(s) in 0.0110 seconds
+
+hbase(main):005:0&gt; put 'test', 'row3', 'cf:c', 'value3'
+0 row(s) in 0.0100 seconds
+</code></pre>
+
+<h5>Get</h5>
+
+<pre><code>hbase(main):007:0&gt; get 'test', 'row1'
+COLUMN                                   CELL
+ cf:a                                    timestamp=1421762485768, value=value1
+1 row(s) in 0.0350 seconds
+</code></pre>
+
+<h5>Scan</h5>
+
+<pre><code>hbase(main):006:0&gt; scan 'test'
+ROW                                      COLUMN+CELL
+ row1                                    column=cf:a, timestamp=1421762485768, value=value1
+ row2                                    column=cf:b, timestamp=1421762491785, value=value2
+ row3                                    column=cf:c, timestamp=1421762496210, value=value3
+3 row(s) in 0.0230 seconds
+</code></pre>
+
+<h4>API</h4>
+
+<h4>TODO</h4>
+
+<h3>Implementation / Architecture</h3>
+
+<p>The Bigtable implementation has three major components: </p>
+
+<ul>
+<li>a library that is linked into every client</li>
+<li>one master server. </li>
+<li>many tablet servers. </li>
+</ul>
+
+<p>Master server：分派tablet到tablet server，探测tablet server状态，做负载均衡，依据需要添加/剔除tablet server. Table、column family的schema也由Master server来管理。</p>
+
+<p>Tablet server： 管理一批tablet，对应tablet的读写通过tablet server来完成，数据读写直接由client与tablet server来交互，大tablet的split也是由tablet server来完成的。</p>
+
+<h4>Tablet Location</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/table2.png" alt="x" width=500 /> </div>
+
+<h4>Tablet Assignment</h4>
+
+<ul>
+<li>Chubby's role</li>
+<li>Master on start</li>
+<li>Tablet server Failover</li>
+</ul>
+
+<h4>Tablet Serving</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/table3.png" alt="x" width=500 /> </div>
+
+<ul>
+<li>memtable</li>
+<li>SSTable</li>
+<li>LSM-tree</li>
+</ul>
+
+<h4>Compactions</h4>
+
+<ul>
+<li>minor compaction</li>
+<li>major compaction</li>
+</ul>
+
+<h4>Features calls for</h4>
+
+<ul>
+<li>secondary indices</li>
+<li>cross-data-center replicated Bigtables</li>
+</ul>
+
+<h3>References</h3>
+
+<ul>
+<li>BigTable (Bigtable: A Distributed Storage System for Structured Data Google, Inc.)</li>
+<li>Hbase <a href="http://hbase.apache.org/book.html#datamodel">data model</a></li>
 <li>Hbase <a href="http://hbase.apache.org/">http://hbase.apache.org/</a></li>
+<li>Hadoop <a href="http://hadoop.apache.org/">http://hadoop.apache.org/</a></li>
 </ul>
 
     </div>
