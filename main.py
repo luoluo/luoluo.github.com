@@ -41,7 +41,7 @@ def dev():
 def categories():
     return render_template("categories.html", categories=resources.categories(), title="categories")
 
-@app.route("/notes")
+@app.route("/notes.html")
 def notes():
     post = resources.get_note()
     return render_template("post.html", post=post, title="notes")

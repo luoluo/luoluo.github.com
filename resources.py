@@ -27,7 +27,7 @@ class Resources(object):
         """ load note
         """
         self.notes = Post()
-        self.notes.load_from_file(self.post_path + "note/note.markdown")
+        self.notes.load_from_file(self.post_path + "kip/my_mind_map.markdown")
 
     def load_about(self):
         """ load note
@@ -54,7 +54,7 @@ class Resources(object):
 
     def get(self, link):
 		# TODO add debug conf, this should open when writing new article
-        # self.init()
+        self.init()
         return self.post_mapping.get(link)
 
     def posts(self):
