@@ -6,7 +6,7 @@ comments: true
 categories: [MindMap]
 ---
 
-* **Distribute System**
+* **Distributed System**
 * * Storage
 * * - [HDFS](/archives/the_hadoop_distributed_file_system.html)
 * * - [Hive](/archives/hive_note.html)
