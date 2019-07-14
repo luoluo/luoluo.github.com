@@ -22,6 +22,9 @@ categories: [MindMap]
 * * + Streaming Processing
 * * + * [Flink](/archives/streaming_computing.html)
 * * + * Storm
+* * + Application
+* * + * OLAP
+* * + * BI
 * * Message Queue
 * * + Kafka
 * * + ZeroMQ
@@ -47,6 +50,12 @@ categories: [MindMap]
 * * + IO Multiplexing
 * * + * select/poll/epoll
 * * + IPC
+* * + Networking
+* * + * TCP
+* * + * IP
+* * + * UDP
+* * + * HTTP
+* * + Memory
 * * Performance
 * * + Context Switch
 * * + system call
@@ -71,3 +80,4 @@ categories: [MindMap]
 * * - [Html & CSS](/archives/html_and_css_is_hard_note.html)
 * * Tools
 * * - Vim
+* * - Git

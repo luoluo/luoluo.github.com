@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114360233-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114360233-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+
+    <link rel="icon" href="/static/img/icon_tiger.png">
+    <title> Operating System Memory Summary V0.3 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="/archives.html"> Archive </a>
+              </li>
+              <li>
+                <a href="/categories.html"> Categories</a>
+              </li>
+              <li>
+                <a href="/notes.html"> Knowledge is Power</a>
+              </li>
+              <li>
+                <a href="/about.html"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Operating System Memory Summary V0.3 </div>
+    <div class="post-time"> 2019-07-01 19:53:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>Overview</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/memory_overview.png" alt="x" width=550 /> </div>
+
+<h4>Memory Technology:</h4>
+
+<ul>
+<li>SRAM</li>
+<li><ul>
+<li>use six transistors per bit to prevent the information from being disturbed when read; don't need refresh</li>
+</ul></li>
+<li><ul>
+<li>L1 L2 L3 cache</li>
+</ul></li>
+<li>DRAM</li>
+<li><ul>
+<li>requires data to be written back after being read; need refresh</li>
+</ul></li>
+<li><ul>
+<li>main memory</li>
+</ul></li>
+<li>SDRAM</li>
+<li><ul>
+<li>have a programmable register to hold the number of bytes requested, and hence can send many bytes over several cycles per request</li>
+</ul></li>
+<li>DDR</li>
+<li><ul>
+<li>double data rate</li>
+</ul></li>
+<li><ul>
+<li>transfer data on both the rising edge and falling edge of the DRAM clock signal</li>
+</ul></li>
+<li>FLASH Memory</li>
+<li><ul>
+<li>Flash memory is a type of EEPROM (Electronically Erasable ProgrammableRead-Only Memory),</li>
+</ul></li>
+<li><ul>
+<li>normally read-only but can be erased</li>
+</ul></li>
+<li><ul>
+<li>it holds it contents without any power</li>
+</ul></li>
+<li>HDD</li>
+</ul>
+
+<h4>Summary</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/memory_summary.png" alt="x" width=650 /> </div>
+
+<h4>Summary of 10 advanced cache optimization</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/cache_opt.png" alt="x" width=650 /> </div>
+
+<h4>The Intel Core i7's Cache</h4>
+
+<p>The i7 supports the x86-64 instruction set architecture, a 64-bit extension of the 80x86 architecture. The i7 is an out-of-order execution processor that includes four cores.</p>
+
+<p>Each core in an i7 can execute up to four 80x86 instructions per clock cycle, using a multiple issue, dynamically scheduled, 16-stage pipeline. </p>
+
+<p>The i7 can also support up to two simultaneous threads per processor, using a technique called simultaneous multithreading</p>
+
+<p>The i7 can support up to three memory channels, each consisting of a separate set of DIMMs, and each of which can transfer in parallel. Using DDR3-1066 (DIMM PC8500), the i7 has a peak memory bandwith of just over 25 GB/sec</p>
+
+<p>i7 uses 48-bit virtual addresses and 36-bit physical addresses, yielding a maximum physical memory of 36 GB. Memory management is handled with a twolevel TLB.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/intel_i7_tlb.png" alt="x" width=500 /> </div>
+
+<p>i7’s three-level cache hierarchy. The first-level caches are virtually indexed and physically tagged, while the L2 and L3 caches are physically indexed.</p>
+
+<div class="image-div"> <img class="content-image" src="/static/img/intel_i7_cache.png" alt="x" width=500 /> </div>
+
+<div class="image-div"> <img class="content-image" src="/static/img/intel_i7.png" alt="x" width=650 /> </div>
+
+<h4>Reference:</h4>
+
+<p><a href="https://www.amazon.com/Computer-Architecture-Quantitative-John-Hennessy/dp/012383872X">Computer Architecture: A Quantitative Approach 5th Edition</a> <br />
+<a href="https://www.7-cpu.com/cpu/Haswell.html">Intel i7-4770 (Haswell) performance</a> <br />
+<a href="https://arstechnica.com/gadgets/2002/07/caching/">Understanding CPU caching and performance</a> <br />
+<a href="https://www.computerhope.com/history/memory.htm">Computer memory history</a></p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>
