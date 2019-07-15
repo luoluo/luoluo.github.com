@@ -55,7 +55,7 @@ categories: [MindMap]
 * * + * IP
 * * + * UDP
 * * + * HTTP
-* * + Memory
+* * + [Memory](/archives/operating_system_memory.html)
 * * Performance
 * * + Context Switch
 * * + system call
