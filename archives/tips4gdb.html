@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> Gdb Ê¹ÓÃ±Ê¼Ç </title>
+    <title> Gdb ä½¿ç”¨ç¬”è®° </title>
   </head>
   <body>
     <div id="Top">
@@ -45,7 +45,7 @@
     <div id="Content">  
 
 <div class="post-top">
-    <div class="post-title"> Gdb Ê¹ÓÃ±Ê¼Ç </div>
+    <div class="post-title"> Gdb ä½¿ç”¨ç¬”è®° </div>
     <div class="post-time"> 2013-12-19 18:52:00 +0800 </div>
     <!-- TODO
     <div class="post-tag"> think </div>
@@ -54,75 +54,75 @@
 
 <div class="post-main">
     <div class="post-content">
-        <h4>1.ÔÚDebugÖ®Ç°£¬±àÒëÊ±ÔÊĞídebug.</h4>
+        <h4>1.åœ¨Debugä¹‹å‰ï¼Œç¼–è¯‘æ—¶å…è®¸debug.</h4>
 
 <pre><code>g++ -g xxx.cpp -o xxx
 </code></pre>
 
-<h4>2.Ê¹ÓÃgdbÀ´debug,³£ÓÃÃüÁî£º</h4>
+<h4>2.ä½¿ç”¨gdbæ¥debug,å¸¸ç”¨å‘½ä»¤ï¼š</h4>
 
-<pre><code>gdb xxx     # ¿ªÊ¼debug
-break       # ÉèÖÃ¶Ïµã
+<pre><code>gdb xxx     # å¼€å§‹debug
+break       # è®¾ç½®æ–­ç‚¹
     break function-name/line-number/ClassName::funcName
-delete/d    # É¾³ı¶Ïµã
-    delete  # É¾³ıËùÓĞ¶Ïµã£¬¹Û²ìµã£¬²¶×½µã
+delete/d    # åˆ é™¤æ–­ç‚¹
+    delete  # åˆ é™¤æ‰€æœ‰æ–­ç‚¹ï¼Œè§‚å¯Ÿç‚¹ï¼Œæ•æ‰ç‚¹
     delete breakpoint-number-or-range
-run         # ¿ªÊ¼ÔËĞĞ
+run         # å¼€å§‹è¿è¡Œ
 
-where       # ÏÔÊ¾µ±Ç°Ö´ĞĞºÍËùÔÚº¯Êı
-next/n      # Ö´ĞĞÏÂÒ»ÌõÓï¾ä,²»½øÈëº¯Êı
-continue/c  # Ö´ĞĞµ½ÏÂÒ»¸ö ¶Ïµã Ç°
+where       # æ˜¾ç¤ºå½“å‰æ‰§è¡Œå’Œæ‰€åœ¨å‡½æ•°
+next/n      # æ‰§è¡Œä¸‹ä¸€æ¡è¯­å¥,ä¸è¿›å…¥å‡½æ•°
+continue/c  # æ‰§è¡Œåˆ°ä¸‹ä¸€ä¸ª æ–­ç‚¹ å‰
 until
     until line-number
-step/s      # Ö´ĞĞÏÂÒ»ÌõÓï¾ä£¬»á½øÈëº¯Êı
-finish      # Ö´ĞĞµ½µ±Ç°º¯Êı½áÊø
+step/s      # æ‰§è¡Œä¸‹ä¸€æ¡è¯­å¥ï¼Œä¼šè¿›å…¥å‡½æ•°
+finish      # æ‰§è¡Œåˆ°å½“å‰å‡½æ•°ç»“æŸ
 
 info
     info frame
     info args
     info locals
 
-list/l      # ÁĞ³ö´úÂë
+list/l      # åˆ—å‡ºä»£ç 
     list line-number/function/start#,end#
 
-print/p     # ´òÓ¡±äÁ¿µÄÖµ
+print/p     # æ‰“å°å˜é‡çš„å€¼
     print variable-name
     print *array-variable@length
 
-quit/q      # ÍË³öGDB
+quit/q      # é€€å‡ºGDB
 </code></pre>
 
-<h4>3.gdb¶ÔSTLµÄÖ§³Ö.</h4>
+<h4>3.gdbå¯¹STLçš„æ”¯æŒ.</h4>
 
-<p>Ê¹ÓÃ<strong>GDB</strong>´òÓ¡<em>vector</em>¡¢<em>stack</em>µÈ³éÏóSTLÊı¾İ½á¹¹ÊÇ£¬´òÓ¡³öµÄÄÚÈİÊÇÎŞÒâÒåµÄ¡£¶øGDB 7.0¾ÍÖ§³Ö pretty-printers. °Ñpretty-printers ºÍ libstdc++ ×éºÏÆğÀ´¾Í²úÉúÁË´òÓ¡ C++ ÈİÆ÷µÄ×îºÃ¹¤¾ß£¬¾ßÌå²Ù×÷ÈçÏÂ£º    </p>
+<p>ä½¿ç”¨<strong>GDB</strong>æ‰“å°<em>vector</em>ã€<em>stack</em>ç­‰æŠ½è±¡STLæ•°æ®ç»“æ„æ˜¯ï¼Œæ‰“å°å‡ºçš„å†…å®¹æ˜¯æ— æ„ä¹‰çš„ã€‚è€ŒGDB 7.0å°±æ”¯æŒ pretty-printers. æŠŠpretty-printers å’Œ libstdc++ ç»„åˆèµ·æ¥å°±äº§ç”Ÿäº†æ‰“å° C++ å®¹å™¨çš„æœ€å¥½å·¥å…·ï¼Œå…·ä½“æ“ä½œå¦‚ä¸‹ï¼š    </p>
 
-<pre><code>1.½«Python libstdc++ printer check out µ½±¾µØ¡£
+<pre><code>1.å°†Python libstdc++ printer check out åˆ°æœ¬åœ°ã€‚
 svn co svn://gcc.gnu.org/svn/gcc/trunk/libstdc++-v3/python
-2.°ÑÒÔÏÂÄÚÈİ¼Óµ½~/.gdbinit.
+2.æŠŠä»¥ä¸‹å†…å®¹åŠ åˆ°~/.gdbinit.
 python
 import sys
 sys.path.insert(0, '/path/to/gdb_printers/python')
 from libstdcxx.v6.printers import register_libstdcxx_printers
 register_libstdcxx_printers (None)
 end    
-×¢Òâ£¬ÒÔÉÏµÄÂ·¾¶ÒªÒ»ÖÂ£¬¼´.gdbinitÀïµÄÂ·¾¶ºÍÊµ¼Êcheck outµÄµØÖ·ÒªÒ»ÖÂ¡£
+æ³¨æ„ï¼Œä»¥ä¸Šçš„è·¯å¾„è¦ä¸€è‡´ï¼Œå³.gdbinité‡Œçš„è·¯å¾„å’Œå®é™…check outçš„åœ°å€è¦ä¸€è‡´ã€‚
 </code></pre>
 
-<h4>4.gdb¶Ô¶àÏß³ÌµÄÖ§³Ö.</h4>
+<h4>4.gdbå¯¹å¤šçº¿ç¨‹çš„æ”¯æŒ.</h4>
 
-<pre><code>1. kill -11 pid          # ÊÖ¶¯´¥·¢core£º 
-2. gdb bin core.xxx      # gdb µ÷ÊÔ£º
-3. (gdb) info threads    # Õ¹Ê¾ËùÒÔÏß³Ì
-4. (gdb) thread 4        # ÇĞ»»ÖÁÌØ¶¨Ïß³Ì
-5. (gdb) bt              # ´òÓ¡Õ»ĞÅÏ¢
-6. thread apply [thread-id-list] [all]0„2args   # ´òÓ¡³öËùÓĞ½ø³ÌµÄÇé¿ö
+<pre><code>1. kill -11 pid          # æ‰‹åŠ¨è§¦å‘coreï¼š 
+2. gdb bin core.xxx      # gdb è°ƒè¯•ï¼š
+3. (gdb) info threads    # å±•ç¤ºæ‰€ä»¥çº¿ç¨‹
+4. (gdb) thread 4        # åˆ‡æ¢è‡³ç‰¹å®šçº¿ç¨‹
+5. (gdb) bt              # æ‰“å°æ ˆä¿¡æ¯
+6. thread apply [thread-id-list] [all]Â args   # æ‰“å°å‡ºæ‰€æœ‰è¿›ç¨‹çš„æƒ…å†µ
 </code></pre>
 
-<h4>5.gdb´úÂëËÑË÷Â·¾¶</h4>
+<h4>5.gdbä»£ç æœç´¢è·¯å¾„</h4>
 
-<pre><code>1. directory                    # ÖØÖÃÔ´ÂëÂ·¾¶ÎªÄ¬ÈÏÖµ('$cdir:$cwd')
-2. set directories path-list    # Ìí¼Ópath-listµ½ËÑË÷Â·¾¶
-3. show directories             # ´òÓ¡µ±Ç°ËÑË÷Â·¾¶
+<pre><code>1. directory                    # é‡ç½®æºç è·¯å¾„ä¸ºé»˜è®¤å€¼('$cdir:$cwd')
+2. set directories path-list    # æ·»åŠ path-liståˆ°æœç´¢è·¯å¾„
+3. show directories             # æ‰“å°å½“å‰æœç´¢è·¯å¾„
 </code></pre>
 
     </div>
@@ -134,7 +134,7 @@ end
  </div>
 
     <div id="Bottom">
-        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> ��0����ϵͳ </title>
+    <title> 无0数字系统 </title>
   </head>
   <body>
     <div id="Top">
@@ -45,7 +45,7 @@
     <div id="Content">  
 
 <div class="post-top">
-    <div class="post-title"> ��0����ϵͳ </div>
+    <div class="post-title"> 无0数字系统 </div>
     <div class="post-time"> 2013-03-31 10:17:00 +0800 </div>
     <!-- TODO
     <div class="post-tag"> think </div>
@@ -54,21 +54,21 @@
 
 <div class="post-main">
     <div class="post-content">
-        <p>���ֽ�Ŀ���֤�ݿ����Ʋ������������ʷ�����������꣬���ɴ˷�չ���³���ѧ���ż�����ϵͳ�ķ�չ��</p>
+        <p>由现今的考古证据可以推测人类计数的历史至少有五万年，并由此发展导致出数学符号及记数系统的发展。</p>
 
-<p>��CF��ʱһ����˼��<a href="http://codeforces.com/problemset/problem/1/B">��������</a></p>
+<p>做CF的时一有意思的<a href="http://codeforces.com/problemset/problem/1/B">计数问题</a></p>
 
 <blockquote>
-  <p>ʹ�� A-Z 26����ʾ��������1����A����2����B��...����26����Z��Ȼ����������ĸ��ʾ��27��AA��28��AB, 52��AZ;Ȼ����3����������ʾ...</p>
+  <p>使用 A-Z 26个表示计数，第1个是A，第2个是B，...，第26个是Z；然后是两个字母表示：27是AA，28是AB, 52是AZ;然后是3个数字来表示...</p>
 </blockquote>
 
-<h3>���ϵͳ</h3>
+<h3>标号系统</h3>
 
-<h4>���Ǻ�ϵͳ</h4>
+<h4>单记号系统</h4>
 
-<p>����ϵͳת�������⣬��������ϵͳ������һ�����˵�����˵�𣬼���ֻ��һ�����<em><code>A</code></em></p>
+<p>数字系统转换的问题，对于数字系统，先由一个极端的例子说起，假设只有一个标记<em><code>A</code></em></p>
 
-<pre><code>���      ����
+<pre><code>标号      数字
 A           1
 AA          2
 AAA         3
@@ -76,16 +76,16 @@ AAAA        4
 ...        ...
 </code></pre>
 
-<p>��Ȼ�õ�����һ��<strong>һ����ϵͳ</strong>,<em>ÿ��λ��Ȩ�ؾ�Ϊ1��A�ĸ�����Ϊ��ֵ</em>�� <br />
-��ѧ�����
+<p>显然得到的是一个<strong>一进制系统</strong>,<em>每个位的权重均为1，A的个数即为数值</em>。 <br />
+数学化表达：
     $$sum = \sum<em>{k=0}^n v</em>kn<em>k $$
-ע�� <br />
-    v</em>k��ʾȨ�أ���ʱȨ�ؾ�Ϊ1��n_k��ʾ��ǰ��ֵ.</p>
+注： <br />
+    v</em>k表示权重，此时权重均为1，n_k表示当前的值.</p>
 
-<h4>˫����ϵͳ</h4>
+<h4>双符号系统</h4>
 
-<pre><code>������ϵͳ��������ǣ�A B
-���      ����
+<pre><code>本数字系统有两个标记：A B
+标号      数字
 A           1
 B           2
 AA          3
@@ -95,16 +95,16 @@ AAB         6
 ...        ...
 </code></pre>
 
-<p>��Ȼ�õ�����һ��<strong>������ϵͳ</strong>,<em>ÿ��λ��Ȩ�ؾ�Ϊ2</em>�����ö�����ϵͳ��<strong>1-2</strong>ϵͳ(A����ֵΪ1��B����ֵΪ2)
-��ѧ�����
+<p>显然得到的是一个<strong>二进制系统</strong>,<em>每个位的权重均为2</em>，但该二进制系统是<strong>1-2</strong>系统(A的数值为1，B的数值为2)
+数学化表达：
     $$sum = \sum<em>{k=0}^n v</em>kn<em>k $$
-ע�� <br />
-    v</em>k��ʾȨ�أ���ʱȨ�ؾ�Ϊ1,2,4,..��n_k��ʾ��ǰ��ֵ.</p>
+注： <br />
+    v</em>k表示权重，此时权重均为1,2,4,..，n_k表示当前的值.</p>
 
-<h4>�����ϵͳ</h4>
+<h4>多符号系统</h4>
 
-<pre><code>ʹ��26����ǣ�A - Z 
-���      ����
+<pre><code>使用26个标记：A - Z 
+标号      数字
 A           1
 B           2
 C           3
@@ -119,22 +119,22 @@ AAA
 ...
 </code></pre>
 
-<p>��Ȼ�õ�����һ��<strong>26����ϵͳ</strong>,<em>ÿ��λ��Ȩ�ؾ�Ϊ2</em>�����ö�����ϵͳ��<strong>1-26</strong>ϵͳ(A-1��B-2��C-3��...,Z-26)
-��ѧ�����
-��ѧ�����
+<p>显然得到的是一个<strong>26进制系统</strong>,<em>每个位的权重均为2</em>，但该二进制系统是<strong>1-26</strong>系统(A-1，B-2，C-3，...,Z-26)
+数学化表达：
+数学化表达：
     $$sum = \sum<em>{k=0}^n v</em>kn<em>k $$
-ע�� <br />
-    v</em>k��ʾȨ�أ���ʱȨ�ؾ�Ϊ1,26,26^2,..��n_k��ʾ��ǰ��ֵ.</p>
+注： <br />
+    v</em>k表示权重，此时权重均为1,26,26^2,..，n_k表示当前的值.</p>
 
-<h3>��ֵϵͳ��ת��</h3>
+<h3>数值系统的转换</h3>
 
-<p>֮ǰ�ĵ�<strong>��ѧ��</strong>��ʾֻ���ɱ��ϵͳ��ʮ���ơ����ڿ���һ��<strong>ʮ���Ƶ����ϵͳ��������ϵͳ��ת��</strong></p>
+<p>之前的的<strong>数学化</strong>表示只是由标号系统到十进制。现在考虑一下<strong>十进制到标号系统；任意标号系统间转换</strong></p>
 
-<h4>ʮ���� �� ���ϵͳ</h4>
+<h4>十进制 到 标号系统</h4>
 
-<p>��һ���<strong>������</strong>������Ҫ���ڲ���<strong>0-1</strong>ϵͳ����<strong>1-2</strong>ϵͳ������ת���ӵ�λ����λ���У�</p>
+<p>与一般的<strong>二进制</strong>区别主要在于不是<strong>0-1</strong>系统而是<strong>1-2</strong>系统，所以转换从低位到高位进行：</p>
 
-<h5>���ϵͳ��ʮ����</h5>
+<h5>标号系统到十进制</h5>
 
 <pre><code>void deal(char arr[])
 {
@@ -153,7 +153,7 @@ AAA
 }
 </code></pre>
 
-<h5>ʮ���Ƶ����ϵͳ</h5>
+<h5>十进制到标号系统</h5>
 
 <pre><code>void deal(char arr[])
 {
@@ -176,13 +176,13 @@ AAA
 }
 </code></pre>
 
-<h4>�����ż��ת��</h4>
+<h4>任意标号间的转换</h4>
 
-<p>���Խ�ʮ������Ϊ�м�ֵ������ת��</p>
+<p>可以将十进制作为中间值来两步转换</p>
 
-<h4>����</h4>
+<h4>结语</h4>
 
-<p>�ϻ���ô�࣬�����֮����0-(n-1)����ϵͳ��1-nϵͳ��</p>
+<p>废话这么多，简而言之：非0-(n-1)符号系统，1-n系统。</p>
 
     </div>
 </div>
@@ -193,7 +193,7 @@ AAA
  </div>
 
     <div id="Bottom">
-        Copyright �0�8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

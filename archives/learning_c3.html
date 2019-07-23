@@ -54,25 +54,25 @@
 
 <div class="post-main">
     <div class="post-content">
-        <p>Ä¿±ê <br />
-°×»°C£¬×î¶ÌÊ±¼äÄÚÐ´³ö¼òµ¥C³ÌÐò(<em>ÖÕ¼«Æª</em>)  </p>
+        <p>ç›®æ ‡ <br />
+ç™½è¯Cï¼Œæœ€çŸ­æ—¶é—´å†…å†™å‡ºç®€å•Cç¨‹åº(<em>ç»ˆæžç¯‡</em>)  </p>
 
-<p>¹Ø¼ü×Ö  </p>
+<p>å…³é”®å­—  </p>
 
 <ul>
-<li>1.ºê</li>
-<li>2.Ö¸Õë</li>
-<li>3.++º¯Êý</li>
+<li>1.å®</li>
+<li>2.æŒ‡é’ˆ</li>
+<li>3.++å‡½æ•°</li>
 </ul>
 
-<p>ÉÏÆÚ½â´ð<a href="/archives/learning_c2.markdown">ÎÊÌâ´«ËÍÃÅ</a></p>
+<p>ä¸ŠæœŸè§£ç­”<a href="/archives/learning_c2.markdown">é—®é¢˜ä¼ é€é—¨</a></p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int fib(int x){
-    if(x &lt;= 1)  //±ß½ç·µ»Ø
+    if(x &lt;= 1)  //è¾¹ç•Œè¿”å›ž
         return 1;        
     else 
-        return fib(x-1) + fib(x-2); //µÝ¹éµ÷ÓÃ
+        return fib(x-1) + fib(x-2); //é€’å½’è°ƒç”¨
 }
 int main(){
     int i;
@@ -82,13 +82,13 @@ int main(){
 }
 </code></pre>
 
-<h3>ºê</h3>
+<h3>å®</h3>
 
-<p>¿¼ÂÇÒÔÏÂÇéÐÎ: <br />
-±à³ÌÊ±ÓÐÖØ¸´³öÏÖµÄÊýÖµ³£Á¿£¬·ÖÉ¢Óë³ÌÐòµÄ¸÷¸ö½ÇÂä£¬Òª¶ÔÆäÖµÐÞ¸ÄÊ±£¬ÇéÐÎ½«À§‡åÆðÀ´¡£Ìõ¼þ±àÒë£¬°´ÐèÇó±àÒë³ÌÐòµÄ²»Í¬²¿·Ö£¬µÍ³É±¾³ÌÐòÒÆÖ²¡£±¾ÖÊÉÏËµ£¬ºêÊÇÔÚÔ¤±àÒëÊ±µÄ´¿Ìæ»»¡£</p>
+<p>è€ƒè™‘ä»¥ä¸‹æƒ…å½¢: <br />
+ç¼–ç¨‹æ—¶æœ‰é‡å¤å‡ºçŽ°çš„æ•°å€¼å¸¸é‡ï¼Œåˆ†æ•£ä¸Žç¨‹åºçš„å„ä¸ªè§’è½ï¼Œè¦å¯¹å…¶å€¼ä¿®æ”¹æ—¶ï¼Œæƒ…å½¢å°†å›°å›§èµ·æ¥ã€‚æ¡ä»¶ç¼–è¯‘ï¼ŒæŒ‰éœ€æ±‚ç¼–è¯‘ç¨‹åºçš„ä¸åŒéƒ¨åˆ†ï¼Œä½Žæˆæœ¬ç¨‹åºç§»æ¤ã€‚æœ¬è´¨ä¸Šè¯´ï¼Œå®æ˜¯åœ¨é¢„ç¼–è¯‘æ—¶çš„çº¯æ›¿æ¢ã€‚</p>
 
 <pre><code>#include &lt;stdio.h&gt;
-#define MAX 20 //¼´Ôö¼Ó¿É¶ÁÐÔ£¬ÓÖ±ãÓÚÐÞ¸Ä
+#define MAX 20 //å³å¢žåŠ å¯è¯»æ€§ï¼Œåˆä¾¿äºŽä¿®æ”¹
 int main(){
     int stu[MAX], i;
     for(i = 0;i &lt; MAX;i++){
@@ -98,40 +98,40 @@ int main(){
 }
 </code></pre>
 
-<h3>Ö¸Õë</h3>
+<h3>æŒ‡é’ˆ</h3>
 
-<p>CµÄ÷ÈÁ¦ËùÔÚ£¬Ò²ÊÇC coderµÄØ¬ÃÎ</p>
+<p>Cçš„é­…åŠ›æ‰€åœ¨ï¼Œä¹Ÿæ˜¯C coderçš„å™©æ¢¦</p>
 
-<p>Ö¸ÕëÒ²ÊÇCµÄÀàÐÍ£¬ÓÚÊÇºõÓÐ<em>Ö¸Õë³£Á¿</em> <em>Ö¸Õë±äÁ¿</em>¡£ÎÒÀí½âµÄ<em>Ö¸ÕëÀàÐÍÊÇ±êÊ¶µØÖ·µÄÒ»ÖÖÀàÐÍ</em>£¬¾ÍÏñÍ¨¹ý¡°¾­¼ÍÈË¡±ÕÒ¡°¸èÊÖ¡±£¬ÎÒÃÇÍ¨¹ý¡°Ö¸Õë¡±À´·ÃÎÊ¡°±äÁ¿¡±¡£Ö¸Õë±¾ÉíµÄ<em>Öµ</em>ÊÇµØÖ·£¬Í¨¹ýµØÖ·£¬ÎÒÃÇ¿ÉÒÔ·ÃÎÊÆäËû±äÁ¿¡¢º¯Êý¡£</p>
+<p>æŒ‡é’ˆä¹Ÿæ˜¯Cçš„ç±»åž‹ï¼ŒäºŽæ˜¯ä¹Žæœ‰<em>æŒ‡é’ˆå¸¸é‡</em> <em>æŒ‡é’ˆå˜é‡</em>ã€‚æˆ‘ç†è§£çš„<em>æŒ‡é’ˆç±»åž‹æ˜¯æ ‡è¯†åœ°å€çš„ä¸€ç§ç±»åž‹</em>ï¼Œå°±åƒé€šè¿‡â€œç»çºªäººâ€æ‰¾â€œæ­Œæ‰‹â€ï¼Œæˆ‘ä»¬é€šè¿‡â€œæŒ‡é’ˆâ€æ¥è®¿é—®â€œå˜é‡â€ã€‚æŒ‡é’ˆæœ¬èº«çš„<em>å€¼</em>æ˜¯åœ°å€ï¼Œé€šè¿‡åœ°å€ï¼Œæˆ‘ä»¬å¯ä»¥è®¿é—®å…¶ä»–å˜é‡ã€å‡½æ•°ã€‚</p>
 
-<p>Á½¸ö²Ù×÷·û <code>*</code> <code>&amp;</code>    </p>
+<p>ä¸¤ä¸ªæ“ä½œç¬¦ <code>*</code> <code>&amp;</code>    </p>
 
 <ul>
-<li>1.&amp;ÊÇÈ¡µØÖ·²Ù×÷·û</li>
-<li>2.*ÊÇµØÖ··ÃÎÊ²Ù×÷·û</li>
+<li>1.&amp;æ˜¯å–åœ°å€æ“ä½œç¬¦</li>
+<li>2.*æ˜¯åœ°å€è®¿é—®æ“ä½œç¬¦</li>
 </ul>
 
-<p>Ö¸Õë±äÁ¿µÄÉùÃ÷¡¢³õÊ¼»¯¡¢·ÃÎÊ</p>
+<p>æŒ‡é’ˆå˜é‡çš„å£°æ˜Žã€åˆå§‹åŒ–ã€è®¿é—®</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
     int a = 0;
-    int *pa; //ÉùÃ÷Ö¸Õë±äÁ¿pa
-    pa = &amp;a;    //Îªpa³õÊ¼»¯ÎªaµÄµØÖ·
-    //´ËÊ±pa´æ´¢aµÄµØÖ·£¬¿ÉÒÔËµpaÖ¸Ïòa 
+    int *pa; //å£°æ˜ŽæŒ‡é’ˆå˜é‡pa
+    pa = &amp;a;    //ä¸ºpaåˆå§‹åŒ–ä¸ºaçš„åœ°å€
+    //æ­¤æ—¶paå­˜å‚¨açš„åœ°å€ï¼Œå¯ä»¥è¯´paæŒ‡å‘a 
     printf("%d %d\n", a, *pa);
     printf("%d %d\n", &amp;a, pa);
     return 0;
 }
 </code></pre>
 
-<p>Ö¸Õë±äÁ¿ÊÇ±äÁ¿Ò²¿ÉÒÔ±»Ö¸Ïò</p>
+<p>æŒ‡é’ˆå˜é‡æ˜¯å˜é‡ä¹Ÿå¯ä»¥è¢«æŒ‡å‘</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
     int a;
     int *pa = &amp;a;
-    int **ppa = &amp;pa; //ppaÊÇÖ¸ÏòpaµÄÖ¸Õë
+    int **ppa = &amp;pa; //ppaæ˜¯æŒ‡å‘paçš„æŒ‡é’ˆ
     printf("%d %d %d\n", a, *pa, **ppa);
     printf("%d %d %d\n", &amp;a, pa, *ppa);
     printf("%d %d\n", &amp;pa, pa);
@@ -139,11 +139,11 @@ int main(){
 }
 </code></pre>
 
-<p>³£Á¿Ö¸ÕëÓëÖ¸ÕëµÄÔËËã</p>
+<p>å¸¸é‡æŒ‡é’ˆä¸ŽæŒ‡é’ˆçš„è¿ç®—</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
-    int a[] = {1, 2, 3, 4, 5, 6};    //aÊÇÊý×éÃû£¬Êý×éÃûµÄÖµÊÇÊý×éÔÚÄÚ´æµÄÊ×µØÖ·£¬ËùÒÔÊý×éÃûÊÇÖ¸Õë;±àÒëºóÊý×éÔÚÄÚ´æÀïµÄÎ»ÖÃÈ·¶¨£¬aµÄÖµ²»»á¸Ä±ä£¬ËùÒÔ*Êý×éÃûÊÇ³£Á¿Ö¸Õë*
+    int a[] = {1, 2, 3, 4, 5, 6};    //aæ˜¯æ•°ç»„åï¼Œæ•°ç»„åçš„å€¼æ˜¯æ•°ç»„åœ¨å†…å­˜çš„é¦–åœ°å€ï¼Œæ‰€ä»¥æ•°ç»„åæ˜¯æŒ‡é’ˆ;ç¼–è¯‘åŽæ•°ç»„åœ¨å†…å­˜é‡Œçš„ä½ç½®ç¡®å®šï¼Œaçš„å€¼ä¸ä¼šæ”¹å˜ï¼Œæ‰€ä»¥*æ•°ç»„åæ˜¯å¸¸é‡æŒ‡é’ˆ*
     int *p = a;
     printf("%d %d\n", a, *p);
     printf("%d %d\n", a[1], *(p+1));//a[i] &lt;==&gt; *(p+i)
@@ -151,30 +151,30 @@ int main(){
 }
 </code></pre>
 
-<p>Ö¸ÕëÏà¹ØÔËËã</p>
+<p>æŒ‡é’ˆç›¸å…³è¿ç®—</p>
 
 <ul>
-<li>a.Ö¸Õë+/-ÕûÐÍ</li>
-<li>b.Ö¸Õë+/-Ö¸Õë</li>
-<li>c.Ö¸Õë¹ØÏµÔËËã·û</li>
-<li>d.Ö¸Õësizeof</li>
+<li>a.æŒ‡é’ˆ+/-æ•´åž‹</li>
+<li>b.æŒ‡é’ˆ+/-æŒ‡é’ˆ</li>
+<li>c.æŒ‡é’ˆå…³ç³»è¿ç®—ç¬¦</li>
+<li>d.æŒ‡é’ˆsizeof</li>
 </ul>
 
-<p>Ö¸ÕëËãÊýÔËËãµÄ×Ôµ÷½Ú»úÖÆ£º  </p>
+<p>æŒ‡é’ˆç®—æ•°è¿ç®—çš„è‡ªè°ƒèŠ‚æœºåˆ¶ï¼š  </p>
 
-<p>a.Ö¸ÕëÔÚÓëÕûÐÍÔËËãÇ°»á½øÐÐµ÷Õû£¬½«Ö¸ÕëÖ¸ÏòÀàÐÍµÄ´óÐ¡À´ÓëÕûÐÍÏà³Ë£¬ÔÙ¼Ó¡£½á¹ûÎªÖ¸ÕëÀàÐÍ</p>
+<p>a.æŒ‡é’ˆåœ¨ä¸Žæ•´åž‹è¿ç®—å‰ä¼šè¿›è¡Œè°ƒæ•´ï¼Œå°†æŒ‡é’ˆæŒ‡å‘ç±»åž‹çš„å¤§å°æ¥ä¸Žæ•´åž‹ç›¸ä¹˜ï¼Œå†åŠ ã€‚ç»“æžœä¸ºæŒ‡é’ˆç±»åž‹</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
     int a[] = {1, 2, 3};
     int *pa = a;
     int *pb = pa + 1; 
-    //int *pb = &amp;a[1]; ÓëÉÏÌõµÈÐ§
+    //int *pb = &amp;a[1]; ä¸Žä¸Šæ¡ç­‰æ•ˆ
     return 0;
 }
 </code></pre>
 
-<p>b.Ö¸ÕëÓëÖ¸ÕëÀàÐÍËãÊõÔËËã£¬Ö»ÓÐ¶þÕßÖ¸ÏòÏàÍ¬Êý×é£¬½á¹û²ÅÊÇ¶¨ÒåÁËµÄ¡£½á¹ûÎªÕûÐÍ</p>
+<p>b.æŒ‡é’ˆä¸ŽæŒ‡é’ˆç±»åž‹ç®—æœ¯è¿ç®—ï¼Œåªæœ‰äºŒè€…æŒ‡å‘ç›¸åŒæ•°ç»„ï¼Œç»“æžœæ‰æ˜¯å®šä¹‰äº†çš„ã€‚ç»“æžœä¸ºæ•´åž‹</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
@@ -186,7 +186,7 @@ int main(){
 }
 </code></pre>
 
-<p>c.Ö¸ÕëÓëÖ¸ÕëÀàÐÍ¹ØÏµÔËËã£¬Ö»ÓÐ¶þÕßÖ¸ÏòÏàÍ¬Êý×é£¬½á¹û²ÅÊÇ¶¨ÒåÁËµÄ¡£½á¹ûÎªÕæ»ò¼Ù</p>
+<p>c.æŒ‡é’ˆä¸ŽæŒ‡é’ˆç±»åž‹å…³ç³»è¿ç®—ï¼Œåªæœ‰äºŒè€…æŒ‡å‘ç›¸åŒæ•°ç»„ï¼Œç»“æžœæ‰æ˜¯å®šä¹‰äº†çš„ã€‚ç»“æžœä¸ºçœŸæˆ–å‡</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
@@ -198,7 +198,7 @@ int main(){
 }
 </code></pre>
 
-<p>d.Ö¸ÕëµÄsizeofÔËËã£ºÖ±½Ó×÷ÓÃÓÚÖ¸Õë±äÁ¿£¬·µ»ØÖ¸Õë±äÁ¿µÄ´óÐ¡(4»ò8);¶ÔÓÚÊý×éÃû,»á·µ»Ø¸ÃÊý×éµÄ´óÐ¡</p>
+<p>d.æŒ‡é’ˆçš„sizeofè¿ç®—ï¼šç›´æŽ¥ä½œç”¨äºŽæŒ‡é’ˆå˜é‡ï¼Œè¿”å›žæŒ‡é’ˆå˜é‡çš„å¤§å°(4æˆ–8);å¯¹äºŽæ•°ç»„å,ä¼šè¿”å›žè¯¥æ•°ç»„çš„å¤§å°</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
@@ -210,7 +210,7 @@ int main(){
 }
 </code></pre>
 
-<p>ÏÈ¸æÒ»¶ÎÂä£¬»¹´ýÍêÉÆ¡£ÈôÓÐÎÊÌâ£¬¾´ÇëÖ¸³ö¡£</p>
+<p>å…ˆå‘Šä¸€æ®µè½ï¼Œè¿˜å¾…å®Œå–„ã€‚è‹¥æœ‰é—®é¢˜ï¼Œæ•¬è¯·æŒ‡å‡ºã€‚</p>
 
     </div>
 </div>
@@ -221,7 +221,7 @@ int main(){
  </div>
 
     <div id="Bottom">
-        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

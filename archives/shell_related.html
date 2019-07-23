@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> Linux shell ×Ü½á </title>
+    <title> Linux shell æ€»ç»“ </title>
   </head>
   <body>
     <div id="Top">
@@ -45,7 +45,7 @@
     <div id="Content">  
 
 <div class="post-top">
-    <div class="post-title"> Linux shell ×Ü½á </div>
+    <div class="post-title"> Linux shell æ€»ç»“ </div>
     <div class="post-time"> 2018-02-13 13:16:00 +0800 </div>
     <!-- TODO
     <div class="post-tag"> think </div>
@@ -54,9 +54,9 @@
 
 <div class="post-main">
     <div class="post-content">
-        <p>³£ÓÃÃüÁî»ã×Ü£º</p>
+        <p>å¸¸ç”¨å‘½ä»¤æ±‡æ€»ï¼š</p>
 
-<pre><code>ÎÄ±¾´¦Àí£º
+<pre><code>æ–‡æœ¬å¤„ç†ï¼š
 cat
 less
 head/tail
@@ -71,7 +71,7 @@ diff
 echo
 printf
 
-ÎÄ¼ş´¦Àí£º
+æ–‡ä»¶å¤„ç†ï¼š
 ls
 ln
 tree
@@ -82,14 +82,14 @@ file
 ldd
 iconv
 
-ÈÎÎñ¹ÜÀí£º
+ä»»åŠ¡ç®¡ç†ï¼š
 ctrl + z/c/r/b/f
 jobs/fg/bg
 source
 date
 xargs
 
-ÏµÍ³´¦Àí£º
+ç³»ç»Ÿå¤„ç†ï¼š
 sudo
 chmod
 passwd
@@ -97,33 +97,33 @@ bashrc/bash_profile
 export
 netstat
 
-ÎÄ¼ş´«Êä£º
+æ–‡ä»¶ä¼ è¾“ï¼š
 scp
 wget
 lftp
 </code></pre>
 
-<p>ÎÄ±¾´¦ÀíÏà¹Ø£º</p>
+<p>æ–‡æœ¬å¤„ç†ç›¸å…³ï¼š</p>
 
 <pre><code>vim
 
-    vim regex Æ¥ÅäÊ¹ÓÃgroup: `s/\(xx\)ad\(xx\)/xx\1\2/g`
-    vim ÏÔÊ¾Òş²Ø×Ö·û£º`set list`
-    vim À©´óÎÄ¼şÖ®¼äµÄcopyĞĞÊıµ½100 `:set viminfo='100,&lt;100,s10,h`
+    vim regex åŒ¹é…ä½¿ç”¨group: `s/\(xx\)ad\(xx\)/xx\1\2/g`
+    vim æ˜¾ç¤ºéšè—å­—ç¬¦ï¼š`set list`
+    vim æ‰©å¤§æ–‡ä»¶ä¹‹é—´çš„copyè¡Œæ•°åˆ°100 `:set viminfo='100,&lt;100,s10,h`
     vim case casting:
         vim to UPPER CASE gU
         vim to downcase  gu
         vim to opposite case g~
-    vim »»ĞĞ %s/html:/&amp;\r/g
+    vim æ¢è¡Œ %s/html:/&amp;\r/g
     vim buffer:
     set noexpa
-    shift+3  ¸ßÁÁµ±Ç°´úÂë
-    :g/^$/d   È¥³ı¿ÕĞĞ
-    %s/xx/&amp;\r/g »»ĞĞ
-    vimÒÆ¶¯´°¿ÚÎ»ÖÃ
+    shift+3  é«˜äº®å½“å‰ä»£ç 
+    :g/^$/d   å»é™¤ç©ºè¡Œ
+    %s/xx/&amp;\r/g æ¢è¡Œ
+    vimç§»åŠ¨çª—å£ä½ç½®
       Control + w &amp;&amp; shitf + hjkl
-      vim ÔÚ´°¿Ú¼äÒÆ¶¯¹â±ê Control + w &amp;&amp; hjkl
-    vim ºöÂÔ´óĞ¡Ğ´£¬/simple\c
+      vim åœ¨çª—å£é—´ç§»åŠ¨å…‰æ ‡ Control + w &amp;&amp; hjkl
+    vim å¿½ç•¥å¤§å°å†™ï¼Œ/simple\c
 
     vim restore the cursor position:
     " put those line to .vimrc
@@ -144,17 +144,17 @@ iconv
 grep/awk # TODO
 </code></pre>
 
-<p>ÈÎÎñ¹ÜÀí£º</p>
+<p>ä»»åŠ¡ç®¡ç†ï¼š</p>
 
-<pre><code>½ø³ÌÇ°ºóÌ¨²Ù×÷Ïà¹Ø:
-    Ctrl + C    # ÍË³öÇ°Ì¨ÃüÁîÖ´ĞĞ£¬»Øµ½shell
-    Ctrl + Z    # ÔİÍ£Ç°Ì¨ÃüÁîÖ´ĞĞ£¬»Øµ½shell
-    jobs        # ²é¿´µ±Ç°ÔÚºóÌ¨Ö´ĞĞÃüÁî£¬¿É²é¿´½ø³ÌºÅÂë
-    &amp;           # ÔËĞĞÃüÁîÊ±£¬ÔÚÄ©Î²Ìí¼Ó&amp;,Ê¹µÃÃüÁîÔÚºóÌ¨Ö´ĞĞ
-    fg N        # ½«ÃüÁî½ø³ÌºÅÂëÎªNµÄ½ø³Ì£¬·Åµ½Ç°Ì¨Ö´ĞĞ
-    bg N        # ½«ÃüÁî½ø³ÌºÅÂëÎªNµÄ½ø³Ì£¬·Åµ½ºóÌ¨Ö´ĞĞ
-    2&gt;&amp;1        # ½«±ê×¼´íÎóÊä³ö Êä³öµ½±ê×¼Êä³ö
-    nohup       # Ê¹³ÌĞòºóÌ¨Ö´ĞĞ£¬²¢ºöÂÔHUPĞÅºÅ£¨ÓÃ»§×¢Ïú£¬ÍøÂç¶Ë¿ÚÒıÆğ£©
+<pre><code>è¿›ç¨‹å‰åå°æ“ä½œç›¸å…³:
+    Ctrl + C    # é€€å‡ºå‰å°å‘½ä»¤æ‰§è¡Œï¼Œå›åˆ°shell
+    Ctrl + Z    # æš‚åœå‰å°å‘½ä»¤æ‰§è¡Œï¼Œå›åˆ°shell
+    jobs        # æŸ¥çœ‹å½“å‰åœ¨åå°æ‰§è¡Œå‘½ä»¤ï¼Œå¯æŸ¥çœ‹è¿›ç¨‹å·ç 
+    &amp;           # è¿è¡Œå‘½ä»¤æ—¶ï¼Œåœ¨æœ«å°¾æ·»åŠ &amp;,ä½¿å¾—å‘½ä»¤åœ¨åå°æ‰§è¡Œ
+    fg N        # å°†å‘½ä»¤è¿›ç¨‹å·ç ä¸ºNçš„è¿›ç¨‹ï¼Œæ”¾åˆ°å‰å°æ‰§è¡Œ
+    bg N        # å°†å‘½ä»¤è¿›ç¨‹å·ç ä¸ºNçš„è¿›ç¨‹ï¼Œæ”¾åˆ°åå°æ‰§è¡Œ
+    2&gt;&amp;1        # å°†æ ‡å‡†é”™è¯¯è¾“å‡º è¾“å‡ºåˆ°æ ‡å‡†è¾“å‡º
+    nohup       # ä½¿ç¨‹åºåå°æ‰§è¡Œï¼Œå¹¶å¿½ç•¥HUPä¿¡å·ï¼ˆç”¨æˆ·æ³¨é”€ï¼Œç½‘ç»œç«¯å£å¼•èµ·ï¼‰
 
 date
     date -d
@@ -165,28 +165,28 @@ date
     date --date='20140902 2 days ago' +%Y-%m-%d
 
 source
-    source demo.sh  # ÖğĞĞ¶ÁÈ¡demo.sh²¢ÖğĞĞÖ´ĞĞ£¬ÔÚµ±Ç°shell»·¾³ÖĞ
-    . demo.sh       # Óësource demo.shµÈÍ¬
-    ./demo.sh       # ½«demo.shµ±×ö¿ÉÖ´ĞĞÎÄ¼ş£¬²¢½¨Á¢ĞÂshell»·¾³À´Ö´ĞĞ
+    source demo.sh  # é€è¡Œè¯»å–demo.shå¹¶é€è¡Œæ‰§è¡Œï¼Œåœ¨å½“å‰shellç¯å¢ƒä¸­
+    . demo.sh       # ä¸source demo.shç­‰åŒ
+    ./demo.sh       # å°†demo.shå½“åšå¯æ‰§è¡Œæ–‡ä»¶ï¼Œå¹¶å»ºç«‹æ–°shellç¯å¢ƒæ¥æ‰§è¡Œ
 </code></pre>
 
-<p>ÎÄ¼ş´¦Àí£º</p>
+<p>æ–‡ä»¶å¤„ç†ï¼š</p>
 
-<pre><code>ÎÄ¼şÑ¹Ëõ½âÑ¹
-    tar -zcvf xx.tgz xx     # ½«xxÑ¹ËõÖÁxx.tgz£¬xx¿ÉÒÔÎªÒ»ÅúÎÄ¼ş
-    tar -zxvf xx.tgz        # ½âÑ¹xx.tgz
+<pre><code>æ–‡ä»¶å‹ç¼©è§£å‹
+    tar -zcvf xx.tgz xx     # å°†xxå‹ç¼©è‡³xx.tgzï¼Œxxå¯ä»¥ä¸ºä¸€æ‰¹æ–‡ä»¶
+    tar -zxvf xx.tgz        # è§£å‹xx.tgz
     unzip xx.tar.bz2
     bzip2 -d xx.tar.bz2 =&gt; xx.tar
     tar -xvf  xx.tar =&gt; xx
 
-Á´½ÓÎÄ¼ş
-    ln -s path/to/file linkName # ½¨Á¢Ö¸ÏòÂ·¾¶path/to/fileµÄÈíÁ´
+é“¾æ¥æ–‡ä»¶
+    ln -s path/to/file linkName # å»ºç«‹æŒ‡å‘è·¯å¾„path/to/fileçš„è½¯é“¾
     unlink linkName             # 
     rm linkName
     ln -rf linkName
     Not!!! ln -fr linkName/
 
-ÎÄ¼ş²éÕÒ
+æ–‡ä»¶æŸ¥æ‰¾
     find start_path -name file_to_find
     find /home/work -name my.sh
     find . -name "*py" | xargs cat | wc -l
@@ -196,33 +196,33 @@ source
     find . -name "*.md5" -exec md5sum -c {} \;
     find . -name "*.md5" | xargs -i md5sum -c {}
 
-ÎÄ¼ş´«Êä£º
-    lftp -u user,pwd host:/path/to/file # ²é¿´´øuser/pwdµÄÄÚÈİ
-    wget --ftp-user=xxx --ftp-password=xxx ftp://host:/path/to/file # Ö¸Ã÷user¡¢passwd
-    wget --no-check-certificate ftp://host:/path/to/file # ²»ÑéÖ¤https°²È«ĞÔ
+æ–‡ä»¶ä¼ è¾“ï¼š
+    lftp -u user,pwd host:/path/to/file # æŸ¥çœ‹å¸¦user/pwdçš„å†…å®¹
+    wget --ftp-user=xxx --ftp-password=xxx ftp://host:/path/to/file # æŒ‡æ˜userã€passwd
+    wget --no-check-certificate ftp://host:/path/to/file # ä¸éªŒè¯httpså®‰å…¨æ€§
     scp local_file remote_username@remote_ip:remote_folder
     scp -r local_dir remote_username@remote_ip:remote_folder
 </code></pre>
 
-<p>ÏµÍ³×´Ì¬£º</p>
+<p>ç³»ç»ŸçŠ¶æ€ï¼š</p>
 
 <pre><code>show machine hardware info
     lscpu
-    cat /proc/meminfo       # ¿ÕÏĞÄÚ´æÇé¿ö
-    cat /etc/redhat-release # ²é¿´centos°æ±¾
-    cat /etc/issue          # ²é¿´centos°æ±¾
-    free -h                 # ¿ÕÏĞÄÚ´æÇé¿ö
+    cat /proc/meminfo       # ç©ºé—²å†…å­˜æƒ…å†µ
+    cat /etc/redhat-release # æŸ¥çœ‹centosç‰ˆæœ¬
+    cat /etc/issue          # æŸ¥çœ‹centosç‰ˆæœ¬
+    free -h                 # ç©ºé—²å†…å­˜æƒ…å†µ
 
 
 show user login info:
     last    # Show a list of last logged in user
     uptime  # Tell how long system been running
 
-Ìí¼ÓÓÃ»§
+æ·»åŠ ç”¨æˆ·
     sudo adduser thegeek
 </code></pre>
 
-<p>MysqlÏà¹Ø£º</p>
+<p>Mysqlç›¸å…³ï¼š</p>
 
 <pre><code>mysql dump
     mysqldump -u root -ppassword tablename --no-data &gt; tablename.sql
@@ -242,25 +242,25 @@ mysql function
     select substring_index("/test/examplepath/use/rlo/g.txtasdf", '/', 3);
 </code></pre>
 
-<p>shellÓïÑÔ£º</p>
+<p>shellè¯­è¨€ï¼š</p>
 
-<pre><code>Ä¿Â¼ÊÇ·ñ´æÔÚ
+<pre><code>ç›®å½•æ˜¯å¦å­˜åœ¨
 if [ -d "$DIRECTORY" ]; then
   # Control will enter here if $DIRECTORY exists.
 fi
 
-shell »ñÈ¡ÃüÁîµÄÊä³öÖµ
-count=$(ls |¡¡wc -l)
+shell è·å–å‘½ä»¤çš„è¾“å‡ºå€¼
+count=$(ls |ã€€wc -l)
 
-shell µÄ²ÎÊı
-    $# ²ÎÊı¸öÊı  
-    $1 $2 .. $n µÚÒ»¡¢µÚ¶ş¡¢µÚn¸ö²ÎÊı
+shell çš„å‚æ•°
+    $# å‚æ•°ä¸ªæ•°  
+    $1 $2 .. $n ç¬¬ä¸€ã€ç¬¬äºŒã€ç¬¬nä¸ªå‚æ•°
 
-'' Óë "" µÄÇø±ğ 
+'' ä¸ "" çš„åŒºåˆ« 
 
-Êı×é
-    shellÀï±äÁ¿µÄÀàĞÍ²»ÊÇÌØ±ğÃ÷È·£¬×Ö·û´®ºÍ±äÁ¿¿ÉÒÔ»ìÓÃ£¬¹Ø¼üÊÇ¿´²ÎÓëÊ²Ã´ÔËËã£»
-    Êı×é¿ÉÒÔÓÃ×Ö·û´®À´±íÊ¾  
+æ•°ç»„
+    shellé‡Œå˜é‡çš„ç±»å‹ä¸æ˜¯ç‰¹åˆ«æ˜ç¡®ï¼Œå­—ç¬¦ä¸²å’Œå˜é‡å¯ä»¥æ··ç”¨ï¼Œå…³é”®æ˜¯çœ‹å‚ä¸ä»€ä¹ˆè¿ç®—ï¼›
+    æ•°ç»„å¯ä»¥ç”¨å­—ç¬¦ä¸²æ¥è¡¨ç¤º  
     days="1 2 3 4 5"
     for day in days;do
         echo $day;
@@ -274,21 +274,21 @@ shell µÄ²ÎÊı
     # or do whatever with individual element of the array
     done
 
-&gt; ºÍ &gt;&gt;
-    &gt;   # write to£¬Çå³ı¾ÉÄÚÈİ
-    &gt;&gt;  # write append£¬²»Çå³ı¾ÉÄÚÈİ 
+&gt; å’Œ &gt;&gt;
+    &gt;   # write toï¼Œæ¸…é™¤æ—§å†…å®¹
+    &gt;&gt;  # write appendï¼Œä¸æ¸…é™¤æ—§å†…å®¹ 
 
 sleep
-    sleep &lt;nubmer&gt;s/m/h/d   #sleep numberÃë/·ÖÖÓ/Ğ¡Ê±/Ìì 
+    sleep &lt;nubmer&gt;s/m/h/d   #sleep numberç§’/åˆ†é’Ÿ/å°æ—¶/å¤© 
 
-Ö´ĞĞÒ»Ìõ×Ö·û´®
+æ‰§è¡Œä¸€æ¡å­—ç¬¦ä¸²
     cmd="date +Y%m%d"
     eval $cmd
     val=$(eval $cmd)
 
 
-printfÓëecho
-    printf»á¶Ô\n×ö×ªÒåµÄecho
+printfä¸echo
+    printfä¼šå¯¹\nåšè½¬ä¹‰çš„echo
     echo -e "Hello\nworld"
     echo -e 'Hello\nworld'
     echo Hello$'\n'world
@@ -296,12 +296,12 @@ printfÓëecho
     printf "hello\nworld\n"
 
 base64 in terminal
-    openssl enc -base64 &lt;&lt;&lt; fengkong-hadoop #hadoopµÄÃÜÂë¾ÓÈ»²»ÄÜÓĞµÈºÅ
+    openssl enc -base64 &lt;&lt;&lt; fengkong-hadoop #hadoopçš„å¯†ç å±…ç„¶ä¸èƒ½æœ‰ç­‰å·
     openssl enc -base64 &lt;&lt;&lt; fengkonghadoop
     echo `echo xxxx | base64 --decode`
 </code></pre>
 
-<p>Ğ¡¼¼ÇÉ£º</p>
+<p>å°æŠ€å·§ï¼š</p>
 
 <pre><code>ssh keep alive login
     o@o:~$ cat ~/.ssh/config 
@@ -312,7 +312,7 @@ base64 in terminal
     ControlPersist yes
 
 ssh-keygen 
-    ssh keyÉú³É
+    ssh keyç”Ÿæˆ
 </code></pre>
 
     </div>
@@ -324,7 +324,7 @@ ssh-keygen
  </div>
 
     <div id="Bottom">
-        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

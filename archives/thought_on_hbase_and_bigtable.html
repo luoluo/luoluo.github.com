@@ -54,32 +54,32 @@
 
 <div class="post-main">
     <div class="post-content">
-        <h3>����</h3>
+        <h3>概述</h3>
 
 <blockquote>
-  <p><em>Bigtable</em> is a distributed storage system for managing structured data that is designed to scale to a very large size: petabytes of data across thousands of commodity servers.  <em>Apache HBase�6�4</em> is the Hadoop database, a distributed, scalable, big data store.</p>
+  <p><em>Bigtable</em> is a distributed storage system for managing structured data that is designed to scale to a very large size: petabytes of data across thousands of commodity servers.  <em>Apache HBase™</em> is the Hadoop database, a distributed, scalable, big data store.</p>
 </blockquote>
 
-<h3>����ģ��</h3>
+<h3>数据模型</h3>
 
-<p>Bigtable��һ��ϡ�衢��ά������ķֲ�ʽmap��map��(rowkey, column, timestamp)��������</p>
+<p>Bigtable是一个稀疏、多维、有序的分布式map，map由(rowkey, column, timestamp)来索引。</p>
 
-<pre><code>(row:string, column:string, time:int64) �� string
+<pre><code>(row:string, column:string, time:int64) → string
 </code></pre>
 
-<p>Bigtable�ɳ���Ϊ��άExcel���񣬾�����˵��</p>
+<p>Bigtable可抽象为三维Excel表格，具体来说：</p>
 
 <ul>
-<li>���ݿ����ж��У�ÿ����һ��rowkeyָ��</li>
-<li>һ�����ݿ����ж���(Column)���п�������չ</li>
-<li>���п��Զ�λ��һ��Cell��Cell��汾</li>
+<li>数据可以有多行，每行由一个rowkey指定</li>
+<li>一行数据可以有多列(Column)，列可自由扩展</li>
+<li>行列可以定位到一个Cell，Cell多版本</li>
 </ul>
 
 <div class="image-div"> <img class="content-image" src="/static/img/table1.png" alt="x" width=600 /> </div>
 
-<p>��ͼ�������и�������ҳ��Ӧ��ʵ������������ַ������(��֤ͬһվ�����ݼ���)���дأ�column family��<code>contents</code>������Դ�����ݣ��д�<code>anchor</code>�������ø���վ���ı���������˵<code>cnnsi.com</code>��<code>my.look.ca</code>��ָ��<code>CNN</code>����ҳ��ÿ��<code>anchor</code> cellֻ��1���汾���ݣ�<code>content</code>�е�cell��3���汾���ݡ�</p>
+<p>上图是论文中给出的网页库应用实例，行名是网址的逆序(保证同一站点数据集中)。列簇（column family）<code>contents</code>包含的源码内容，列簇<code>anchor</code>包含引用该网站的文本，具体来说<code>cnnsi.com</code>和<code>my.look.ca</code>均指向<code>CNN</code>的首页。每个<code>anchor</code> cell只有1个版本数据，<code>content</code>列的cell有3个版本数据。</p>
 
-<p>�߼���ͼ��</p>
+<p>逻辑视图：</p>
 
 <pre><code>{
     "com.cnn.www" : {
@@ -98,15 +98,15 @@
 
 <h5>Raws</h5>
 
-<p>Rowkey��һ�������ƴ���Bigtable������ݰ���rowkey���ֵ�������, ͬʱ����rowkey�����佫���ݶ�̬������ÿ��������Ϊһ��<code>tablet</code>.���ݰ�rowkey���У�����range���������ݰ�����<code>scan</code>��ǳ��죬Ʃ���ȡĳhost��������ҳ��ֻ��ָ����ֹ���伴�ɿ��ٻ�ȡ.</p>
+<p>Rowkey是一个二进制串，Bigtable里的数据按照rowkey的字典序排列, 同时按照rowkey的区间将数据动态分区，每个分区称为一个<code>tablet</code>.数据按rowkey排列，并做range分区，数据按区间<code>scan</code>会非常快，譬如获取某host下所有网页，只需指明起止区间即可快速获取.</p>
 
 <h5>Column/Column family</h5>
 
-<p>Column��֯Ϊһ��Column family, column family���ڽ���ʱָ����column�ɰ�����������column��������ĳһcolumn family��column family�¿�������������column�����ݵĴ洢�Ͷ�ȡ�϶��ǰ���column family����֯�ģ���ʹ����ضȸߵ�columnӦ��֯����ͬ��column family��.</p>
+<p>Column组织为一个Column family, column family需在建表时指明，column可按需来建立，column必须属于某一column family；column family下可有任意数量的column，数据的存储和读取上都是按照column family来组织的，故使用相关度高的column应组织在相同的column family下.</p>
 
 <h5>Timestamps</h5>
 
-<p>Bigtable��Cell��֧�ֶ�汾���汾��timestamp��ָ����timestamp����bigtable��ָ����ϵͳʱ�䣩��Ҳ����Ӧ�ñ�����ָ���������ݳ�ͻ���е�Ӧ������Լ��������汾���Ͼ��ֲ�ʽϵͳ�е�ʱ�䲻�ǿɿ��ġ�Bigtable�ṩ���ڰ汾��<code>GC</code>���ԣ�����Ϊcolumn falmily���ȣ������ࣺ1. ָ�����ݵ�TTL������TTL���ݱ�GC��2. ָ�����ݱ����汾��������ౣ����ٰ汾�����ٱ�����ٰ汾����ʵ�ʳ����и�GC���Լ������á�</p>
+<p>Bigtable的Cell均支持多版本，版本由timestamp来指明，timestamp可由bigtable来指明（系统时间），也可由应用本身来指明，对数据冲突敏感的应用最好自己来管理版本，毕竟分布式系统中的时间不是可靠的。Bigtable提供基于版本的<code>GC</code>策略，策略为column falmily粒度，有两类：1. 指明数据的TTL，超过TTL数据被GC；2. 指明数据保留版本数量（最多保存多少版本，最少保存多少版本），实际场景中该GC策略极其有用。</p>
 
 <h3>Data Model Operations / API</h3>
 
@@ -156,9 +156,9 @@ ROW                                      COLUMN+CELL
 <li>many tablet servers. </li>
 </ul>
 
-<p>Master server������tablet��tablet server��̽��tablet server״̬�������ؾ��⣬������Ҫ����/�޳�tablet server. Table��column family��schemaҲ��Master server��������</p>
+<p>Master server：分派tablet到tablet server，探测tablet server状态，做负载均衡，依据需要添加/剔除tablet server. Table、column family的schema也由Master server来管理。</p>
 
-<p>Tablet server�� ����һ��tablet����Ӧtablet�Ķ�дͨ��tablet server����ɣ����ݶ�дֱ����client��tablet server����������tablet��splitҲ����tablet server����ɵġ�</p>
+<p>Tablet server： 管理一批tablet，对应tablet的读写通过tablet server来完成，数据读写直接由client与tablet server来交互，大tablet的split也是由tablet server来完成的。</p>
 
 <h4>Tablet Location</h4>
 
@@ -214,7 +214,7 @@ ROW                                      COLUMN+CELL
  </div>
 
     <div id="Bottom">
-        Copyright �0�8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

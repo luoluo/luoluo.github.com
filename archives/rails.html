@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> Rails ·ÉÆğÀ´ </title>
+    <title> Rails é£èµ·æ¥ </title>
   </head>
   <body>
     <div id="Top">
@@ -45,7 +45,7 @@
     <div id="Content">  
 
 <div class="post-top">
-    <div class="post-title"> Rails ·ÉÆğÀ´ </div>
+    <div class="post-title"> Rails é£èµ·æ¥ </div>
     <div class="post-time"> 2013-04-11 19:17:00 +0800 </div>
     <!-- TODO
     <div class="post-tag"> think </div>
@@ -54,57 +54,57 @@
 
 <div class="post-main">
     <div class="post-content">
-        <p>Ò»ÈëRailsÉîËÆº££¬´Ó´ËMVC²»ÀëÊÖ </p>
+        <p>ä¸€å…¥Railsæ·±ä¼¼æµ·ï¼Œä»æ­¤MVCä¸ç¦»æ‰‹ </p>
 
-<p><strong>RailsÊÇÊ²Ã´</strong></p>
+<p><strong>Railsæ˜¯ä»€ä¹ˆ</strong></p>
 
-<p>Ò»¸ö·ûºÏÊµ¼ÊĞèÒª¶øÇÒ¸ßĞ§µÄWeb¿ò¼Ü.  </p>
+<p>ä¸€ä¸ªç¬¦åˆå®é™…éœ€è¦è€Œä¸”é«˜æ•ˆçš„Webæ¡†æ¶.  </p>
 
-<p><strong>RailsÌá¹©ÁËÊ²Ã´</strong></p>
+<p><strong>Railsæä¾›äº†ä»€ä¹ˆ</strong></p>
 
-<p>¿ìËÙ½¨Á¢WebÓ¦ÓÃ </p>
+<p>å¿«é€Ÿå»ºç«‹Webåº”ç”¨ </p>
 
-<pre><code>rails new tickets  ±ã½¨Á¢ÁËticketsÓ¦ÓÃ
+<pre><code>rails new tickets  ä¾¿å»ºç«‹äº†ticketsåº”ç”¨
 </code></pre>
 
-<p><strong>Ö§¼Ü</strong>  </p>
+<p><strong>æ”¯æ¶</strong>  </p>
 
-<p>¿ìËÙÍê³É CRUD²Ù×÷(´´½¨(C)\¶ÁÈ¡(R)\¸üĞÂ(U)\É¾³ı(D) ¾ùÒÔÊı¾İ¿âÎªÖĞĞÄ)</p>
+<p>å¿«é€Ÿå®Œæˆ CRUDæ“ä½œ(åˆ›å»º(C)\è¯»å–(R)\æ›´æ–°(U)\åˆ é™¤(D) å‡ä»¥æ•°æ®åº“ä¸ºä¸­å¿ƒ)</p>
 
 <pre><code>rails generate scaffold ticket name:string address:string price:decimal
 </code></pre>
 
-<p><strong>Êı¾İ¿â¹ÜÀí</strong></p>
+<p><strong>æ•°æ®åº“ç®¡ç†</strong></p>
 
-<pre><code>rake migrate #Êı¾İµÄÇ¨ÒÆ
-rails generate AddPhoneToTickets phone:string  #Ôö¼ÓĞÂµÄÊı¾İÏî
-rake db:migrate #Êı¾İµÄÇ¨ÒÆ
+<pre><code>rake migrate #æ•°æ®çš„è¿ç§»
+rails generate AddPhoneToTickets phone:string  #å¢åŠ æ–°çš„æ•°æ®é¡¹
+rake db:migrate #æ•°æ®çš„è¿ç§»
 </code></pre>
 
-<p><strong>Viewä¯ÀÀÆ÷Ö§³ÖÔ¤ÀÀ</strong></p>
+<p><strong>Viewæµè§ˆå™¨æ”¯æŒé¢„è§ˆ</strong></p>
 
-<pre><code>rails server #·ÃÎÊhttp://localhost:3000/tickets
+<pre><code>rails server #è®¿é—®http://localhost:3000/tickets
 </code></pre>
 
-<p><strong>RailsÓ¦ÓÃ = Ä£ĞÍ(model) + ÊÓÍ¼(view) + ¿ØÖÆÆ÷(controller)</strong></p>
+<p><strong>Railsåº”ç”¨ = æ¨¡å‹(model) + è§†å›¾(view) + æ§åˆ¶å™¨(controller)</strong></p>
 
 <p><em>Model</em></p>
 
-<p>Ä£ĞÍ´úÂë¹ÜÀíÈçºÎ´ÓÊı¾İ¿âÖĞ¶ÁĞ´Êı¾İ.</p>
+<p>æ¨¡å‹ä»£ç ç®¡ç†å¦‚ä½•ä»æ•°æ®åº“ä¸­è¯»å†™æ•°æ®.</p>
 
 <pre><code>class Ticket &lt; ActiveRecord::Base 
-    attr_accessible :address, :name, :price, :phone #model.rb Ôö¼ÓĞÂµÄÊı¾İÏî¼ÇµÃĞŞ¸Ä
+    attr_accessible :address, :name, :price, :phone #model.rb å¢åŠ æ–°çš„æ•°æ®é¡¹è®°å¾—ä¿®æ”¹
 end
 </code></pre>
 
 <p><em>View</em></p>
 
-<p>ÊÓÍ¼ÊÇÕ¹ÏÖ¸øÓÃ»§¿´µÄ²¿·Ö£¬¼´ä¯ÀÀÆ÷ÖĞËù¼û¡£ <br />
-Ôö¼ÓĞÂµÄÊı¾İÏî¼ÇµÃĞŞ¸Ä <em>views/tickets/</em>Ä¿Â¼ÏÂµÄhtmlÎÄ¼ş   </p>
+<p>è§†å›¾æ˜¯å±•ç°ç»™ç”¨æˆ·çœ‹çš„éƒ¨åˆ†ï¼Œå³æµè§ˆå™¨ä¸­æ‰€è§ã€‚ <br />
+å¢åŠ æ–°çš„æ•°æ®é¡¹è®°å¾—ä¿®æ”¹ <em>views/tickets/</em>ç›®å½•ä¸‹çš„htmlæ–‡ä»¶   </p>
 
 <p><em>Controller</em></p>
 
-<p>¾ö¶¨<em>Ä£ĞÍ</em>ºÍ<em>ÊÓÍ¼</em>µÄ½»»¥¡£¾ö¶¨ÁËÄÇĞ©Êı¾İĞèÒª´ÓÄ£ĞÍÖĞ»ñÈ¡£»ÒÔ¼°ÊÓÍ¼ÖĞµÄÄÇÒ»²¿·Ö½«ÏÔÊ¾ÕâĞ©Êı¾İ¡£</p>
+<p>å†³å®š<em>æ¨¡å‹</em>å’Œ<em>è§†å›¾</em>çš„äº¤äº’ã€‚å†³å®šäº†é‚£äº›æ•°æ®éœ€è¦ä»æ¨¡å‹ä¸­è·å–ï¼›ä»¥åŠè§†å›¾ä¸­çš„é‚£ä¸€éƒ¨åˆ†å°†æ˜¾ç¤ºè¿™äº›æ•°æ®ã€‚</p>
 
     </div>
 </div>
@@ -115,7 +115,7 @@ end
  </div>
 
     <div id="Bottom">
-        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

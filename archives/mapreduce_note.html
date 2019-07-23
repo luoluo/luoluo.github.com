@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/static/css/base.css" />
 
     <link rel="icon" href="/static/img/icon_tiger.png">
-    <title> MapReduce¿ò¼ÜÏê½â </title>
+    <title> MapReduceæ¡†æ¶è¯¦è§£ </title>
   </head>
   <body>
     <div id="Top">
@@ -45,7 +45,7 @@
     <div id="Content">  
 
 <div class="post-top">
-    <div class="post-title"> MapReduce¿ò¼ÜÏê½â </div>
+    <div class="post-title"> MapReduceæ¡†æ¶è¯¦è§£ </div>
     <div class="post-time"> 2018-02-19 10:40:00 +0800 </div>
     <!-- TODO
     <div class="post-tag"> think </div>
@@ -54,49 +54,49 @@
 
 <div class="post-main">
     <div class="post-content">
-        <h4>Apache Hadoop¼ò½é</h4>
+        <h4>Apache Hadoopç®€ä»‹</h4>
 
 <blockquote>
-  <p>The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.0„2</p>
+  <p>The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.Â </p>
 </blockquote>
 
-<p>Apache HadoopÊÇÒ»¸ö·Ö²¼Ê½¼ÆËã¿ò¼Ü£¬²ÉÓÃ¼«¼òµÄ±íÊöÄ£ĞÍ£¬ÔÚÓÉ¶àÌ¨¼ÆËã»ú×é³ÉµÄ»úÆ÷¼¯ÈºÉÏ£¬·Ö²¼Ê½´¦Àí¼ÆËãÈÎÎñ¡£</p>
+<p>Apache Hadoopæ˜¯ä¸€ä¸ªåˆ†å¸ƒå¼è®¡ç®—æ¡†æ¶ï¼Œé‡‡ç”¨æç®€çš„è¡¨è¿°æ¨¡å‹ï¼Œåœ¨ç”±å¤šå°è®¡ç®—æœºç»„æˆçš„æœºå™¨é›†ç¾¤ä¸Šï¼Œåˆ†å¸ƒå¼å¤„ç†è®¡ç®—ä»»åŠ¡ã€‚</p>
 
-<p>Apache HadoopÓÉÒÔÏÂ¼¸²¿·Ö×é³É£º</p>
+<p>Apache Hadoopç”±ä»¥ä¸‹å‡ éƒ¨åˆ†ç»„æˆï¼š</p>
 
 <ul>
-<li>Hadoop Common: Í¨ÓÃ×é¼ş£¬ÒÔ´ËÀ´¹¹½¨ÆäËû»ù´¡Ä£¿é</li>
-<li>Hadoop Distributed File System (HDFS6¾4): ·Ö²¼Ê½ÎÄ¼şÏµÍ³£¬Ìá¹©Êı¾İ·ÃÎÊ¸ßÍÌÍÂ</li>
-<li>Hadoop YARN: ÈÎÎñµ÷¶È&amp;¼¯Èº×ÊÔ´¹ÜÀíÆ÷</li>
-<li>Hadoop MapReduce: »ùÓÚyarnÊµÏÖµÄ´óÊı¾İ²¢ĞĞ´¦Àí¿ò¼Ü</li>
+<li>Hadoop Common: é€šç”¨ç»„ä»¶ï¼Œä»¥æ­¤æ¥æ„å»ºå…¶ä»–åŸºç¡€æ¨¡å—</li>
+<li>Hadoop Distributed File System (HDFSâ„¢): åˆ†å¸ƒå¼æ–‡ä»¶ç³»ç»Ÿï¼Œæä¾›æ•°æ®è®¿é—®é«˜åå</li>
+<li>Hadoop YARN: ä»»åŠ¡è°ƒåº¦&amp;é›†ç¾¤èµ„æºç®¡ç†å™¨</li>
+<li>Hadoop MapReduce: åŸºäºyarnå®ç°çš„å¤§æ•°æ®å¹¶è¡Œå¤„ç†æ¡†æ¶</li>
 </ul>
 
-<p>±¾ÎÄ½²ÖØµã½éÉÜHadoop MapReduce¡£</p>
+<p>æœ¬æ–‡è®²é‡ç‚¹ä»‹ç»Hadoop MapReduceã€‚</p>
 
-<h4>±à³ÌÄ£ĞÍ</h4>
+<h4>ç¼–ç¨‹æ¨¡å‹</h4>
 
-<p>MapReduceÌá¹©Á½ÖÖ³éÏó£º</p>
+<p>MapReduceæä¾›ä¸¤ç§æŠ½è±¡ï¼š</p>
 
-<pre><code>Map£º
-£¨k1, v1£©=&gt; list(k2, v2)
+<pre><code>Mapï¼š
+ï¼ˆk1, v1ï¼‰=&gt; list(k2, v2)
 Reduce:
   (k2, list(v2)) =&gt; list(v3)
 </code></pre>
 
-<p>³éÏóµÄºÃ´¦:³ÌĞòÔ±Ö»Ğè×¨×¢ÒµÎñ£¬µ÷¶È¡¢·Ö·¢¡¢Èİ´í¾ùÓÉ¼¯Èº±£Ö¤£¬´ó´ó½µµÍÑĞ·¢³É±¾¼°ÃÅ¼÷¡£</p>
+<p>æŠ½è±¡çš„å¥½å¤„:ç¨‹åºå‘˜åªéœ€ä¸“æ³¨ä¸šåŠ¡ï¼Œè°ƒåº¦ã€åˆ†å‘ã€å®¹é”™å‡ç”±é›†ç¾¤ä¿è¯ï¼Œå¤§å¤§é™ä½ç ”å‘æˆæœ¬åŠé—¨æ§›ã€‚</p>
 
-<p>ÆÁ±ÎÏ¸½Ú:</p>
+<p>å±è”½ç»†èŠ‚:</p>
 
 <ul>
-<li>mapÊäÈë·Öpartition£¬reduceÊäÈë»®·Ö</li>
-<li>¼ÆËã×ÊÔ´¡¢´æ´¢Ïà¹ØmapºÍreduceµÄµ÷¶È</li>
+<li>mapè¾“å…¥åˆ†partitionï¼Œreduceè¾“å…¥åˆ’åˆ†</li>
+<li>è®¡ç®—èµ„æºã€å­˜å‚¨ç›¸å…³mapå’Œreduceçš„è°ƒåº¦</li>
 <li>Failover</li>
-<li>Êı¾İ·Ö·¢</li>
+<li>æ•°æ®åˆ†å‘</li>
 </ul>
 
-<h4>¾Ù¸öÀõ×Ó</h4>
+<h4>ä¸¾ä¸ªæ —å­</h4>
 
-<p>×î×î¾­µäµÄword-count</p>
+<p>æœ€æœ€ç»å…¸çš„word-count</p>
 
 <pre><code>map(String key, String value):
     // key: document name
@@ -113,33 +113,33 @@ reduce(String key, Iterator values):
     Emit(AsString(result));
 </code></pre>
 
-<p>¹ı³Ì¼òÊö</p>
+<p>è¿‡ç¨‹ç®€è¿°</p>
 
 <div class="image-div"> <img class="content-image" src="/static/img/mapreduce1.png" alt="x" /> </div>
 
 <ol>
-<li>»ñÈ¡ÊäÈë£¬²¢½«ÊäÈë·ÖÆ¬</li>
-<li>mapper¶ÁÈ¡ÊäÈë£¬´¦Àí£¬Êä³ö</li>
-<li>½«mapperÊä³ö°´keyÅÅĞò£¬·¢ËÍÖÁ¶ÔÓ¦reducer</li>
-<li>reducer´¦Àí£¬Êä³ö</li>
+<li>è·å–è¾“å…¥ï¼Œå¹¶å°†è¾“å…¥åˆ†ç‰‡</li>
+<li>mapperè¯»å–è¾“å…¥ï¼Œå¤„ç†ï¼Œè¾“å‡º</li>
+<li>å°†mapperè¾“å‡ºæŒ‰keyæ’åºï¼Œå‘é€è‡³å¯¹åº”reducer</li>
+<li>reducerå¤„ç†ï¼Œè¾“å‡º</li>
 </ol>
 
-<h4>¸ü¶àÀı×Ó</h4>
+<h4>æ›´å¤šä¾‹å­</h4>
 
 <ul>
-<li>·Ö²¼Ê½grep</li>
-<li>Õ¾µãPVÍ³¼Æ</li>
-<li>Õ¾µãÄÚÁ´·´ÏòÁ´½ÓÍ³¼Æ</li>
-<li>ËÑË÷ÒıÇæµ¹ÅÅË÷Òı¹¹½¨</li>
-<li>·Ö²¼Ê½ÅÅĞò</li>
+<li>åˆ†å¸ƒå¼grep</li>
+<li>ç«™ç‚¹PVç»Ÿè®¡</li>
+<li>ç«™ç‚¹å†…é“¾åå‘é“¾æ¥ç»Ÿè®¡</li>
+<li>æœç´¢å¼•æ“å€’æ’ç´¢å¼•æ„å»º</li>
+<li>åˆ†å¸ƒå¼æ’åº</li>
 <li>...</li>
 </ul>
 
-<h4>Ö´ĞĞ¹ı³Ì¸ÅÊö</h4>
+<h4>æ‰§è¡Œè¿‡ç¨‹æ¦‚è¿°</h4>
 
 <div class="image-div"> <img class="content-image" src="/static/img/mapreduce2.png" alt="x" /> </div>
 
-<p>×é³É²¿·Ö</p>
+<p>ç»„æˆéƒ¨åˆ†</p>
 
 <ul>
 <li>an input reader</li>
@@ -150,7 +150,7 @@ reduce(String key, Iterator values):
 <li>an output writer</li>
 </ul>
 
-<h4>Ö´ĞĞ¹ı³ÌÏêÊö</h4>
+<h4>æ‰§è¡Œè¿‡ç¨‹è¯¦è¿°</h4>
 
 <div class="image-div"> <img class="content-image" src="/static/img/mapreduce3.png" alt="x" /> </div>
 
@@ -164,43 +164,43 @@ reduce(String key, Iterator values):
 <li>Weak up user program, program returns to user code.</li>
 </ul>
 
-<h4>Master Êı¾İ½á¹¹</h4>
+<h4>Master æ•°æ®ç»“æ„</h4>
 
-<p>Master´æ´¢µÄĞÅÏ¢£ºmapÈÎÎñ¡¢reduceÈÎÎñµÄÖ´ĞĞ×´Ì¬£»¼¯Èºworker»úÆ÷µÄ×´Ì¬£¨ÒÔ¹©µ÷¶È£© <br />
-TaskµÄ×´Ì¬¼¯£ºidle£¬in-process£¬complete</p>
+<p>Masterå­˜å‚¨çš„ä¿¡æ¯ï¼šmapä»»åŠ¡ã€reduceä»»åŠ¡çš„æ‰§è¡ŒçŠ¶æ€ï¼›é›†ç¾¤workeræœºå™¨çš„çŠ¶æ€ï¼ˆä»¥ä¾›è°ƒåº¦ï¼‰ <br />
+Taskçš„çŠ¶æ€é›†ï¼šidleï¼Œin-processï¼Œcomplete</p>
 
-<p>MasterÊÇmap´¦Àí½á¹ûÁ÷×ªµ½reduceµÄÖĞ¼äÈË</p>
-
-<ul>
-<li>¶ÔÓÚÒÑÍê³ÉµÄmapÈÎÎñ£¬master´æ´¢R¸ö·ÖÆ¬½á¹ûµØÖ·</li>
-<li>Ã¿µ±map´¦ÀíÍê³Éºó£¬½á¹ûĞÅÏ¢±ã´æ´¢ÖÁmaster</li>
-<li>masterÁ¢¼´½«ĞÅÏ¢ÍÆËÍÖÁ´¦ÀíÖĞµÄreducerÈÎÎñ</li>
-</ul>
-
-<h4>Èİ´í»úÖÆ</h4>
-
-<p>WorkerÈİ´í£º</p>
-
-<p>ĞÄÌø¼ì²éÀ´·¢ÏÖ¹ÊÕÏworker£¬masterÖÜÆÚĞÔpingËùÓĞworker£¬ÒÔ·¢ÏÖ¹ÊÕÏworker¡£ <br />
-µ±worker¹ÊÕÏ£¬»úÆ÷ÉÏµÄ´¦Àí½á¹û½«ÎŞ·¨·ÃÎÊ£¬¼ÆËãÈÎÎñÎŞ·¨Ö´ĞĞ¡£¹ÊĞèÆäÉÏ<code>complete</code> mapÖØÖÃÎª<code>idle</code>£¬<code>in-process</code> map¡¢reduceÖØÖÃÎª<code>idle</code>£¬¹©ÖØĞÂµ÷¶ÈÖ´ĞĞ¡£
-µ±¹ÊÕÏworker±»ĞÂworkerÌæ´úºó£¬mapÈÎÎñÖØĞÂÖ´ĞĞĞÅÏ¢½«ÖÜÖª¶ÔÓ¦reduce¡£</p>
-
-<p>MasterÈİ´í£º</p>
-
-<p>Í¨¹ıcheck point»úÖÆÀ´Èİ´í¡£</p>
-
-<p>Ò»ÖÂĞÔ±£Ö¤£º</p>
-
-<p>¶ÔÓÚmapºÍreduceÎª<code>de-terministic functions</code>£¬Ôò²»ÂÛÖĞ¼ä¹ı³ÌÊÇ·ñ´æÔÚÊ§°Ütask£¬´¦Àí½á¹ûÓ¦ÏàÍ¬¡£
-Í¨¹ı<code>atomic commits</code>»úÖÆÀ´±£Ö¤´¦ÀíÒ»ÖÂĞÔ¡£    </p>
+<p>Masteræ˜¯mapå¤„ç†ç»“æœæµè½¬åˆ°reduceçš„ä¸­é—´äºº</p>
 
 <ul>
-<li>map¡¢reduce¾ù½«½á¹ûĞ´ÖÁÁÙÊ±ÎÄ¼ş</li>
-<li>mapÈÎÎñÍê³Éºó£¬½«½á¹ûÎÄ¼şĞÅÏ¢Ìá½»ÖÁmaster£¬ÈômasterÒÑ½ÓÊÜ¹ı´ËmapÈÎÎñµÄĞÅÏ¢£¬ÔòºóĞøĞÅÏ¢½«±»ºöÂÔ</li>
-<li>reduceÈÎÎñÍê³Éºó£¬ÔòÖØÃüÃûÁÙÊ±½á¹ûÎÄ¼şÎª×îÖÕÊä³öÎÄ¼ş£¬ÖØÃüÃû¹ı³Ì¾ßÓĞÔ­×ÓĞÔ£¬ÓÉµ×²ãÎÄ¼şÏµÍ³±£Ö¤</li>
+<li>å¯¹äºå·²å®Œæˆçš„mapä»»åŠ¡ï¼Œmasterå­˜å‚¨Rä¸ªåˆ†ç‰‡ç»“æœåœ°å€</li>
+<li>æ¯å½“mapå¤„ç†å®Œæˆåï¼Œç»“æœä¿¡æ¯ä¾¿å­˜å‚¨è‡³master</li>
+<li>masterç«‹å³å°†ä¿¡æ¯æ¨é€è‡³å¤„ç†ä¸­çš„reducerä»»åŠ¡</li>
 </ul>
 
-<h4>Ïà¹ØÏîÄ¿</h4>
+<h4>å®¹é”™æœºåˆ¶</h4>
+
+<p>Workerå®¹é”™ï¼š</p>
+
+<p>å¿ƒè·³æ£€æŸ¥æ¥å‘ç°æ•…éšœworkerï¼Œmasterå‘¨æœŸæ€§pingæ‰€æœ‰workerï¼Œä»¥å‘ç°æ•…éšœworkerã€‚ <br />
+å½“workeræ•…éšœï¼Œæœºå™¨ä¸Šçš„å¤„ç†ç»“æœå°†æ— æ³•è®¿é—®ï¼Œè®¡ç®—ä»»åŠ¡æ— æ³•æ‰§è¡Œã€‚æ•…éœ€å…¶ä¸Š<code>complete</code> mapé‡ç½®ä¸º<code>idle</code>ï¼Œ<code>in-process</code> mapã€reduceé‡ç½®ä¸º<code>idle</code>ï¼Œä¾›é‡æ–°è°ƒåº¦æ‰§è¡Œã€‚
+å½“æ•…éšœworkerè¢«æ–°workeræ›¿ä»£åï¼Œmapä»»åŠ¡é‡æ–°æ‰§è¡Œä¿¡æ¯å°†å‘¨çŸ¥å¯¹åº”reduceã€‚</p>
+
+<p>Masterå®¹é”™ï¼š</p>
+
+<p>é€šè¿‡check pointæœºåˆ¶æ¥å®¹é”™ã€‚</p>
+
+<p>ä¸€è‡´æ€§ä¿è¯ï¼š</p>
+
+<p>å¯¹äºmapå’Œreduceä¸º<code>de-terministic functions</code>ï¼Œåˆ™ä¸è®ºä¸­é—´è¿‡ç¨‹æ˜¯å¦å­˜åœ¨å¤±è´¥taskï¼Œå¤„ç†ç»“æœåº”ç›¸åŒã€‚
+é€šè¿‡<code>atomic commits</code>æœºåˆ¶æ¥ä¿è¯å¤„ç†ä¸€è‡´æ€§ã€‚    </p>
+
+<ul>
+<li>mapã€reduceå‡å°†ç»“æœå†™è‡³ä¸´æ—¶æ–‡ä»¶</li>
+<li>mapä»»åŠ¡å®Œæˆåï¼Œå°†ç»“æœæ–‡ä»¶ä¿¡æ¯æäº¤è‡³masterï¼Œè‹¥masterå·²æ¥å—è¿‡æ­¤mapä»»åŠ¡çš„ä¿¡æ¯ï¼Œåˆ™åç»­ä¿¡æ¯å°†è¢«å¿½ç•¥</li>
+<li>reduceä»»åŠ¡å®Œæˆåï¼Œåˆ™é‡å‘½åä¸´æ—¶ç»“æœæ–‡ä»¶ä¸ºæœ€ç»ˆè¾“å‡ºæ–‡ä»¶ï¼Œé‡å‘½åè¿‡ç¨‹å…·æœ‰åŸå­æ€§ï¼Œç”±åº•å±‚æ–‡ä»¶ç³»ç»Ÿä¿è¯</li>
+</ul>
+
+<h4>ç›¸å…³é¡¹ç›®</h4>
 
 <ul>
 <li>Hive <a href="http://hive.apache.org/">http://hive.apache.org/</a></li>
@@ -220,7 +220,7 @@ TaskµÄ×´Ì¬¼¯£ºidle£¬in-process£¬complete</p>
  </div>
 
     <div id="Bottom">
-        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

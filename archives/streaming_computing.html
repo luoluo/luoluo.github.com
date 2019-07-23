@@ -57,12 +57,12 @@
         <h4>MillWheel</h4>
 
 <blockquote>
-  <p>MillWheel is a framework for building <em>low-latency</em> data-processing applications that is widely used at Google. Users specify a directed computation graph and application code for individual nodes, and the system manages <em>persistent state</em> and the <em>continuous flow</em> of records, all within the envelope of the framework°Øs <em>fault-tolerance guarantees</em>.</p>
+  <p>MillWheel is a framework for building <em>low-latency</em> data-processing applications that is widely used at Google. Users specify a directed computation graph and application code for individual nodes, and the system manages <em>persistent state</em> and the <em>continuous flow</em> of records, all within the envelope of the framework‚Äôs <em>fault-tolerance guarantees</em>.</p>
 </blockquote>
 
-<h4>∏≈ ˆ</h4>
+<h4>Ê¶ÇËø∞</h4>
 
-<p>∫À–ƒÀﬂ«Û£∫</p>
+<p>Ê†∏ÂøÉËØâÊ±ÇÔºö</p>
 
 <ol>
 <li>Latency</li>
@@ -75,14 +75,14 @@
 
 <ol>
 <li>Data should be available to consumers as soon as it is published</li>
-<li><em>Persistent state</em> abstractions should be available to user code, and should be integrated into the system°Øs overall consistency model.</li>
+<li><em>Persistent state</em> abstractions should be available to user code, and should be integrated into the system‚Äôs overall consistency model.</li>
 <li><em>Out-of-order</em> data should be handled gracefully by the system.</li>
 <li>A monotonically increasing <em>low watermark</em> of data timestamps should be computed by the system.</li>
 <li><em>Latency</em> should stay constant as the system scales to more machines.</li>
 <li>The system should provide <em>exactly-once</em> delivery of records.</li>
 </ol>
 
-<p>œµÕ≥≥ÈœÛ</p>
+<p>Á≥ªÁªüÊäΩË±°</p>
 
 <div class="image-div"> <img class="content-image" src="/static/img/millwhell_overview.png" alt="x" width=450 /> </div>
 
@@ -91,7 +91,7 @@
 <li>Delivery Guarantee: All internal updates within the MillWheel framework resulting from record processing are atomically checkpointed per-key and records are delivered exactly once.</li>
 </ol>
 
-<h4>∫À–ƒ∏≈ƒÓ</h4>
+<h4>Ê†∏ÂøÉÊ¶ÇÂøµ</h4>
 
 <p>Definition of a single node in a MillWheel topology</p>
 
@@ -162,7 +162,7 @@ Common uses of state include counters aggregated over windows of records and buf
 
 <p>The low watermark for a computation provides a bound on the timestamps of future records arriving at that computation.
 Low watermark values are seeded by injectors, which send data into MillWheel from external systems. 
-Measurement of pending work in external systems is often an estimate, so in practice, computations should expect a small rate of late records ®C records behind the low watermark ®C from such systems.
+Measurement of pending work in external systems is often an estimate, so in practice, computations should expect a small rate of late records ‚Äì records behind the low watermark ‚Äì from such systems.
 Definition: </p>
 
 <pre><code>low watermark of A = min(oldest work of A, low watermark of C : C outputs to A)
@@ -255,7 +255,7 @@ After that, it resumes processing records from all input streams, processing rec
 
 <ul>
 <li>MillWheel: Fault-Tolerant Stream Processing at Internet Scale</li>
-<li>Apache FlinkÅ6æ4: Stream and Batch Processing in a Single Engine</li>
+<li>Apache Flink‚Ñ¢: Stream and Batch Processing in a Single Engine</li>
 <li>Lightweight Asynchronous Snapshots for Distributed Dataflows</li>
 <li>https://ci.apache.org/projects/flink/flink-docs-release-1.4/internals/stream_checkpointing.html#introduction</li>
 </ul>
@@ -269,7 +269,7 @@ After that, it resumes processing records from all input streams, processing rec
  </div>
 
     <div id="Bottom">
-        Copyright Å0Ñ8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright ¬© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 
