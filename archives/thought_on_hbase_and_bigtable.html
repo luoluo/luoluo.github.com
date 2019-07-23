@@ -54,32 +54,32 @@
 
 <div class="post-main">
     <div class="post-content">
-        <h3>æ¦‚è¿°</h3>
+        <h3>¸ÅÊö</h3>
 
 <blockquote>
-  <p><em>Bigtable</em> is a distributed storage system for managing structured data that is designed to scale to a very large size: petabytes of data across thousands of commodity servers.  <em>Apache HBaseâ„¢</em> is the Hadoop database, a distributed, scalable, big data store.</p>
+  <p><em>Bigtable</em> is a distributed storage system for managing structured data that is designed to scale to a very large size: petabytes of data across thousands of commodity servers.  <em>Apache HBase6¾4</em> is the Hadoop database, a distributed, scalable, big data store.</p>
 </blockquote>
 
-<h3>æ•°æ®æ¨¡å‹</h3>
+<h3>Êı¾İÄ£ĞÍ</h3>
 
-<p>Bigtableæ˜¯ä¸€ä¸ªç¨€ç–ã€å¤šç»´ã€æœ‰åºçš„åˆ†å¸ƒå¼mapï¼Œmapç”±(rowkey, column, timestamp)æ¥ç´¢å¼•ã€‚</p>
+<p>BigtableÊÇÒ»¸öÏ¡Êè¡¢¶àÎ¬¡¢ÓĞĞòµÄ·Ö²¼Ê½map£¬mapÓÉ(rowkey, column, timestamp)À´Ë÷Òı¡£</p>
 
-<pre><code>(row:string, column:string, time:int64) â†’ string
+<pre><code>(row:string, column:string, time:int64) ¡ú string
 </code></pre>
 
-<p>Bigtableå¯æŠ½è±¡ä¸ºä¸‰ç»´Excelè¡¨æ ¼ï¼Œå…·ä½“æ¥è¯´ï¼š</p>
+<p>Bigtable¿É³éÏóÎªÈıÎ¬Excel±í¸ñ£¬¾ßÌåÀ´Ëµ£º</p>
 
 <ul>
-<li>æ•°æ®å¯ä»¥æœ‰å¤šè¡Œï¼Œæ¯è¡Œç”±ä¸€ä¸ªrowkeyæŒ‡å®š</li>
-<li>ä¸€è¡Œæ•°æ®å¯ä»¥æœ‰å¤šåˆ—(Column)ï¼Œåˆ—å¯è‡ªç”±æ‰©å±•</li>
-<li>è¡Œåˆ—å¯ä»¥å®šä½åˆ°ä¸€ä¸ªCellï¼ŒCellå¤šç‰ˆæœ¬</li>
+<li>Êı¾İ¿ÉÒÔÓĞ¶àĞĞ£¬Ã¿ĞĞÓÉÒ»¸örowkeyÖ¸¶¨</li>
+<li>Ò»ĞĞÊı¾İ¿ÉÒÔÓĞ¶àÁĞ(Column)£¬ÁĞ¿É×ÔÓÉÀ©Õ¹</li>
+<li>ĞĞÁĞ¿ÉÒÔ¶¨Î»µ½Ò»¸öCell£¬Cell¶à°æ±¾</li>
 </ul>
 
 <div class="image-div"> <img class="content-image" src="/static/img/table1.png" alt="x" width=600 /> </div>
 
-<p>ä¸Šå›¾æ˜¯è®ºæ–‡ä¸­ç»™å‡ºçš„ç½‘é¡µåº“åº”ç”¨å®ä¾‹ï¼Œè¡Œåæ˜¯ç½‘å€çš„é€†åº(ä¿è¯åŒä¸€ç«™ç‚¹æ•°æ®é›†ä¸­)ã€‚åˆ—ç°‡ï¼ˆcolumn familyï¼‰<code>contents</code>åŒ…å«çš„æºç å†…å®¹ï¼Œåˆ—ç°‡<code>anchor</code>åŒ…å«å¼•ç”¨è¯¥ç½‘ç«™çš„æ–‡æœ¬ï¼Œå…·ä½“æ¥è¯´<code>cnnsi.com</code>å’Œ<code>my.look.ca</code>å‡æŒ‡å‘<code>CNN</code>çš„é¦–é¡µã€‚æ¯ä¸ª<code>anchor</code> cellåªæœ‰1ä¸ªç‰ˆæœ¬æ•°æ®ï¼Œ<code>content</code>åˆ—çš„cellæœ‰3ä¸ªç‰ˆæœ¬æ•°æ®ã€‚</p>
+<p>ÉÏÍ¼ÊÇÂÛÎÄÖĞ¸ø³öµÄÍøÒ³¿âÓ¦ÓÃÊµÀı£¬ĞĞÃûÊÇÍøÖ·µÄÄæĞò(±£Ö¤Í¬Ò»Õ¾µãÊı¾İ¼¯ÖĞ)¡£ÁĞ´Ø£¨column family£©<code>contents</code>°üº¬µÄÔ´ÂëÄÚÈİ£¬ÁĞ´Ø<code>anchor</code>°üº¬ÒıÓÃ¸ÃÍøÕ¾µÄÎÄ±¾£¬¾ßÌåÀ´Ëµ<code>cnnsi.com</code>ºÍ<code>my.look.ca</code>¾ùÖ¸Ïò<code>CNN</code>µÄÊ×Ò³¡£Ã¿¸ö<code>anchor</code> cellÖ»ÓĞ1¸ö°æ±¾Êı¾İ£¬<code>content</code>ÁĞµÄcellÓĞ3¸ö°æ±¾Êı¾İ¡£</p>
 
-<p>é€»è¾‘è§†å›¾ï¼š</p>
+<p>Âß¼­ÊÓÍ¼£º</p>
 
 <pre><code>{
     "com.cnn.www" : {
@@ -98,15 +98,15 @@
 
 <h5>Raws</h5>
 
-<p>Rowkeyæ˜¯ä¸€ä¸ªäºŒè¿›åˆ¶ä¸²ï¼ŒBigtableé‡Œçš„æ•°æ®æŒ‰ç…§rowkeyçš„å­—å…¸åºæ’åˆ—, åŒæ—¶æŒ‰ç…§rowkeyçš„åŒºé—´å°†æ•°æ®åŠ¨æ€åˆ†åŒºï¼Œæ¯ä¸ªåˆ†åŒºç§°ä¸ºä¸€ä¸ª<code>tablet</code>.æ•°æ®æŒ‰rowkeyæ’åˆ—ï¼Œå¹¶åšrangeåˆ†åŒºï¼Œæ•°æ®æŒ‰åŒºé—´<code>scan</code>ä¼šéå¸¸å¿«ï¼Œè­¬å¦‚è·å–æŸhostä¸‹æ‰€æœ‰ç½‘é¡µï¼Œåªéœ€æŒ‡æ˜èµ·æ­¢åŒºé—´å³å¯å¿«é€Ÿè·å–.</p>
+<p>RowkeyÊÇÒ»¸ö¶ş½øÖÆ´®£¬BigtableÀïµÄÊı¾İ°´ÕÕrowkeyµÄ×ÖµäĞòÅÅÁĞ, Í¬Ê±°´ÕÕrowkeyµÄÇø¼ä½«Êı¾İ¶¯Ì¬·ÖÇø£¬Ã¿¸ö·ÖÇø³ÆÎªÒ»¸ö<code>tablet</code>.Êı¾İ°´rowkeyÅÅÁĞ£¬²¢×örange·ÖÇø£¬Êı¾İ°´Çø¼ä<code>scan</code>»á·Ç³£¿ì£¬Æ©Èç»ñÈ¡Ä³hostÏÂËùÓĞÍøÒ³£¬Ö»ĞèÖ¸Ã÷ÆğÖ¹Çø¼ä¼´¿É¿ìËÙ»ñÈ¡.</p>
 
 <h5>Column/Column family</h5>
 
-<p>Columnç»„ç»‡ä¸ºä¸€ä¸ªColumn family, column familyéœ€åœ¨å»ºè¡¨æ—¶æŒ‡æ˜ï¼Œcolumnå¯æŒ‰éœ€æ¥å»ºç«‹ï¼Œcolumnå¿…é¡»å±äºæŸä¸€column familyï¼›column familyä¸‹å¯æœ‰ä»»æ„æ•°é‡çš„columnï¼Œæ•°æ®çš„å­˜å‚¨å’Œè¯»å–ä¸Šéƒ½æ˜¯æŒ‰ç…§column familyæ¥ç»„ç»‡çš„ï¼Œæ•…ä½¿ç”¨ç›¸å…³åº¦é«˜çš„columnåº”ç»„ç»‡åœ¨ç›¸åŒçš„column familyä¸‹.</p>
+<p>Column×éÖ¯ÎªÒ»¸öColumn family, column familyĞèÔÚ½¨±íÊ±Ö¸Ã÷£¬column¿É°´ĞèÀ´½¨Á¢£¬column±ØĞëÊôÓÚÄ³Ò»column family£»column familyÏÂ¿ÉÓĞÈÎÒâÊıÁ¿µÄcolumn£¬Êı¾İµÄ´æ´¢ºÍ¶ÁÈ¡ÉÏ¶¼ÊÇ°´ÕÕcolumn familyÀ´×éÖ¯µÄ£¬¹ÊÊ¹ÓÃÏà¹Ø¶È¸ßµÄcolumnÓ¦×éÖ¯ÔÚÏàÍ¬µÄcolumn familyÏÂ.</p>
 
 <h5>Timestamps</h5>
 
-<p>Bigtableçš„Cellå‡æ”¯æŒå¤šç‰ˆæœ¬ï¼Œç‰ˆæœ¬ç”±timestampæ¥æŒ‡æ˜ï¼Œtimestampå¯ç”±bigtableæ¥æŒ‡æ˜ï¼ˆç³»ç»Ÿæ—¶é—´ï¼‰ï¼Œä¹Ÿå¯ç”±åº”ç”¨æœ¬èº«æ¥æŒ‡æ˜ï¼Œå¯¹æ•°æ®å†²çªæ•æ„Ÿçš„åº”ç”¨æœ€å¥½è‡ªå·±æ¥ç®¡ç†ç‰ˆæœ¬ï¼Œæ¯•ç«Ÿåˆ†å¸ƒå¼ç³»ç»Ÿä¸­çš„æ—¶é—´ä¸æ˜¯å¯é çš„ã€‚Bigtableæä¾›åŸºäºç‰ˆæœ¬çš„<code>GC</code>ç­–ç•¥ï¼Œç­–ç•¥ä¸ºcolumn falmilyç²’åº¦ï¼Œæœ‰ä¸¤ç±»ï¼š1. æŒ‡æ˜æ•°æ®çš„TTLï¼Œè¶…è¿‡TTLæ•°æ®è¢«GCï¼›2. æŒ‡æ˜æ•°æ®ä¿ç•™ç‰ˆæœ¬æ•°é‡ï¼ˆæœ€å¤šä¿å­˜å¤šå°‘ç‰ˆæœ¬ï¼Œæœ€å°‘ä¿å­˜å¤šå°‘ç‰ˆæœ¬ï¼‰ï¼Œå®é™…åœºæ™¯ä¸­è¯¥GCç­–ç•¥æå…¶æœ‰ç”¨ã€‚</p>
+<p>BigtableµÄCell¾ùÖ§³Ö¶à°æ±¾£¬°æ±¾ÓÉtimestampÀ´Ö¸Ã÷£¬timestamp¿ÉÓÉbigtableÀ´Ö¸Ã÷£¨ÏµÍ³Ê±¼ä£©£¬Ò²¿ÉÓÉÓ¦ÓÃ±¾ÉíÀ´Ö¸Ã÷£¬¶ÔÊı¾İ³åÍ»Ãô¸ĞµÄÓ¦ÓÃ×îºÃ×Ô¼ºÀ´¹ÜÀí°æ±¾£¬±Ï¾¹·Ö²¼Ê½ÏµÍ³ÖĞµÄÊ±¼ä²»ÊÇ¿É¿¿µÄ¡£BigtableÌá¹©»ùÓÚ°æ±¾µÄ<code>GC</code>²ßÂÔ£¬²ßÂÔÎªcolumn falmilyÁ£¶È£¬ÓĞÁ½Àà£º1. Ö¸Ã÷Êı¾İµÄTTL£¬³¬¹ıTTLÊı¾İ±»GC£»2. Ö¸Ã÷Êı¾İ±£Áô°æ±¾ÊıÁ¿£¨×î¶à±£´æ¶àÉÙ°æ±¾£¬×îÉÙ±£´æ¶àÉÙ°æ±¾£©£¬Êµ¼Ê³¡¾°ÖĞ¸ÃGC²ßÂÔ¼«ÆäÓĞÓÃ¡£</p>
 
 <h3>Data Model Operations / API</h3>
 
@@ -156,9 +156,9 @@ ROW                                      COLUMN+CELL
 <li>many tablet servers. </li>
 </ul>
 
-<p>Master serverï¼šåˆ†æ´¾tabletåˆ°tablet serverï¼Œæ¢æµ‹tablet serverçŠ¶æ€ï¼Œåšè´Ÿè½½å‡è¡¡ï¼Œä¾æ®éœ€è¦æ·»åŠ /å‰”é™¤tablet server. Tableã€column familyçš„schemaä¹Ÿç”±Master serveræ¥ç®¡ç†ã€‚</p>
+<p>Master server£º·ÖÅÉtabletµ½tablet server£¬Ì½²âtablet server×´Ì¬£¬×ö¸ºÔØ¾ùºâ£¬ÒÀ¾İĞèÒªÌí¼Ó/ÌŞ³ıtablet server. Table¡¢column familyµÄschemaÒ²ÓÉMaster serverÀ´¹ÜÀí¡£</p>
 
-<p>Tablet serverï¼š ç®¡ç†ä¸€æ‰¹tabletï¼Œå¯¹åº”tabletçš„è¯»å†™é€šè¿‡tablet serveræ¥å®Œæˆï¼Œæ•°æ®è¯»å†™ç›´æ¥ç”±clientä¸tablet serveræ¥äº¤äº’ï¼Œå¤§tabletçš„splitä¹Ÿæ˜¯ç”±tablet serveræ¥å®Œæˆçš„ã€‚</p>
+<p>Tablet server£º ¹ÜÀíÒ»Åútablet£¬¶ÔÓ¦tabletµÄ¶ÁĞ´Í¨¹ıtablet serverÀ´Íê³É£¬Êı¾İ¶ÁĞ´Ö±½ÓÓÉclientÓëtablet serverÀ´½»»¥£¬´ótabletµÄsplitÒ²ÊÇÓÉtablet serverÀ´Íê³ÉµÄ¡£</p>
 
 <h4>Tablet Location</h4>
 
@@ -214,7 +214,7 @@ ROW                                      COLUMN+CELL
  </div>
 
     <div id="Bottom">
-        Copyright Â© xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+        Copyright 0„8 xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
     </div>
   </body>
 

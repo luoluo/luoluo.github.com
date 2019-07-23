@@ -40,6 +40,10 @@ categories: [MindMap]
 * * + Docker
 * **Operating System**
 * * Linux
+* * + Memory
+* * + * [Memory Hierarchy](/archives/operating_system_memory.html)
+* * + * Cache coherence
+* * + * Memory consistency
 * * + Processing
 * * + Threading
 * * + Locking
@@ -55,7 +59,6 @@ categories: [MindMap]
 * * + * IP
 * * + * UDP
 * * + * HTTP
-* * + [Memory](/archives/operating_system_memory.html)
 * * Performance
 * * + Context Switch
 * * + system call
