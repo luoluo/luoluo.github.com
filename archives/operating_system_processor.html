@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143853514-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-143853514-1');
+	</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+
+    <link rel="icon" href="/static/img/icon_tiger.png">
+    <title> Operating System Processor Summary V0.1 </title>
+  </head>
+  <body>
+    <div id="Top">
+        <nav role="navigation" id="Nav">
+              <li>
+                <a href="/"> Home </a>
+              </li>
+              <li>
+                <a href="/archives.html"> Archive </a>
+              </li>
+              <li>
+                <a href="/categories.html"> Categories</a>
+              </li>
+              <li>
+                <a href="/notes.html"> Knowledge is Power</a>
+              </li>
+              <li>
+                <a href="/about.html"> About </a>
+              </li>
+        </nav>
+    </div> 
+
+    <div id="Content">  
+
+<div class="post-top">
+    <div class="post-title"> Operating System Processor Summary V0.1 </div>
+    <div class="post-time"> 2019-08-11 10:53:00 +0800 </div>
+    <!-- TODO
+    <div class="post-tag"> think </div>
+    -->
+</div>
+
+<div class="post-main">
+    <div class="post-content">
+        <h4>Shared-memory multiporcessor:</h4>
+
+<ul>
+<li>SMP(symmetric multiprocessors / centralized shared-memeory multiprocessor) =&gt; UMA(uniform memory access)</li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_smp.png" alt="x" width=500 /> </div>
+
+<ul>
+<li>DSM(distributed shard memory) =&gt; NUMA(nonuniform memory access)</li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_dsm.png" alt="x" width=650 /> </div>
+
+<h4>Coherence vs Consistency</h4>
+
+<ul>
+<li>Coherence Defines the behavior of reads and writes to the same memory location.</li>
+<li>Consistency defines the behavior of reads and writes with respect to accesses to other memory locations.</li>
+</ul>
+
+<h4>Coherence Protocols</h4>
+
+<ul>
+<li>Snooping</li>
+<li><ul>
+<li>MSI</li>
+</ul></li>
+<li><ul>
+<li>MESI</li>
+</ul></li>
+<li><ul>
+<li>MOESI</li>
+</ul></li>
+<li>Directory based</li>
+</ul>
+
+<h4>Snooping coherence protocol example</h4>
+
+<ul>
+<li>State(MSI):</li>
+<li><ul>
+<li>Invalid</li>
+</ul></li>
+<li><ul>
+<li>Shared</li>
+</ul></li>
+<li><ul>
+<li>Modified</li>
+</ul></li>
+</ul>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_snooping1.png" alt="x" width=650 /> </div>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_snooping2.png" alt="x" width=650 /> </div>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_snooping3.png" alt="x" width=450 /> </div>
+
+<h4>Directory-based coherence protocol example</h4>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_directory_based1.png" alt="x" width=500 /> </div>
+
+<div class="image-div"> <img class="content-image" src="/static/img/os_multicore_directory_based2.png" alt="x" width=450 /> </div>
+
+<h4>Memory consistency models</h4>
+
+<ul>
+<li>Sequential consistency</li>
+<li>Processor consistency</li>
+<li>Relaxed consistency</li>
+</ul>
+
+<h4>Synchronization</h4>
+
+<ul>
+<li>Automic operation: single uninterruptible instruction</li>
+<li>Conditional store: piar of instructions (load locked / store conditional)</li>
+</ul>
+
+<h4>Reference:</h4>
+
+<p><a href="https://www.amazon.com/Computer-Architecture-Quantitative-John-Hennessy/dp/012383872X">Computer Architecture: A Quantitative Approach 5th Edition</a> <br />
+<a href="https://www.7-cpu.com/cpu/Haswell.html">Intel i7-4770 (Haswell) performance</a> <br />
+<a href="https://arstechnica.com/gadgets/2002/07/caching/">Understanding CPU caching and performance</a> <br />
+<a href="https://www.computerhope.com/history/memory.htm">Computer memory history</a></p>
+
+    </div>
+</div>
+
+<div class="post-bottom">
+</div>
+
+ </div>
+
+    <div id="Bottom">
+        Copyright © xiaolaofu&luoluo 2011-2018 | Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW"> BY-NC-SA </a>
+    </div>
+  </body>
+
+</html>

@@ -44,6 +44,8 @@ categories: [MindMap]
 * * + * [Memory Hierarchy](/archives/operating_system_memory.html)
 * * + * Cache coherence
 * * + * Memory consistency
+* * + Porcessor
+* * + * [Multiporcessor](/archives/operating_system_processor.html)
 * * + Processing
 * * + Threading
 * * + Locking
