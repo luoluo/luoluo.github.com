@@ -66,7 +66,6 @@ Most of the <em>regular expression operations</em> are available as <em>module-l
 
 <blockquote>
   <p>Compile a regular expression pattern into a regular expression object, which can be used for matching using its <code>match()</code> and <code>search()</code> methods, described below.</p>
-</blockquote>
 
 <pre><code>import re
 text = 'I love China'
@@ -80,12 +79,9 @@ for regex in regexs:
     else:
         print "Not Match"
 </code></pre>
-
-<p><em>re.search(pattern, string)</em></p>
-
-<blockquote>
-  <p>Scan through string looking for a location where the regular expression pattern produces a match, and return a corresponding <code>MatchObject</code> instance.Return <code>None</code> if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.</p>
-</blockquote>
+  
+  <p><em>re.search(pattern, string)</em>
+  Scan through string looking for a location where the regular expression pattern produces a match, and return a corresponding <code>MatchObject</code> instance.Return <code>None</code> if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.</p>
 
 <pre><code>#!/usr/bin/python
 #encoding:utf-8
@@ -102,8 +98,8 @@ for regex in regexs:
     else:
         print "Not Match"
 </code></pre>
-
-<p><em>RegexObject.search(string)</em></p>
+  
+  <p><em>RegexObject.search(string)</em></p>
 
 <pre><code>#!/usr/bin/python
 #encoding:utf-8
@@ -116,12 +112,9 @@ e = match.end()
 print 'Found "%s"\nin "%s"\nfrom %d to %d ("%s")' % \
       (match.re.pattern, match.string, s, e, text[s:e])
 </code></pre>
-
-<p><em>re.match(pattern, srting)</em></p>
-
-<blockquote>
-  <p>If zero or more characters at the beginning of string match this regular expression, return a corresponding <code>MatchObject</code> instance. Return <code>None</code> if the string does not match the pattern; note that this is different from a zero-length match.</p>
-</blockquote>
+  
+  <p><em>re.match(pattern, srting)</em>
+  If zero or more characters at the beginning of string match this regular expression, return a corresponding <code>MatchObject</code> instance. Return <code>None</code> if the string does not match the pattern; note that this is different from a zero-length match.</p>
 
 <pre><code>#!/usr/bin/python
 #encoding:utf-8
@@ -132,8 +125,8 @@ match = re.match(regex, text)
 if match: 
     print match.group(1),match.group(2),
 </code></pre>
-
-<p><em>RegexObject.match(string)</em></p>
+  
+  <p><em>RegexObject.match(string)</em></p>
 
 <pre><code>#!/usr/bin/python
 #encoding:utf-8
@@ -144,8 +137,9 @@ match = regex.match(text)
 if match: 
     print match.group(1), match.group(2),
 </code></pre>
-
-<h4>Match object has many attributes:</h4>
+  
+  <h4>Match object has many attributes:</h4>
+</blockquote>
 
 <p><strong>Match more than one</strong></p>
 

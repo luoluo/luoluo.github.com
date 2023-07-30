@@ -59,7 +59,7 @@ class Post(object):
 if __name__ == "__main__":
     p = Post()
     p.load_from_file("./_post/regex_in_python.markdown")
-    print p.categories
+    print (p.categories)
     # print p.title
     # print p.date
     # print p.content

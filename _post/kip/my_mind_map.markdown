@@ -6,6 +6,9 @@ comments: true
 categories: [MindMap]
 ---
 
+* **Machine Learning**
+* * Deep Learning
+* * - Deep Learning
 * **Distributed System**
 * * Storage
 * * - [HDFS](/archives/the_hadoop_distributed_file_system.html)
@@ -75,7 +78,7 @@ categories: [MindMap]
 * * + [Shell Command](/archives/shell_related.html)
 * **Compiler**
 * * [Gdb](/archives/tips4gdb.html)
-* **Others**
+* **Basic**
 * * Algorithm
 * * - Data structure
 * * Back-End

@@ -53,7 +53,7 @@ class Resources(object):
         return self.about
 
     def get(self, link):
-		# TODO add debug conf, this should open when writing new article
+        # TODO add debug conf, this should open when writing new article
         self.init()
         return self.post_mapping.get(link)
 
@@ -63,8 +63,8 @@ class Resources(object):
     def categories(self):
         return [(k, v) for k, v in self.categories_mapping.items()]
 
-	def static_dump(self):
-		pass
+    def static_dump(self):
+        pass
 
 if __name__ == "__main__":
     resource = Resources()
@@ -72,5 +72,5 @@ if __name__ == "__main__":
     for link in resource.post_mapping:
         post = resource.post_mapping[link]
     for category in resource.categories_mapping:
-        print category, resource.categories_mapping[category]
+        print (category, resource.categories_mapping[category])
         # print post.title, post.date, link
